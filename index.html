@@ -33,9 +33,11 @@
 			import { SVGLoader } from 'three/addons/SVGLoader.js';
 
 			let renderer, scene, camera, gui, guiData;
-
+            let INTERSECTED, raycaster;
+			let button = false;
+            const pointer = new THREE.Vector2();
 			init();
-
+            animate();
 			//
 
 			function init() {
@@ -45,6 +47,7 @@
 				//
 
 				camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 1000 );
+				//camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerHeight / 2, window.innerHeight / 2, window.innerHeight / - 2, 1, 1000)
 				camera.position.set( 0, 0, 200 );
 
 				//
@@ -55,7 +58,7 @@
 				renderer.outputEncoding = THREE.sRGBEncoding;
 				container.appendChild( renderer.domElement );
 
-				//
+				raycaster = new THREE.Raycaster();
 
 				const controls = new OrbitControls( camera, renderer.domElement );
 				controls.mouseButtons = { RIGHT: THREE.MOUSE.ROTATE, MIDDLE: THREE.MOUSE.DOLLY, LEFT: THREE.MOUSE.PAN }
@@ -68,10 +71,12 @@
 				console.log(controls)
 				console.log(THREE.TOUCH);
 				controls.addEventListener( 'change', render );
-				//
-
+			
 				window.addEventListener( 'resize', onWindowResize );
-
+                document.addEventListener( 'mousemove', onPointerMove );
+				document.addEventListener( 'mousedown', onDocumentMouseDown );
+				document.addEventListener( 'mouseup', onDocumentMouseUp );
+				
 				guiData = {
 					currentURL: 'models/svg/Frame_1.svg',
 					drawFillShapes: true,
@@ -94,9 +99,10 @@
 				console.log(gui);
 				gui.title("MAPAS")
 				gui.add( guiData, 'currentURL', {
-
+                    
 					'Mapa 1': 'models/svg/Frame_1.svg',
 					'Mapa 2': 'models/svg/Frame_2.svg',
+                    'Teste': 'models/svg/teste.svg',
 
 
 
@@ -210,6 +216,12 @@
 
 			}
 
+
+            function onPointerMove( event ) {
+                pointer.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+                pointer.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+            }
+
 			function onWindowResize() {
 
 				camera.aspect = window.innerWidth / window.innerHeight;
@@ -219,11 +231,63 @@
 
 			}
 
+			function onDocumentMouseDown(event){
+                button = event.button == 0;
+            }
+
+            function onDocumentMouseUp(){
+                button = false;
+            }
+
+            function onObject(){
+                raycaster.setFromCamera( pointer, camera );
+                const intersects = raycaster.intersectObjects( scene.children, true );
+				console.log(intersects);
+				if(button){
+					
+						for ( let i = 0; i < intersects.length; i ++ ) {
+							//console.log(intersects[ i ].object.geometry)
+							intersects[ i ].object.material.color.set( 0x00ff00 );
+						}
+				}
+
+
+                /*
+                if ( intersects.length > 0 && intersects[ 0 ]) {
+                    //if ( INTERSECTED != intersects[ 0 ].object ) {
+                        if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
+
+                        console.log(intersects[ 0 ].object.material.name);
+                        INTERSECTED = intersects[ 0 ].object;
+                        INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
+                        INTERSECTED.material.emissive.setHex( 0xff0000 );
+                        if(button){
+                            console.log("AAAAAAAAAA")
+                        }
+                        return true;
+                        
+                    //}
+                } else {
+                    if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
+                    INTERSECTED = null;
+
+                }
+                return false;*/
+            }
+
+
+
 			function render() {
-				
+                onObject();
+				camera.updateProjectionMatrix();
 				renderer.render( scene, camera );
 
 			}
+
+            function animate(){
+                requestAnimationFrame( animate );
+                render();
+            }
 
 		</script>
 
