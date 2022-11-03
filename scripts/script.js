@@ -6,6 +6,14 @@ var viewport = document.querySelector("#viewport");
 var elementMap = document.querySelectorAll("a");
 var ElementoAtual = {"Elemento": null, "Ativo":false}
 
+var s = Snap("#viewport");
+Snap.load("../img/svg/main.svg", onSVGLoaded);
+
+function onSVGLoaded(data) {
+      s.append( data );
+    
+  }
+
 for(let element of elementMap){
   element.addEventListener('mouseenter',function(){
     ElementoAtual.Elemento = element;
