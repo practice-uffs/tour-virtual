@@ -58,7 +58,11 @@
   }
 
   .map:hover{
-    fill: white;
+    fill: #005729;
+    stroke: #ffc107;
+    stroke-width: 2;
+    stroke-opacity: 25%;
+    transform: translateY(0.1%) ;
     cursor: pointer;
   }
 
