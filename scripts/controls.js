@@ -3,31 +3,6 @@ var reset = document.querySelector("#reset");
 var pivot = document.querySelector("#pivot");
 var proxy = document.createElement("div");
 var viewport = document.querySelector("#viewport");
-var elementMap = document.querySelectorAll("a");
-var ElementoAtual = {"Elemento": null, "Ativo":false}
-
-var s = Snap("#viewport");
-Snap.load("../img/svg/main.svg", onSVGLoaded);
-
-function onSVGLoaded(data) {
-      s.append( data );
-    
-  }
-
-for(let element of elementMap){
-  element.addEventListener('mouseenter',function(){
-    ElementoAtual.Elemento = element;
-    ElementoAtual.Ativo = true;
-  })
-}
-
-for(let element of elementMap){
-  element.addEventListener('mouseleave',function(){
-    ElementoAtual.Elemento = null;
-    ElementoAtual.Ativo = false;
-  })
-}
-
 
 var rotateThreshold = 4;
 var reachedThreshold = false;
@@ -47,7 +22,7 @@ var cachedViewBox = {
 
 var zoom = {
   animation: new TimelineLite(),
-  scaleFactor: 1.6,
+  scaleFactor: 1.1,
   duration: 0.3,
   ease: Power2.easeOut,
 };
@@ -137,10 +112,6 @@ function onWheel(event) {
 // SELECT DRAGGABLE
 // =========================================================================== 
 function selectDraggable(event) {
-  if(ElementoAtual.Ativo){
-    ElementoAtual.Elemento.querySelector("xlink:href");
-  }
-  
   if (resetAnimation.isActive()) {
     resetAnimation.kill();
   }

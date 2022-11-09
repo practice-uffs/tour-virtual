@@ -1,3 +1,5 @@
+
+
 .svg {
     position: fixed;
     top: 0;
@@ -56,6 +58,7 @@
   }
 
   .map:hover{
-    fill: firebrick;
+    fill: white;
+    cursor: pointer;
   }
 
