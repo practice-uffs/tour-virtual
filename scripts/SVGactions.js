@@ -5,7 +5,15 @@ function actionOnHover(target, group, texto,pan){
 
   paper.hover(criar_hover, deletar_hover);
   var points = SVGTarget.getBBox();
-  let angle = Snap.angle(points.x,points.y,points.x2,points.y2) - 260;
+  let angle = Snap.angle(points.x,points.y,points.x2,points.y2) - 250;
+
+  //let angle = Snap.angle(points.x,points.y,0,0);
+  //let angle = Snap.atan( ((points.y2/ points.x2) )) 
+  //let angle = Snap.acos( points.r0) 
+  //console.log(angle);
+  console.log(points);
+  console.log("V:" + points.y/ points.y2);
+  console.log(angle)
 
 
 function criar_click(){
@@ -67,14 +75,19 @@ function criar_click(){
   }
 }
 
-function loadImage(id_element,a){
+function loadImage(elementos){
   window.onload = function(){
     let s = Snap("#viewport");
     Snap.load("./img/svg/main.svg", onSVGLoaded);
 
     function onSVGLoaded(data) {
           s.append( data );
-          setActions(s, id_element, "#Gbloco", "Bloco",a);
+          for( let elemento in elementos){
+            
+            console.log(elementos[elemento].id)
+            setActions(s, elementos[elemento].id, elementos[elemento].group, elementos[elemento].texto);
+          }
+          
           
     }
   }  
@@ -87,7 +100,20 @@ function setActions(s, id_element, id_group, text){
   actionOnHover(elemento, grupo,text);
 }
 
-loadImage("#bloco");
+var atributos = {
+  1:{
+    "id":"#bloco",
+    "group":"#Gbloco",
+    "texto": "Bloco"
+  },
+  2:{
+    "id":"#bloco2",
+    "group":"#Gbloco2",
+    "texto": "Bloco2"
+  }
+}
+
+loadImage(atributos);
 
 
 
