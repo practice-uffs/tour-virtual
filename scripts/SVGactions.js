@@ -12,6 +12,7 @@ function actionOnHover(target, group, texto,pan){
   if((points.r1 + points.r2)> 90){
     angle = angle * -1;
   }
+  angle = 0;
   
 
 function criar_click(){
@@ -84,7 +85,6 @@ function loadImage(elementos){
     function onSVGLoaded(data) {
           s.append( data );
           for( let elemento in elementos){
-            
             console.log(elementos[elemento].id)
             setActions(s, elementos[elemento].id, elementos[elemento].group, elementos[elemento].texto);
           }
@@ -101,11 +101,22 @@ function setActions(s, id_element, id_group, text){
   actionOnHover(elemento, grupo,text);
 }
 
+
+var atributos = [];
+let tam = 14
+for(let i = 1; i <= tam; i++){
+  atributos[i] = {
+    "id":"#bloco" + i,
+    "group":"#Gbloco" + i,
+    "texto": "Bloco" + i
+  }
+}
+/*
 var atributos = {
   1:{
-    "id":"#bloco",
-    "group":"#Gbloco",
-    "texto": "Bloco"
+    "id":"#bloco1",
+    "group":"#Gbloco1",
+    "texto": "Bloco1"
   },
   2:{
     "id":"#bloco2",
@@ -121,9 +132,20 @@ var atributos = {
       "id":"#bloco4",
       "group":"#Gbloco4",
       "texto": "Bloco4"
-  }
-}
+  },
+  5:{
+    "id":"#bloco5",
+    "group":"#Gbloco5",
+    "texto": "Bloco5"
+  },
+  6:{
+    "id":"#bloco6",
+    "group":"#Gbloco6",
+    "texto": "Bloco6"
+  },
 
+}
+*/
 loadImage(atributos);
 
 

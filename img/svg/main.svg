@@ -50,42 +50,55 @@
 <path d="M1171 1179.5H1149.5V1220L1171 1216V1179.5Z" fill="#00923F" fill-opacity="0.4"/>
 <rect x="1299" y="1118" width="27" height="15" fill="#004729" fill-opacity="0.7"/>
 <path d="M1430 1240L1522 1379.5L1544.5 1419.5L1551 1451.5L1538 1485.5" stroke="#00923F" stroke-opacity="0.55" stroke-width="10" stroke-dasharray="5 5"/>
-<path d="M1267.5 931L1228 950L1267.5 1040L1311.5 1022.5L1267.5 931Z" fill="#004729"/>
-<path d="M1339 911L1298.5 928.5L1342.5 1017.5L1382.5 1000.5L1339 911Z" fill="#004729"/>
-<g id="Gbloco4" class="map">
-    <path id="bloco4" class="map" d="M1350.5 1073.5L1308.5 1091L1350.5 1183L1392.5 1163.5L1368.7 1112.5L1350.5 1073.5Z" fill="#004729"/>
 
+<g id="Gbloco1" class="map">
+    <path id="bloco1" class="map" d="M1267.5 931L1228 950L1267.5 1040L1311.5 1022.5L1267.5 931Z" fill="#004729"/>
 </g>
-<path d="M1438 1196L1421 1163.5L1471 1138.5L1487 1166L1438 1196Z" fill="#004729"/>
+<g id="Gbloco2" class="map">
+    <path id="bloco2" class="map" d="M1339 911L1298.5 928.5L1342.5 1017.5L1382.5 1000.5L1339 911Z" fill="#004729"/> 
+</g>
 <g id="Gbloco3" class="map">
-    <path id="bloco3" class="map" d="M1771 1129.5L1737.5 1106L1694.5 1151L1728 1181L1771 1129.5Z" fill="#004729"/>
+    <path id="bloco3" class="map" d="M1350.5 1073.5L1308.5 1091L1350.5 1183L1392.5 1163.5L1368.7 1112.5L1350.5 1073.5Z" fill="#004729"/>
+
 </g>
-<path d="M965 1206H929V1250H965V1206Z" fill="#004729"/>
-<path d="M1037 1215H1001.5V1252.5H1037V1215Z" fill="#004729"/>
-<g id="Gbloco2" >
-    <path  id="bloco2" class="map" d="M1071.5 1141V1112.5H1136.5V1137.5H1149.5V1187.5H1132H1071.5V1158H1054V1141H1071.5Z" fill="#004729"/>
+<g id="Gbloco4" class="map">
+    <path id="bloco4" class="map" d="M1438 1196L1421 1163.5L1471 1138.5L1487 1166L1438 1196Z" fill="#004729"/> 
+</g>
+<g id="Gbloco5" class="map">
+    <path id="bloco5" class="map" d="M1771 1129.5L1737.5 1106L1694.5 1151L1728 1181L1771 1129.5Z" fill="#004729"/>
+</g>
+<g id="Gbloco6" class="map">
+    <path id="bloco6" class="map" d="M965 1206H929V1250H965V1206Z" fill="#004729"/> 
 </g>
 
-<path d="M777 914.5L751.5 954.5L843.5 1018L874 975.5L777 914.5Z" fill="#004729"/>
+<g id="Gbloco7" class="map">
+    <path id="bloco7" class="map" d="M1037 1215H1001.5V1252.5H1037V1215Z" fill="#004729"/> 
+</g>
+<g id="Gbloco8" >
+    <path  id="bloco8" class="map" d="M1071.5 1141V1112.5H1136.5V1137.5H1149.5V1187.5H1132H1071.5V1158H1054V1141H1071.5Z" fill="#004729"/>
+</g>
 
-<g id="Gbloco" >
-    <path id="bloco" class="map" d="M1531 1303.5L1543 1295.5L1614.5 1245L1641.5 1282L1614.5 1301.5L1645.5 1348L1614.5 1366.5L1583.5 1325.5L1559 1342L1531 1303.5Z" fill="#004729"/>
+<g id="Gbloco9" class="map">
+    <path id="bloco9" class="map" d="M777 914.5L751.5 954.5L843.5 1018L874 975.5L777 914.5Z" fill="#004729"/> 
+</g>
+
+<g id="Gbloco10" >
+    <path id="bloco10" class="map" d="M1531 1303.5L1543 1295.5L1614.5 1245L1641.5 1282L1614.5 1301.5L1645.5 1348L1614.5 1366.5L1583.5 1325.5L1559 1342L1531 1303.5Z" fill="#004729"/>
     
 </g>
-<path d="M1900 973.5V954.5H1943.5V973.5H1900Z" fill="#004729"/>
-<path d="M1890.5 1004.5H1866.5V1031H1890.5V1004.5Z" fill="#004729"/>
-<path d="M1836.5 1004.5L1785.5 1003.5V1042H1836.5V1004.5Z" fill="#004729"/>
-<path d="M1267.5 931L1228 950L1267.5 1040L1311.5 1022.5L1267.5 931Z" stroke="#004729"/>
-<path d="M1339 911L1298.5 928.5L1342.5 1017.5L1382.5 1000.5L1339 911Z" stroke="#004729"/>
-<path d="M1438 1196L1421 1163.5L1471 1138.5L1487 1166L1438 1196Z" stroke="#004729"/>
-<path d="M965 1206H929V1250H965V1206Z" stroke="#004729"/>
-<path d="M1037 1215H1001.5V1252.5H1037V1215Z" stroke="#004729"/>
-<path d="M777 914.5L751.5 954.5L843.5 1018L874 975.5L777 914.5Z" stroke="#004729"/>
-<path d="M1900 973.5V954.5H1943.5V973.5H1900Z" stroke="#004729"/>
-<path d="M1890.5 1004.5H1866.5V1031H1890.5V1004.5Z" stroke="#004729"/>
-<path d="M1836.5 1004.5L1785.5 1003.5V1042H1836.5V1004.5Z" stroke="#004729"/>
+<g id="Gbloco11" class="map">
+    <path id="bloco11" class="map" d="M1900 973.5V954.5H1943.5V973.5H1900Z" fill="#004729"/> 
+</g>
+<g id="Gbloco12" class="map">
+    <path id="bloco12" class="map" d="M1890.5 1004.5H1866.5V1031H1890.5V1004.5Z" fill="#004729"/> 
+</g>
+<g id="Gbloco13" class="map">
+    <path id="bloco13" class="map" d="M1836.5 1004.5L1785.5 1003.5V1042H1836.5V1004.5Z" fill="#004729"/> 
+</g>
 <rect x="672.464" y="727.829" width="49.9373" height="83.9494" transform="rotate(-47.9664 672.464 727.829)" fill="#00923F" fill-opacity="0.4"/>
-<rect x="1304" y="462.156" width="20" height="26" transform="rotate(-24.0653 1304 462.156)" fill="#004729"/>
+<g id="Gbloco14" class="map">
+    <rect id="bloco14" class="map" x="1304" y="462.156" width="20" height="26" transform="rotate(-24.0653 1304 462.156)" fill="#004729"/> 
+</g>
 <path d="M1308.5 902L1298.5 883.5L1324.5 871L1335 891L1308.5 902Z" fill="#004729" fill-opacity="0.7"/>
 <g opacity="0.7">
 <circle cx="1654" cy="983" r="10" fill="#00923F" fill-opacity="0.46"/>
