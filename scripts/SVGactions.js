@@ -1,3 +1,8 @@
+class Utils{
+
+}
+
+
 class Info{
   constructor(SVGtarget, group){
     this.paper = group;
@@ -18,6 +23,7 @@ class Info{
       'font-size': '40px',
       'fill': 'white',
       'opacity': 0.1,
+      'overflow':"visible"
     });
     text_1.animate({ opacity: 1 }, 800 );
     return text_1;
@@ -36,6 +42,8 @@ class Info{
       "fill":"#04923F",
       "stroke": "#08523F",
       "stroke-width": "2",
+      "height":"auto",
+      "width":"auto",
     });
     
     card.animate({stroke: "#04923F"},500, mina.bounce)
@@ -89,7 +97,15 @@ class LoadSVG{
       function(){
         info.deletar()
       }); // Fim Hover
-    
+      
+      // Hover Touch
+      grupo.touchstart(function(){
+        info.criar(texto)
+      });
+      grupo.touchend(function(){
+        info.deletar()
+      });  // Fim Hover Touch
+     
     }
   }
 
