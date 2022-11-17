@@ -1,5 +1,4 @@
 class Info{
-  
   constructor(SVGtarget, group){
     this.paper = group;
     this.target = SVGtarget;
@@ -65,36 +64,37 @@ class Info{
 
 }
 
-
-function loadImage(elementos){
-  window.onload = function(){
-    let s = Snap("#viewport");
+class LoadSVG{
+  constructor(elementos, parent_name="#viewport"){
+    let parent = Snap(parent_name);
     Snap.load("./img/svg/main.svg", onSVGLoaded);
+    
     function onSVGLoaded(data) {
-          s.append( data );
+          parent.append( data );
           for( let elemento in elementos){
             console.log(elementos[elemento].id)
-            setActions(s, elementos[elemento].id, elementos[elemento].group, elementos[elemento].texto);     
+            setActions(parent, elementos[elemento].id, elementos[elemento].group, elementos[elemento].texto);     
           }                
     }
-  }  
+
+    function setActions(parent, ID_element, ID_group, texto){
+      let elemento = parent.select(ID_element);
+      let grupo = parent.select(ID_group);
+      let info = new Info(elemento,grupo);
+    
+      // Hover
+      grupo.hover(function(){
+        info.criar(texto)
+      }, 
+      function(){
+        info.deletar()
+      }); // Fim Hover
+    
+    }
+  }
 
 }
 
-function setActions(s, id_element, id_group, text){
-  let elemento = s.select(id_element);
-  let grupo = s.select(id_group);
-  let info = new Info(elemento,grupo);
-
-  // Hover
-  grupo.hover(function(){
-    info.criar(text)
-  }, 
-  function(){
-    info.deletar()
-  }); // Fim Hover
-
-}
 
 
 var atributos = [];
@@ -107,7 +107,8 @@ for(let i = 1; i <= tam; i++){
   }
 }
 
-loadImage(atributos);
+//loadImage(atributos);
+let load = new LoadSVG(atributos);
 
 
 
