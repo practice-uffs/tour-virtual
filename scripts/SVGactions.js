@@ -1,10 +1,13 @@
-class Utils{
+import {LoadSVG}from './loadSVG.js';
 
+class Utils{
+  
 }
 
 
 class Info{
-  constructor(SVGtarget, group){
+  constructor(parent,SVGtarget, group){
+    this.parent = parent.select("#interativo");
     this.paper = group;
     this.target = SVGtarget;
     this.label = null;
@@ -62,6 +65,9 @@ class Info{
     let SVG_text = this.#getText(texto);
     let card = this.#getCard();
     this.#getAgroup(card,SVG_text);
+    this.#sobrepor();
+    
+
     
   }
 
@@ -70,48 +76,39 @@ class Info{
 
   }
 
-}
-
-class LoadSVG{
-  constructor(elementos, parent_name="#viewport"){
-    let parent = Snap(parent_name);
-    Snap.load("./img/svg/main.svg", onSVGLoaded);
-    
-    function onSVGLoaded(data) {
-          parent.append( data );
-          for( let elemento in elementos){
-            console.log(elementos[elemento].id)
-            setActions(parent, elementos[elemento].id, elementos[elemento].group, elementos[elemento].texto);     
-          }                
-    }
-
-    function setActions(parent, ID_element, ID_group, texto){
-      let elemento = parent.select(ID_element);
-      let grupo = parent.select(ID_group);
-      let info = new Info(elemento,grupo);
-    
-      // Hover
-      grupo.hover(function(){
-        info.criar(texto)
-      }, 
-      function(){
-        info.deletar()
-      }); // Fim Hover
-      
-      // Hover Touch
-      grupo.touchstart(function(){
-        info.criar(texto)
-      });
-      grupo.touchend(function(){
-        info.deletar()
-      });  // Fim Hover Touch
-     
-    }
+  #sobrepor(){
+    let temp = this.paper;
+    this.paper.remove();
+    this.parent.append(temp);
+    this.paper = temp;
   }
 
 }
 
 
+
+
+function setHover(parent, ID_element, ID_group, texto){
+  let elemento = parent.select(ID_element);
+  let grupo = parent.select(ID_group);
+  let info = new Info(parent,elemento,grupo);
+
+  // Hover
+  grupo.hover(function(){
+    info.criar(texto)
+  }, 
+  function(){
+    info.deletar()
+  }); // Fim Hover
+  
+  // Hover Touch
+  grupo.touchstart(function(){
+    info.criar(texto)
+  });
+  grupo.touchend(function(){
+    info.deletar()
+  });  // Fim Hover Touch
+}
 
 var atributos = [];
 let tam = 14
@@ -123,8 +120,7 @@ for(let i = 1; i <= tam; i++){
   }
 }
 
-//loadImage(atributos);
-let load = new LoadSVG(atributos);
+new LoadSVG("./img/svg/main.svg",atributos,setHover);
 
 
 
