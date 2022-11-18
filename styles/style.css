@@ -48,64 +48,66 @@ body{
     width: 100%;
     height: 100%;
     cursor: move;
-  }
-  
-  .svg-scrim {
-    pointer-events: none;
-    z-index: 5;
-    fill: black;
-  }
- 
-  .proxy {
-    fill: none;
-    stroke: none;
-  }
-  
-  .controls {
-    position: fixed;
-    top: 0;
-    left: 0;  
-    padding: 12px;  
-    z-index: 10;
-  }
-    .controls-button {
-      font-weight: 700;
-    }
-  
-  
-  .info {  
-    user-select: none;
-    pointer-events: none;}
-    
-    ul {
-      font-size: 13px;
-      list-style-type: none;
-      padding: 0;    
-      line-height: 20px;    
-      margin-top: 0;
-    }
+}
 
-  
-  .svg-background {
-    fill: none;
-    stroke: none;
-  }
-  
-  .pivot {
-    fill: #ffc107;
-    stroke: rgba(0,0,0,0.5);
-    stroke-width: 2;
-    opacity: 1;
-  }
+.svg-scrim {
+  pointer-events: none;
+  z-index: 5;
+  fill: black;
+}
 
-  .map:hover{
-    fill: #005729;
-    stroke: #ffc107;
-    stroke-width: 2;
-    stroke-opacity: 25%;
-    transform: translateY(0.1%) ;
+.proxy {
+  fill: none;
+  stroke: none;
+}
+
+.controls {
+  position: fixed;
+  top: 0;
+  left: 0;  
+  padding: 12px;  
+  z-index: 10;
+}
+ .controls .reset:hover{
     cursor: pointer;
+    fill: rgba(255, 0, 0, 0.479);
   }
+
+  
+.info {  
+  user-select: none;
+  pointer-events: none;
+}
+  
+ul {
+  font-size: 13px;
+  list-style-type: none;
+  padding: 0;    
+  line-height: 20px;    
+  margin-top: 0;
+}
+
+
+.svg-background {
+  fill: none;
+  stroke: none;
+}
+
+.pivot {
+  fill: #ffc107;
+  stroke: rgba(0,0,0,0.5);
+  stroke-width: 2;
+  opacity: 1;
+}
+
+.map:hover{
+  fill: #005729;
+  stroke: #ffc107;
+  stroke-width: 2;
+  stroke-opacity: 25%;
+  transform: translateY(0.1%) ;
+  cursor: pointer;
+}
 
 
   .information {
@@ -114,23 +116,21 @@ body{
   }
 
 .information div {
-
-    text-align: top;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 45%;
   }
 
 .information div p{
   display: inline-block;
   padding: 5px 10px 5px 10px;
 
-  border: 1px solid #000;
+  border-bottom: 2px solid #000;
   border-radius: 30px;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  color: rgb(17, 87, 0);
-  -webkit-text-stroke: 1px black
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;
 }
 
 .side-bar{
@@ -160,3 +160,5 @@ body{
 .side-bar .close:hover{
   fill: rgba(202, 5, 5, 0.6);
 }
+
+
