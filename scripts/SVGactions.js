@@ -1,4 +1,5 @@
 import {LoadSVG}from './loadSVG.js';
+import {atributos} from './data.js'
 
 class Utils{
   
@@ -32,23 +33,44 @@ class Info{
 
 
 
+const side_bar = document.getElementById("side-bar");
+const svg = document.getElementById("svg"); 
+const fechar_side_bar = document.getElementById("side-bar-fechar");
+fechar_side_bar.addEventListener('click',fechar);
+
+function abrir(texto){
+    const element = document.getElementById("titulo-side-bar");
+    if(element)
+      element.parentNode.removeChild(element);
+
+    const h4 = document.createElement("h4");
+    h4.setAttribute('id',"titulo-side-bar")
+    const node = document.createTextNode(texto);
+    h4.appendChild(node);
+    side_bar.appendChild(h4);
+
+    side_bar.style.display= "inline";
+    svg.style.width= "75%";
+}
+  function fechar(){
+
+    const element = document.getElementById("titulo-side-bar");
+    element.parentNode.removeChild(element);
+    side_bar.style.display= "none";
+    svg.style.width= "100%";
+
+  }
+
+
 
 function setHover(parent, ID_element, ID_group, texto){
   let elemento = parent.select(ID_element);
   let grupo = parent.select(ID_group);
   let info = new Info(parent,elemento,grupo);
-  const side_bar = document.getElementById("side-bar");
-  const svg = document.getElementById("svg"); 
-  function abrir(){
-    side_bar.style.display= "inline";
-    svg.style.width= "75%";
-  }
-  function fechar(){
-    side_bar.style.display= "none";
-    svg.style.width= "100%";
-
-  }
-  grupo.click(abrir);
+  
+  grupo.click(function(){
+    abrir(texto)
+  });
 
   
   // Hover
@@ -69,16 +91,8 @@ function setHover(parent, ID_element, ID_group, texto){
   });  // Fim Hover Touch
 }
 
-var atributos = [];
-let tam = 14
-for(let i = 1; i <= tam; i++){
-  atributos[i] = {
-    "id":"#bloco" + i,
-    "group":"#Gbloco" + i,
-    "texto": "Bloco" + i
-  }
-}
 
+console.log(atributos);
 new LoadSVG("./img/svg/main.svg",atributos,setHover);
 
 

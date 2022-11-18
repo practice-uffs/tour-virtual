@@ -149,4 +149,14 @@ body{
 
 
 
-
+.side-bar .close{
+  float: right;
+  margin-right: 0.25ch;
+  fill: rgb(202, 5, 5);
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 100%;
+}
+.side-bar .close:hover{
+  fill: rgba(202, 5, 5, 0.6);
+}
