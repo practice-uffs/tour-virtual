@@ -1,4 +1,45 @@
+:root {
+	--d: 2500ms;
+	--angle: 90deg;
+	--gradX: 100%;
+	--gradY: 50%;
+	--c1: rgb(94, 255, 0);
+	--c2: rgb(255, 255, 255);
+}
 
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: '<percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: true;
+}
+
+
+
+@keyframes borderRotate {
+	100% {
+		--angle: 420deg;
+	}
+}
+
+
+
+
+body{
+  margin: 0;
+}
 
 .svg {
     position: fixed;
@@ -65,4 +106,47 @@
     transform: translateY(0.1%) ;
     cursor: pointer;
   }
+
+
+  .information {
+    position: relative;
+    background-color: #333;
+  }
+
+.information div {
+
+    text-align: top;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+.information div p{
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+
+  border: 1px solid #000;
+  border-radius: 30px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(17, 87, 0);
+  -webkit-text-stroke: 1px black
+}
+
+.side-bar{
+  display: none;
+  position: absolute;
+  right: 0px;
+  height: 100%;
+  width: 25%;
+  text-align: center;
+  font-size: 3vw;
+	border-left: 5px solid;
+	border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+	animation: borderRotate var(--d) linear infinite forwards;
+
+}
+
+
+
 
