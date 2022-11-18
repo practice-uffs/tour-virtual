@@ -1,4 +1,45 @@
+:root {
+	--d: 2002ms;
+	--angle: 90deg;
+	--gradX: 100%;
+	--gradY: 100%;
+	--c1: rgb(0, 0, 0);
+	--c2: rgba(0, 0, 0, 0.39);
+}
 
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: '<percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: true;
+}
+
+
+
+@keyframes borderRotate {
+	100% {
+		--angle: 420deg;
+	}
+}
+
+
+
+
+body{
+  margin: 0;
+}
 
 .svg {
     position: fixed;
@@ -7,62 +48,120 @@
     width: 100%;
     height: 100%;
     cursor: move;
-  }
-  
-  .svg-scrim {
-    pointer-events: none;
-    z-index: 5;
-    fill: black;
-  }
- 
-  .proxy {
-    fill: none;
-    stroke: none;
-  }
-  
-  .controls {
-    position: fixed;
-    top: 0;
-    left: 0;  
-    padding: 12px;  
-    z-index: 10;
-  }
-    .controls-button {
-      font-weight: 700;
-    }
-  
-  
-  .info {  
-    user-select: none;
-    pointer-events: none;}
-    
-    ul {
-      font-size: 13px;
-      list-style-type: none;
-      padding: 0;    
-      line-height: 20px;    
-      margin-top: 0;
-    }
+}
 
-  
-  .svg-background {
-    fill: none;
-    stroke: none;
-  }
-  
-  .pivot {
-    fill: #ffc107;
-    stroke: rgba(0,0,0,0.5);
-    stroke-width: 2;
-    opacity: 1;
-  }
+.svg-scrim {
+  pointer-events: none;
+  z-index: 5;
+  fill: black;
+}
 
-  .map:hover{
-    fill: #005729;
-    stroke: #ffc107;
-    stroke-width: 2;
-    stroke-opacity: 25%;
-    transform: translateY(0.1%) ;
+.proxy {
+  fill: none;
+  stroke: none;
+}
+
+.controls {
+  position: fixed;
+  top: 0;
+  left: 0;  
+  padding: 12px;  
+  z-index: 10;
+}
+ .controls .reset:hover{
     cursor: pointer;
+    fill: rgba(255, 0, 0, 0.479);
   }
+
+
+  
+.info {  
+  user-select: none;
+  pointer-events: none;
+}
+  
+ul {
+  font-size: 13px;
+  list-style-type: none;
+  padding: 0;    
+  line-height: 20px;    
+  margin-top: 0;
+}
+
+
+.svg-background {
+  fill: none;
+  stroke: none;
+}
+
+.pivot {
+  fill: #ffc107;
+  stroke: rgba(0,0,0,0.5);
+  stroke-width: 2;
+  opacity: 1;
+}
+
+.map:hover{
+  fill: #005729;
+  stroke: #ffc107;
+  stroke-width: 2;
+  stroke-opacity: 25%;
+  transform: translateY(0.1%) ;
+  cursor: pointer;
+}
+
+
+  .information {
+    position: relative;
+    background-color: #333;
+  }
+
+.information div {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+  }
+
+.information div p{
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+
+  border-bottom: 2px solid #000;
+  border-radius: 30px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;
+}
+
+.side-bar{
+  display: none;
+  position: absolute;
+  right: 0px;
+  height: 100%;
+  width: 25%;
+  text-align: center;
+  font-size: 3vw;
+	border-left: 5px solid;
+	border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+	animation: borderRotate var(--d) linear infinite forwards;
+
+}
+
+
+
+.side-bar .close{
+  float: right;
+  margin-right: 0.25ch;
+  fill: rgb(202, 5, 5);
+
+}
+.side-bar .close:hover{
+  fill: rgba(202, 5, 5, 0.6);
+}
+
+.btn-360{
+  position: absolute;
+  bottom: 0;
+}
 
