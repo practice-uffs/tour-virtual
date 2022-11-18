@@ -38,11 +38,22 @@ const svg = document.getElementById("svg");
 const fechar_side_bar = document.getElementById("side-bar-fechar");
 fechar_side_bar.addEventListener('click',fechar);
 
+function drag_start(){}
+function drag_onmouse(){}
+function drag_end(){}
+
+
 function abrir(texto){
     const element = document.getElementById("titulo-side-bar");
     if(element)
       element.parentNode.removeChild(element);
-
+    let btn_360 = document.getElementById("btn-360")
+    btn_360 = Snap(btn_360);
+    btn_360.drag()
+    /*
+    btn_360.drag(function(event,a,b,c,d){
+        console.log(event,a,b,c,d);
+    });*/
     const h4 = document.createElement("h4");
     h4.setAttribute('id',"titulo-side-bar")
     const node = document.createTextNode(texto);

@@ -1,10 +1,10 @@
 :root {
-	--d: 2500ms;
+	--d: 2002ms;
 	--angle: 90deg;
 	--gradX: 100%;
-	--gradY: 50%;
-	--c1: rgb(94, 255, 0);
-	--c2: rgb(255, 255, 255);
+	--gradY: 100%;
+	--c1: rgb(0, 0, 0);
+	--c2: rgba(0, 0, 0, 0.39);
 }
 
 
@@ -72,6 +72,7 @@ body{
     cursor: pointer;
     fill: rgba(255, 0, 0, 0.479);
   }
+
 
   
 .info {  
@@ -153,12 +154,14 @@ ul {
   float: right;
   margin-right: 0.25ch;
   fill: rgb(202, 5, 5);
-  background-color: rgb(255, 255, 255);
-  border: 2px solid rgb(255, 255, 255);
-  border-radius: 100%;
+
 }
 .side-bar .close:hover{
   fill: rgba(202, 5, 5, 0.6);
 }
 
+.btn-360{
+  position: absolute;
+  bottom: 0;
+}
 
