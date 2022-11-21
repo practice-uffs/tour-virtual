@@ -14,7 +14,6 @@ var startGlobal = svg.createSVGPoint();
 
 var viewBox = svg.viewBox.baseVal;
 
-
 var cachedViewBox = {
   x: viewBox.x,
   y: viewBox.y,
@@ -30,10 +29,15 @@ var zoom = {
 };
 
 var limits = {
-  min: cachedViewBox,
+  min: {
+    x: -400,
+    y: -400, 
+    width: cachedViewBox.width,
+    height: cachedViewBox.height
+  },
   max: {
-      x: cachedViewBox.x,
-      y: cachedViewBox.y,
+      x: 1200,
+      y: 1200 , 
       width: viewBox.width/4,
       height: viewBox.height/4
   }
@@ -69,7 +73,9 @@ var rotatable = new Draggable(viewport, {
 
 rotatable.disable();
 
-reset.addEventListener("click", resetViewport);
+reset.addEventListener("click", function(){
+  resetViewport(cachedViewBox);
+});
 window.addEventListener("wheel", onWheel);
 window.addEventListener("resize", function() {
   pivotAnimation.reverse();
@@ -104,6 +110,33 @@ function limitZoom(scaleDelta,startPoint,fromVars){
   }
 }
 
+
+//
+// LIMIT DRAG
+// ===========================================================================
+
+
+function limitDrag(moveGlobal){
+  //console.log(viewBox)
+  console.log(viewBox)
+  _x = viewBox.x - (moveGlobal.x - startGlobal.x)
+  
+  
+  _y = viewBox.y - (moveGlobal.y - startGlobal.y)
+  console.log("_y: "+_y)
+  console.log("Limite  min _y: "+ limits.min.y)
+  console.log("Limite  max _y: "+ limits.max.y)
+  if(_x > limits.min.x && _x < limits.max.x)
+    viewBox.x = _x;
+  if(_y > limits.min.y && _y < limits.max.y)
+    viewBox.y = _y;
+
+  /*  
+  if(_y < limits.min.y)
+    viewBox.y = limits.min.y;*/
+
+}
+
 //
 // ON WHEEL
 // =========================================================================== 
@@ -136,15 +169,6 @@ function onWheel(event) {
     width: viewBox.width,
     height: viewBox.height,
   };
-  console.log(viewBox);
-  /*
-  if(viewBox.x -(startPoint.x - viewBox.x) * (scaleDelta - 1) > limits.min.x){
-    viewBox.x = viewBox.x -(startPoint.x - viewBox.x) * (scaleDelta - 1);
-    viewBox.y -= (startPoint.y - viewBox.y) * (scaleDelta - 1);
-    viewBox.width *= scaleDelta;
-    viewBox.height *= scaleDelta;
-    zoom.animation = TweenLite.from(viewBox, zoom.duration, fromVars);  
-  }*/
   limitZoom(scaleDelta,startPoint,fromVars);
 }
 
@@ -152,6 +176,7 @@ function onWheel(event) {
 // SELECT DRAGGABLE
 // =========================================================================== 
 function selectDraggable(event) {
+ 
   if (resetAnimation.isActive()) {
     resetAnimation.kill();
   }
@@ -159,12 +184,8 @@ function selectDraggable(event) {
   startClient.x = this.pointerX;
   startClient.y = this.pointerY;
   startGlobal = startClient.matrixTransform(svg.getScreenCTM().inverse());
-  /*
-  if(event.button === 0){
-    
-  }
+
   // Right mouse button
-  //console.log(variavel);*/
   if (event.button === 2) {
     
     reachedThreshold = false;
@@ -190,7 +211,7 @@ function selectDraggable(event) {
     });
     
     rotatable.disable();
-    pannable.enable()//.update().startDrag(event);
+    pannable.enable()
     pivotAnimation.reverse();
   }
 }
@@ -198,8 +219,9 @@ function selectDraggable(event) {
 //
 // RESET VIEWPORT
 // =========================================================================== 
-function resetViewport() {
-  var duration = 0.8;
+function resetViewport(tempViewBox) {
+  pannable.disable();
+  var duration = 0.3;
   var ease = Power3.easeOut;
   
   pivotAnimation.reverse();
@@ -214,10 +236,10 @@ function resetViewport() {
     
   resetAnimation.clear()
     .to(viewBox, duration, {
-      x: cachedViewBox.x,
-      y: cachedViewBox.y,
-      width: cachedViewBox.width,
-      height: cachedViewBox.height,
+      x: tempViewBox.x,
+      y: tempViewBox.y,
+      width: tempViewBox.width,
+      height: tempViewBox.height,
       ease: ease
     }, 0)
     .to(viewport, duration, {
@@ -227,7 +249,9 @@ function resetViewport() {
       svgOrigin: "0 0",
       ease: ease
     }, 0)
+    pannable.enable();
 }
+
 
 //
 // CHECK THRESHOLD
@@ -254,7 +278,7 @@ function checkThreshold(value) {
 // =========================================================================== 
 
 function updateViewBox() {
-  
+
   if (zoom.animation.isActive()) {
     return;
   }
@@ -262,10 +286,11 @@ function updateViewBox() {
   point.x = this.x;
   point.y = this.y;
   
-  var moveGlobal = point.matrixTransform(svg.getScreenCTM().inverse());
-    
-  viewBox.x -= (moveGlobal.x - startGlobal.x);
-  viewBox.y -= (moveGlobal.y - startGlobal.y); 
+  let moveGlobal = point.matrixTransform(svg.getScreenCTM().inverse());
+  limitDrag(moveGlobal);
+  
+  //viewBox.x -= (moveGlobal.x - startGlobal.x);
+  //viewBox.y -= (moveGlobal.y - startGlobal.y); 
 }
     
   

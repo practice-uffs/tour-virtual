@@ -45,7 +45,7 @@ body{
 .svg {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100%;
     height: 100%;
     cursor: move;
@@ -70,8 +70,8 @@ body{
 
 .controls {
   position: fixed;
-  top: 0;
-  left: 0;  
+  bottom: 0;
+  right: 0;  
   padding: 12px;  
   z-index: 10;
 }
@@ -144,12 +144,12 @@ ul {
 .side-bar{
   display: none;
   position: absolute;
-  right: 0px;
+  left: 0;
   height: 100%;
   width: 25%;
   text-align: center;
   font-size: 3vw;
-	border-left: 5px solid;
+	border-right: 5px solid;
 	border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
 	animation: borderRotate var(--d) linear infinite forwards;
 
