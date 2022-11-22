@@ -1,0 +1,22 @@
+.controls {
+    position: fixed;
+    bottom: 0;
+    right: 0;  
+    padding: 12px 5px 30px 10px;  
+    z-index: 10;
+  }
+.controls .reset:hover{
+      cursor: pointer;
+      fill: rgba(255, 0, 0, 0.479);
+}
+
+.controls .btn-360:hover{
+  position: fixed;
+  cursor: pointer;
+  fill: rgba(255, 0, 0, 0.479);
+}
+
+.btn-360{
+    position: fixed;
+    bottom: 0;
+}

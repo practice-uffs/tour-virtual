@@ -1,0 +1,47 @@
+.svg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    cursor: move;
+    
+}
+
+.svg-scrim {
+  pointer-events: none;
+  z-index: 5;
+  fill: black;
+}
+
+.proxy {
+  fill: none;
+  stroke: none;
+}
+
+
+.svg-map{
+  background-color: #333;
+}
+
+  
+.svg-background {
+  fill: none;
+  stroke: none;
+}
+
+.pivot {
+  fill: #ffc107;
+  stroke: rgba(0,0,0,0.5);
+  stroke-width: 2;
+  opacity: 1;
+}
+
+.map:hover{
+  fill: #005729;
+  stroke: #ffc107;
+  stroke-width: 2;
+  stroke-opacity: 25%;
+  transform: translateY(0.1%) ;
+  cursor: pointer;
+}

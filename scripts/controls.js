@@ -76,7 +76,8 @@ rotatable.disable();
 reset.addEventListener("click", function(){
   resetViewport(cachedViewBox);
 });
-window.addEventListener("wheel", onWheel);
+//window.addEventListener("wheel", onWheel);
+svg.addEventListener("wheel", onWheel);
 window.addEventListener("resize", function() {
   pivotAnimation.reverse();
 });

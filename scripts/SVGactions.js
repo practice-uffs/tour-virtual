@@ -43,59 +43,86 @@ function drag_onmouse(){}
 function drag_end(){}
 
 
-function abrir(texto){
-    const element = document.getElementById("titulo-side-bar");
-    if(element)
-      element.parentNode.removeChild(element);
-    let btn_360 = document.getElementById("btn-360")
-    btn_360 = Snap(btn_360);
-    btn_360.drag()
-    /*
-    btn_360.drag(function(event,a,b,c,d){
-        console.log(event,a,b,c,d);
-    });*/
-    const h6 = document.createElement("h6");
-    h6.setAttribute('id',"titulo-side-bar")
-    const node = document.createTextNode(texto);
-    h6.appendChild(node);
-    side_bar.appendChild(h6);
+function abrir(titulo, descricao){
 
+
+  // Verifica se já foi criado
+
+  let element_titulo_p = document.getElementById("titulo-sidebar-p");
+  let element_desc_p = document.getElementById("descricao-sidebar-p");
+  let element_titulo_c = document.getElementById("titulo-sidebar-c");
+  let element_desc_c = document.getElementById("descricao-sidebar-c");
+  
+  if(element_desc_c)
+    element_desc_p.removeChild(element_desc_c)
+  if(element_titulo_c)
+    element_titulo_p.removeChild(element_titulo_c);
+
+    let tit = document.createTextNode(titulo);
+    let desc = document.createTextNode(descricao);
+
+    
+
+
+    const tit_e = document.createElement("p");
+    const desc_e = document.createElement("p");
+
+    tit_e.appendChild(tit);
+    tit_e.setAttribute('id', 'titulo-sidebar-c')
+
+    desc_e.appendChild(desc);
+    desc_e.setAttribute('id','descricao-sidebar-c');
+
+
+  
+
+    element_titulo_p.appendChild(tit_e);
+    element_desc_p.appendChild(desc_e);
     side_bar.style.display= "inline";
     svg.style.width= "75%";
 }
   function fechar(){
 
-    const element = document.getElementById("titulo-side-bar");
-    element.parentNode.removeChild(element);
-    side_bar.style.display= "none";
-    svg.style.width= "100%";
+  let element_titulo_p = document.getElementById("titulo-sidebar-p");
+  let element_desc_p = document.getElementById("descricao-sidebar-p");
+  let element_titulo_c = document.getElementById("titulo-sidebar-c");
+  let element_desc_c = document.getElementById("descricao-sidebar-c");
+  
+  if(element_desc_c)
+    element_desc_p.removeChild(element_desc_c)
+  if(element_titulo_c)
+    element_titulo_p.removeChild(element_titulo_c);
+  side_bar.style.display= "none";
+  svg.style.width= "100%";
+  console.log("fechar")
 
   }
 
 
 
-function setHover(parent, ID_element, ID_group, texto){
+
+function setHover(parent, ID_element, ID_group, titulo,desc){
   let elemento = parent.select(ID_element);
   let grupo = parent.select(ID_group);
   let info = new Info(parent,elemento,grupo);
   
   grupo.click(function(){
-    abrir(texto)
+    abrir(titulo,desc)
   });
 
   
   // Hover
 
   grupo.hover(function(){
-    info.criar(texto)
+    info.criar(titulo)
   }, 
   function(){
-    info.deletar(texto)
+    info.deletar(titulo)
   }); // Fim Hover
   
   // Hover Touch
   grupo.touchstart(function(){
-    info.criar(texto)
+    info.criar(titulo)
   });
   grupo.touchend(function(){
     info.deletar()
