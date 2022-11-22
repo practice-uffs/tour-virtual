@@ -1,0 +1,24 @@
+
+.custom-scrollbar-css {
+    height: 100vh;
+  }
+  
+  .custom-scrollbar-css {
+    overflow-y: scroll;
+  }
+  
+  .custom-scrollbar-css::-webkit-scrollbar {
+    width: 2px;
+  }
+  
+  .custom-scrollbar-css::-webkit-scrollbar-track {
+    background: #eee;
+  }
+  
+  .custom-scrollbar-css::-webkit-scrollbar-thumb {
+    border-radius: 300rem;
+    background-image: linear-gradient(rgb(143, 143, 143),rgb(160, 160, 160));
+  }
+  
+  
+  

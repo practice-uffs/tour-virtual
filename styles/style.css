@@ -142,14 +142,15 @@ ul {
 }
 
 .side-bar{
+  background-color: azure;
+  padding: 0px 2.5vw 0px 2.5vw;
   display: none;
   position: absolute;
   left: 0;
   height: 100%;
   width: 25%;
-  text-align: center;
+  text-align: initial;
   font-size: 3vw;
-	border-right: 5px solid;
 	border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
 	animation: borderRotate var(--d) linear infinite forwards;
 
@@ -159,6 +160,7 @@ ul {
 
 .side-bar .close{
   float: right;
+  left: 0;
   margin-right: 0.25ch;
   fill: rgb(202, 5, 5);
 
@@ -168,7 +170,7 @@ ul {
 }
 
 .btn-360{
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 

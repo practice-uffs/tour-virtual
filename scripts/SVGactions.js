@@ -54,11 +54,11 @@ function abrir(texto){
     btn_360.drag(function(event,a,b,c,d){
         console.log(event,a,b,c,d);
     });*/
-    const h4 = document.createElement("h4");
-    h4.setAttribute('id',"titulo-side-bar")
+    const h6 = document.createElement("h6");
+    h6.setAttribute('id',"titulo-side-bar")
     const node = document.createTextNode(texto);
-    h4.appendChild(node);
-    side_bar.appendChild(h4);
+    h6.appendChild(node);
+    side_bar.appendChild(h6);
 
     side_bar.style.display= "inline";
     svg.style.width= "75%";
