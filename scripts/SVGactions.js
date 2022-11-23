@@ -78,19 +78,21 @@ function setActions(parent, ID_element, ID_group, titulo,desc){
 
 class BTN_360{
   move = function(dx,dy) {
-    this.attr({
-                transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [dx, dy]
-            });
-          }
+    this.attr({transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [dx, dy] });
+  }
+          
   start = function() {
     this.data('origTransform', this.transform().local );
     $(".map").addClass('_360');
+    
   }
   stop = function(dx,dy) {
+    this.animate({ transform: 'r360' }, 220, mina.linear);
     this.attr({
       transform:(this.data('origTransform') ? "T" : "t") + [dx, dy]
     });
     $(".map").removeClass('_360');
+    
   }
 }
 
