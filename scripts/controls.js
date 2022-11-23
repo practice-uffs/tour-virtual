@@ -1,5 +1,3 @@
-
-
 var svg = document.querySelector("#svg");
 var reset = document.querySelector("#reset");
 var pivot = document.querySelector("#pivot");
@@ -76,7 +74,6 @@ rotatable.disable();
 reset.addEventListener("click", function(){
   resetViewport(cachedViewBox);
 });
-//window.addEventListener("wheel", onWheel);
 svg.addEventListener("wheel", onWheel);
 window.addEventListener("resize", function() {
   pivotAnimation.reverse();
@@ -116,26 +113,15 @@ function limitZoom(scaleDelta,startPoint,fromVars){
 // LIMIT DRAG
 // ===========================================================================
 
-
 function limitDrag(moveGlobal){
-  //console.log(viewBox)
-  console.log(viewBox)
   _x = viewBox.x - (moveGlobal.x - startGlobal.x)
-  
-  
   _y = viewBox.y - (moveGlobal.y - startGlobal.y)
-  console.log("_y: "+_y)
-  console.log("Limite  min _y: "+ limits.min.y)
-  console.log("Limite  max _y: "+ limits.max.y)
-  if(_x > limits.min.x && _x < limits.max.x)
+  if(_x > limits.min.x && _x < limits.max.x){
     viewBox.x = _x;
-  if(_y > limits.min.y && _y < limits.max.y)
+  }
+  if(_y > limits.min.y && _y < limits.max.y){
     viewBox.y = _y;
-
-  /*  
-  if(_y < limits.min.y)
-    viewBox.y = limits.min.y;*/
-
+  }
 }
 
 //
@@ -245,7 +231,6 @@ function resetViewport(tempViewBox) {
     }, 0)
     .to(viewport, duration, {
       attr: { transform: "matrix(1,0,0,1,0,0)" },
-      // rotation: "0_short",
       smoothOrigin: false,
       svgOrigin: "0 0",
       ease: ease
@@ -283,15 +268,10 @@ function updateViewBox() {
   if (zoom.animation.isActive()) {
     return;
   }
-  
   point.x = this.x;
   point.y = this.y;
-  
   let moveGlobal = point.matrixTransform(svg.getScreenCTM().inverse());
   limitDrag(moveGlobal);
-  
-  //viewBox.x -= (moveGlobal.x - startGlobal.x);
-  //viewBox.y -= (moveGlobal.y - startGlobal.y); 
 }
     
   
