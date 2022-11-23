@@ -45,3 +45,8 @@
   transform: translateY(0.1%) ;
   cursor: pointer;
 }
+._360{
+  fill: rgba(83, 20, 255, 0.801);
+  stroke: rgb(83, 20, 255);
+  stroke-width: 3;
+}
