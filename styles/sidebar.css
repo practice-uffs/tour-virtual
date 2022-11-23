@@ -8,19 +8,18 @@
 
 .side-bar{
     background-color: rgb(255, 255, 255);
-    
     display: none;
     position: absolute;
     left: 0;
     height: 100%;
     width: 30%;
     text-align: center;
-  
 }
   
   
   
 .side-bar .close{
+    
     position: absolute;
     right: 0;
     margin-right: 0.25ch;
