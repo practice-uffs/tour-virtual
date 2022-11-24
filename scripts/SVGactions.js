@@ -84,7 +84,7 @@ function setActions(parent, ID_element, ID_group, titulo,desc){
   
 }
 
-
+console.log(window.location)
 class BTN_360{
  constructor(atributos){
   this.btn = Snap($('#btn-360')[0]);
@@ -110,7 +110,7 @@ class BTN_360{
       let paper = this.parent.select(this.atributos[i].id)
       if(this.#Onpoint(paper)){
         sessionStorage.setItem("id_360",this.atributos[i].id_360);
-        window.location.assign("/panorama/");
+        window.location.assign(window.location.href + "panorama/");
         console.log(window.location)
       }
     }
