@@ -97,11 +97,7 @@ class BTN_360{
   move(dx,dy,xa,ya) {
     this.#updatePoint(xa,ya);
     this.btn.attr({transform: this.btn.data('origTransform') + (this.btn.data('origTransform') ? "T" : "t") + [dx, dy] });
-    for(let i in this.atributos){
-      let paper = this.parent.select(this.atributos[i].id)
-      if(this.#Onpoint(paper))
-        abrir(this.atributos[i].titulo,this.atributos[i].descricao)
-    }
+    
   }
           
   start() {
@@ -110,7 +106,14 @@ class BTN_360{
     
   }
   stop(dx,dy) {
-    fechar();
+    for(let i in this.atributos){
+      let paper = this.parent.select(this.atributos[i].id)
+      if(this.#Onpoint(paper)){
+        sessionStorage.setItem("id_360",this.atributos[i].id_360);
+        window.location.assign("/panorama/index.html");
+        console.log(window.location)
+      }
+    }
     this.btn.animate({ transform: 'r360' }, 220, mina.linear);
     this.btn.attr({
       transform:(this.btn.data('origTransform') ? "T" : "t") + [dx, dy]
