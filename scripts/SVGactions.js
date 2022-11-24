@@ -68,12 +68,19 @@ function setActions(parent, ID_element, ID_group, titulo,desc){
   });
 
   // Hover
+  grupo.mouseover(()=>{
+    criar(titulo);
+  });
+  grupo.mouseout(()=>{
+    deletar(titulo);
+  })
+  /*
   grupo.hover(function(){
     criar(titulo)
   }, 
   function(){
     deletar(titulo)
-  }); // Fim Hover
+  }); // Fim Hover*/
   
 }
 

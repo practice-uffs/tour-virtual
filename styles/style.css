@@ -7,25 +7,27 @@ body{
 
   .information {
     position: absolute;
-    top: 20vh;
-    width: 300px;
+    top: 5vh;
+    width: 20vw;
+    height: 40px;
     right: auto;
-    left: 45vw;
-    
-    
-
-    background-color: #333;
+    left: 40vw;
+    background-color: rgba(255, 255, 255, 0);
     
   }
 
 .information div {
-    position: fixed;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-width: max-content;
-    
+    height: 0;
+    margin-top: 3vh;
+   
   }
 
 .information div p{
+  word-wrap: break-word;
   padding: 5px 10px 5px 10px;
   background-color: rgb(255, 153, 0);
   border: 2px double rgb(255, 153, 0);
