@@ -6,21 +6,29 @@ body{
 }
 
   .information {
-    position: relative;
+    position: absolute;
+    top: 20vh;
+    width: 300px;
+    right: auto;
+    left: 45vw;
+    
+    
+
     background-color: #333;
+    
   }
 
 .information div {
-    position: absolute;
-    top: 50%;
-    left: 45%;
+    position: fixed;
+
+    min-width: max-content;
+    
   }
 
 .information div p{
-  display: inline-block;
   padding: 5px 10px 5px 10px;
-
-  border-bottom: 2px solid #000;
+  background-color: rgb(255, 153, 0);
+  border: 2px double rgb(255, 153, 0);
   border-radius: 30px;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;

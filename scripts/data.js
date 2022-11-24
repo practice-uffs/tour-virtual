@@ -1,5 +1,5 @@
 export var atributos = {
-    1: {id: '#bloco1', group: '#Gbloco1', titulo: 'Laboratório 3', descricao: "aa123aaa"}, 
+    1: {id: '#bloco1', group: '#Gbloco1', titulo: 'Laboratório 3', descricao: "aa123aaa",}, 
     2:{id: '#bloco2', group: '#Gbloco2', titulo: 'Laboratório 1', descricao: "aa1232aaa"},
     3: {id: '#bloco3', group: '#Gbloco3', titulo: 'Laboratório 2', descricao: "4aaaaa"},
     4:{id: '#bloco4', group: '#Gbloco4', titulo: 'Almoxarifado', descricao: "a3aaaa"},

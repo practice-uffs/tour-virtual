@@ -24,7 +24,8 @@ function criar(texto){
 
 function deletar(texto){
   const element = document.getElementById(texto);
-  element.parentNode.removeChild(element);
+  if(element)
+    element.parentNode.removeChild(element);
 }
 
 
@@ -76,28 +77,68 @@ function setActions(parent, ID_element, ID_group, titulo,desc){
   
 }
 
+
 class BTN_360{
-  move = function(dx,dy) {
-    this.attr({transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [dx, dy] });
+ constructor(atributos){
+  this.btn = Snap($('#btn-360')[0]);
+  this.point = svg.createSVGPoint();
+  this.pointOnSVG = point.matrixTransform(svg.getScreenCTM().inverse());
+  this.atributos = atributos;
+  this.parent = Snap("#viewport");
+ }
+
+  move(dx,dy,xa,ya) {
+    this.#updatePoint(xa,ya);
+    this.btn.attr({transform: this.btn.data('origTransform') + (this.btn.data('origTransform') ? "T" : "t") + [dx, dy] });
+    for(let i in this.atributos){
+      let paper = this.parent.select(this.atributos[i].id)
+      if(this.#Onpoint(paper))
+        abrir(this.atributos[i].titulo,this.atributos[i].descricao)
+    }
   }
           
-  start = function() {
-    this.data('origTransform', this.transform().local );
+  start() {
+    this.btn.data('origTransform', this.btn.transform().local );
     $(".map").addClass('_360');
     
   }
-  stop = function(dx,dy) {
-    this.animate({ transform: 'r360' }, 220, mina.linear);
-    this.attr({
-      transform:(this.data('origTransform') ? "T" : "t") + [dx, dy]
+  stop(dx,dy) {
+    fechar();
+    this.btn.animate({ transform: 'r360' }, 220, mina.linear);
+    this.btn.attr({
+      transform:(this.btn.data('origTransform') ? "T" : "t") + [dx, dy]
     });
     $(".map").removeClass('_360');
     
+    
   }
+  #updatePoint(dx,dy){
+    this.point.x = dx;
+    this.point.y = dy;
+    this.pointOnSVG = this.point.matrixTransform(svg.getScreenCTM().inverse());
+  }
+
+  #Onpoint(element){
+    element = element.getBBox();
+    let _x = this.pointOnSVG.x > element.x && this.pointOnSVG.x < (element.x + element.w);
+    let _y = this.pointOnSVG.y > element.y && this.pointOnSVG.y < (element.y + element.h);
+
+    if(_x && _y){
+      return true;
+    }
+    return false;
+  }
+
+
 }
 
-let btn_360_action = new BTN_360();
-let btn_360 = Snap($('#btn-360')[0]).drag(btn_360_action.move,btn_360_action.start,btn_360_action.stop);
+let btn_360_action = new BTN_360(atributos);
+let btn_360 = Snap($('#btn-360')[0]);
+btn_360.drag(
+  (dx,dy,xa,ya)=>{btn_360_action.move(dx,dy,xa,ya)},
+  ()=>{btn_360_action.start()},
+  (dx,dy)=>{btn_360_action.stop(dx,dy)});
+
 new LoadSVG("./img/svg/main.svg",atributos,setActions);
 $("#side-bar-fechar").click(fechar);
 
