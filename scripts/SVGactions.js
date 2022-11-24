@@ -110,7 +110,7 @@ class BTN_360{
       let paper = this.parent.select(this.atributos[i].id)
       if(this.#Onpoint(paper)){
         sessionStorage.setItem("id_360",this.atributos[i].id_360);
-        window.location.assign("/panorama/index.html");
+        window.location.assign("/panorama/");
         console.log(window.location)
       }
     }
