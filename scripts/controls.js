@@ -71,6 +71,11 @@ var rotatable = new Draggable(viewport, {
 
 rotatable.disable();
 
+
+svg.addEventListener('click',function(){
+  $("#search").trigger('blur');
+  $("#menu").css('display','none')
+})
 reset.addEventListener("click", function(){
   resetViewport(cachedViewBox);
 });
