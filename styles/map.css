@@ -1,3 +1,5 @@
+
+
 .svg {
     position: fixed;
     bottom: 0;
@@ -30,12 +32,7 @@
   stroke: none;
 }
 
-.pivot {
-  fill: #ffc107;
-  stroke: rgba(0,0,0,0.5);
-  stroke-width: 2;
-  opacity: 1;
-}
+
 
 
 .map:hover{
@@ -45,8 +42,20 @@
   stroke-opacity: 25%;
   cursor: pointer;
 }
+
+
+.map-hover-legendas{
+  fill: #067988;
+  stroke: #ffc107;
+  stroke-width: 2;
+  stroke-opacity: 25%;
+  cursor: pointer;
+}
+
+
 ._360{
   fill: rgba(83, 20, 255, 0.801);
   stroke: rgb(83, 20, 255);
   stroke-width: 3;
 }
+

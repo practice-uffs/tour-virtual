@@ -61,13 +61,15 @@ function fechar(){
 // ====================================
 
 function setActions(parent, ID_element, ID_group, titulo,desc){
-  let grupo = parent.select(ID_group);
+  let grupo =  $(ID_group);
 
   grupo.click(function(){
     abrir(titulo,desc)
   });
+  
 
   // Hover
+
   grupo.mouseover(()=>{
     criar(titulo);
   });
