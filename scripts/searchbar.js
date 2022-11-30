@@ -17,7 +17,11 @@ function add(){
     for(let i in atributos){
             ul.append(
                 $("<li/>").append(
-                    $("<a/>").text(atributos[i].titulo)
+                    $("<a/>").text(atributos[i].titulo).click(function(){
+                        $(atributos[i].group).trigger('click');
+                        input.value = atributos[i].titulo;
+                        $("#menu").css("display","none")
+                    })
                 )
             )
         }
@@ -28,10 +32,11 @@ function add(){
 
 
 function filtro(){
-    if(this.value.length > 1){
+    if(this.value.length > 0){
         $("#menu").css("display","")
         var value = this.value.toLowerCase().trim();
         $("#menu a").show().filter(function() {
+            
             return $(this).text().toLowerCase().trim().indexOf(value) == -1;
         }).hide();
     }

@@ -9,6 +9,7 @@
     padding: 1px;
     border: 0px;
     
+    
   }
 
 #search:focus{
@@ -20,6 +21,7 @@
 list-style-type: none;
 padding: 0;
 margin: 0;
+
 }
 
 #menu li a {
@@ -35,4 +37,5 @@ display: block
 #menu li a:hover {
 background-color: rgb(2, 150, 27);
 color: aliceblue;
+cursor: pointer;
 }

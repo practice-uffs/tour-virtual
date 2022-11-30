@@ -52,6 +52,7 @@ function fechar(){
   $("#descricao-sidebar-c").text("");
   $("#svg").css('width', '100%');
   $("#side-bar").slideUp(400);
+  $("#search").val("")
   
 }
 
