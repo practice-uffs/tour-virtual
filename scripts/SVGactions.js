@@ -37,9 +37,9 @@ function abrir(titulo, descricao){
   $("#titulo-sidebar-c").text(titulo);
   $("#descricao-sidebar-c").text(descricao);
   
-  $("#svg").css('width', '75%');
+  $("#svg").css('width', '100%');
   $("#side-bar").slideDown(400);
-  $("#side-bar").css('display', 'inline');
+  $("#side-bar").css('display', 'block');
 }
 
 

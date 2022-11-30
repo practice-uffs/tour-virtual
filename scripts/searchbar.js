@@ -36,13 +36,15 @@ function filtro(){
     if(this.value.length > 0){
         $("#menu").css("display","")
         $(".search-bar-container").addClass("pesquisa")
+        
         var value = this.value.toLowerCase().trim();
         $("#menu a").show().filter(function() {
-            
+            $("#resultado").addClass("resultado")
             return $(this).text().toLowerCase().trim().indexOf(value) == -1;
         }).hide();
     }
     else{
+        $("#resultado").removeClass("resultado")
         $(".search-bar-container").removeClass("pesquisa")
         $("#menu").css("display","none")
     }
