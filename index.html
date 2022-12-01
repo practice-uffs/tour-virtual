@@ -55,23 +55,27 @@
         </div>
 
 
-        <div class="search-bar">
-            <div style="width: 56px; height:52px; display: flex; align-items: center; justify-content: center;">
-            <svg viewBox="0 0 100 80" width="24px" height="24px"><rect x="15"  y="17" width="70" height="5"></rect><rect x="15" y="37" width="70" height="5"></rect><rect x="15" y="57" width="70" height="5"></rect></svg>
+        <div class="search-bar-container">
+
+            <div class="search-bar">
+                <div style="width: 56px; height:52px; display: flex; align-items: center; justify-content: center;">
+                <svg viewBox="0 0 100 80" width="24px" height="24px"><rect x="15"  y="17" width="70" height="5"></rect><rect x="15" y="37" width="70" height="5"></rect><rect x="15" y="57" width="70" height="5"></rect></svg>
+                </div>
+                <input type="text" id="search" placeholder="Procurar..." title="Type in a category">
+                <div style="width: 54px; height:48px; display: flex; align-items: center; justify-content: center;">
+                    <svg width="20" height="20" viewBox="0 0 148 145" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="56.5" cy="56" rx="47.5" ry="47" stroke="#717171" stroke-width="18"/>
+                        <path d="M94 96L142 139" stroke="#717171" stroke-width="15"/>
+                        </svg>
+                </div>
             </div>
-            <input type="text" id="search" placeholder="Procurar..." title="Type in a category">
-            <div style="width: 54px; height:48px; display: flex; align-items: center; justify-content: center;">
-                <svg width="20" height="20" viewBox="0 0 148 145" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <ellipse cx="56.5" cy="56" rx="47.5" ry="47" stroke="#717171" stroke-width="18"/>
-                    <path d="M94 96L142 139" stroke="#717171" stroke-width="15"/>
-                    </svg>
-            </div>
+    
+            <div class="search-bar-resultado">
+                <ul id="menu">
+
+                </ul>
+            </div> 
             
-</svg>
-
-    <ul id="menu">
-
-    </ul>
         </div>
     
 

@@ -1,16 +1,31 @@
-.search-bar{
+.search-bar-container{
     position: fixed;
-    display: flex;
+    display: block;
     margin-left: 0.5em;
     margin-top: 0.5em;
     background-color: rgb(255, 255, 255);
     width: 342px;
     height: 48px;
-    justify-content: space-around;
+    
     border: 1px solid rgba(184, 184, 184, 0.444);
     -webkit-box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.093);
     border-radius: 0.5em;
+        
+}
+
+
+.pesquisa{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+}
+
+
+.search-bar{
+    width: 100%;
+    display: flex;
     align-items: center;
+    justify-content: space-around;
 }
 
 #search {
@@ -32,24 +47,35 @@
   
 
 #menu {
-list-style-type: none;
-padding: 0;
-margin: 0;
+    display: block;
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 
 }
 
 #menu li a {
-font-size: 14px;
-background-color: #ddd;
-width: 100%;
-padding: 12px;
-text-decoration: none;
-color: black;
-display: block
+    font-size: 14px;
+    background-color: rgb(255, 253, 253);
+    width: 100%;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    text-decoration: none;
+    color: black;
+    display: block;
+    
+
 }
 
 #menu li a:hover {
 background-color: rgb(2, 150, 27);
 color: aliceblue;
 cursor: pointer;
+}
+
+.search-bar-resultado{
+    border: 1px solid rgba(184, 184, 184, 0.444);
+    -webkit-box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.093);
+    border-radius: 0.5em;
 }

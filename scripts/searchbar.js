@@ -19,6 +19,7 @@ function add(){
                 $("<li/>").append(
                     $("<a/>").text(atributos[i].titulo).click(function(){
                         $(atributos[i].group).trigger('click');
+                        $(".search-bar-container").removeClass("pesquisa")
                         input.value = atributos[i].titulo;
                         $("#menu").css("display","none")
                     })
@@ -34,6 +35,7 @@ function add(){
 function filtro(){
     if(this.value.length > 0){
         $("#menu").css("display","")
+        $(".search-bar-container").addClass("pesquisa")
         var value = this.value.toLowerCase().trim();
         $("#menu a").show().filter(function() {
             
@@ -41,6 +43,7 @@ function filtro(){
         }).hide();
     }
     else{
+        $(".search-bar-container").removeClass("pesquisa")
         $("#menu").css("display","none")
     }
       
