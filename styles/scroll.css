@@ -1,23 +1,28 @@
 
 .custom-scrollbar-css {
     height: 50vh;
-  }
-  
-  .custom-scrollbar-css {
     overflow-y: scroll;
+    
   }
   
+
+  .esquerda{
+    direction: rtl;
+  }
   .custom-scrollbar-css::-webkit-scrollbar {
-    width: 2px;
+    width: 0px;
+    
   }
   
   .custom-scrollbar-css::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0);
+    
+    
   }
   
   .custom-scrollbar-css::-webkit-scrollbar-thumb {
     border-radius: 300rem;
-    background-image: linear-gradient(rgb(143, 143, 143),rgb(160, 160, 160));
+    background-image: linear-gradient(rgb(29, 86, 124),rgb(12, 158, 202));
   }
   
   
