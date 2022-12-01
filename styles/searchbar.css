@@ -1,14 +1,28 @@
 .search-bar{
     position: fixed;
-    margin-left: 10px;
+    display: flex;
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+    background-color: rgb(255, 255, 255);
+    width: 342px;
+    height: 48px;
+    justify-content: space-around;
+    border: 1px solid rgba(184, 184, 184, 0.444);
+    -webkit-box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.093);
+    border-radius: 0.5em;
+    align-items: center;
 }
 
 #search {
-    width: 100%;
+
+    width: 216px;
+    height: 50%;
+    padding: 0px;
     font-size: 14px;
-    padding: 1px;
     border: 0px;
-    
+    background-color: rgb(255, 255, 255);
+    border-right: 1px solid #7171713c;
+
     
   }
 
