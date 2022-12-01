@@ -8,7 +8,7 @@
     height: 48px;
     
     border: 1px solid rgba(184, 184, 184, 0.444);
-    -webkit-box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.093);
+    box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.093);
     border-radius: 0.5em;
         
 }
@@ -78,7 +78,7 @@ cursor: pointer;
 
 .resultado{
     
-    -webkit-box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.514);
+    box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.514);
     
    
 }
