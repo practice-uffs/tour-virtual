@@ -40,6 +40,7 @@ function abrir(titulo, descricao){
   $("#svg").css('width', '100%');
   $("#side-bar").slideDown(400);
   $("#side-bar").css('display', 'block');
+  $("#search").val(titulo)
 }
 
 

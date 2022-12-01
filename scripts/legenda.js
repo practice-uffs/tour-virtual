@@ -1,5 +1,12 @@
 import { atributos } from "./data.js";
 
+
+$("#btn-legenda").click(function(){
+    $(".controls-container").toggleClass("controls-show-legenda");
+    $("#legenda").toggleClass("ocultar");
+});
+
+
 let legenda = $("container-list")
 let list = $("#list")
 

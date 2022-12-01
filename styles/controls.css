@@ -4,10 +4,15 @@
     bottom: 1em;
     right: 0.5em;  
     margin-top: 10px; 
-    
-
+    margin-right: 0;
+    transition: margin-right 0.5s;
     
   }
+
+.controls-show-legenda{
+  margin-right: 16em;
+  transition: margin-right 0.5s;
+}
 
 
 .zoom-container, .especial-controls{
@@ -17,6 +22,7 @@
   margin-top: 40px;
   border-radius: 0.5em;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.411);
+  background-color: rgba(255, 255, 255, 0.897);
 
 }
 
@@ -34,3 +40,4 @@
   background-color: rgba(150, 150, 150, 0.144);
   cursor: pointer;
 }
+
