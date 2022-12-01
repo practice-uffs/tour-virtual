@@ -82,3 +82,17 @@ cursor: pointer;
     
    
 }
+
+.icons-search{
+    fill: #717171;
+    stroke:#717171;
+    width: 54px; 
+    height:48px; 
+    display: flex; 
+    align-items: center; justify-content: center;
+    cursor: pointer;
+
+}
+.icons-search svg:hover{
+    stroke: rgb(1, 151, 21);
+}

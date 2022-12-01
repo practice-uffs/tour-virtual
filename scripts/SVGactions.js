@@ -41,6 +41,8 @@ function abrir(titulo, descricao){
   $("#side-bar").slideDown(400);
   $("#side-bar").css('display', 'block');
   $("#search").val(titulo)
+  $("#btn-close-search").css({"border-left":"1px dashed rgba(184, 184, 184, 0.2)", "width":"50px"});
+  $(".search-bar-container").css({"width":"392px", "transition": "width 0.5s"})
 }
 
 
@@ -55,6 +57,8 @@ function fechar(){
   $("#side-bar").slideUp(400);
 
   $("#search").val("")
+  $(".search-bar-container").css({"width":"342px", "transition": "width 0.5s"});
+  $("#btn-close-search").css({"border-left":"0px", "width":"0"})
   
 }
 
@@ -155,7 +159,7 @@ btn_360.drag(
   (dx,dy)=>{btn_360_action.stop(dx,dy)});
 
 new LoadSVG("./img/svg/main.svg",atributos,setActions);
-$("#side-bar-fechar").click(fechar);
+$("#btn-close-search").click(fechar);
 
 
 

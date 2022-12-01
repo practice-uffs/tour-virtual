@@ -12,23 +12,12 @@
     position: absolute;
     left: 0;
     height: 100%;
-    width: 30%;
+    width: 408px;
     text-align: center;
 }
   
   
-  
-.side-bar .close{
-    
-    position: absolute;
-    right: 0;
-    margin-right: 0.25ch;
-    fill: rgb(0, 0, 0);
-  
-}
-.side-bar .close:hover{
-    fill: rgba(0, 0, 0, 0.349);
-  }
+
 
 #descricao-sidebar-c{
     text-align: center;
