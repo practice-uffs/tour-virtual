@@ -1,8 +1,8 @@
 var APP_DATA = {
   "scenes": [
     {
-      "id": "0-calada2",
-      "name": "Calçada2",
+      "id": "0-estufas",
+      "name": "Estufas",
       "levels": [
         {
           "tileSize": 256,
@@ -22,32 +22,18 @@ var APP_DATA = {
           "size": 2048
         }
       ],
-      "faceSize": 2000,
+      "faceSize": 2048,
       "initialViewParameters": {
-        "pitch": 0,
-        "yaw": 0,
-        "fov": 1.5707963267948966
+        "yaw": 0.07469001829766952,
+        "pitch": 0.1715641424827865,
+        "fov": 1.2424983224529278
       },
-      "linkHotspots": [
-        {
-          "yaw": -1.6947331937624384,
-          "pitch": 0.004045336519006071,
-          "rotation": 0,
-          "target": "2-calada"
-        }
-      ],
-      "infoHotspots": [
-        {
-          "yaw": 2.2506462337384745,
-          "pitch": -0.20199331960031408,
-          "title": "Cantina",
-          "text": "Cantina"
-        }
-      ]
+      "linkHotspots": [],
+      "infoHotspots": []
     },
     {
-      "id": "1-dentro",
-      "name": "Dentro",
+      "id": "1-laboratrio-2",
+      "name": "Laboratório 2",
       "levels": [
         {
           "tileSize": 256,
@@ -67,38 +53,18 @@ var APP_DATA = {
           "size": 2048
         }
       ],
-      "faceSize": 2000,
+      "faceSize": 2048,
       "initialViewParameters": {
-        "pitch": 0,
         "yaw": 0,
-        "fov": 1.5707963267948966
+        "pitch": 0,
+        "fov": 1.2424983224529278
       },
-      "linkHotspots": [
-        {
-          "yaw": 1.0904224228931625,
-          "pitch": 0.1383127949230598,
-          "rotation": 0,
-          "target": "3-entre-bloco"
-        },
-        {
-          "yaw": -0.05201485162503516,
-          "pitch": 0.17296206434285466,
-          "rotation": 0,
-          "target": "2-calada"
-        }
-      ],
-      "infoHotspots": [
-        {
-          "yaw": 3.030057247669795,
-          "pitch": -0.020293012943374933,
-          "title": "Elevador",
-          "text": "Elevador"
-        }
-      ]
+      "linkHotspots": [],
+      "infoHotspots": []
     },
     {
-      "id": "2-calada",
-      "name": "Calçada",
+      "id": "2-almoxarifado",
+      "name": "Almoxarifado",
       "levels": [
         {
           "tileSize": 256,
@@ -118,38 +84,18 @@ var APP_DATA = {
           "size": 2048
         }
       ],
-      "faceSize": 2000,
+      "faceSize": 2048,
       "initialViewParameters": {
-        "pitch": 0,
         "yaw": 0,
-        "fov": 1.5707963267948966
+        "pitch": 0,
+        "fov": 1.2424983224529278
       },
-      "linkHotspots": [
-        {
-          "yaw": 0.6367155179542312,
-          "pitch": -0.002911801530544267,
-          "rotation": 0,
-          "target": "0-calada2"
-        },
-        {
-          "yaw": 3.017230599072323,
-          "pitch": 0.032319450052856524,
-          "rotation": 0,
-          "target": "3-entre-bloco"
-        }
-      ],
-      "infoHotspots": [
-        {
-          "yaw": 0.8339720880275099,
-          "pitch": -0.06557690780879533,
-          "title": "Alunos",
-          "text": "Alunos conversando"
-        }
-      ]
+      "linkHotspots": [],
+      "infoHotspots": []
     },
     {
-      "id": "3-entre-bloco",
-      "name": "Entre-Bloco",
+      "id": "3-rea-experimental-aquicultura-2",
+      "name": "Área Experimental Aquicultura 2",
       "levels": [
         {
           "tileSize": 256,
@@ -169,40 +115,361 @@ var APP_DATA = {
           "size": 2048
         }
       ],
-      "faceSize": 2000,
+      "faceSize": 2048,
       "initialViewParameters": {
         "pitch": 0,
         "yaw": 0,
         "fov": 1.5707963267948966
       },
-      "linkHotspots": [
+      "linkHotspots": [],
+      "infoHotspots": []
+    },
+    {
+      "id": "4-rea-experimental-da-aquicultura",
+      "name": "Área Experimental da Aquicultura",
+      "levels": [
         {
-          "yaw": -0.47907153142497805,
-          "pitch": 0.16346931585257352,
-          "rotation": 0,
-          "target": "2-calada"
+          "tileSize": 256,
+          "size": 256,
+          "fallbackOnly": true
         },
         {
-          "yaw": 0.5062554027066,
-          "pitch": 0.29396742450118296,
-          "rotation": 0,
-          "target": "1-dentro"
+          "tileSize": 512,
+          "size": 512
+        },
+        {
+          "tileSize": 512,
+          "size": 1024
+        },
+        {
+          "tileSize": 512,
+          "size": 2048
         }
       ],
-      "infoHotspots": [
+      "faceSize": 2048,
+      "initialViewParameters": {
+        "pitch": 0,
+        "yaw": 0,
+        "fov": 1.5707963267948966
+      },
+      "linkHotspots": [],
+      "infoHotspots": []
+    },
+    {
+      "id": "5-campo-de-futebol",
+      "name": "Campo de Futebol",
+      "levels": [
         {
-          "yaw": 1.0070881904597364,
-          "pitch": 0.20382703424196436,
-          "title": "Bloco B",
-          "text": "Bloco B"
+          "tileSize": 256,
+          "size": 256,
+          "fallbackOnly": true
+        },
+        {
+          "tileSize": 512,
+          "size": 512
+        },
+        {
+          "tileSize": 512,
+          "size": 1024
+        },
+        {
+          "tileSize": 512,
+          "size": 2048
         }
-      ]
+      ],
+      "faceSize": 2048,
+      "initialViewParameters": {
+        "yaw": 0,
+        "pitch": 0,
+        "fov": 1.2424983224529278
+      },
+      "linkHotspots": [],
+      "infoHotspots": []
+    },
+    {
+      "id": "6-cvt",
+      "name": "Centro Vocacional Tecnológico",
+      "levels": [
+        {
+          "tileSize": 256,
+          "size": 256,
+          "fallbackOnly": true
+        },
+        {
+          "tileSize": 512,
+          "size": 512
+        },
+        {
+          "tileSize": 512,
+          "size": 1024
+        },
+        {
+          "tileSize": 512,
+          "size": 2048
+        }
+      ],
+      "faceSize": 2048,
+      "initialViewParameters": {
+        "yaw": 0,
+        "pitch": 0,
+        "fov": 1.2424983224529278
+      },
+      "linkHotspots": [],
+      "infoHotspots": []
+    },
+    {
+      "id": "7-ru-fora",
+      "name": "Restaurante Universitário Fora",
+      "levels": [
+        {
+          "tileSize": 256,
+          "size": 256,
+          "fallbackOnly": true
+        },
+        {
+          "tileSize": 512,
+          "size": 512
+        },
+        {
+          "tileSize": 512,
+          "size": 1024
+        },
+        {
+          "tileSize": 512,
+          "size": 2048
+        }
+      ],
+      "faceSize": 2048,
+      "initialViewParameters": {
+        "yaw": -0.04986655005698282,
+        "pitch": 0.08816036606024014,
+        "fov": 1.2424983224529278
+      },
+      "linkHotspots": [],
+      "infoHotspots": []
+    },
+    {
+      "id": "8-bloco-a-dentro",
+      "name": "Bloco A Dentro",
+      "levels": [
+        {
+          "tileSize": 256,
+          "size": 256,
+          "fallbackOnly": true
+        },
+        {
+          "tileSize": 512,
+          "size": 512
+        },
+        {
+          "tileSize": 512,
+          "size": 1024
+        },
+        {
+          "tileSize": 512,
+          "size": 2048
+        }
+      ],
+      "faceSize": 2048,
+      "initialViewParameters": {
+        "yaw": 0.17882374451324523,
+        "pitch": 0.2692641572499159,
+        "fov": 1.2424983224529278
+      },
+      "linkHotspots": [],
+      "infoHotspots": []
+    },
+    {
+      "id": "9-bloco-a-fora",
+      "name": "Bloco A Fora",
+      "levels": [
+        {
+          "tileSize": 256,
+          "size": 256,
+          "fallbackOnly": true
+        },
+        {
+          "tileSize": 512,
+          "size": 512
+        },
+        {
+          "tileSize": 512,
+          "size": 1024
+        },
+        {
+          "tileSize": 512,
+          "size": 2048
+        }
+      ],
+      "faceSize": 2048,
+      "initialViewParameters": {
+        "yaw": 0,
+        "pitch": 0,
+        "fov": 1.2424983224529278
+      },
+      "linkHotspots": [],
+      "infoHotspots": []
+    },
+    {
+      "id": "10-bloco-dos-professores-dentro",
+      "name": "Bloco dos Professores Dentro",
+      "levels": [
+        {
+          "tileSize": 256,
+          "size": 256,
+          "fallbackOnly": true
+        },
+        {
+          "tileSize": 512,
+          "size": 512
+        },
+        {
+          "tileSize": 512,
+          "size": 1024
+        },
+        {
+          "tileSize": 512,
+          "size": 2048
+        }
+      ],
+      "faceSize": 2048,
+      "initialViewParameters": {
+        "yaw": 0.11895613324650967,
+        "pitch": 0.1581107418723846,
+        "fov": 1.2424983224529278
+      },
+      "linkHotspots": [],
+      "infoHotspots": []
+    },
+    {
+      "id": "11-bloco-dos-professores-fora",
+      "name": "Bloco dos Professores Fora",
+      "levels": [
+        {
+          "tileSize": 256,
+          "size": 256,
+          "fallbackOnly": true
+        },
+        {
+          "tileSize": 512,
+          "size": 512
+        },
+        {
+          "tileSize": 512,
+          "size": 1024
+        },
+        {
+          "tileSize": 512,
+          "size": 2048
+        }
+      ],
+      "faceSize": 2048,
+      "initialViewParameters": {
+        "yaw": 0,
+        "pitch": 0,
+        "fov": 1.2424983224529278
+      },
+      "linkHotspots": [],
+      "infoHotspots": []
+    },
+    {
+      "id": "12-cantina",
+      "name": "Cantina",
+      "levels": [
+        {
+          "tileSize": 256,
+          "size": 256,
+          "fallbackOnly": true
+        },
+        {
+          "tileSize": 512,
+          "size": 512
+        },
+        {
+          "tileSize": 512,
+          "size": 1024
+        },
+        {
+          "tileSize": 512,
+          "size": 2048
+        }
+      ],
+      "faceSize": 2048,
+      "initialViewParameters": {
+        "yaw": 0,
+        "pitch": 0,
+        "fov": 1.2424983224529278
+      },
+      "linkHotspots": [],
+      "infoHotspots": []
+    },
+    {
+      "id": "13-laboratrio-1",
+      "name": "Laboratório 1",
+      "levels": [
+        {
+          "tileSize": 256,
+          "size": 256,
+          "fallbackOnly": true
+        },
+        {
+          "tileSize": 512,
+          "size": 512
+        },
+        {
+          "tileSize": 512,
+          "size": 1024
+        },
+        {
+          "tileSize": 512,
+          "size": 2048
+        }
+      ],
+      "faceSize": 2048,
+      "initialViewParameters": {
+        "pitch": 0,
+        "yaw": 0,
+        "fov": 1.5707963267948966
+      },
+      "linkHotspots": [],
+      "infoHotspots": []
+    },
+    {
+      "id": "14-laboratrio-3",
+      "name": "Laboratório 3",
+      "levels": [
+        {
+          "tileSize": 256,
+          "size": 256,
+          "fallbackOnly": true
+        },
+        {
+          "tileSize": 512,
+          "size": 512
+        },
+        {
+          "tileSize": 512,
+          "size": 1024
+        },
+        {
+          "tileSize": 512,
+          "size": 2048
+        }
+      ],
+      "faceSize": 2048,
+      "initialViewParameters": {
+        "pitch": 0,
+        "yaw": 0,
+        "fov": 1.5707963267948966
+      },
+      "linkHotspots": [],
+      "infoHotspots": []
     }
   ],
-  "name": "Project Title",
+  "name": "UFFS Laranjeiras do Sul Panorama",
   "settings": {
     "mouseViewMode": "drag",
-    "autorotateEnabled": true,
+    "autorotateEnabled": false,
     "fullscreenButton": false,
     "viewControlButtons": false
   }
