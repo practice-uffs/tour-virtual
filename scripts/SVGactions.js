@@ -6,15 +6,12 @@ import {atributos} from './data.js'
 // CRIAR HOVER
 // ====================================
 
-function criar(texto){
-  const div = document.createElement("div");
-  const paragraph = document.createElement("p");
-  const node = document.createTextNode(texto);
-  paragraph.appendChild(node);
-  const element = document.getElementById("information");
-  div.appendChild(paragraph)
-  div.setAttribute('id',texto);
-  element.appendChild(div);
+function criar(evt, text) {
+  let tooltip = document.getElementById("tooltip");
+  tooltip.innerHTML = text;
+  tooltip.style.display = "inline";
+  tooltip.style.left = evt.pageX - 50 + 'px';
+  tooltip.style.top = evt.pageY -50 + 'px';
 }
 
 
@@ -22,10 +19,9 @@ function criar(texto){
 // DELETAR HOVER
 // ====================================
 
-function deletar(texto){
-  const element = document.getElementById(texto);
-  if(element)
-    element.parentNode.removeChild(element);
+function deletar() {
+  var tooltip = document.getElementById("tooltip");
+  tooltip.style.display = "none";
 }
 
 
@@ -77,11 +73,11 @@ function setActions(parent, ID_element, ID_group, titulo,desc){
 
   // Hover
 
-  grupo.mouseover(()=>{
-    criar(titulo);
+  grupo.mouseover((evt)=>{
+    criar(evt,titulo);
   });
   grupo.mouseout(()=>{
-    deletar(titulo);
+    deletar();
   })
   /*
   grupo.hover(function(){
