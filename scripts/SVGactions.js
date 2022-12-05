@@ -39,6 +39,7 @@ function abrir(titulo, descricao){
   $("#search").val(titulo)
   $("#btn-close-search").css({"border-left":"1px dashed rgba(184, 184, 184, 0.2)", "width":"50px"});
   $(".search-bar-container").css({"width":"392px", "transition": "width 0.5s"})
+ 
 }
 
 
@@ -64,11 +65,17 @@ function fechar(){
 // ====================================
 
 function setActions(parent, ID_element, ID_group, titulo,desc){
-  let grupo =  $(ID_group);
+  let grupo =  parent.select(ID_group);
 
   grupo.click(function(){
     abrir(titulo,desc)
   });
+
+  grupo.touchstart(function(){
+    abrir(titulo,desc);
+  })
+
+
   
 
   // Hover
@@ -79,22 +86,15 @@ function setActions(parent, ID_element, ID_group, titulo,desc){
   grupo.mouseout(()=>{
     deletar();
   })
-  /*
-  grupo.hover(function(){
-    criar(titulo)
-  }, 
-  function(){
-    deletar(titulo)
-  }); // Fim Hover*/
+  
+ 
   
 }
-
-console.log(window.location)
 class BTN_360{
  constructor(atributos){
   this.btn = Snap($('#btn-360')[0]);
   this.point = svg.createSVGPoint();
-  this.pointOnSVG = point.matrixTransform(svg.getScreenCTM().inverse());
+  this.pointOnSVG = this.point.matrixTransform(svg.getScreenCTM().inverse());
   this.atributos = atributos;
   this.parent = Snap("#viewport");
  }
@@ -117,7 +117,6 @@ class BTN_360{
         sessionStorage.setItem("id_360",this.atributos[i].id_360);
         //window.location.assign(window.location.href + "panorama/");
         window.location.href = "panorama/index.html";
-        console.log(window.location)
       }
     }
     this.btn.animate({ transform: 'r360' }, 220, mina.linear);
