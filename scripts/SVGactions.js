@@ -65,25 +65,23 @@ function fechar(){
 // ====================================
 
 function setActions(parent, ID_element, ID_group, titulo,desc){
-  let grupo =  parent.select(ID_group);
+  let grupoSNAP =  parent.select(ID_group);
+  let grupo =  $(ID_group);
 
   grupo.click(function(){
     abrir(titulo,desc)
   });
 
-  grupo.touchstart(function(){
-    abrir(titulo,desc);
-  })
-
-
-  
+  grupo.bind("touchstart",function(){
+    abrir(titulo,desc);})
+ 
 
   // Hover
 
-  grupo.mouseover((evt)=>{
+  grupoSNAP.mouseover((evt)=>{
     criar(evt,titulo);
   });
-  grupo.mouseout(()=>{
+  grupoSNAP.mouseout(()=>{
     deletar();
   })
   

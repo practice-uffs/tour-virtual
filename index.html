@@ -22,7 +22,11 @@
                     <g id="viewport">
                         
                     </g>
-            </svg>  
+            </svg>
+
+            <svg id="svg-scrim" class="svg svg-scrim">
+                <circle id="pivot" class="pivot" cx="0" cy="0" r="6" />
+            </svg>
         </div>
 
         <div class="controls-container">
@@ -46,7 +50,7 @@
                 
 
             <div class="zoom-container">
-                <div class="zoomin">
+                <div class="zoomin" id="zoomin">
                     <svg width="20" height="20" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16 2.5V27" stroke="black" stroke-width="6"/>
                         <ellipse cx="16" cy="2.5" rx="3" ry="2.5" fill="black"/>
@@ -58,7 +62,7 @@
                         </svg>
                     
                 </div>
-                <div class="zoomout">
+                <div class="zoomout" id="zoomout">
                     <svg width="20" height="20" viewBox="0 0 32 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 3H28.5" stroke="black" stroke-width="6"/>
                         <circle cx="29" cy="3" r="3" fill="black"/>
@@ -66,7 +70,7 @@
                         </svg>
                   
                 </div>
-                <div class="zoomreset">
+                <div class="zoomreset" id="zoomreset">
                     <svg id="reset" width="25" height="25" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9.53853 11.8235C4.37248 17.9425 5.31604 27.2352 11.646 32.5794C17.976 37.9236 27.2954 37.2955 32.4615 31.1765C37.6275 25.0575 36.6839 15.7648 30.354 10.4206" stroke="black" stroke-width="4"/>
                         <path d="M16.3932 5.33355L13.818 17.6417L4.20192 8.41502L16.3932 5.33355Z" fill="#020000"/>
@@ -138,9 +142,9 @@
 
 <script type="module" src="./scripts/SVGactions.js" defer></script>
 
-<script type="module" src="./scripts/legenda.js"defer></script>
-<script type="module" src="./scripts/searchbar.js" defer></script>
-<script src="./scripts/controls.js"></script>
+<script type="module" src="./scripts/legenda.js" defer></script>
+<script type="module" src="./scripts/searchbar.js"defer></script>
+<script src="./scripts/controls.js" defer></script>
 
     </body>
 </html>
