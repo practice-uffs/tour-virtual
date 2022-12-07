@@ -11,14 +11,14 @@
     font-family: 'Roboto', sans-serif;
     box-shadow: -1px 0px 0px rgb(0, 0, 0);
     color: #264653;
-    transition: width 1s;
+    margin-left: 0;
+    transition: margin-left 0.5s;
     
 }
 
 .hidden-side-bar{
-    width: 0;
-    display: none;
-    transition: width 1s;
+    margin-left: -26em;
+    transition: margin-left 0.5s;
 }
 
 .container-content-side-bar .content-side-bar{
