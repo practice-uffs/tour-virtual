@@ -10,19 +10,20 @@
     direction: rtl;
   }
   .custom-scrollbar-css::-webkit-scrollbar {
-    width: 0px;
+    background-image:linear-gradient(rgb(129, 129, 129),rgba(119, 118, 118, 0.753));
+    width: 0.0625em;
     
   }
   
   .custom-scrollbar-css::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0);
+    background: rgba(233, 11, 11, 0);
     
     
   }
   
   .custom-scrollbar-css::-webkit-scrollbar-thumb {
     border-radius: 300rem;
-    background-image: linear-gradient(rgb(29, 86, 124),rgb(12, 158, 202));
+    background-image:linear-gradient(rgb(129, 129, 129),rgba(104, 103, 103, 0.753));
   }
   
   
