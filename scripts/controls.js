@@ -86,7 +86,7 @@ $("#zoomout").click((e)=>{
   onWheel(e,true, -1)
 })
 
-svg.addEventListener("wheel", onWheel);
+//svg.addEventListener("wheel", onWheel);
 window.addEventListener("resize", function() {
   pivotAnimation.reverse();
 });
