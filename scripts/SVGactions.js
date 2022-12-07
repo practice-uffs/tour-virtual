@@ -30,12 +30,14 @@ function deletar() {
 // ====================================
 
 function abrir(titulo, descricao){
-  $("#titulo-sidebar-c").text(titulo);
-  $("#descricao-sidebar-c").text(descricao);
-  
-  $("#svg").css('width', '100%');
-  $("#side-bar").slideDown(400);
-  $("#side-bar").css('display', 'flex');
+  $("#titulo-sidebar").text(titulo);
+  $("#descricao-sidebar").text(descricao);
+
+  $("#side-bar").removeClass("hidden-side-bar");
+
+
+  // ============================
+  //Search Action
   $("#search").val(titulo)
   $("#btn-close-search").css({"border-left":"1px dashed rgba(184, 184, 184, 0.2)", "width":"50px"});
   $(".search-bar-container").css({"width":"392px", "transition": "width 0.5s"})
@@ -48,11 +50,13 @@ function abrir(titulo, descricao){
 // ====================================
 
 function fechar(){
-  $("#titulo-sidebar-c").text("");
-  $("#descricao-sidebar-c").text("");
-  $("#svg").css('width', '100%');
-  $("#side-bar").slideUp(400);
+  $("#side-bar").addClass("hidden-side-bar");
+  $("#titulo-sidebar").text("");
+  $("#descricao-sidebar").text("");
 
+
+  // ============================
+  //Search Action
   $("#search").val("")
   $(".search-bar-container").css({"width":"342px", "transition": "width 0.5s"});
   $("#btn-close-search").css({"border-left":"0px", "width":"0"})
@@ -64,7 +68,7 @@ function fechar(){
 // DEFINIR ACOES
 // ====================================
 
-function setActions(parent, ID_element, ID_group, titulo,desc){
+function setActions(parent, ID_element, ID_group, titulo, desc, list_desc,id_360){
   let grupoSNAP =  parent.select(ID_group);
   let grupo =  $(ID_group);
 

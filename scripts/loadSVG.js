@@ -5,7 +5,7 @@ export  class LoadSVG{
     function onSVGLoaded(data) {
           parent.append( data );
           for( let elemento in elementos){
-            setActions(parent, elementos[elemento].id, elementos[elemento].group, elementos[elemento].titulo, elementos[elemento].descricao);               
+            setActions(parent, elementos[elemento].id, elementos[elemento].group, elementos[elemento].titulo, elementos[elemento].descricao, elementos[elemento].list_description);               
           }                
     }
   }  

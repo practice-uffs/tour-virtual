@@ -9,27 +9,29 @@
     width: 26em;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    box-shadow: -1px 0px 5px rgb(0, 0, 0);
+    box-shadow: -1px 0px 0px rgb(0, 0, 0);
     color: #264653;
+    transition: width 1s;
     
 }
 
-
+.hidden-side-bar{
+    width: 0;
+    display: none;
+    transition: width 1s;
+}
 
 .container-content-side-bar .content-side-bar{
     height: 90%;
-    background-color: #d9d9d9;
+    background-color: #ffffff;
     width: 92%;
     border-radius: 1em;
-    box-shadow: -1px 1px 5px rgb(0, 0, 0);
+    box-shadow: 0px 0px 2px rgb(0, 0, 0);
 }
 
 
 .side-bar-campus{
-    color: #fca4009d;
-    font-size: 1.5em;
     letter-spacing:3%;
-    -webkit-text-stroke: 1.5px #010e13;
 }
 
 .content-side-bar ul{
