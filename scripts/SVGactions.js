@@ -1,6 +1,7 @@
 import {LoadSVG}from './loadSVG.js';
 import {atributos} from './data.js'
 
+let sidebar_open = false;
 
 //
 // CRIAR HOVER
@@ -30,9 +31,12 @@ function deletar() {
 // ====================================
 
 function abrir(titulo, descricao){
+
+
   $("#titulo-sidebar").text(titulo);
   $("#descricao-sidebar").text(descricao);
 
+  
   $("#side-bar").removeClass("hidden-side-bar");
 
 
