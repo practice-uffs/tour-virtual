@@ -35,7 +35,7 @@ function abrir(titulo, descricao){
   
   $("#svg").css('width', '100%');
   $("#side-bar").slideDown(400);
-  $("#side-bar").css('display', 'block');
+  $("#side-bar").css('display', 'flex');
   $("#search").val(titulo)
   $("#btn-close-search").css({"border-left":"1px dashed rgba(184, 184, 184, 0.2)", "width":"50px"});
   $(".search-bar-container").css({"width":"392px", "transition": "width 0.5s"})
