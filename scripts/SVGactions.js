@@ -30,18 +30,23 @@ function deletar() {
 // CRIAR SIDEBAR
 // ====================================
 
-function abrir(titulo, descricao){
-
+function abrir(titulo, descricao,list_desc,id_360){
+  console.log(list_desc)
+  console.log(id_360)
 
   $("#titulo-sidebar").text(titulo);
   $("#descricao-sidebar").text(descricao);
-
-  
   $("#side-bar").removeClass("hidden-side-bar");
+  
+  $("#vista-panoramica").click(()=>{changeToPanorama(id_360)})
+  
+  
+  $("#btn-adicionar-photo").click(openPopupConstrucao)
 
-
+  //
+  // Search Action
   // ============================
-  //Search Action
+  
   $("#search").val(titulo)
   $("#btn-close-search").css({"border-left":"1px dashed rgba(184, 184, 184, 0.2)", "width":"50px"});
   $(".search-bar-container").css({"width":"392px", "transition": "width 0.5s"})
@@ -68,6 +73,12 @@ function fechar(){
 }
 
 
+function changeToPanorama(id_360){
+  sessionStorage.setItem("id_360", id_360);
+  window.location.href = "panorama/index.html";
+}
+
+
 //
 // DEFINIR ACOES
 // ====================================
@@ -77,7 +88,7 @@ function setActions(parent, ID_element, ID_group, titulo, desc, list_desc,id_360
   let grupo =  $(ID_group);
 
   grupo.click(function(){
-    abrir(titulo,desc)
+    abrir(titulo,desc,list_desc,id_360)
   });
 
   grupo.bind("touchstart",function(){
@@ -120,9 +131,9 @@ class BTN_360{
     for(let i in this.atributos){
       let paper = this.parent.select(this.atributos[i].id)
       if(this.#Onpoint(paper)){
-        sessionStorage.setItem("id_360",this.atributos[i].id_360);
-        //window.location.assign(window.location.href + "panorama/");
-        window.location.href = "panorama/index.html";
+        changeToPanorama(this.atributos[i].id_360)
+       
+       
       }
     }
     this.btn.animate({ transform: 'r360' }, 220, mina.linear);
