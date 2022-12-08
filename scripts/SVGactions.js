@@ -1,7 +1,6 @@
 import {LoadSVG}from './loadSVG.js';
 import {atributos} from './data.js'
 
-let sidebar_open = false;
 
 //
 // CRIAR HOVER
@@ -31,11 +30,22 @@ function deletar() {
 // ====================================
 
 function abrir(titulo, descricao,list_desc,id_360){
-  console.log(list_desc)
-  console.log(id_360)
+
 
   $("#titulo-sidebar").text(titulo);
   $("#descricao-sidebar").text(descricao);
+  let ul = $("<ul>")
+  let lista = $("#list_description");
+  lista.empty();
+
+  for(let i in list_desc){
+    let li = $("<li>")
+    li.text(list_desc[i])
+    ul.append(li)
+  }
+  lista.append(ul)
+
+
   $("#side-bar").removeClass("hidden-side-bar");
   
   $("#vista-panoramica").click(()=>{changeToPanorama(id_360)})
