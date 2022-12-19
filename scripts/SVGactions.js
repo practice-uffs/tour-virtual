@@ -40,10 +40,13 @@ function abrir(titulo, descricao,list_desc,id_360){
 
   for(let i in list_desc){
     let li = $("<li>")
+    let a = $("<a>")
     li.text(list_desc[i])
-    ul.append(li)
+    a.append(li)
+    ul.append(a)
   }
   lista.append(ul)
+
 
 
   $("#side-bar").removeClass("hidden-side-bar");
@@ -181,7 +184,20 @@ btn_360.drag(
   ()=>{btn_360_action.start()},
   (dx,dy)=>{btn_360_action.stop(dx,dy)});
 
-new LoadSVG("./img/svg/main.svg",atributos,setActions);
+
+
+fetch("http://127.0.0.1:8000").then((Response) => {
+    return Response.json()
+    
+    
+}).then((data) => {
+  new LoadSVG("./img/svg/main.svg",data,setActions);
+   
+}).catch((a)=>{
+  console.log("ERRO" + a)
+  new LoadSVG("./img/svg/main.svg",atributos,setActions);
+});
+
 $("#btn-close-search").click(fechar);
 
 
