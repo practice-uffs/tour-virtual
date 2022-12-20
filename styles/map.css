@@ -37,8 +37,8 @@
 
 
 .map:hover{
-  fill: #005729;
-  stroke: #ffc107;
+  opacity: 0.85;
+  stroke: var(--yellow);
   stroke-width: 2;
   stroke-opacity: 25%;
   cursor: pointer;
