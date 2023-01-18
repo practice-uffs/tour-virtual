@@ -2,20 +2,21 @@
 <html>
 <head>
   <title>Tour Virtual</title>
-  <link rel="stylesheet" href="./styles/style.css">
-  <link rel="stylesheet" href="./styles/scroll.css">
-  <link rel="stylesheet" href="./styles/sidebar.css">
-  <link rel="stylesheet" href="./styles/controls.css">
-  <link rel="stylesheet" href="./styles/map.css">
-  <link rel="stylesheet" href="./styles/legenda.css">
-  <link rel="stylesheet" href="./styles/searchbar.css">
-  <link rel="stylesheet" href="./styles/construcao.css">
+  <link rel="stylesheet" href="{{url_for('static', path='/styles/style.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', path='/styles/scroll.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', path='/styles/sidebar.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', path='/styles/controls.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', path='/styles/map.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', path='/styles/legenda.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', path='/styles/searchbar.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', path='/styles/construcao.css')}}">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="./img/icon/uffsvirtual-icon.png">
+  <link rel="icon" type="image/x-icon" href="{{url_for('static', path='/img/icon/uffsvirtual-icon.png')}}">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/utils/Draggable.min.js"></script>
-  <script src="./scripts/snap.svg/snap.svg.js"></script>
+  
+  <script src="{{url_for('static', path='scripts/snap.svg/snap.svg.js')}}"></script>
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </head>
     <body>
@@ -92,7 +93,7 @@
         </div>
         <div class="container-side-bar custom-scrollbar-css hidden-side-bar"id="side-bar">
             <div class="img">
-                <img  src="./img/pictures/teste2.jpg" alt="">
+                <img  src="{{url_for('static', path='/img/pictures/teste2.jpg')}}" alt="">
             </div>
             <div class="side-bar-campus">
                 <h1 style="font-weight: 300;">Laranjeiras do Sul</h1>
@@ -210,9 +211,9 @@
                     <h1 style="font-weight: 300;">FOTOS</h1>
                 </div>
                 <div class="other-photos-content">
-                    <div class="other-photos-frame"><img src="./img/pictures/teste2.jpg" alt=""></div>
-                    <div class="other-photos-frame"><img src="./img/pictures/teste.jpg" alt=""></div>
-                    <div class="other-photos-frame"><img src="./img/pictures/teste2.jpg" alt=""></div>
+                    <div class="other-photos-frame"><img src="{{url_for('static',path='/img/pictures/teste2.jpg')}}" alt=""></div>
+                    <div class="other-photos-frame"><img src="{{url_for('static',path='/img/pictures/teste.jpg')}}" alt=""></div>
+                    <div class="other-photos-frame"><img src="{{url_for('static',path='/img/pictures/teste2.jpg')}}" alt=""></div>
 
     
                 </div>
@@ -371,12 +372,13 @@
 
 
 
-<script type="module" src="./scripts/SVGactions.js" defer></script>
+<script type="module" src="{{url_for('static', path='scripts/SVGactions.js')}}" defer></script>
 
-<script type="module" src="./scripts/legenda.js" defer></script>
-<script type="module" src="./scripts/searchbar.js"defer></script>
-<script src="./scripts/controls.js" defer></script>
-<script src="./scripts/popup.js" defer></script>
+
+<script type="module" src="{{url_for('static', path='scripts/legenda.js')}}" defer></script>
+<script type="module" src="{{url_for('static', path='scripts/searchbar.js')}}"defer></script>
+<script src="{{url_for('static', path='scripts/controls.js')}}" defer></script>
+<script src="{{url_for('static', path='scripts/popup.js')}}" defer></script>
 
     </body>
 </html>

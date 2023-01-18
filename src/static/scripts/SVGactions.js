@@ -88,7 +88,7 @@ function fechar(){
 
 function changeToPanorama(id_360){
   sessionStorage.setItem("id_360", id_360);
-  window.location.href = "panorama/index.html";
+  window.location.href = "panorama/";
 }
 
 
@@ -182,7 +182,8 @@ let btn_360 = Snap($('#btn-360')[0]);
 btn_360.drag(
   (dx,dy,xa,ya)=>{btn_360_action.move(dx,dy,xa,ya)},
   ()=>{btn_360_action.start()},
-  (dx,dy)=>{btn_360_action.stop(dx,dy)});
+  (dx,dy)=>{btn_360_action.stop(dx,dy)}
+);
 
 
 
@@ -191,12 +192,14 @@ fetch("http://127.0.0.1:8000").then((Response) => {
     
     
 }).then((data) => {
-  new LoadSVG("./img/svg/main.svg",data,setActions);
+  new LoadSVG("static/img/svg/main.svg",data,setActions);
    
 }).catch((a)=>{
   console.log("ERRO" + a)
-  new LoadSVG("./img/svg/main.svg",atributos,setActions);
+  new LoadSVG("static/img/svg/main.svg",atributos,setActions);
 });
+
+console.log("aaaa")
 
 $("#btn-close-search").click(fechar);
 
