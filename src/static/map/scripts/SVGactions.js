@@ -1,7 +1,7 @@
 import {LoadSVG}from './loadSVG.js';
-import {atributos} from './data.js'
+//import {atributos} from './data.js'
 
-
+//let atributos;
 //
 // CRIAR HOVER
 // ====================================
@@ -185,21 +185,31 @@ btn_360.drag(
   (dx,dy)=>{btn_360_action.stop(dx,dy)}
 );
 
-
+/*
 
 fetch("http://127.0.0.1:8000").then((Response) => {
     return Response.json()
     
     
 }).then((data) => {
-  new LoadSVG("static/img/svg/main.svg",data,setActions);
+  new LoadSVG("static/map/img/svg/main.svg",data,setActions);
    
 }).catch((a)=>{
   console.log("ERRO" + a)
-  new LoadSVG("static/img/svg/main.svg",atributos,setActions);
+  new LoadSVG("static/map/img/svg/main.svg",atributos,setActions);
 });
+*/
+console.log(atributos)
+
+for(let i in atributos){
+  console.log(atributos[i]["group"])
+}
+
+
+new LoadSVG("static/map/img/svg/main.svg",atributos,setActions);
 
 console.log("aaaa")
+
 
 $("#btn-close-search").click(fechar);
 

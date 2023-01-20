@@ -9,7 +9,8 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="./static"), name="static")
 
 
-templates = Jinja2Templates(directory="./static")
+map = Jinja2Templates(directory="./static/map/templates")
+panorama = Jinja2Templates(directory="./static/panorama")
 
 
 origins = ["*"]
@@ -26,7 +27,8 @@ app.add_middleware(
 @app.get("/",response_class=HTMLResponse)
 
 async def root(request:Request):
-    return templates.TemplateResponse("index.html",{"request":request})
+    atributos = scraping.getData("Laranjeiras do Sul","Geral")
+    return map.TemplateResponse("content.html",{"request":request, "atributos": atributos})
 @app.get("/panorama", response_class=HTMLResponse)
 async def panoramaRoute(request:Request):
-    return templates.TemplateResponse("index.html",{"request":request})
+    return panorama.TemplateResponse("index.html",{"request":request})

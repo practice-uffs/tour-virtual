@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+{{atributos}}
+<script>
+    //console.log({{atributos | safe}})
+    let teste = {{atributos | safe}}
+    console.log(teste)
+</script>
+{% endblock %}
