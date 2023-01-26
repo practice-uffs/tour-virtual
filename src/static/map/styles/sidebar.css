@@ -55,6 +55,10 @@
     font-weight: 300;
     font-size: 1em;
 }
+.description ul{
+    margin:0;
+    padding: 0;
+}
 
 .content-side-bar .titulo{
     margin-left: 1.5em;

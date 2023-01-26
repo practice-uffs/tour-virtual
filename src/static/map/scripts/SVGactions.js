@@ -33,21 +33,7 @@ function abrir(titulo, descricao,list_desc,id_360){
 
 
   $("#titulo-sidebar").text(titulo);
-  $("#descricao-sidebar").text(descricao);
-  let ul = $("<ul>")
-  let lista = $("#list_description");
-  lista.empty();
-
-  for(let i in list_desc){
-    let li = $("<li>")
-    let a = $("<a>")
-    li.text(list_desc[i])
-    a.append(li)
-    ul.append(a)
-  }
-  lista.append(ul)
-
-
+  $(".description").html(descricao)
 
   $("#side-bar").removeClass("hidden-side-bar");
   

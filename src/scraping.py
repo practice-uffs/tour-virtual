@@ -1,12 +1,6 @@
 import gspread
 import pandas as pd
-
-
-
-
-def find_item(value:str) -> list:
-    ...
-
+from markdown import markdown
 
 
 def getData(shname: str, worksheetname: str):
@@ -21,13 +15,11 @@ def getData(shname: str, worksheetname: str):
     for valor in dataframe.values:
         temp: dict = {}
         for index_column in range(len(dataframe.columns)):
-            list_group:list = []
             if dataframe.columns[index_column] == 'descricao':
+                temp[dataframe.columns[index_column]] = markdown(valor[index_column])
 
-                print(valor[index_column].split("(item)[]"))
-
-
-            temp[dataframe.columns[index_column]] = valor[index_column]
+            else:
+                temp[dataframe.columns[index_column]] = valor[index_column]
             
         data[contador] = temp
         contador += 1
