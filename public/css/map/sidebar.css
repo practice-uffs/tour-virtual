@@ -1,0 +1,226 @@
+
+
+.container-side-bar{
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 0;
+    max-height: auto;
+    min-height: 100%;
+    width: 26em;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: -1px 0px 0px rgb(0, 0, 0);
+    color: #264653;
+    margin-left: 0;
+    transition: margin-left 0.5s;
+    
+}
+
+.hidden-side-bar{
+    margin-left: -26em;
+    transition: margin-left 0.5s;
+}
+
+.container-content-side-bar .content-side-bar{
+    height: 90%;
+    background-color: #ffffff;
+    width: 92%;
+    border-radius: 1em;
+    box-shadow: 0px 0px 2px rgb(0, 0, 0);
+    
+}
+
+
+.side-bar-campus{
+    letter-spacing:3%;
+}
+
+.content-side-bar ul{
+    list-style-type: none;
+    text-align: start;
+    margin-left: 0;
+    font-weight: 300;
+    font-size: 1em;
+    
+}
+.content-side-bar li{
+    margin-bottom: 0.8em;
+    word-break:break-all;
+    margin-right: 1em;
+}
+
+.content-side-bar .description{
+    text-align: start;
+    margin-left: 2.2em;
+    font-weight: 300;
+    font-size: 1em;
+}
+.description ul{
+    margin:0;
+    padding: 0;
+}
+
+.content-side-bar .titulo{
+    margin-left: 1.5em;
+    color: transparent;
+    font-size: 1.5em;
+    letter-spacing:3%;
+    text-align: start;
+    -webkit-text-stroke: 2px #264653;
+    margin-bottom: -1em;
+    font-weight: 900;
+
+
+}
+
+
+
+.container-side-bar .img img{
+    width: 100%;
+    height: auto;
+}
+
+
+.container-side-bar .container-content-side-bar{
+    width: 100%;
+    height: auto; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1em; 
+    margin-bottom: 1em;
+    border-bottom: 1px solid #b9b9b998;
+    
+ 
+}
+
+.side-bar-buttons-container{
+
+    padding-bottom: 1em; 
+    margin-bottom: 1em;
+    border-bottom: 1px solid #b9b9b998;
+
+}
+
+.vista-panoramica-container, .adicionar-photo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 3.2em;
+    margin-bottom: 1em;
+    
+}
+
+.vista-panoramica-container .vista-panoramica{
+    display: flex;
+    background-color: #FCAE17;
+    height: 90%;
+    width: 75%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.4em;
+    font-size: 1.25em;
+    color: #264653;
+    cursor: pointer;
+}
+
+.vista-panoramica:hover{
+    box-shadow: #010e13b9 1px 0px 3px;
+    scale: 1.05;
+
+}
+
+.other-buttons-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 3.5em;
+}
+.other-buttons{
+    width: 4.375em;
+    height: 100%;
+}
+
+
+.button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.other-buttons:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    scale: 1.05;
+}
+
+
+.svg-content{
+    width: 2.25em;
+    height: 2.25em;
+}
+
+.svg-content svg{
+    width: 100%;
+    height: 100%;
+}
+
+.button-text{
+    font-size: 0.7em;
+    font-weight: 300;
+    word-break:break-all
+}
+
+
+.other-photos-container .other-photos-content{
+    display: flex;
+    justify-content: space-around;
+}
+.other-photos-container .other-photos-frame{
+    cursor: pointer;
+    width: 7.5em;
+    height: 10.5em;
+    margin-bottom: 0.5em;
+    object-fit: cover;
+}
+.other-photos-frame img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    border-radius: 0.5em;
+    box-shadow: 0px 1px 3px rgb(0, 0, 0);
+}
+.other-photos-frame img:hover{
+    filter: blur(1px);
+    scale: 1.05;
+
+    
+}
+
+.adicionar-photo-container .adicionar-photo{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #FCAE17;
+    width: 12.5em;
+    height: 1.875em;
+    border-radius: 1em;
+    cursor: pointer;
+    
+
+}
+.adicionar-photo:hover{
+    box-shadow: #010e13b9 1px 0px 3px;
+    scale: 1.05;
+}
+
+.adicionar-photo .itens{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
