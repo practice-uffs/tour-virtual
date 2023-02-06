@@ -274,11 +274,17 @@
 
 
 
-        <div class="legenda ocultar custom-scrollbar-css" id="legenda">
+        <div class="legenda ocultar" id="legenda">
             <div>
                 <h2> Legenda</h2>
             </div>
-        <div class="container-list" > <div class="list" id="list"></div></div>
+            <img src="{{'img/svg/legenda.svg'}}" alt="">
+        <div class="container-list" >
+            
+            <div class="list" id="list">
+
+            </div>
+        </div>
        
         <div class="close-legenda"><div class="close-container"><div class="arrow "></div></div></div>
         </div>

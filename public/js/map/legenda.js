@@ -6,7 +6,7 @@ $("#btn-legenda").click(function(){
     $("#legenda").toggleClass("ocultar");
 });
 
-
+/*
 let legenda = $("container-list")
 let list = $("#list")
 
@@ -33,3 +33,4 @@ for(let i in atributos){
     list.append(element_div);
 }
 legenda.append(list)
+*/
