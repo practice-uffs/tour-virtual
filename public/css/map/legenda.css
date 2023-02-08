@@ -1,3 +1,12 @@
+:root{
+
+  --blue-1: #264653;
+  --blue-2: #2F7B9A;
+  --orange: #FA8334;
+  --yellow: #FCAE17;
+}
+
+
 .legenda{
   position: fixed;
   right: 0;
@@ -14,32 +23,21 @@
   transition: margin-right 0.5s;
 }
 
-.item{
-  color: #264653;
-  font-family: 'Roboto', sans-serif;
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.514);
-  border-radius: 1ch;
-  text-align: center;
-  padding: 0.5em 0 0.5em 0;
-  margin: 0.5em 0.25em 0.5em 0.25em;
- 
-  
-}
-.item:hover{
-  cursor: pointer;
-  box-shadow: 0px 1px 3px  #264653;
-}
+
 
 .legenda h2{
-  color: aliceblue;
+  color: var(--blue-1);
   font-size: 4ch;
-  -webkit-text-stroke: 0.2px #264653;
   font-family: 'Roboto', sans-serif;
   text-align: center;
 }
-.list{
-  padding: 10px 0px 10px 0px;
-  box-shadow: 2px 0px 7px rgba(0, 0, 0, 0.514);
+
+
+.legenda img{
+  max-width: 16em;
+  margin-left: 2em;
+  margin-top: 3em;
+  text-align: center;
 }
 
 
