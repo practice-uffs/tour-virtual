@@ -186,16 +186,8 @@ btn_360.drag(
 
 
 
-fetch("http://127.0.0.1:8000").then((Response) => {
-    return Response.json()
-    
-    
-}).then((data) => {
-  new LoadSVG("../../img/svg/main.svg",data,setActions);
-   
-}).catch((a)=>{
-  console.log("ERRO" + a)
-  new LoadSVG("./img/svg/main.svg",atributos,setActions);
-});
+
+new LoadSVG("./img/svg/main.svg",atributos,setActions);
+
 
 $("#btn-close-search").click(fechar);

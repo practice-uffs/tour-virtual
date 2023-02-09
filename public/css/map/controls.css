@@ -15,7 +15,17 @@
 }
 
 
-.zoom-container, .especial-controls{
+.zoom-container{
+  width: 40px;
+  height: 120px;
+  border: 1px solid rgba(138, 138, 138, 0.733);
+  margin-top: 40px;
+  border-radius: 0.5em;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.411);
+  background-color: rgba(255, 255, 255, 0.897);
+
+}
+.especial-controls{
   width: 40px;
   height: 120px;
   border: 1px solid rgba(138, 138, 138, 0.733);

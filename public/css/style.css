@@ -15,6 +15,17 @@ body{
 }
 
 
+
+.campus h2{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4em;
+  font-weight: 300; 
+  position:absolute;
+  width:100%;
+  bottom:0;
+  text-align:center;
+}
+
 img {
   -drag: none;
   user-select: none;

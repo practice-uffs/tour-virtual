@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .container-side-bar{
     background-color: rgb(255, 255, 255);
@@ -35,7 +35,13 @@
     letter-spacing:3%;
 }
 
+
+.content-side-bar{
+    margin-top: 1.4em;
+}
+
 .content-side-bar ul{
+    
     list-style-type: none;
     text-align: start;
     margin-left: 0;
@@ -60,17 +66,12 @@
     padding: 0;
 }
 
-.content-side-bar .titulo{
-    margin-left: 1.5em;
-    color: transparent;
-    font-size: 1.5em;
-    letter-spacing:3%;
-    text-align: start;
-    -webkit-text-stroke: 2px #264653;
-    margin-bottom: -1em;
-    font-weight: 900;
-
-
+#titulo-sidebar{
+    text-align: center;
+    word-wrap: break-word;
+    color: var(--blue-1);
+    font-size: 2em;
+    font-weight: 500;
 }
 
 
