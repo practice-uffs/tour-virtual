@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Tour Virtual</title>
-  <link rel="stylesheet" href="{{ '/css/style.css' }}">
+  <link rel="stylesheet" href="{{ 'css/style.css' }}">
   <link rel="stylesheet" href="{{ 'css/map/scroll.css' }}">
   <link rel="stylesheet" href="{{ 'css/map/sidebar.css' }}">
   <link rel="stylesheet" href="{{ 'css//map/controls.css'}}">
@@ -211,9 +211,9 @@
                     <h1 style="font-weight: 300;">FOTOS</h1>
                 </div>
                 <div class="other-photos-content">
-                    <div class="other-photos-frame"><img src="/img/pictures/teste2.jpg" alt=""></div>
-                    <div class="other-photos-frame"><img src="/img/pictures/teste.jpg" alt=""></div>
-                    <div class="other-photos-frame"><img src="/img/pictures/teste2.jpg" alt=""></div>
+                    <div class="other-photos-frame"><img src="{{'img/pictures/teste2.jpg'}}" alt=""></div>
+                    <div class="other-photos-frame"><img src="{{'img/pictures/teste.jpg'}}" alt=""></div>
+                    <div class="other-photos-frame"><img src="{{'img/pictures/teste2.jpg'}}" alt=""></div>
 
     
                 </div>
