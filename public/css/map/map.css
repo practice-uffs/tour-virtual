@@ -55,9 +55,9 @@
 
 
 ._360{
-  fill: rgba(83, 20, 255, 0.801);
-  stroke: rgb(83, 20, 255);
-  stroke-width: 3;
+  stroke: var(--orange);
+  fill-opacity: 0.85;
+  transform: translateZ(100%);
 }
 
 
