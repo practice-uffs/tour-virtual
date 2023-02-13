@@ -100,22 +100,27 @@ function setActions(parent, ID_element, ID_group, titulo, desc, list_desc,id_360
   let grupoSNAP =  parent.select(ID_group);
   let grupo =  $(ID_group);
 
-  grupo.click(function(){
-    abrir(titulo,desc,list_desc,id_360)
+  if(grupo){ 
+    grupo.click(function(){
+      abrir(titulo,desc,list_desc,id_360)
   });
 
-  grupo.bind("touchstart",function(){
-    abrir(titulo,desc);})
- 
+    grupo.bind("touchstart",function(){
+      abrir(titulo,desc);})
+
+  }
 
   // Hover
+  if(grupoSNAP){
+    grupoSNAP.mouseover((evt)=>{
+      criar(evt,titulo);
+    });
+    grupoSNAP.mouseout(()=>{
+      deletar();
+    })
 
-  grupoSNAP.mouseover((evt)=>{
-    criar(evt,titulo);
-  });
-  grupoSNAP.mouseout(()=>{
-    deletar();
-  })
+  }
+  
   
  
   
@@ -164,6 +169,8 @@ class BTN_360{
   }
 
   #Onpoint(element){
+    if(!element)
+      return false;
     element = element.getBBox();
     let _x = this.pointOnSVG.x > element.x && this.pointOnSVG.x < (element.x + element.w);
     let _y = this.pointOnSVG.y > element.y && this.pointOnSVG.y < (element.y + element.h);
