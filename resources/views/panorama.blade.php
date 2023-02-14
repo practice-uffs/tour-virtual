@@ -6,6 +6,7 @@
 <style> @-ms-viewport { width: device-width; } </style>
 <link rel="stylesheet" href="{{'css/panorama/reset.min.css'}}">
 <link rel="stylesheet" href="{{'css/panorama/style.css'}}">
+ <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </head>
 <body class="multiple-scenes ">
 
@@ -103,6 +104,10 @@
   <h1 class="sceneName"></h1>
 </div>
 
+<a href="javascript:void(0)" id="btn-voltar" class="enabled">
+  <img class="icon on" src="{{'img/panorama/img/left.png'}}">
+</a>
+
 <a href="javascript:void(0)" id="autorotateToggle">
   <img class="icon off" src="{{'img/panorama/img/play.png'}}">
   <img class="icon on" src="{{'img/panorama/img/pause.png'}}">
@@ -118,14 +123,16 @@
   <img class="icon on" src="{{'img/panorama/img/collapse.png'}}">
 </a>
 
-<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+
+
+<a href="{{env('PROXY_URL')}}" id="viewUp" class="viewControlButton viewControlButton-1">
   <img class="icon" src="{{'img/panorama/img/up.png'}}">
 </a>
 <a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
   <img class="icon" src="{{'img/panorama/img/down.png'}}">
 </a>
 <a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
-  <img class="icon" src="{{'img/panorama/img/left.png'}}">
+  
 </a>
 <a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
   <img class="icon" src="{{'img/panorama/img/right.png'}}">
@@ -143,6 +150,7 @@
 
 <script src="{{'js/panorama/data.js'}}"></script>
 <script src="{{'js/panorama/index.js'}}"></script>
+<script src="{{'js/panorama/script.js'}}"></script>
 
 </body>
 </html>

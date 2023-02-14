@@ -15,6 +15,9 @@
  */
 'use strict';
 
+
+
+
 (function() {
   var Marzipano = window.Marzipano;
   var bowser = window.bowser;

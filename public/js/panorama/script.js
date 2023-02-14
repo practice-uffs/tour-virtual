@@ -1,0 +1,1 @@
+$("#btn-voltar").click(()=>{window.location.href = "/"})
