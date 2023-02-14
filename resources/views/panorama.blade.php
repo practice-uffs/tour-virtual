@@ -125,7 +125,7 @@
 
 
 
-<a href="{{env('PROXY_URL')}}" id="viewUp" class="viewControlButton viewControlButton-1">
+<a href="/" id="viewUp" class="viewControlButton viewControlButton-1">
   <img class="icon" src="{{'img/panorama/img/up.png'}}">
 </a>
 <a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
