@@ -51,12 +51,12 @@
 }
 .content-side-bar li{
     margin-bottom: 0.8em;
-    word-break:break-all;
     margin-right: 1em;
 }
 
 .content-side-bar .description{
-    margin-left: 1em;
+    margin-left: 0.3em;
+    margin-right: 0.3em;
     font-weight: 300;
     font-size: 1em;
 }
@@ -78,6 +78,7 @@
 .container-side-bar .img img{
     width: 100%;
     height: auto;
+    max-height: 16em;
 }
 
 
@@ -89,7 +90,7 @@
     justify-content: center;
     padding-bottom: 1em; 
     margin-bottom: 1em;
-    border-bottom: 1px solid #b9b9b998;
+    /*border-bottom: 1px solid #b9b9b998;*/
     
  
 }
@@ -98,7 +99,7 @@
 
     padding-bottom: 1em; 
     margin-bottom: 1em;
-    border-bottom: 1px solid #b9b9b998;
+    /*border-bottom: 1px solid #b9b9b998;*/
 
 }
 

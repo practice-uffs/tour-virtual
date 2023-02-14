@@ -126,7 +126,7 @@
         </div>
         <div class="container-side-bar custom-scrollbar-css hidden-side-bar"id="side-bar">
             <div class="img">
-                <img  src="{{'img/pictures/teste2.jpg'}}" alt="">
+                <img  id="sidebar-img-capa" src="{{'img/pictures/LS/Principal/Capa/almoxarifado.jpg'}}" alt="">
             </div>
 
             <div class="container-content-side-bar " >
@@ -154,7 +154,7 @@
                         <span>VISTA PANORÂMICA</span>
                     </div>
                 </div>
-                <div class="other-buttons-container">
+                <div class="other-buttons-container" style="display:none">
                     
                     <div class="other-buttons">
                         <div class="button-container">
@@ -236,7 +236,7 @@
                 </div> <!-- Other Button-->
             </div><!-- Buttons -->
             
-            <div class="other-photos-container">
+            <div class="other-photos-container" style="display:none">
                 <div>
                     <h1 style="font-weight: 300;">FOTOS</h1>
                 </div>
@@ -247,7 +247,7 @@
 
     
                 </div>
-                <div class="adicionar-photo-container">
+                <div class="adicionar-photo-container" style="display:none">
                     <div class="adicionar-photo " id="btn-adicionar-photo"> 
                         <div class="itens">
                             <svg width="30" height="20" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
