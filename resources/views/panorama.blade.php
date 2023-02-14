@@ -13,65 +13,87 @@
 
 <div id="sceneList">
   <ul class="scenes">
+
+    <a href="javascript:void(0)" class="scene" data-id="17-bloco-a-dentro">
+      <li class="text">Bloco A Dentro</li>
+    </a>
+  
+    <a href="javascript:void(0)" class="scene" data-id="18-bloco-a-fora">
+      <li class="text">Bloco A Fora</li>
+    </a>
     
-      <a href="javascript:void(0)" class="scene" data-id="0-estufas">
-        <li class="text">Estufas</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="1-laboratrio-2">
-        <li class="text">Laboratório 2</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="2-almoxarifado">
-        <li class="text">Almoxarifado</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="3-rea-experimental-aquicultura-2">
-        <li class="text">Área Experimental Aquicultura 2</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="4-rea-experimental-da-aquicultura">
-        <li class="text">Área Experimental da Aquicultura</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="5-campo-de-futebol">
-        <li class="text">Campo de Futebol</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="6-cvt">
-        <li class="text">CVT</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="7-ru-fora">
-        <li class="text">RU Fora</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="8-bloco-a-dentro">
-        <li class="text">Bloco A Dentro</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="9-bloco-a-fora">
-        <li class="text">Bloco A Fora</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="10-bloco-dos-professores-dentro">
-        <li class="text">Bloco dos Professores Dentro</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="11-bloco-dos-professores-fora">
+      <a href="javascript:void(0)" class="scene" data-id="0-bloco-dos-professores-fora">
         <li class="text">Bloco dos Professores Fora</li>
       </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="12-cantina">
-        <li class="text">Cantina</li>
+
+      <a href="javascript:void(0)" class="scene" data-id="19-bloco-dos-professores-dentro">
+        <li class="text">Bloco dos Professores Dentro</li>
       </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="13-laboratrio-1">
+
+      <a href="javascript:void(0)" class="scene" data-id="8-laboratrio-1">
         <li class="text">Laboratório 1</li>
       </a>
     
-      <a href="javascript:void(0)" class="scene" data-id="14-laboratrio-3">
+      <a href="javascript:void(0)" class="scene" data-id="9-laboratrio-2">
+        <li class="text">Laboratório 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="10-laboratrio-3">
         <li class="text">Laboratório 3</li>
+      </a>
+
+      <a href="javascript:void(0)" class="scene" data-id="12-ru-dentro">
+        <li class="text">RU Dentro</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="13-ru-fora">
+        <li class="text">RU Fora</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="11-pomar">
+        <li class="text">Pomar</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="1-campo-de-futebol">
+        <li class="text">Campo de Futebol</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="2-campo-de-vlei">
+        <li class="text">Campo de Vôlei</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="3-cantina">
+        <li class="text">Cantina</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="4-cvt">
+        <li class="text">CVT</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="5-estao-de-tratamento">
+        <li class="text">Estação de Tratamento</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="6-estufas">
+        <li class="text">Estufas</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="7-galpo-de-mquinas-agrcolas">
+        <li class="text">Galpão de Máquinas Agrícolas</li>
+      </a>
+    
+     
+    
+      <a href="javascript:void(0)" class="scene" data-id="14-slackline">
+        <li class="text">Slackline</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="15-almoxarifado">
+        <li class="text">Almoxarifado</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="16-rea-experimental-da-aquicultura">
+        <li class="text">Área Experimental da Aquicultura</li>
       </a>
     
   </ul>
