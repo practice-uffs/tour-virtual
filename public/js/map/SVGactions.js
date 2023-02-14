@@ -1,6 +1,8 @@
 import {LoadSVG}from './loadSVG.js';
 import {atributos} from './data.js'
 
+var PREFIX_IMG = "img/pictures/LS/Principal/Capa/"
+
 
 //
 // CRIAR HOVER
@@ -29,7 +31,7 @@ function deletar() {
 // CRIAR SIDEBAR
 // ====================================
 
-function abrir(titulo, descricao,list_desc,id_360){
+function abrir(titulo, descricao,list_desc,id_360, img_capa){
 
 
   $("#titulo-sidebar").text(titulo);
@@ -37,6 +39,9 @@ function abrir(titulo, descricao,list_desc,id_360){
   let ul = $("<ul>")
   let lista = $("#list_description");
   lista.empty();
+  $("#sidebar-img-capa").attr("src", PREFIX_IMG + img_capa )
+
+
 
   for(let i in list_desc){
     let li = $("<li>")
@@ -96,13 +101,13 @@ function changeToPanorama(id_360){
 // DEFINIR ACOES
 // ====================================
 
-function setActions(parent, ID_element, ID_group, titulo, desc, list_desc,id_360){
+function setActions(parent, ID_element, ID_group, titulo, desc, list_desc,id_360, img_capa){
   let grupoSNAP =  parent.select(ID_group);
   let grupo =  $(ID_group);
 
   if(grupo){ 
     grupo.click(function(){
-      abrir(titulo,desc,list_desc,id_360)
+      abrir(titulo,desc,list_desc,id_360, img_capa)
   });
 
     grupo.bind("touchstart",function(){
