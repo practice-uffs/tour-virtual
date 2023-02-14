@@ -43,7 +43,7 @@
 .content-side-bar ul{
     
     list-style-type: none;
-    text-align: start;
+    text-align: justify;
     margin-left: 0;
     font-weight: 300;
     font-size: 1em;
@@ -56,8 +56,7 @@
 }
 
 .content-side-bar .description{
-    text-align: start;
-    margin-left: 2.2em;
+    margin-left: 1em;
     font-weight: 300;
     font-size: 1em;
 }
