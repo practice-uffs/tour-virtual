@@ -1,1 +1,1 @@
-$("#btn-voltar").click(()=>{window.location.href="/"})
+$("#btn-voltar").click(()=>{window.location.href="/tour-virtual"})
