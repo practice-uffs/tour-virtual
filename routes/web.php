@@ -31,8 +31,8 @@ Route::get('/', function () {
 
 Route::get('/panorama', function () {
     return view('panorama');
-});
+})->name('panorama');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['check.admin', 'verified', 'auth:sanctum' ])->get('/dashboard', function () {
     return view('dashboard');
-})->name('dashboard');
+})->name('dashboard');;

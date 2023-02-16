@@ -18,6 +18,9 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
 
+    const ADMIN = 'admin';
+    const NORMAL = 'normal';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -28,6 +31,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'type'
     ];
 
     /**
@@ -59,4 +63,8 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function isAdmin() {
+        return $this->type == SELF::ADMIN;
+    }
 }
