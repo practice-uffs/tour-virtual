@@ -17,7 +17,7 @@ class CreateDetailsTable extends Migration
             $table->id();
             $table->string('item');
             $table->unsignedBigInteger('id_information');
-            $table->foreign('id_information')->on('information')->references('id');
+            $table->foreign('id_information')->on('informations')->references('id');
             $table->timestamps();
 
         });

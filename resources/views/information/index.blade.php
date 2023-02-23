@@ -45,6 +45,9 @@
             box-shadow: #120013 1px 1px 1px;
             margin-bottom: 1em;
         }
+        .especial{
+            background-color: #0f6674;
+        }
     </style>
     <nav>
         <ul style="display:flex">
@@ -61,6 +64,7 @@
             <th>TITULO</th>
             <th>DESCRICAO</th>
             <th>IMAGEM CAPA</th>
+            <th>Itens</th>
 
         </tr>
 
@@ -73,14 +77,18 @@
                 <td>{{$information->title}}</td>
                 <td>{{$information->description}}</td>
                 <td>{{$information->cover_image}}</td>
-                <td><a href="{{route('information.edit', ['information' => $information->id])}}">Editar</a></td>
                 <td>
+                @foreach($information->informationDetail as $key)
+                    <td>{{$key->item}}</td>
+                @endforeach
+                <td class="especial" ><a href="{{route('information.edit', ['information' => $information->id])}}">Editar</a></td>
+                <td class="especial">
 
                     <form method="post" action="{{route('information.destroy', ['information' => $information->id])}}">
                         @method("DELETE")
                         @csrf
 
-                        <button type="submit"> Excluir</button>
+                        <button  type="submit"> Excluir</button>
                     </form>
                 </td>
 

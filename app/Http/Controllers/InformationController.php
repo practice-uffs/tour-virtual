@@ -31,7 +31,7 @@ class InformationController extends Controller
     public function index(Request $request)
     {
 
-        $data = Information::all();
+        $data = Information::with('informationDetail')->get();
         return view('information.index', ['data' => $data, 'request', $request->all()]);
     }
 
@@ -101,8 +101,9 @@ class InformationController extends Controller
      * @return \Illuminate\Http\RedirectResponse|Response
      */
     public function destroy(Information $information)
-    {
+    {   Detail::where('id_information', $information->getAttribute('id'))->delete();
         $information->delete();
         return redirect()->route('information.index');
     }
 }
+
