@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Detail;
 use App\Models\Information;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
