@@ -16,13 +16,13 @@ class CreateInformationTable extends Migration
         Schema::create('information', function (Blueprint $table) {
 
             $table->id();
-            $table->string('id_componente');
+            $table->string('component');
             $table->string('group');
             $table->string('campus');
-            $table->string('id_360');
-            $table->string('titulo');
-            $table->string('descricao');
-            $table->string('img_capa');
+            $table->string('identifier_360');
+            $table->string('title');
+            $table->string('description');
+            $table->string('cover_image');
 
 
             $table->timestamps();

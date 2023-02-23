@@ -27,13 +27,13 @@
         <h1>Informação - Criar</h1>
         <form action="{{route('information.store')}}" method="post">
                 @csrf
-            <x-input label="ID" name="id_componente" placeholder="ID" />
+            <x-input label="ID" name="component" placeholder="ID" />
             <x-input label="GRUPO" name="group" placeholder="Grupo" />
             <x-input label="CAMPUS" name="campus" placeholder="Campus" />
-            <x-input label="ID 360" name="id_360" placeholder="ID 360" />
-            <x-input label="TITULO" name="titulo" placeholder="Titulo" />
-            <x-input label="Imagem Capa" name="img_capa" placeholder="Endereço Imagem" />
-            <x-textarea label="Descrição" name="descricao" placeholder=" Descrição" />
+            <x-input label="ID 360" name="identifier_360" placeholder="ID 360" />
+            <x-input label="TITULO" name="title" placeholder="Titulo" />
+            <x-input label="Imagem Capa" name="cover_image" placeholder="Endereço Imagem" />
+            <x-textarea label="Descrição" name="description" placeholder=" Descrição" />
             <x-button label="Submit" dark icon="cursor-click" type="submit" />
         </form>
 

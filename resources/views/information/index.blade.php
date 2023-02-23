@@ -66,13 +66,13 @@
 
         @foreach($data as $information)
             <tr>
-                <td>{{$information->id_componente}}</td>
+                <td>{{$information->component}}</td>
                 <td>{{$information->group}}</td>
                 <td>{{$information->campus}}</td>
-                <td>{{$information->id_360}}</td>
-                <td>{{$information->titulo}}</td>
-                <td>{{$information->descricao}}</td>
-                <td>{{$information->img_capa}}</td>
+                <td>{{$information->identifier_360}}</td>
+                <td>{{$information->title}}</td>
+                <td>{{$information->description}}</td>
+                <td>{{$information->cover_image}}</td>
                 <td><a href="{{route('information.edit', ['information' => $information->id])}}">Editar</a></td>
                 <td>
 

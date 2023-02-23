@@ -9,13 +9,13 @@ use Illuminate\Http\Response;
 class InformationController extends Controller
 {
     protected static $rules = [
-        'id_componente' => 'required',
+        'component' => 'required',
         'group' => 'required',
         'campus' => 'required',
-        'id_360' => 'required',
-        'titulo' => 'required',
-        'descricao' => 'required',
-        'img_capa' => 'required',
+        'identifier_360' => 'required',
+        'title' => 'required',
+        'description' => 'required',
+        'cover_image' => 'required',
 
     ];
     protected static $feedback = [
