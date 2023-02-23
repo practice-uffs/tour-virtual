@@ -22,7 +22,6 @@
             font-size: larger;
         }
     </style>
-
     <div class="inputs">
         <h1>Informação - Editar</h1>
         <form action="{{route('information.update', ['information' => $information->id])}}" method="post">
@@ -36,7 +35,12 @@
             <x-input value="{{$information->title ?? old('title')}}" label="TITULO" name="title" placeholder="Titulo" />
             <x-input value="{{$information->cover_image ?? old('cover_image')}}" label="Imagem Capa" name="cover_image" placeholder="Endereço Imagem" />
             <x-textarea label="Descrição" name="description" placeholder=" Descrição">{{$information->description ?? old('description')}} </x-textarea>
+            @foreach($details as $dt)
+                <x-input value="{{$dt->item ?? old('item')}}" label="ID" name="item" placeholder="ID" />
+
+            @endforeach
             <x-button label="Submit" dark icon="cursor-click" type="submit" />
+
         </form>
 
     </div>

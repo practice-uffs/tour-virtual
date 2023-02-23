@@ -22,7 +22,7 @@
     <body>
     <script>
         var atributos = {!! json_encode($data->toArray(), JSON_HEX_TAG) !!};
-
+        console.log(atributos)
     </script>
     <div class="mapa">
         <div class="map-svg">

@@ -53,8 +53,16 @@ class InformationController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate(InformationController::$rules, InformationController::$feedback);
-        Information::create($request->all());
+        $item = Information::create($request->all());
+        $item_id = $item->id;
+        if(isset($item_id) && isset($request->all()['boxid']))
+            foreach ($request->all()['boxid'] as $i){
+                echo $item_id;
+                Detail::insert(['id_information' => $item_id, 'item' => $i ]);
+            }
+
         return redirect()->route('information.index');
     }
 
@@ -77,7 +85,9 @@ class InformationController extends Controller
      */
     public function edit(Information $information)
     {
-        return view('information.edit', ['information' => $information]);
+
+        $data =  Detail::where('id_information', $information->getAttribute('id'));
+        return view('information.edit', ['information' => $information, 'details' => $data->get()]);
     }
 
     /**

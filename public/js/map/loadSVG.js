@@ -5,7 +5,12 @@ export  class LoadSVG{
     function onSVGLoaded(data) {
           parent.append( data );
           for( let e in els){
-            setActions(parent, els[e].id_componente, els[e].group, els[e].titulo, els[e].descricao, els[e].list_description, els[e].id_360, els[e].img_capa);
+              try {
+                  setActions(parent, els[e].component, els[e].group, els[e].title, els[e].description, els[e].list_description, els[e].identifier_360, els[e].cover_image);
+              }catch (ex){
+                  continue
+              }
+
           }
     }
   }

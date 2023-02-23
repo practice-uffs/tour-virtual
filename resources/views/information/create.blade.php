@@ -34,6 +34,19 @@
             <x-input label="TITULO" name="title" placeholder="Titulo" />
             <x-input label="Imagem Capa" name="cover_image" placeholder="Endereço Imagem" />
             <x-textarea label="Descrição" name="description" placeholder=" Descrição" />
+            <x-input id="howmany" label="Quantidade Itens"/>
+            <div id="boxquantity"></div>
+            <script>
+                $(document).ready(function() {
+                    $('#howmany').change(function() {
+                        $("#boxquantity input").remove();
+
+                        for (i = 0; i < $("#howmany").val(); i++) {
+                            $('#boxquantity').append('<input name="boxid['+i+']" type="text" id="boxid['+i+']"/>');
+                        }
+                    });
+                });
+            </script>
             <x-button label="Submit" dark icon="cursor-click" type="submit" />
         </form>
 

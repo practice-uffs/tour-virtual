@@ -102,7 +102,7 @@ function changeToPanorama(id_360){
 // ====================================
 
 function setActions(parent, ID_element, ID_group, titulo, desc, list_desc,id_360, img_capa){
-  let grupoSNAP =  parent.select(ID_group);
+    let grupoSNAP =  parent.select(ID_group);
   let grupo =  $(ID_group);
 
   if(grupo){
