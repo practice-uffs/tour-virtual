@@ -25,6 +25,11 @@ if (!empty($proxy_schema)) {
 }
 
 Route::get('/', function () {
+    return view('landingpage');
+});
+
+
+Route::get('/ferramenta', function () {
     return view('index');
 });
 
