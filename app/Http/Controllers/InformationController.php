@@ -18,6 +18,7 @@ class InformationController extends Controller
         'description' => 'required',
         'cover_image' => 'required',
 
+
     ];
     protected static $feedback = [
         'required' => "Campo :attribute é necessario"
@@ -101,6 +102,27 @@ class InformationController extends Controller
     {
         $request->validate(InformationController::$rules, InformationController::$feedback);
         $information->update($request->all());
+
+        if(isset($request->all()['item'])){
+            foreach ($request->all()['item'] as $key => $value){
+                Detail::find($key)->update(['item' => $value]);
+            }
+        }
+        if(isset($request->all()['remove'])){
+            foreach ($request->all()['remove'] as $key => $value){
+                Detail::find($key)->delete();
+            }
+        }
+
+        if(isset($request->all()['addbox'])){
+            foreach ($request->all()['addbox'] as $key => $value){
+                if($value != "")
+                    Detail::insert(['item' => $value, 'id_information' => $information->id]);
+            }
+        }
+
+
+
         return redirect()->route('information.index');
     }
 

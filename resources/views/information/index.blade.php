@@ -5,7 +5,7 @@
             background-color: #1a202c;
         }
         table, th, td {
-
+            table-layout:fixed;
             text-align: center;
             padding: 10px;
             margin:auto;
@@ -15,7 +15,7 @@
 
         }
         tr:nth-child(odd) {
-            background-color: #1a202c;
+            background-color: #3a3d42;
 
         }
         tr{
@@ -30,6 +30,7 @@
 
         td{
             border-right: #130009 1px solid;
+            overflow:hidden;
         }
         table{
 
@@ -49,6 +50,9 @@
         }
         .especial{
             background-color: #0f6674;
+        }
+        tr{
+            border-bottom: solid 1px black;
         }
     </style>
     <nav>

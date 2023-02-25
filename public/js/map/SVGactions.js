@@ -2,7 +2,7 @@ import {LoadSVG}from './loadSVG.js';
 //import {atributos} from './data.js'
 
 var PREFIX_IMG = "img/pictures/LS/Principal/Capa/"
-
+var httpRegex = new RegExp('https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)')
 
 //
 // CRIAR HOVER
@@ -39,7 +39,15 @@ function abrir(titulo, descricao,list_desc,id_360, img_capa){
   let ul = $("<ul>")
   let lista = $("#list_description");
   lista.empty();
-  $("#sidebar-img-capa").attr("src", PREFIX_IMG + img_capa )
+  console.log(httpRegex.test(img_capa))
+  if (httpRegex.test(img_capa)){
+      $("#sidebar-img-capa").attr("src", img_capa )
+  }
+  else{
+      $("#sidebar-img-capa").attr("src", PREFIX_IMG + img_capa )
+  }
+
+
 
 
 

@@ -8,10 +8,11 @@
             margin-right: auto;
         }
 
+
         form > div{
             margin-top: 1em;
         }
-        button{
+        .button-submit{
             margin-top: 2em;
             width: 100%;
         }
@@ -21,6 +22,27 @@
             text-transform: capitalize;
             font-size: larger;
         }
+
+        #howmany{
+            width: 30px;
+            text-align: center;
+
+        }
+        #boxquantity input{
+            width: 100%;
+            border-radius: 0.5em;
+            margin-bottom: 0.5em;
+        }
+
+        #plus, #minus{
+            cursor: pointer;
+        }
+        #howmany:focus{
+            border: none;
+            outline: none;
+
+        }
+
     </style>
 
     <div class="inputs">
@@ -34,21 +56,39 @@
             <x-input label="TITULO" name="title" placeholder="Titulo" />
             <x-input label="Imagem Capa" name="cover_image" placeholder="Endereço Imagem" />
             <x-textarea label="Descrição" name="description" placeholder=" Descrição" />
-            <x-input id="howmany" label="Quantidade Itens"/>
-            <div id="boxquantity"></div>
-            <script>
-                $(document).ready(function() {
-                    $('#howmany').change(function() {
-                        $("#boxquantity input").remove();
+            <label class="mt-5 block text-sm font-medium text-gray-700 dark:text-gray-400 text-center">Itens Descrição</label>
+            <div style="display: flex; justify-content: center">
+                <span id="plus"> +</span>
+                <input id="howmany" val="0" readonly="" />
+                <span id="minus">-</span>
+            </div>
 
-                        for (i = 0; i < $("#howmany").val(); i++) {
-                            $('#boxquantity').append('<input name="boxid['+i+']" type="text" id="boxid['+i+']"/>');
-                        }
-                    });
-                });
-            </script>
-            <x-button label="Submit" dark icon="cursor-click" type="submit" />
+            <div id="boxquantity" ></div>
+            <x-button label="Submit" dark icon="cursor-click" type="submit" class="button-submit"/>
         </form>
 
     </div>
+
+    <script>
+
+        var count = 0;
+        $('#howmany').val(count);
+
+        $('#plus').click( () => {
+            count++;
+            $('#howmany').val(count);
+            $('#boxquantity').append('<input name="boxid['+count+']" type="text" id="boxid['+count+']" placeholder="item('+(count)+')"/>');
+        })
+
+        $('#minus').click( () => {
+            if(count > 0){
+                count--;
+                $('#howmany').val(count);
+                $("#boxquantity input").last().remove();
+            }
+
+        })
+
+    </script>
+
 @endsection
