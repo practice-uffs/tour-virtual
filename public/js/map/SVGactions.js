@@ -1,8 +1,8 @@
 import {LoadSVG}from './loadSVG.js';
-import {atributos} from './data.js'
+//import {atributos} from './data.js'
 
 var PREFIX_IMG = "img/pictures/LS/Principal/Capa/"
-
+var httpRegex = new RegExp('https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)')
 
 //
 // CRIAR HOVER
@@ -39,7 +39,15 @@ function abrir(titulo, descricao,list_desc,id_360, img_capa){
   let ul = $("<ul>")
   let lista = $("#list_description");
   lista.empty();
-  $("#sidebar-img-capa").attr("src", PREFIX_IMG + img_capa )
+  console.log(httpRegex.test(img_capa))
+  if (httpRegex.test(img_capa)){
+      $("#sidebar-img-capa").attr("src", img_capa )
+  }
+  else{
+      $("#sidebar-img-capa").attr("src", PREFIX_IMG + img_capa )
+  }
+
+
 
 
 
@@ -55,20 +63,20 @@ function abrir(titulo, descricao,list_desc,id_360, img_capa){
 
 
   $("#side-bar").removeClass("hidden-side-bar");
-  
+
   $("#vista-panoramica").click(()=>{changeToPanorama(id_360)})
-  
-  
+
+
   $("#btn-adicionar-photo").click(openPopupConstrucao)
 
   //
   // Search Action
   // ============================
-  
+
   $("#search").val(titulo)
   $("#btn-close-search").css({"border-left":"1px dashed rgba(184, 184, 184, 0.2)", "width":"50px"});
   $(".search-bar-container").css({"width":"392px", "transition": "width 0.5s"})
- 
+
 }
 
 
@@ -87,7 +95,7 @@ function fechar(){
   $("#search").val("")
   $(".search-bar-container").css({"width":"342px", "transition": "width 0.5s"});
   $("#btn-close-search").css({"border-left":"0px", "width":"0"})
-  
+
 }
 
 
@@ -102,10 +110,10 @@ function changeToPanorama(id_360){
 // ====================================
 
 function setActions(parent, ID_element, ID_group, titulo, desc, list_desc,id_360, img_capa){
-  let grupoSNAP =  parent.select(ID_group);
+    let grupoSNAP =  parent.select(ID_group);
   let grupo =  $(ID_group);
 
-  if(grupo){ 
+  if(grupo){
     grupo.click(function(){
       abrir(titulo,desc,list_desc,id_360, img_capa)
   });
@@ -125,10 +133,10 @@ function setActions(parent, ID_element, ID_group, titulo, desc, list_desc,id_360
     })
 
   }
-  
-  
- 
-  
+
+
+
+
 }
 class BTN_360{
  constructor(atributos){
@@ -142,21 +150,21 @@ class BTN_360{
   move(dx,dy,xa,ya) {
     this.#updatePoint(xa,ya);
     this.btn.attr({transform: this.btn.data('origTransform') + (this.btn.data('origTransform') ? "T" : "t") + [dx, dy] });
-    
+
   }
-          
+
   start() {
     this.btn.data('origTransform', this.btn.transform().local );
     $(".map").addClass('_360');
-    
+
   }
   stop(dx,dy) {
     for(let i in this.atributos){
       let paper = this.parent.select(this.atributos[i].id)
       if(this.#Onpoint(paper)){
         changeToPanorama(this.atributos[i].id_360)
-       
-       
+
+
       }
     }
     this.btn.animate({ transform: 'r360' }, 220, mina.linear);
@@ -164,8 +172,8 @@ class BTN_360{
       transform:(this.btn.data('origTransform') ? "T" : "t") + [dx, dy]
     });
     $(".map").removeClass('_360');
-    
-    
+
+
   }
   #updatePoint(dx,dy){
     this.point.x = dx;

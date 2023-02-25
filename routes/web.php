@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\InformationController;
+use App\Http\Controllers\MapController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,15 +26,19 @@ if (!empty($proxy_schema)) {
    URL::forceScheme($proxy_schema);
 }
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [MapController::class, 'index']);
 
 
 Route::get('/panorama', function () {
     return view('panorama');
 })->name('panorama');
 
-Route::middleware(['check.admin', 'verified', 'auth:sanctum' ])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');;
+
+Route::get('/admin', function (){
+    return redirect()->route('information.index');
+});
+
+
+Route::prefix('admin')->group(function (){
+    Route::resource('/information', InformationController::class)->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+});
