@@ -1,3 +1,4 @@
+@include('navigation-dropdown')
 @extends('layouts.base')
 @section('content')
     <style>
@@ -45,7 +46,7 @@
             margin: 0 1em 1em 1em;
         }
         nav{
-            height: 2em;
+            height: 4em;
             margin-bottom: 1em;
         }
         .especial{

@@ -21,7 +21,7 @@
 </head>
     <body>
     <script>
-        var atributos = {!! json_encode($data->toArray(), JSON_HEX_TAG) !!};
+        var atributos = {!! json_encode($data, JSON_HEX_TAG) !!};
         console.log(atributos)
     </script>
     <div class="mapa">

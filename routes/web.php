@@ -33,8 +33,12 @@ Route::get('/panorama', function () {
     return view('panorama');
 })->name('panorama');
 
-Route::middleware(['check.admin', 'verified', 'auth:sanctum' ])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
 
-Route::resource('/information', InformationController::class);
+Route::get('/admin', function (){
+    return redirect()->route('information.index');
+});
+
+
+Route::prefix('admin')->group(function (){
+    Route::resource('/information', InformationController::class)->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+});
