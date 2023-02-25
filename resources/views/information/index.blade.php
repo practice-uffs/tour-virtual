@@ -2,36 +2,38 @@
 @extends('layouts.base')
 @section('content')
     <style>
-        body{
-            background-color: #1a202c;
-        }
-        table, th, td {
+
+        table, th{
             table-layout:fixed;
             text-align: center;
             padding: 10px;
             margin:auto;
         }
         tr:nth-child(even) {
-            background-color: #2a2a2a;
+            background-color: #eeeeee;
 
         }
         tr:nth-child(odd) {
-            background-color: #3a3d42;
+            background-color: #f6f6f6;
 
         }
         tr{
-            color: #f5ffe1;
+            color: #3b3b3b;
 
         }
         th{
-            border-right: #130009 1px solid;
-            background: #050513;
+
+            background: #212123;
             color: aliceblue;
         }
 
         td{
-            border-right: #130009 1px solid;
+            table-layout:fixed;
+            text-align: center;
+            padding: 10px;
+
             overflow:hidden;
+
         }
         table{
 
@@ -46,15 +48,15 @@
             margin: 0 1em 1em 1em;
         }
         nav{
-            height: 4em;
+            height: 2em;
             margin-bottom: 1em;
         }
         .especial{
-            background-color: #0f6674;
+            background-color: #2f2f2f;
+            border-right: #3d3d3d 1px solid;
+            border-bottom: #3d3d3d 1px solid;
         }
-        tr{
-            border-bottom: solid 1px black;
-        }
+
     </style>
     <nav>
 
@@ -69,7 +71,13 @@
             <th>DESCRICAO</th>
             <th>IMAGEM CAPA</th>
             <th>Itens</th>
-            <th colspan="2"><a href="{{route('information.create')}}"><x-button   label="Novo"  style="width: 100%;margin: 0; background-color: #2d3748; color:#9fcdff "/></a></th>
+            <th colspan="2">
+                <a href="{{route('information.create')}}">
+                    <button  style="width: 50%; height:35px; margin: 0; background-color: #3b3b3b; color:#d7d7d7; border-radius: 5px;">NOVO
+                    </button>
+                </a>
+            </th>
+
 
         </tr>
 

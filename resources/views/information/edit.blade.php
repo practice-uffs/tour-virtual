@@ -63,7 +63,7 @@
             </div>
 
 
-            <div id="boxquantity">
+            <div id="boxquantity" class="mb-4">
                 @foreach($details as $dt)
                         <x-input value="{{$dt->item ?? old('item')}}" name="item[{{$dt->id}}]" placeholder="ID" />
 
@@ -79,7 +79,7 @@
 
             </div>
 
-            <x-button label="Submit" dark icon="cursor-click" type="submit" class="button-submit"/>
+            <x-button label="Salvar" dark icon="cursor-click" type="submit" class="button-submit"/>
         </form>
     </div>
 

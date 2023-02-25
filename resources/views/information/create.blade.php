@@ -64,7 +64,7 @@
             </div>
 
             <div id="boxquantity" ></div>
-            <x-button label="Submit" dark icon="cursor-click" type="submit" class="button-submit"/>
+            <x-button label="Criar" dark icon="cursor-click" type="submit" class="button-submit"/>
         </form>
 
     </div>
