@@ -31,9 +31,16 @@ class InformationController extends Controller
      */
     public function index(Request $request)
     {
+        $filter = $request->input('filter');
+        if ($filter){
+            $data = Information::with('informationDetail')->where('campus', $request->input('filter'))->get();
+        }
+        else{
+            $data = Information::with('informationDetail')->get();
+        }
 
-        $data = Information::with('informationDetail')->get();
-        return view('information.index', ['data' => $data, 'request', $request->all()]);
+
+        return view('information.index', ['data' => $data, 'request', $request->all(), 'filter' => $filter],);
     }
 
     /**

@@ -1,4 +1,4 @@
-@include('navigation-dropdown')
+@include('navigation-dropdown ')
 @extends('layouts.base')
 @section('content')
     <style>
@@ -47,9 +47,33 @@
         li{
             margin: 0 1em 1em 1em;
         }
-        nav{
-            height: 2em;
+        .filtro{
+            text-align: center;
+            display: block;
+            width:30%;
+            height: 9em;
             margin-bottom: 1em;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+        .filtro select{
+            text-align: center;
+            border-radius: 0.5em;
+            width: 14em;
+            height: 3em;
+            margin-bottom: 0.5em;
+        }
+        .filtro select:focus{
+            border-color: #727272;
+            box-shadow: 0 0 1px 1px #727272;
+        }
+        .filtro button{
+            padding: 0.5em;
+            border: solid  1px black;
+            border-radius: 0.5em;
+            color: #d7d7d7;
+            background-color: #3d3d3d;
         }
         .especial{
             background-color: #2f2f2f;
@@ -58,9 +82,23 @@
         }
 
     </style>
-    <nav>
-
-    </nav>
+    <div class="filtro">
+        <form action="{{ route('information.index') }}" method="GET">
+            <br>
+            <label>
+                <select name="filter" id="filter">
+                    <option value="">Todos</option>
+                    <option value="CH">Chapecó</option>
+                    <option value="CL">Cerro Largo</option>
+                    <option value="ER">Erechim</option>
+                    <option value="LS">Laranjeiras do Sul</option>
+                    <option value="PF">Passo Fundo</option>
+                    <option value="RE">Realeza</option>
+                </select>
+            </label>
+            <button type="submit" >Filtrar</button>
+        </form>
+    </div>
     <table>
         <tr>
             <th>ID</th>
@@ -103,13 +141,19 @@
                     <form method="post" action="{{route('information.destroy', ['information' => $information->id])}}">
                         @method("DELETE")
                         @csrf
-
                         <x-button.circle negative icon="x" type="submit"/>
                     </form>
                 </td>
-
             </tr>
-
         @endforeach
     </table>
+    <script>
+        $(document).ready(function() {
+            const oldFilter = '{{ $filter}}';
+            console.log(oldFilter);
+            if(oldFilter !== '') {
+                $('#filter').val(oldFilter);
+            }
+        });
+    </script>
 @endsection

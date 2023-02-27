@@ -49,7 +49,15 @@
 
             <x-input value="{{$information->component ?? old('component')}}" label="ID" name="component" placeholder="ID" />
             <x-input value="{{$information->group ?? old('group')}}"  label="GRUPO" name="group" placeholder="Grupo" />
-            <x-input value="{{$information->campus ?? old('campus')}}" label="CAMPUS" name="campus" placeholder="Campus" />
+            <x-native-select
+                label="Campus"
+                :options="[
+                            ['name' => $information->campus ?? old('campus'),  'id' => $information->campus ?? old('campus')],
+                        ]"
+                option-label="name"
+                option-value="id"
+                wire:model="campus"
+            />
             <x-input value="{{$information->identifier_360 ?? old('identifier_360')}}" label="ID 360" name="identifier_360" placeholder="ID 360" />
             <x-input value="{{$information->title ?? old('title')}}" label="TITULO" name="title" placeholder="Titulo" />
             <x-input value="{{$information->cover_image ?? old('cover_image')}}" label="Imagem Capa" name="cover_image" placeholder="Endereço Imagem" />
