@@ -22,6 +22,8 @@
     <body>
     <script>
         var atributos = {!! json_encode($data, JSON_HEX_TAG) !!};
+        var campus = {!! json_encode($campus, JSON_HEX_TAG) !!};
+
         console.log(atributos)
     </script>
     <div class="mapa">
@@ -37,7 +39,7 @@
             </svg>
         </div>
         <div class="campus">
-            <h2>Laranjeiras do Sul</h2>
+            <h2>{{$titulo}}</h2>
         </div>
         <div class="controls-container">
             <div class="especial-controls">

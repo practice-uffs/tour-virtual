@@ -3,6 +3,7 @@ import {LoadSVG}from './loadSVG.js';
 
 var PREFIX_IMG = "img/pictures/LS/Principal/Capa/"
 var httpRegex = new RegExp('https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)')
+var DIR_MAP = '/img/svg/map/'
 
 //
 // CRIAR HOVER
@@ -207,7 +208,7 @@ btn_360.drag(
 
 
 
-new LoadSVG("./img/svg/main.svg",atributos,setActions);
+new LoadSVG(DIR_MAP + campus + "/main.svg" ,atributos,setActions);
 
 
 $("#btn-close-search").click(fechar);

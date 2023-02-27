@@ -10,13 +10,35 @@ use Illuminate\Support\Facades\DB;
 class MapController extends Controller
 {
     public function index(){
-        $data = $this->formatData();
-        return view('index', ['data' => $data]);
+        $data = $this->formatData(Information::all()->toArray());
+        return view('index', ['data' => $data, 'campus' => 'ls', 'titulo' => 'Laranjeiras do Sul']);
     }
 
-    private function formatData(): array
+    public function laranjeiras(){
+        $data = $this->formatData(Information::query()->where('campus', 'LS')->get()->toArray());
+        return view('index', ['data' => $data, 'campus' => 'ls', 'titulo' => 'Laranjeiras do Sul']);
+
+    }
+
+    public function chapeco(){
+        $data = $this->formatData(Information::query()->where('campus', 'CH')->get()->toArray());
+        return view('index', ['data' => $data, 'campus' => 'ch', 'titulo' => 'Chapecó']);
+    }
+
+    public function cerro_largo(){
+
+    }
+
+    public function erechim(){
+
+    }
+
+    public function realeza(){
+
+    }
+
+    private function formatData($dataInfo): array
     {
-        $dataInfo = Information::all()->toArray();
         $dataDetail = Detail::all()->toArray();
         foreach ($dataInfo as $key => $value ){
             $dataInfo[$key]['list_description'] = array();
