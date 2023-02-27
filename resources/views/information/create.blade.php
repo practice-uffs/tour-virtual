@@ -51,7 +51,20 @@
                 @csrf
             <x-input label="ID" name="component" placeholder="ID" />
             <x-input label="GRUPO" name="group" placeholder="Grupo" />
-            <x-input label="CAMPUS" name="campus" placeholder="Campus" />
+            <x-native-select
+                label="Campus"
+                :options="[
+                            ['name' => 'Cerro Largo',  'id' => 'CL'],
+                            ['name' => 'Chapecó', 'id' => 'CH'],
+                            ['name' => 'Erechim',   'id' => 'ER'],
+                            ['name' => 'Laranjeiras do Sul',    'id' => 'LS'],
+                            ['name' => 'Passo Fundo',    'id' => 'PF'],
+                            ['name' => 'Realeza',    'id' => 'RE'],
+                        ]"
+                option-label="name"
+                option-value="id"
+                wire:model="campus"
+            />
             <x-input label="ID 360" name="identifier_360" placeholder="ID 360" />
             <x-input label="TITULO" name="title" placeholder="Titulo" />
             <x-input label="Imagem Capa" name="cover_image" placeholder="Endereço Imagem" />
