@@ -27,7 +27,8 @@ if (!empty($proxy_schema)) {
 }
 
 Route::get('/', [MapController::class, 'index']);
-
+Route::get('/ls', [MapController::class, 'laranjeiras']);
+Route::get('/ch', [MapController::class, 'chapeco']);
 
 Route::get('/panorama', function () {
     return view('panorama');
