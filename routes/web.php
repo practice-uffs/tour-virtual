@@ -27,8 +27,13 @@ if (!empty($proxy_schema)) {
 }
 
 Route::get('/', [MapController::class, 'index']);
-Route::get('/ls', [MapController::class, 'laranjeiras']);
+Route::get('/cl', [MapController::class, 'cerro_largo']);
 Route::get('/ch', [MapController::class, 'chapeco']);
+Route::get('/er', [MapController::class, 'erechim']);
+Route::get('/ls', [MapController::class, 'laranjeiras']);
+Route::get('/pf', [MapController::class, 'passo_fundo']);
+Route::get('/re', [MapController::class, 'realeza']);
+
 
 Route::get('/panorama', function () {
     return view('panorama');

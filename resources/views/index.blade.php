@@ -26,6 +26,10 @@
 
         console.log(atributos)
     </script>
+
+    @if(isset($popup) && $popup)
+        @include('components.popup')
+    @endif
     <div class="mapa">
         <div class="map-svg">
             <svg id="svg" class="svg" viewBox="322.783 100.267 1526.7 1526.7" preserveAspectRatio="xMidYMid meet"  fill="none" xmlns="http://www.w3.org/2000/svg">

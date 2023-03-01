@@ -22,19 +22,28 @@ class MapController extends Controller
 
     public function chapeco(){
         $data = $this->formatData(Information::query()->where('campus', 'CH')->get()->toArray());
-        return view('index', ['data' => $data, 'campus' => 'ch', 'titulo' => 'Chapecó']);
+        return view('index', ['data' => $data, 'campus' => 'ch', 'titulo' => 'Chapecó', 'popup' => 'true']);
     }
 
     public function cerro_largo(){
+        $data = $this->formatData(Information::query()->where('campus', 'CL')->get()->toArray());
+        return view('index', ['data' => $data, 'campus' => 'cl', 'titulo' => 'Cerro Largo' , 'popup' => 'true']);
 
     }
 
     public function erechim(){
-
+        $data = $this->formatData(Information::query()->where('campus', 'ER')->get()->toArray());
+        return view('index', ['data' => $data, 'campus' => 'er', 'titulo' => 'Erechim', 'popup' => 'true']);
     }
 
     public function realeza(){
+        $data = $this->formatData(Information::query()->where('campus', 'RE')->get()->toArray());
+        return view('index', ['data' => $data, 'campus' => 're', 'titulo' => 'Realeza', 'popup' => 'true']);
+    }
 
+    public function passo_fundo(){
+        $data = $this->formatData(Information::query()->where('campus', 'PF')->get()->toArray());
+        return view('index', ['data' => $data, 'campus' => 'pf', 'titulo' => 'Passo Fundo', 'popup' => 'true']);
     }
 
     private function formatData($dataInfo): array
