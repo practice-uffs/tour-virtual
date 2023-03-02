@@ -161,9 +161,16 @@ class BTN_360{
   }
   stop(dx,dy) {
     for(let i in this.atributos){
-      let paper = this.parent.select(this.atributos[i].id)
-      if(this.#Onpoint(paper)){
-        changeToPanorama(this.atributos[i].id_360)
+        let atributo = true
+        let paper
+        try{
+            paper = this.parent.select(this.atributos[i].component)
+        }catch (DOMException ){
+            atributo = false;
+        }
+
+      if(this.#Onpoint(paper) && atributo){
+        changeToPanorama(this.atributos[i].identifier_360)
 
 
       }

@@ -37,7 +37,7 @@
         }
         table{
 
-            width:90%;
+            width:50%;
         }
 
         ul{
@@ -101,14 +101,8 @@
     </div>
     <table>
         <tr>
-            <th>ID</th>
-            <th>GROUP</th>
             <th>CAMPUS</th>
-            <th>ID-360</th>
             <th>TITULO</th>
-            <th>DESCRICAO</th>
-            <th>IMAGEM CAPA</th>
-            <th>Itens</th>
             <th colspan="2">
                 <a href="{{route('information.create')}}">
                     <button  style="width: 50%; height:35px; margin: 0; background-color: #3b3b3b; color:#d7d7d7; border-radius: 5px;">NOVO
@@ -121,20 +115,8 @@
 
         @foreach($data as $information)
             <tr>
-
-                <td>{{$information->component}}</td>
-                <td>{{$information->group}}</td>
                 <td>{{$information->campus}}</td>
-                <td>{{$information->identifier_360}}</td>
                 <td>{{$information->title}}</td>
-                <td>{{$information->description}}</td>
-                <td>{{$information->cover_image}}</td>
-                <td>
-                    @foreach($information->informationDetail as $key)
-                        {{$key->item}}
-                        <br>
-                    @endforeach
-                </td>
                 <td class="especial" ><a href="{{route('information.edit', ['information' => $information->id])}}"><x-button.circle primary icon="pencil" /></a></td>
                 <td class="especial">
 

@@ -33,10 +33,10 @@ class InformationController extends Controller
     {
         $filter = $request->input('filter');
         if ($filter){
-            $data = Information::with('informationDetail')->where('campus', $request->input('filter'))->get();
+            $data = Information::with('informationDetail')->where('campus', $request->input('filter'))->orderBy('campus')->orderBy('title')->get();
         }
         else{
-            $data = Information::with('informationDetail')->get();
+            $data = Information::with('informationDetail')->orderBy('campus')->orderBy('title')->get();
         }
 
 
