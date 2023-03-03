@@ -26,7 +26,9 @@ if (!empty($proxy_schema)) {
    URL::forceScheme($proxy_schema);
 }
 
-Route::get('/', [MapController::class, 'index']);
+Route::get('/', function () {
+    return view('landingpage');
+});
 Route::get('/cl', [MapController::class, 'cerro_largo']);
 Route::get('/ch', [MapController::class, 'chapeco']);
 Route::get('/er', [MapController::class, 'erechim']);
