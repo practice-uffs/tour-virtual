@@ -12,10 +12,10 @@
 	<!-- header -->
 	<div class="header">
 		<div class="container-large">
-			<div class="logo-header">
+			<a href="/" class="logo-header">
 				<img src="img/icon/tour-icon.svg" class="header-main-icon">
 				<h1 class="header-title">Tour Virtual UFFS</h1>
-			</div>
+			</a>
 			<a class="btn-header" href="/ferramenta">
 				<h2>Acessar o tour</h2>
 				<img src="img/icon/pin-map.svg">
@@ -26,6 +26,33 @@
 
 	<!-- slider component -->
 	<div class="app">
+
+		<!-- text content slider -->
+		<div class="infoList">
+			<div class="info__wrapper">
+				<a href="/ferramenta" class="info current--info">
+					<img src="img/icon/explore-solid-svgrepo-com.svg" class="icon-explore-slider">
+					<div class="box-text-slider">
+						<p class="text description">Explorar</p>
+						<h4 class="text campus-title">Campus Laranjeiras do Sul</h4>
+					</div>
+				</a>
+				<a href="/ferramenta" class="info next--info">
+					<img src="img/icon/explore-solid-svgrepo-com.svg" class="icon-explore-slider">
+					<div class="box-text-slider">
+						<p class="text description">Explorar</p>
+						<h4 class="text campus-title">Campus Chapecó</h4>
+					</div>
+				</a>
+				<a href="/ferramenta" class="info previous--info">
+					<img src="img/icon/explore-solid-svgrepo-com.svg" class="icon-explore-slider">
+					<div class="box-text-slider">
+						<p class="text description">Explorar</p>
+						<h4 class="text campus-title">Campus Realeza</h4>
+					</div>
+				</a>
+			</div>
+		</div>
 
 		<!-- card images slider -->
 		<div class="cardList">
@@ -62,33 +89,6 @@
 			</button>
 		</div>
 
-		<!-- text content slider -->
-		<div class="infoList">
-			<div class="info__wrapper">
-				<div class="info current--info">
-					<img src="img/icon/explore-solid-svgrepo-com.svg" class="icon-explore-slider">
-					<div class="box-text-slider">
-						<p class="text description">Explorar</p>
-						<h4 class="text campus-title">Campus Laranjeiras do Sul</h4>
-					</div>
-				</div>
-				<div class="info next--info">
-					<img src="img/icon/explore-solid-svgrepo-com.svg" class="icon-explore-slider">
-					<div class="box-text-slider">
-						<p class="text description">Explorar</p>
-						<h4 class="text campus-title">Campus Chapecó</h4>
-					</div>
-				</div>
-				<div class="info previous--info">
-					<img src="img/icon/explore-solid-svgrepo-com.svg" class="icon-explore-slider">
-					<div class="box-text-slider">
-						<p class="text description">Explorar</p>
-						<h4 class="text campus-title">Campus Realeza</h4>
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<!-- background slider -->
 		<div class="app__bg">
 			<div class="app__bg__image current--image">
@@ -101,6 +101,8 @@
 				<img src="img/slider/maxresdefault.jpg" alt="" />
 			</div>
 		</div>
+
+		<img src="img/icon/logoUFFS.png" class="logo-uffs-slide">
 	</div>
 
 	<!-- loader slider -->
@@ -130,85 +132,71 @@
 
 	<!-- content section 1-->
 	<div class="main-content">
+		<div class="detail-content-section-responsive"></div>
 		<img src="img/icon/detail-icon-practice.svg" class="detail-content-section">
 		<div class="container-small">
-			<img src="img/icon/title-main-content.svg">
+			<img src="img/icon/title-main-content.svg" class="tour-virtual-text">
+			
 			<div class="text-main-content">Conheça e navegue dentro dos campus da Universidade Federal da Fronteira Sul</div>
-			<div class="align-main-content">
-				<img src="img/icon/btn-mapas-detalhados.svg" class="item-content">
-				<img src="img/icon/btn-interatividade.svg" class="item-content">
-				<img src="img/icon/btn-visao-panoramica.svg" class="item-content">
-			</div>
 			<img src="img/icon/chapeco-map.svg" class="item-map-content">
+			<div class="align-main-content">
+				<img src="img/icon/btn-mapas-detalhados.svg" class="item-content" id="item-content-1">
+				<img src="img/icon/btn-interatividade.svg" class="item-content" id="item-content-2">
+				<img src="img/icon/btn-visao-panoramica.svg" class="item-content" id="item-content-3">
+			</div>
+			
 		</div>
 	</div>
 
 	<!-- content section 2 -->
 	<div class="secondary-content">
-		<img src="img/icon/erechim-map.svg" class="first-map">
-		<img src="img/icon/chapeco-map.svg" class="second-map">
+		
 		<div class="align-descriptions">
 			<div class="title-secondary-content"><p>Veja seu campus</p>por outra perspectiva</div>
 			<div class="description-secondary-content">Encontre a informação que você precisa ou publique seu próprio conteúdo e contribua com este projeto</div>
 		</div>
-
+		<img src="img/icon/erechim-map.svg" class="first-map">
+		<img src="img/icon/chapeco-map.svg" class="second-map">
 		<img src="img/icon/laranjeiras-map.svg" class="thirty-map">
+		
 	</div>
 
 
 
 	<div class="footer-bkgd">
 
-		<a onclick="scrollTopPage()" class="logo-header">
+		<a onclick="scrollTopPage()" class="logo-header" id="logo-footer">
 			<img src="img/icon/tour-icon.svg" class="header-main-icon">
 			<div class="container-logo-footer">
 				<h2 class="header-title">Tour Virtual UFFS</h2>
 				<div>voltar ao topo</div>
 			</div>
-			
 		</a>
+	
 		<div class="content-footer">
+		
 			<div class="align-content-footer">
 				<div class="top-content-footer">
-				
 					<a class="social-icon"><img src="img/icon/instagram-f-svgrepo-com.svg" class="header-main-icon"></a>
-					
-					
 					<a class="social-icon"><img src="img/icon/facebook-round-svgrepo-com.svg" class="header-main-icon"></a>
 					<a class="social-icon"><img src="img/icon/twitter-2-svgrepo-com.svg" class="header-main-icon"></a>
 					<a class="social-icon"><img src="img/icon/github-svgrepo-com.svg" class="header-main-icon"></a>
 					<a class="social-icon"><img src="img/icon/youtube-round-svgrepo-com.svg" class="header-main-icon"></a>
-					<a class="social-icon"><img src="img/icon/website-ui-web-svgrepo-com.svg" class="header-main-icon"></a>
-				
-				
-			
-					
-					
-			
-			
-					
-			
-			
-					
+					<a class="social-icon"><img src="img/icon/website-ui-web-svgrepo-com.svg" class="header-main-icon"></a>				
 				</div>
 				<div class="bottom-content-footer">
 					<div>DESENVOLVIDO POR<img src="img/icon/practice.svg" class="footer-icon"></div>
 				</div>
 			</div>
 		</div>
+		<div class="logo-uffs-footer"><img src="img/icon/logo_uffs_verde.png"></div>
 	</div>
 	
-
-
-
 
 	<!-- partial -->
 	<script src="{{ 'js/imagesloaded.pkgd.min.js' }}"></script>
 	<script src="{{ 'js/gsap.min.js' }}"></script>
 	<script  src="{{ 'js/slider.js' }}"></script>
-
-
-
 
 	<script>
 		// Get the button:
@@ -218,11 +206,11 @@
 		window.onscroll = function() {scrollFunction()};
 
 		function scrollFunction() {
-		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-			mybutton.style.height = "25%";
-		} else {
-			mybutton.style.height = "13.5%";
-		}
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				mybutton.style.height = "25%";
+			} else {
+				mybutton.style.height = "13.5%";
+			}
 		}
 
 		// When the user clicks on the button, scroll to the top of the document
@@ -231,10 +219,90 @@
 			document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 		}
 
-
-
-
 	</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<script>
+	$.fn.isInViewport = function() {
+		var elementTop = $(this).offset().top;
+		var elementBottom = elementTop + $(this).outerHeight() / 1.1;
+		var viewportTop = $(window).scrollTop();
+		var viewportHalf = viewportTop + $(window).height() / 1.1;
+		return elementBottom > viewportTop && elementTop < viewportHalf;
+	};
+
+	function delay(time) {
+		return new Promise(resolve => setTimeout(resolve, time));
+	}
+
+	$(window).on('load resize scroll', function() {
+		if ($('.logo-header').isInViewport()) {
+			delay(400).then(() => $('.logo-header').addClass("in-view-opacity-1s"));
+		}
+
+		if ($('.btn-header ').isInViewport()) {
+			delay(800).then(() => $('.btn-header').addClass("in-view-opacity-1s"));
+		}
+
+		if ($('.text-main-content').isInViewport()) {
+			$('.item-map-content').addClass("in-view-opacity-2s");
+		}
+
+		if ($('#item-content-1').isInViewport()) {
+			delay(500).then(() => $('#item-content-1').addClass("in-view-opacity-2s"));
+		}
+
+		if ($('#item-content-2').isInViewport()) {
+			delay(750).then(() => $('#item-content-2').addClass("in-view-opacity-2s"));
+		}
+
+		if ($('#item-content-3').isInViewport()) {
+			delay(1000).then(() => $('#item-content-3').addClass("in-view-opacity-2s"));
+		}
+
+
+		if ($('.detail-content-section-responsive').isInViewport()) {
+			delay(1000).then(() => $('.detail-content-section-responsive').addClass("in-view-opacity-1s"));
+		}
+
+		if ($('.description-secondary-content').isInViewport()) {
+			delay(500).then(() => $('.second-map').addClass("in-view-opacity-1s"));
+			delay(1000).then(() => $('.thirty-map').addClass("in-view-opacity-1s"));
+			delay(1500).then(() => $('.first-map').addClass("in-view-opacity-1s"));
+		}
+
+		if ($('#logo-footer').isInViewport()) {
+			delay(1000).then(() => $('.footer-icon').addClass("in-view-opacity-1s"));
+		}
+	});
+
+	// var logo_footer_transition = 0;
+	// while(1){
+	// 	if (logo_footer_transition) {
+	// 		delay(1500).then(() => $('.logo-footer').addClass("in-view-opacity-1s"));
+	// 	}else{
+	// 		delay(1500).then(() => $('.logo-footer').removeClass("in-view-opacity-1s"));
+	// 	}
+	// }
+
+	// var logo_footer_transition = 0;
+	// const interval = setInterval(function() {
+	// 	if (logo_footer_transition) {
+	// 		logo_footer_transition = 0;
+	// 		delay(1500).then(() => $('.logo-footer').removeClass("in-view-opacity-1s"));
+	// 	}else{
+	// 		logo_footer_transition = 1;
+	// 		delay(1500).then(() => $('.logo-footer').addClass("in-view-opacity-1s"));
+	// 	}
+	// }, 500);
+
+	// clearInterval(interval); 
+
+
+</script>
+
+
 
 </body>
 </html>
