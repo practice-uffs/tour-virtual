@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\InformationController;
+use App\Http\Controllers\MapController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,17 +29,24 @@ if (!empty($proxy_schema)) {
 Route::get('/', function () {
     return view('landingpage');
 });
-
-
-Route::get('/ferramenta', function () {
-    return view('index');
-});
+Route::get('/cl', [MapController::class, 'cerro_largo']);
+Route::get('/ch', [MapController::class, 'chapeco']);
+Route::get('/er', [MapController::class, 'erechim']);
+Route::get('/ls', [MapController::class, 'laranjeiras']);
+Route::get('/pf', [MapController::class, 'passo_fundo']);
+Route::get('/re', [MapController::class, 'realeza']);
 
 
 Route::get('/panorama', function () {
     return view('panorama');
 })->name('panorama');
 
-Route::middleware(['check.admin', 'verified', 'auth:sanctum' ])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');;
+
+Route::get('/admin', function (){
+    return redirect()->route('information.index');
+});
+
+
+Route::prefix('admin')->group(function (){
+    Route::resource('/information', InformationController::class)->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+});
