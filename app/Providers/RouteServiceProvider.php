@@ -18,8 +18,8 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
 
-     
-    public const HOME = 'tour-virtual/admin/information';
+
+    public const HOME = 'admin/information';
 
     /**
      * The controller namespace for the application.

@@ -28,7 +28,7 @@ if (!empty($proxy_schema)) {
 
 Route::get('/', function () {
     return view('landingpage');
-});
+})->name('home');
 Route::get('/cl', [MapController::class, 'cerro_largo'])->name('cl');
 Route::get('/ch', [MapController::class, 'chapeco'])->name('ch');
 Route::get('/er', [MapController::class, 'erechim'])->name('er');
@@ -44,7 +44,7 @@ Route::get('/panorama', function () {
 
 Route::get('/admin', function (){
     return redirect()->route('information.index');
-});
+})->name('admin');
 
 
 Route::prefix('admin')->group(function (){
