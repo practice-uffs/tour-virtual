@@ -28,13 +28,13 @@ if (!empty($proxy_schema)) {
 
 Route::get('/', function () {
     return view('landingpage');
-});
-Route::get('/cl', [MapController::class, 'cerro_largo']);
-Route::get('/ch', [MapController::class, 'chapeco']);
-Route::get('/er', [MapController::class, 'erechim']);
-Route::get('/ls', [MapController::class, 'laranjeiras']);
-Route::get('/pf', [MapController::class, 'passo_fundo']);
-Route::get('/re', [MapController::class, 'realeza']);
+})->name('home');
+Route::get('/cl', [MapController::class, 'cerro_largo'])->name('cl');
+Route::get('/ch', [MapController::class, 'chapeco'])->name('ch');
+Route::get('/er', [MapController::class, 'erechim'])->name('er');
+Route::get('/ls', [MapController::class, 'laranjeiras'])->name('ls');
+Route::get('/pf', [MapController::class, 'passo_fundo'])->name('pf');
+Route::get('/re', [MapController::class, 'realeza'])->name('re');
 
 
 Route::get('/panorama', function () {
@@ -44,7 +44,7 @@ Route::get('/panorama', function () {
 
 Route::get('/admin', function (){
     return redirect()->route('information.index');
-});
+})->name('admin');
 
 
 Route::prefix('admin')->group(function (){

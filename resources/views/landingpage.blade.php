@@ -16,7 +16,7 @@
 				<img src="img/icon/tour-icon.svg" class="header-main-icon">
 				<h1 class="header-title">Tour Virtual UFFS</h1>
 			</a>
-			<a class="btn-header" href="/ferramenta">
+			<a class="btn-header" href="{{route('ls')}}">
 				<h2>Acessar o tour</h2>
 				<img src="img/icon/pin-map.svg">
 			</a>
@@ -136,7 +136,7 @@
 		<img src="img/icon/detail-icon-practice.svg" class="detail-content-section">
 		<div class="container-small">
 			<img src="img/icon/title-main-content.svg" class="tour-virtual-text">
-			
+
 			<div class="text-main-content">Conheça e navegue dentro dos campus da Universidade Federal da Fronteira Sul</div>
 			<img src="img/icon/chapeco-map.svg" class="item-map-content">
 			<div class="align-main-content">
@@ -144,13 +144,13 @@
 				<img src="img/icon/btn-interatividade.svg" class="item-content" id="item-content-2">
 				<img src="img/icon/btn-visao-panoramica.svg" class="item-content" id="item-content-3">
 			</div>
-			
+
 		</div>
 	</div>
 
 	<!-- content section 2 -->
 	<div class="secondary-content">
-		
+
 		<div class="align-descriptions">
 			<div class="title-secondary-content"><p>Veja seu campus</p>por outra perspectiva</div>
 			<div class="description-secondary-content">Encontre a informação que você precisa ou publique seu próprio conteúdo e contribua com este projeto</div>
@@ -158,7 +158,7 @@
 		<img src="img/icon/erechim-map.svg" class="first-map">
 		<img src="img/icon/chapeco-map.svg" class="second-map">
 		<img src="img/icon/laranjeiras-map.svg" class="thirty-map">
-		
+
 	</div>
 
 
@@ -172,9 +172,9 @@
 				<div>voltar ao topo</div>
 			</div>
 		</a>
-	
+
 		<div class="content-footer">
-		
+
 			<div class="align-content-footer">
 				<div class="top-content-footer">
 					<a class="social-icon"><img src="img/icon/instagram-f-svgrepo-com.svg" class="header-main-icon"></a>
@@ -182,7 +182,7 @@
 					<a class="social-icon"><img src="img/icon/twitter-2-svgrepo-com.svg" class="header-main-icon"></a>
 					<a class="social-icon"><img src="img/icon/github-svgrepo-com.svg" class="header-main-icon"></a>
 					<a class="social-icon"><img src="img/icon/youtube-round-svgrepo-com.svg" class="header-main-icon"></a>
-					<a class="social-icon"><img src="img/icon/website-ui-web-svgrepo-com.svg" class="header-main-icon"></a>				
+					<a class="social-icon"><img src="img/icon/website-ui-web-svgrepo-com.svg" class="header-main-icon"></a>
 				</div>
 				<div class="bottom-content-footer">
 					<div>DESENVOLVIDO POR<img src="img/icon/practice.svg" class="footer-icon"></div>
@@ -191,7 +191,7 @@
 		</div>
 		<div class="logo-uffs-footer"><img src="img/icon/logo_uffs_verde.png"></div>
 	</div>
-	
+
 
 	<!-- partial -->
 	<script src="{{ 'js/imagesloaded.pkgd.min.js' }}"></script>
@@ -297,7 +297,7 @@
 	// 	}
 	// }, 500);
 
-	// clearInterval(interval); 
+	// clearInterval(interval);
 
 
 </script>

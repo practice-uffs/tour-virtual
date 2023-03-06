@@ -9,6 +9,7 @@ use Laravel\Fortify\Fortify;
 use App\Actions\Jetstream\DeleteUser;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Jetstream\Jetstream;
+use App\Http\Responses\LoginResponse;
 
 class JetstreamServiceProvider extends ServiceProvider
 {
@@ -33,10 +34,15 @@ class JetstreamServiceProvider extends ServiceProvider
         $this->configureLogin();
 
         Jetstream::deleteUsersUsing(DeleteUser::class);
+
+        $this->app->singleton(
+            \Laravel\Fortify\Contracts\LoginResponse::class,
+            LoginResponse::class
+        );
     }
 
     /**
-     * 
+     *
      *
      * @return void
      */
@@ -52,7 +58,7 @@ class JetstreamServiceProvider extends ServiceProvider
                 'user' => $request->input('email'),
                 'password' => $request->input('password'),
             ];
-    
+
             $auth = new \CCUFFS\Auth\AuthIdUFFS();
             $user_data = $auth->login($credentials);
 

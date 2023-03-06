@@ -14,6 +14,8 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'id' => env('APP_ID', -1),
+    'eula_url' => env('APP_EULA_URL', 'https://practice.uffs.edu.br'),
 
     /*
     |--------------------------------------------------------------------------
@@ -41,6 +43,20 @@ return [
 
     'debug' => (bool) env('APP_DEBUG', false),
 
+
+
+     /*
+    |--------------------------------------------------------------------------
+    | API CC
+    |--------------------------------------------------------------------------
+    |
+    | Configurações relacionadas à API-CC.
+    |
+    */
+
+    'apicc_url' => env('APICC_URL', 'http://localhost'),
+    'apicc_token' => env('APICC_TOKEN', ''),
+
     /*
     |--------------------------------------------------------------------------
     | Application URL
@@ -52,9 +68,12 @@ return [
     |
     */
 
+
+
     'url' => env('APP_URL', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL', null),
+    'mix_url' => env('APP_URL', 'http://localhost'),
 
     /*
     |--------------------------------------------------------------------------
