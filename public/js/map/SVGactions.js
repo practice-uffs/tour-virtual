@@ -102,7 +102,7 @@ function fechar(){
 
 function changeToPanorama(id_360){
   sessionStorage.setItem("id_360", id_360);
-  window.location.href = "panorama";
+  window.location.href += "/panorama";
 }
 
 

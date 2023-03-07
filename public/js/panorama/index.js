@@ -18,6 +18,27 @@
 
 
 
+function fix_caminhos(){
+    for(let i of $($('#sceneList').children()[0]).children()){
+        let string = $(i).data().id;
+        if(string.toLowerCase().includes('caminho')){
+            $(i).remove()
+            $('#titleBar').children().text(personalSceneName  )
+        }
+
+    }
+
+    for (let i of $('.link-hotspot-tooltip')){
+        let element = $(i);
+        if((element.text()).toLowerCase().includes('caminho')){
+            element.remove()
+        }
+    }
+
+}
+
+
+
 (function() {
   var Marzipano = window.Marzipano;
   var bowser = window.bowser;
@@ -75,7 +96,7 @@
 
   // Create scenes.
   var scenes = data.scenes.map(function(data) {
-    var urlPrefix = "img/panorama/tiles";
+    var urlPrefix = "../img/panorama/tiles";
     var source = Marzipano.ImageUrlSource.fromString(
       urlPrefix + "/" + data.id + "/{z}/{f}/{y}/{x}.jpg",
       { cubeMapPreviewUrl: urlPrefix + "/" + data.id + "/preview.jpg" });
@@ -195,7 +216,12 @@
   }
 
   function updateSceneName(scene) {
-    sceneNameElement.innerHTML = sanitize(scene.data.name);
+      if(scene.data.name.toLowerCase().includes('caminho') || !scene.data.name){
+          sceneNameElement.innerHTML = personalSceneName;
+      }
+      else{
+          sceneNameElement.innerHTML = sanitize(scene.data.name);
+      }
   }
 
   function updateSceneList(scene) {
@@ -256,7 +282,7 @@
 
     // Create image element.
     var icon = document.createElement('img');
-    icon.src = 'img/panorama/img/link.png';
+    icon.src = '../img/panorama/img/link.png';
     icon.classList.add('link-hotspot-icon');
 
     // Set rotation transform.
@@ -398,10 +424,14 @@
       if(setScene == scenes[i].data.id){
         switchScene(scenes[i]);
       }
-      
+
     }
+    sessionStorage.removeItem('id_360');
+    switchScene(scenes[0]);
   }
-  
-  
+
+
 
 })();
+
+fix_caminhos();

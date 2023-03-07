@@ -1,4 +1,4 @@
-<html>
+<html lang="pt-br">
 <head>
 <title>UFFS Laranjeiras do Sul Panorama</title>
 <meta charset="utf-8">
@@ -18,11 +18,11 @@
     <a href="javascript:void(0)" class="scene" data-id="17-bloco-a-dentro">
       <li class="text">Bloco A Dentro</li>
     </a>
-  
+
     <a href="javascript:void(0)" class="scene" data-id="18-bloco-a-fora">
       <li class="text">Bloco A Fora</li>
     </a>
-    
+
       <a href="javascript:void(0)" class="scene" data-id="0-bloco-dos-professores-fora">
         <li class="text">Bloco dos Professores Fora</li>
       </a>
@@ -34,11 +34,11 @@
       <a href="javascript:void(0)" class="scene" data-id="8-laboratrio-1">
         <li class="text">Laboratório 1</li>
       </a>
-    
+
       <a href="javascript:void(0)" class="scene" data-id="9-laboratrio-2">
         <li class="text">Laboratório 2</li>
       </a>
-    
+
       <a href="javascript:void(0)" class="scene" data-id="10-laboratrio-3">
         <li class="text">Laboratório 3</li>
       </a>
@@ -46,57 +46,57 @@
       <a href="javascript:void(0)" class="scene" data-id="12-ru-dentro">
         <li class="text">RU Dentro</li>
       </a>
-    
+
       <a href="javascript:void(0)" class="scene" data-id="13-ru-fora">
         <li class="text">RU Fora</li>
       </a>
-    
+
       <a href="javascript:void(0)" class="scene" data-id="11-pomar">
         <li class="text">Pomar</li>
       </a>
-    
+
       <a href="javascript:void(0)" class="scene" data-id="1-campo-de-futebol">
         <li class="text">Campo de Futebol</li>
       </a>
-    
+
       <a href="javascript:void(0)" class="scene" data-id="2-campo-de-vlei">
         <li class="text">Campo de Vôlei</li>
       </a>
-    
+
       <a href="javascript:void(0)" class="scene" data-id="3-cantina">
         <li class="text">Cantina</li>
       </a>
-    
+
       <a href="javascript:void(0)" class="scene" data-id="4-cvt">
         <li class="text">CVT</li>
       </a>
-    
+
       <a href="javascript:void(0)" class="scene" data-id="5-estao-de-tratamento">
         <li class="text">Estação de Tratamento</li>
       </a>
-    
+
       <a href="javascript:void(0)" class="scene" data-id="6-estufas">
         <li class="text">Estufas</li>
       </a>
-    
+
       <a href="javascript:void(0)" class="scene" data-id="7-galpo-de-mquinas-agrcolas">
         <li class="text">Galpão de Máquinas Agrícolas</li>
       </a>
-    
-     
-    
+
+
+
       <a href="javascript:void(0)" class="scene" data-id="14-slackline">
         <li class="text">Slackline</li>
       </a>
-    
+
       <a href="javascript:void(0)" class="scene" data-id="15-almoxarifado">
         <li class="text">Almoxarifado</li>
       </a>
-    
+
       <a href="javascript:void(0)" class="scene" data-id="16-rea-experimental-da-aquicultura">
         <li class="text">Área Experimental da Aquicultura</li>
       </a>
-    
+
   </ul>
 </div>
 
@@ -132,7 +132,7 @@
   <img class="icon" src="{{'img/panorama/img/down.png'}}">
 </a>
 <a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
-  
+
 </a>
 <a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
   <img class="icon" src="{{'img/panorama/img/right.png'}}">

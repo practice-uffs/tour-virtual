@@ -16,7 +16,7 @@
 				<img src="img/icon/tour-icon.svg" class="header-main-icon">
 				<h1 class="header-title">Tour Virtual UFFS</h1>
 			</a>
-			<a class="btn-header" href="{{route('ls')}}">
+			<a class="btn-header" href="{{route('map.ls')}}">
 				<h2>Acessar o tour</h2>
 				<img src="img/icon/pin-map.svg">
 			</a>
