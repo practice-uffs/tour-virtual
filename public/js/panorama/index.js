@@ -15,6 +15,14 @@
  */
 'use strict';
 
+function isValidScene(scenes, setScene){
+    for(let i in scenes){
+        if(setScene == scenes[i].data.id){
+            return true;
+        }
+    }
+    return false;
+}
 
 
 
@@ -216,7 +224,8 @@ function fix_caminhos(){
   }
 
   function updateSceneName(scene) {
-      if(scene.data.name.toLowerCase().includes('caminho') || !scene.data.name){
+      if(scene.data.name.toLowerCase().includes('caminho')){
+          console.log(scene.data.name)
           sceneNameElement.innerHTML = personalSceneName;
       }
       else{
@@ -416,21 +425,17 @@ function fix_caminhos(){
   }
 
   // Display the initial scene.
-  let setScene = sessionStorage.getItem("id_360");
-  if(!setScene)
+
+    fix_caminhos();
+    let setScene = sessionStorage.getItem("id_360");
+  if(!setScene || !isValidScene(scenes, setScene))
     switchScene(scenes[0]);
   else{
     for(let i in scenes){
       if(setScene == scenes[i].data.id){
-        switchScene(scenes[i]);
+          switchScene(scenes[i]);
       }
-
     }
-    switchScene(scenes[0]);
   }
 
-
-
 })();
-
-fix_caminhos();
