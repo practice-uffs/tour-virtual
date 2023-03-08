@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token()}}">
     <script>window.Laravel = {csrfToken:'{{ csrf_token() }}'}</script>
-    <title>Tour</title>
+    <title>Tour Virtual</title>
 
     <meta content="" name="description">
     <meta content="" name="keywords">

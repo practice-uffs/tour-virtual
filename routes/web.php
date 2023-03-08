@@ -29,17 +29,46 @@ if (!empty($proxy_schema)) {
 Route::get('/', function () {
     return view('landingpage');
 })->name('home');
-Route::get('/cl', [MapController::class, 'cerro_largo'])->name('cl');
-Route::get('/ch', [MapController::class, 'chapeco'])->name('ch');
-Route::get('/er', [MapController::class, 'erechim'])->name('er');
-Route::get('/ls', [MapController::class, 'laranjeiras'])->name('ls');
-Route::get('/pf', [MapController::class, 'passo_fundo'])->name('pf');
-Route::get('/re', [MapController::class, 'realeza'])->name('re');
 
+Route::prefix('/cl')->group(function (){
+    Route::get('/', [MapController::class, 'cerro_largo'])->name('map.cl');
+    Route::get('/panorama', function (){
+        return redirect()->route('home');
+    })->name('panorama.cl');
+});
+Route::prefix('/ch')->group(function (){
+    Route::get('/', [MapController::class, 'chapeco'])->name('map.ch');
+    Route::get('/panorama', function (){
+        return redirect()->route('home');
+    })->name('panorama.ch');
+});
+Route::prefix('/er')->group(function (){
+    Route::get('/', [MapController::class, 'erechim'])->name('map.er');
+    Route::get('/panorama', function (){
+        return redirect()->route('home');
+    })->name('panorama.er');
+});
 
-Route::get('/panorama', function () {
-    return view('panorama');
-})->name('panorama');
+Route::prefix('/ls')->group(function (){
+    Route::get('/', [MapController::class, 'laranjeiras'])->name('map.ls');
+    Route::get('/panorama', function (){
+        return view('panorama.ls');
+    })->name('panorama.ls');
+});
+
+Route::prefix('/pf')->group(function (){
+    Route::get('/', [MapController::class, 'passo_fundo'])->name('map.pf');
+    Route::get('/panorama', function (){
+        return redirect()->route('home');
+    })->name('panorama.pf');
+});
+
+Route::prefix('/re')->group(function (){
+    Route::get('/', [MapController::class, 'realeza'])->name('map.re');
+    Route::get('/panorama', function (){
+        return redirect()->route('home');
+    })->name('panorama.re');
+});
 
 
 Route::get('/admin', function (){
