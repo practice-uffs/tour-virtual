@@ -126,7 +126,11 @@ function setActions(parent, ID_element, ID_group, titulo, desc, list_desc,id_360
 
   // Hover
   if(grupoSNAP){
-    grupoSNAP.mouseover((evt)=>{
+      if(!grupoSNAP.hasClass('map')){
+          grupoSNAP.addClass('map')
+      }
+
+      grupoSNAP.mouseover((evt)=>{
       criar(evt,titulo);
     });
     grupoSNAP.mouseout(()=>{

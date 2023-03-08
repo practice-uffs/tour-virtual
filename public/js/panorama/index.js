@@ -426,7 +426,6 @@ function fix_caminhos(){
       }
 
     }
-    sessionStorage.removeItem('id_360');
     switchScene(scenes[0]);
   }
 
