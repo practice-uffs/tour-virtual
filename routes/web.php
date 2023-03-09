@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FigmaMapController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\MapController;
 use Illuminate\Support\Facades\Route;
@@ -71,11 +72,15 @@ Route::prefix('/re')->group(function (){
 });
 
 
-Route::get('/admin', function (){
-    return redirect()->route('information.index');
-})->name('admin');
 
 
 Route::prefix('admin')->group(function (){
+    Route::get("/", function (){
+        return view('admin.index');
+    })->name('admin.index')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::resource('/information', InformationController::class)->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+    Route::get('/mapa', [FigmaMapController::class, 'index'])->name('figma_map.index')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+    Route::get('/mapa/{figma_map}/edit', [FigmaMapController::class, 'edit'])->name('figma_map.edit')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
 });
+
+

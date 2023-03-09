@@ -1,8 +1,10 @@
+@include('navigation-dropdown')
 @extends('layouts.base')
+
 @section('content')
     <style>
         .inputs{
-            margin-top: 20vh;
+            margin-top: 10vh;
             width: 30vw;
             margin-left: auto;
             margin-right: auto;
@@ -44,7 +46,7 @@
         }
 
     </style>
-
+    <a class="btn btn-secondary m-2" href="{{route('information.index')}}">Voltar</a>
     <div class="inputs">
         <h1>Informação - Criar</h1>
         <form action="{{route('information.store')}}" method="post">
