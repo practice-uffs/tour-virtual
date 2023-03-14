@@ -51,6 +51,11 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
         ],
+        'mapa' => [
+            'driver' => 'local',
+            'root' => public_path('/img/svg/map/'),
+            'visibility' => 'public',
+        ],
 
     ],
 

@@ -15,4 +15,23 @@ class Information extends Model
     public function informationDetail(){
         return $this->hasMany(Detail::class, 'id_information', 'id');
     }
+
+    public static function siglaCampus($campus){
+        switch (strtolower($campus)){
+            case 'cl':
+                return 'Cerro Largo';
+            case 'ch':
+                return 'Chapecó';
+            case 'er':
+                return 'Erechim';
+            case 'pf':
+                return 'Passo Fundo';
+            case 'ls':
+                return 'Laranjeiras do Sul';
+            case 're':
+                return 'Realeza';
+            default:
+                return $campus;
+        }
+    }
 }
