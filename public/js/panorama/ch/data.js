@@ -434,7 +434,7 @@ var APP_DATA = {
     },
     {
       "id": "9-sada-ru",
-      "name": "Saída RU",
+      "name": "Restaurante Universitário (saída)",
       "levels": [
         {
           "tileSize": 256,
@@ -516,7 +516,7 @@ var APP_DATA = {
     },
     {
       "id": "11-bloco-dos-professores",
-      "name": "Bloco dos professores",
+      "name": "Bloco Docente",
       "levels": [
         {
           "tileSize": 256,
@@ -560,7 +560,7 @@ var APP_DATA = {
     },
     {
       "id": "12-bloco-a-e-b",
-      "name": "Bloco A e B",
+      "name": "Acesso Bloco A e B",
       "levels": [
         {
           "tileSize": 256,
@@ -648,7 +648,7 @@ var APP_DATA = {
     },
     {
       "id": "14-sada-bloco-dos-professores",
-      "name": "Saída bloco dos professores",
+      "name": "Bloco Docente (saída)",
       "levels": [
         {
           "tileSize": 256,
@@ -692,7 +692,7 @@ var APP_DATA = {
     },
     {
       "id": "15-sada-bloco-b",
-      "name": "Saída bloco B",
+      "name": "Bloco B (saida)",
       "levels": [
         {
           "tileSize": 256,
@@ -736,7 +736,7 @@ var APP_DATA = {
     },
     {
       "id": "16-laboratrio-12",
-      "name": "Laboratório 1/2",
+      "name": "Acesso Laboratório 1 e 2",
       "levels": [
         {
           "tileSize": 256,
@@ -780,7 +780,7 @@ var APP_DATA = {
     },
     {
       "id": "17-laoratrio-34",
-      "name": "Laoratório 3/4",
+      "name": "Acesso Laboratório 3 e 4",
       "levels": [
         {
           "tileSize": 256,
@@ -830,7 +830,7 @@ var APP_DATA = {
     },
     {
       "id": "18-laboratrio-04",
-      "name": "Laboratório 04",
+      "name": "Laboratório 4",
       "levels": [
         {
           "tileSize": 256,
@@ -868,7 +868,7 @@ var APP_DATA = {
     },
     {
       "id": "19-laboratrio-03",
-      "name": "Laboratório 03",
+      "name": "Laboratório 3",
       "levels": [
         {
           "tileSize": 256,
@@ -906,7 +906,7 @@ var APP_DATA = {
     },
     {
       "id": "20-ru",
-      "name": "RU",
+      "name": "Restaurante Universitário",
       "levels": [
         {
           "tileSize": 256,

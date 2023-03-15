@@ -49,7 +49,7 @@
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="15-sada-bloco-b">
-        <li class="text">Bloco B (saida)</li>
+        <li class="text">Bloco B (saída)</li>
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="21-bloco-c">
@@ -68,7 +68,7 @@
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="14-sada-bloco-dos-professores">
-        <li class="text">Bloco Docente (saida)</li>
+        <li class="text">Bloco Docente (saída)</li>
     </a>
 
 
@@ -96,7 +96,7 @@
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="9-sada-ru">
-        <li class="text">Restaurante Univ. (saida)</li>
+        <li class="text">Restaurante Univ. (saída)</li>
     </a>
 
 
