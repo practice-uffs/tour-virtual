@@ -7,7 +7,7 @@
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="1-rea-experimental-da-aquicultura">
-        <li class="text">Área Experimental da Aquicultura</li>
+        <li class="text">Área Experimental</li>
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="2-caminho-3">
@@ -19,15 +19,15 @@
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="4-docente-fora">
-        <li class="text">Docente Fora</li>
+        <li class="text">Bloco Docente (externo)</li>
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="5-docente-dentro">
-        <li class="text">Docente Dentro</li>
+        <li class="text">Bloco Docente (interno)</li>
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="6-docente-centro">
-        <li class="text">Docente Centro</li>
+        <li class="text">Bloco Docente (interno)</li>
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="7-caminho-4">
@@ -59,15 +59,15 @@
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="14-a-fora">
-        <li class="text">A Fora</li>
+        <li class="text">Bloco A (externo)</li>
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="15-a-dentro">
-        <li class="text">A Dentro</li>
+        <li class="text">Bloco A (interno)</li>
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="16-a-centro">
-        <li class="text">A Centro</li>
+        <li class="text">Bloco A (interno)</li>
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="17-slackline">
@@ -91,7 +91,7 @@
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="22-laboratrio-3-dentro">
-        <li class="text">Laboratório 3 Dentro</li>
+        <li class="text">Laboratório 3 (interno)</li>
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="23-laboratrio-2">
@@ -99,7 +99,7 @@
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="24-laboratrio-2-dentro">
-        <li class="text">Laboratório 2 Dentro</li>
+        <li class="text">Laboratório 2 (interno)</li>
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="25-laboratrio-1">
@@ -107,7 +107,7 @@
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="26-laboratrio-1-dentro">
-        <li class="text">Laboratório 1 Dentro</li>
+        <li class="text">Laboratório 1 (interno)</li>
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="27-caminho-11">
@@ -115,7 +115,7 @@
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="28-rea-de-tratamento-de-esgoto">
-        <li class="text">Área de Tratamento de Esgoto</li>
+        <li class="text">Tratamento de Esgoto</li>
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="29-almoxarifado">
@@ -123,7 +123,7 @@
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="30-galpo-de-mquinas-agrcolas">
-        <li class="text">Galpão de Máquinas Agrícolas</li>
+        <li class="text">Galpão de Máquinas</li>
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="31-estufas">
@@ -131,11 +131,11 @@
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="32-ru-fora">
-        <li class="text">RU Fora</li>
+        <li class="text">Restaurante Universitário (externo)</li>
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="33-ru-dentro">
-        <li class="text">RU Dentro</li>
+        <li class="text">Restaurante Universitário (interno)</li>
     </a>
 
     <a href="javascript:void(0)" class="scene" data-id="34-caminho-12">
@@ -148,7 +148,8 @@
 
 @endsection
 @section('data_panorama')
-    <script src="{{'../js/panorama/data.js'}}"></script>
+    <script>var prefix_DIR = 'ls'</script>
+    <script src="{{'../js/panorama/ls/data.js'}}"></script>
 @endsection
 <script>
     const personalSceneName = "Laranjeiras do Sul";
