@@ -1,9 +1,23 @@
 import {LoadSVG}from './loadSVG.js';
-//import {atributos} from './data.js'
 
-var PREFIX_IMG = "img/pictures/LS/Principal/Capa/"
-var httpRegex = new RegExp('https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)')
-var DIR_MAP = './img/svg/map/'
+
+
+// Get file hash from Google Drive
+function max_string_array(string){
+    let result = string.split('/');
+    let hash = ""
+    for(let i of result){
+        if (i.length > hash.length){
+            hash = i;
+        }
+    }
+    return hash;
+}
+
+const PREFIX_IMG = "img/pictures/LS/Principal/Capa/"
+const httpRegex = new RegExp('https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)')
+const driveRegex = new RegExp('[d-dD-D][r-rR-R][i-iI-I][v-vV-V][e-eE-E][.][g-gG-G][o-oO-O][o-oO-O][g-gG-G][l-lL-L][e-eE-E]');
+const DIR_MAP = './img/svg/map/'
 
 //
 // CRIAR HOVER
@@ -40,17 +54,19 @@ function abrir(titulo, descricao,list_desc,id_360, img_capa){
   let ul = $("<ul>")
   let lista = $("#list_description");
   lista.empty();
-  console.log(httpRegex.test(img_capa))
   if (httpRegex.test(img_capa)){
-      $("#sidebar-img-capa").attr("src", img_capa )
+      if(driveRegex.test(img_capa)){
+          let hash = max_string_array(img_capa);
+          $("#sidebar-img-capa").attr({"src": `https://drive.google.com/uc?id=${hash}`})
+      }
+      else{
+          $("#sidebar-img-capa").attr("src", img_capa )
+      }
+
   }
   else{
       $("#sidebar-img-capa").attr("src", PREFIX_IMG + img_capa )
   }
-
-
-
-
 
   for(let i in list_desc){
     let li = $("<li>")
