@@ -40,7 +40,7 @@ Route::prefix('/cl')->group(function (){
 Route::prefix('/ch')->group(function (){
     Route::get('/', [MapController::class, 'chapeco'])->name('map.ch');
     Route::get('/panorama', function (){
-        return redirect()->route('home');
+        return view('panorama.ch');
     })->name('panorama.ch');
 });
 Route::prefix('/er')->group(function (){
