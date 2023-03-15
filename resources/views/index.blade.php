@@ -23,8 +23,6 @@
     <script>
         var atributos = {!! json_encode($data, JSON_HEX_TAG) !!};
         var campus = {!! json_encode($campus, JSON_HEX_TAG) !!};
-
-        console.log(atributos)
     </script>
 
     @if(isset($popup) && $popup)
