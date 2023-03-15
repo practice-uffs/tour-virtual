@@ -1,4 +1,4 @@
-@include('navigation-dropdown ')
+@include('navigation-dropdown')
 @extends('layouts.base')
 @section('content')
     <style>
@@ -82,6 +82,7 @@
         }
 
     </style>
+    <a class="btn btn-secondary m-2" href="{{route('admin.index')}}">Voltar</a>
     <div class="filtro">
         <form action="{{ route('information.index') }}" method="GET">
             <br>
