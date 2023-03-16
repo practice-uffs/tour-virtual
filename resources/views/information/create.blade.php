@@ -51,26 +51,54 @@
         <h1>Informação - Criar</h1>
         <form action="{{route('information.store')}}" method="post">
                 @csrf
-            <x-input label="ID" name="component" placeholder="ID" />
-            <x-input label="GRUPO" name="group" placeholder="Grupo" />
-            <x-native-select
-                label="Campus"
-                :options="[
-                            ['name' => 'Cerro Largo',  'id' => 'CL'],
-                            ['name' => 'Chapecó', 'id' => 'CH'],
-                            ['name' => 'Erechim',   'id' => 'ER'],
-                            ['name' => 'Laranjeiras do Sul',    'id' => 'LS'],
-                            ['name' => 'Passo Fundo',    'id' => 'PF'],
-                            ['name' => 'Realeza',    'id' => 'RE'],
-                        ]"
-                option-label="name"
-                option-value="id"
-                wire:model="campus"
-            />
-            <x-input label="ID 360" name="identifier_360" placeholder="ID 360" />
-            <x-input label="TITULO" name="title" placeholder="Titulo" />
-            <x-input label="Imagem Capa" name="cover_image" placeholder="Endereço Imagem" />
-            <x-textarea label="Descrição" name="description" placeholder=" Descrição" />
+            <div class="form-floating mb-3 mt-5">
+                <input value="{{old('component') ?? ''}}" name="component" class="form-control form-control-sm" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">ID</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input class="form-control form-control-sm" value="{{ old('group') ?? ''}}"  name="group" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">GROUP</label>
+            </div>
+
+
+
+
+            <!-- Select -->
+
+
+
+            <select class="form-select mb-3" name="campus">
+                <option selected value="">{{old('campus') ?? "Selecione o campus"}}</option>
+                <option value="CL">Cerro Largo</option>
+                <option value="CH">Chapecó</option>
+                <option value="ER">Erechim</option>
+                <option value="LS">Laranjeiras do Sul</option>
+                <option value="PF">Passo Fundo</option>
+                <option value="RE">Realeza</option>
+            </select>
+
+
+
+            <div class="form-floating mb-3">
+                <input class="form-control form-control-sm" value="{{old('identifier_360') ?? ''}}" name="identifier_360" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">ID 360</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input class="form-control form-control-sm"  value="{{old('title') ?? ''}}" name="title" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Titulo</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input class="form-control form-control-sm" id="floatingInput" value="{{ old('cover_image') ?? ''}}" name="cover_image" placeholder="name@example.com">
+                <label for="floatingInput">Imagem Capa</label>
+            </div>
+
+            <div class="form-floating">
+                <textarea name="description" class="form-control form-control-sm"   placeholder="Leave a comment here" id="floatingTextarea">{{old('description') ?? ''}}</textarea>
+                <label for="floatingTextarea">Descrição</label>
+            </div>
             <label class="mt-5 block text-sm font-medium text-gray-700 dark:text-gray-400 text-center">Itens Descrição</label>
             <div style="display: flex; justify-content: center">
                 <span id="plus"> +</span>
@@ -79,7 +107,7 @@
             </div>
 
             <div id="boxquantity" ></div>
-            <x-button label="Criar" dark icon="cursor-click" type="submit" class="button-submit"/>
+            <button type="submit" class="btn btn-dark button-submit"><i class="bi bi-lightning"></i> Criar</button>
         </form>
 
     </div>
@@ -92,7 +120,7 @@
         $('#plus').click( () => {
             count++;
             $('#howmany').val(count);
-            $('#boxquantity').append('<input name="boxid['+count+']" type="text" id="boxid['+count+']" placeholder="item('+(count)+')"/>');
+            $('#boxquantity').append('<input class="form-control mb-2" name="boxid['+count+']" type="text" id="boxid['+count+']" placeholder="item('+(count)+')"/>');
         })
 
         $('#minus').click( () => {

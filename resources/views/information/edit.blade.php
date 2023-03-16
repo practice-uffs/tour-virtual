@@ -49,21 +49,49 @@
             @csrf
             @method('PUT')
 
-            <x-input value="{{$information->component ?? old('component')}}" label="ID" name="component" placeholder="ID" />
-            <x-input value="{{$information->group ?? old('group')}}"  label="GRUPO" name="group" placeholder="Grupo" />
-            <x-native-select
-                label="Campus"
-                :options="[
-                            ['name' => $information->campus ?? old('campus'),  'id' => $information->campus ?? old('campus')],
-                        ]"
-                option-label="name"
-                option-value="id"
-                wire:model="campus"
-            />
-            <x-input value="{{$information->identifier_360 ?? old('identifier_360')}}" label="ID 360" name="identifier_360" placeholder="ID 360" />
-            <x-input value="{{$information->title ?? old('title')}}" label="TITULO" name="title" placeholder="Titulo" />
-            <x-input value="{{$information->cover_image ?? old('cover_image')}}" label="Imagem Capa" name="cover_image" placeholder="Endereço Imagem" />
-            <x-textarea label="Descrição" name="description" placeholder=" Descrição">{{$information->description ?? old('description')}} </x-textarea>
+            <div class="form-floating mb-3 mt-5">
+                <input value="{{$information->component ?? old('component')}}" name="component" class="form-control form-control-sm" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">ID</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input class="form-control form-control-sm" value="{{$information->group ?? old('group')}}"  name="group" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">GROUP</label>
+            </div>
+
+
+
+
+            <!-- Select -->
+
+
+
+            <select class="form-select mb-3" name="campus">
+                <option selected>{{$information->campus ?? old('campus')}}</option>
+            </select>
+
+
+
+            <div class="form-floating mb-3">
+                <input class="form-control form-control-sm" value="{{$information->identifier_360 ?? old('identifier_360')}}" name="identifier_360" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">ID 360</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input class="form-control form-control-sm"  value="{{$information->title ?? old('title')}}" name="title" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Titulo</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input class="form-control form-control-sm" id="floatingInput" value="{{$information->cover_image ?? old('cover_image')}}" name="cover_image" placeholder="name@example.com">
+                <label for="floatingInput">Imagem Capa</label>
+            </div>
+
+            <div class="form-floating">
+                <textarea name="description" class="form-control form-control-sm"   placeholder="Leave a comment here" id="floatingTextarea">{{$information->description ?? old('description')}}</textarea>
+                <label for="floatingTextarea">Descrição</label>
+            </div>
+
             <label class="mt-5 block text-sm font-medium text-gray-700 dark:text-gray-400 text-center">Itens Descrição</label>
 
             <div style="display: flex; justify-content: center">
@@ -89,7 +117,7 @@
 
             </div>
 
-            <x-button label="Salvar" dark icon="cursor-click" type="submit" class="button-submit"/>
+            <button type="submit" class="btn btn-dark button-submit"><i class="bi bi-pencil-square"></i> Salvar</button>
         </form>
     </div>
 
@@ -104,7 +132,7 @@
         $('#plus').click( () => {
             count++;
             $('#howmany').val(count);
-            $('#boxtoappend').append('<input name="addbox['+count+']" type="text" id="addbox['+count+']" placeholder="item('+(count)+')" class="mb-2 placeholder-secondary-400 dark:bg-secondary-800 dark:text-secondary-400 dark:placeholder-secondary-500 border border-secondary-300 focus:ring-primary-500 focus:border-primary-500 dark:border-secondary-600 form-input block w-full sm:text-sm rounded-md transition ease-in-out duration-100 focus:outline-none shadow-sm"/>');
+            $('#boxtoappend').append('<input name="addbox['+count+']"  id="addbox['+count+']" placeholder="item('+(count)+')" class="form-control mb-2"/>');
             /*
             if(!$('#boxtoremove input').length)
                 $('#boxtoappend').append('<input name="addbox['+count+']" type="text" id="addbox['+count+']" placeholder="item('+(count)+')"/>');
