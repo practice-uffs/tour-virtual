@@ -11,6 +11,9 @@
 
     <meta content="" name="description">
     <meta content="" name="keywords">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="{{'/img/icon/uffsvirtual-icon.png'}}">
