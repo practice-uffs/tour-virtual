@@ -11,6 +11,8 @@
         "php": "^7.3|^8.0",
         "ccuffs/auth-iduffs": "^1.1",
         "doctrine/dbal": "^3.6",
+        "erusev/parsedown": "^1.7",
+        "erusev/parsedown-extra": "^0.8.1",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -19,6 +21,7 @@
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
+        "league/html-to-markdown": "^5.1",
         "livewire/livewire": "^2.11",
         "wireui/wireui": "^1.17"
     },

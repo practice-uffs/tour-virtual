@@ -88,7 +88,15 @@
             </div>
 
             <div class="form-floating">
-                <textarea name="description" class="form-control form-control-sm"   placeholder="Leave a comment here" id="floatingTextarea">{{$information->description ?? old('description')}}</textarea>
+                <script>
+                    function auto_grow(element) {
+                        element.style.height = "5px";
+                        element.style.height = (element.scrollHeight)+"px";
+                    }
+                </script>
+
+
+                <textarea oninput="auto_grow(this)" onclick="auto_grow(this)" style="resize: none; overflow: hidden" name="description" class="form-control form-control-sm"   placeholder="Leave a comment here" id="floatingTextarea">{{$information->description ?? old('description')}}</textarea>
                 <label for="floatingTextarea">Descrição</label>
             </div>
 
@@ -123,6 +131,21 @@
 
 
     <script>
+        $("#floatingTextarea").on("keypress",function(e) {
+            var key = e.keyCode;
+
+            if (key === 13) {
+                document.getElementById("tfloatingTextarea").value =document.getElementById("floatingTextarea").value + "\n";
+                return false;
+            }
+            else {
+                return true;
+            }
+        });
+    </script>
+
+
+    <script>
 
         var count = {{  Illuminate\Support\Js::from($details) }};
         count = count.length;
@@ -133,14 +156,7 @@
             count++;
             $('#howmany').val(count);
             $('#boxtoappend').append('<input name="addbox['+count+']"  id="addbox['+count+']" placeholder="item('+(count)+')" class="form-control mb-2"/>');
-            /*
-            if(!$('#boxtoremove input').length)
-                $('#boxtoappend').append('<input name="addbox['+count+']" type="text" id="addbox['+count+']" placeholder="item('+(count)+')"/>');
-            else{
-                let box = $('#boxtoremove input').last().clone().prop('readonly', false);
-                $('#boxquantity').append(box);
-                $('#boxtoremove input').last().remove()
-            }*/
+
         })
 
         $('#minus').click( () => {
