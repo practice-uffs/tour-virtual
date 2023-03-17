@@ -50,7 +50,7 @@ function abrir(titulo, descricao,list_desc,id_360, img_capa){
 
 
   $("#titulo-sidebar").text(titulo);
-  $("#descricao-sidebar").text(descricao);
+  $("#descricao-sidebar").html(descricao);
   let ul = $("<ul>")
   let lista = $("#list_description");
   lista.empty();
@@ -71,7 +71,7 @@ function abrir(titulo, descricao,list_desc,id_360, img_capa){
   for(let i in list_desc){
     let li = $("<li>")
     let a = $("<a>")
-    li.text(list_desc[i])
+    li.html(list_desc[i])
     a.append(li)
     ul.append(a)
   }

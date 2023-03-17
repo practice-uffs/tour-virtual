@@ -96,7 +96,13 @@
             </div>
 
             <div class="form-floating">
-                <textarea name="description" class="form-control form-control-sm"   placeholder="Leave a comment here" id="floatingTextarea">{{old('description') ?? ''}}</textarea>
+                <script>
+                    function auto_grow(element) {
+                        element.style.height = "5px";
+                        element.style.height = (element.scrollHeight)+"px";
+                    }
+                </script>
+                <textarea oninput="auto_grow(this)" onclick="auto_grow(this)" style="resize: none; overflow: hidden" name="description" class="form-control form-control-sm"   placeholder="Leave a comment here" id="floatingTextarea">{{old('description') ?? ''}}</textarea>
                 <label for="floatingTextarea">Descrição</label>
             </div>
             <label class="mt-5 block text-sm font-medium text-gray-700 dark:text-gray-400 text-center">Itens Descrição</label>
@@ -111,6 +117,21 @@
         </form>
 
     </div>
+
+    <script>
+        $("#floatingTextarea").on("keypress",function(e) {
+            var key = e.keyCode;
+
+            if (key === 13) {
+                document.getElementById("tfloatingTextarea").value =document.getElementById("floatingTextarea").value + "\n";
+                return false;
+            }
+            else {
+                return true;
+            }
+        });
+    </script>
+
 
     <script>
 

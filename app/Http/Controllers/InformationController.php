@@ -6,7 +6,8 @@ use App\Models\Detail;
 use App\Models\Information;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-
+use Parsedown;
+use League\HTMLToMarkdown\HtmlConverter;
 class InformationController extends Controller
 {
     protected static $rules = [
@@ -62,13 +63,16 @@ class InformationController extends Controller
     public function store(Request $request)
     {
 
+        $md2html = new Parsedown();
+        $input = $request->all();
+        $input['description'] = $md2html->text( $input['description']);
         $request->validate(InformationController::$rules, InformationController::$feedback);
-        $item = Information::create($request->all());
+        $item = Information::create($input);
         $item_id = $item->id;
         if(isset($item_id) && isset($request->all()['boxid']))
-            foreach ($request->all()['boxid'] as $i){
-                echo $item_id;
-                Detail::insert(['id_information' => $item_id, 'item' => $i ]);
+            foreach ($request->all()['boxid'] as $detail){
+                $detail = $md2html->text($detail);
+                Detail::insert(['id_information' => $item_id, 'item' => $detail ]);
             }
 
         return redirect()->route('information.index');
@@ -94,8 +98,16 @@ class InformationController extends Controller
     public function edit(Information $information)
     {
 
+        $htmlConverter = new HtmlConverter(); // Html to Markdown
+        $information['description'] = $htmlConverter->convert($information['description']);
+
         $data =  Detail::where('id_information', $information->getAttribute('id'));
-        return view('information.edit', ['information' => $information, 'details' => $data->get()]);
+        $data = $data->get();
+        foreach ($data as $k => $v){
+            $data[$k]['item'] = $htmlConverter->convert($v['item']);
+        }
+
+        return view('information.edit', ['information' => $information, 'details' => $data]);
     }
 
     /**
@@ -107,11 +119,18 @@ class InformationController extends Controller
      */
     public function update(Request $request, Information $information)
     {
+
+        $md2html = new Parsedown();
+
         $request->validate(InformationController::$rules, InformationController::$feedback);
-        $information->update($request->all());
+        $input = $request->all();
+        $input['description'] = $md2html->text($input['description']);
+
+        $information->update($input);
 
         if(isset($request->all()['item'])){
             foreach ($request->all()['item'] as $key => $value){
+                $value = $md2html->text($value);
                 Detail::find($key)->update(['item' => $value]);
             }
         }
@@ -124,6 +143,7 @@ class InformationController extends Controller
         if(isset($request->all()['addbox'])){
             foreach ($request->all()['addbox'] as $key => $value){
                 if($value != "")
+                    $value = $md2html->text($value);
                     Detail::insert(['item' => $value, 'id_information' => $information->id]);
             }
         }
