@@ -8,14 +8,13 @@
   margin-right: 0;
   box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.514);
   transition: margin-right 0.5s;
-
+  z-index: 200;
 }
+
 .ocultar{
   margin-right: -16em;
   transition: margin-right 0.5s;
 }
-
-
 
 .legenda h2{
   color: var(--blue-1);
@@ -24,12 +23,9 @@
   text-align: center;
 }
 
-
 .legenda img{
   max-width: 16em;
   margin-left: 2em;
   margin-top: 3em;
   text-align: center;
 }
-
-

@@ -62,12 +62,13 @@
 
 
 #tooltip {
-  padding: 5px;
-  background-color: rgb(255, 153, 0);
-  border: 2px double rgb(255, 153, 0);
-  border-radius: 30px;
+  padding: 10px 20px;
+  background-color: #d9e9e3;
+  border-radius: 10px;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(255, 255, 255);
-  text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;
+  font-weight: 600;
+  color: #567569;
+  -webkit-box-shadow: 0px 0px 4px 4px rgb(0 0 0 / 20%);
+  -moz-box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 4px 4px rgb(0 0 0 / 20%);
 }
