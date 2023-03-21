@@ -1,4 +1,3 @@
-
 .popup-container{
     position: fixed;
     right: 0;
@@ -11,8 +10,6 @@
     align-items: center;
     font-family:Roboto;
     color:#999;
-
-
 }
 
 .popup-cabecalho{
@@ -25,9 +22,7 @@
     height: 100%;
     width: 8%;
     float: right;
-    fill: #E43;
-    
-
+    fill: #4b695d;
 }
 
 .popup-close:hover{
@@ -53,7 +48,7 @@
 .popup-content h1{
     font-weight:100;
     font-size:27pt;
-    color:#E43;
+    color:#4b695d;
 }
 
 .popup-content p{

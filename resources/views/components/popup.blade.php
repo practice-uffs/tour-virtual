@@ -7,9 +7,6 @@
         width: 100%;
         height: 100%;
         background-color: #000;
-        filter: alpha(opacity=70);
-        -moz-opacity: 0.7;
-        opacity: 0.7;
         z-index: 100;
         display: none;
     }
@@ -20,6 +17,7 @@
 
     .popup {
         width: 100%;
+        height: 100%;
         margin: 0 auto;
         display: none;
         position: fixed;
@@ -34,9 +32,11 @@
         background: #f3f3f3;
         position: relative;
         z-index: 103;
-        padding: 15px 35px;
+        padding: 35px 35px;
         border-radius: 5px;
-        box-shadow: 0 2px 5px #000;
+        -webkit-box-shadow: 0px 0px 4px 4px rgb(0 0 0 / 20%);
+        -moz-box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.2);
+        box-shadow: 0px 0px 4px 4px rgb(0 0 0 / 20%);
     }
 
     .cnt223 p {
@@ -48,8 +48,9 @@
     }
 
     .cnt223 p a {
-        color: #d91900;
+        color: #4b695d;
         font-weight: bold;
+        opacity: 1;
     }
 
     .cnt223 .x {
@@ -87,14 +88,13 @@
 </script>
 <div class='popup'>
     <div class='cnt223'>
-        <h1>Importante</h1>
+        <h2>Em desenvolvimento...</h2>
         <p>
-            Nós estamos trabalhando nisso. <br> Pode ser que algumas informações ou funcionalidades ainda não estejam
-            disponiveis.
+            Pode ser que algumas informações ou funcionalidades ainda não estejam disponiveis.
             <br>
             <br>
 
-            <a style="box-shadow: #ff1824 2px 1px 4px" href='' class='close'>Entendo</a>
+            <a href='' class='close'>Continuar</a>
         </p>
     </div>
 </div>
