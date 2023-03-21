@@ -238,7 +238,7 @@ function selectDraggable(event) {
     });
       
     pannable.disable();
-    // rotatable.enable().update().startDrag(event);
+    rotatable.enable().update().startDrag(event);
     pivotAnimation.play(0);
     
   } else {

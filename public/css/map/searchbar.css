@@ -1,15 +1,25 @@
 .search-bar-container{
     position: fixed;
     display: block;
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-left: 0.5em;
+    margin-top: 0.5em;
     background-color: rgb(255, 255, 255);
-    width: 340px;
+    width: 342px;
     height: 48px;
+    
     border: 1px solid rgba(184, 184, 184, 0.444);
     box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.093);
     border-radius: 0.5em;
+        
 }
+
+
+.pesquisa{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+}
+
 
 .search-bar{
     width: 100%;
@@ -19,17 +29,22 @@
 }
 
 #search {
-    width: 80%;
+
+    width: 216px;
+    height: 50%;
     padding: 0px;
     font-size: 14px;
     border: 0px;
     background-color: rgb(255, 255, 255);
     border-right: 1px solid #7171713c;
+
+    
   }
 
 #search:focus{
     outline: none;
 }
+  
 
 #menu {
     display: block;
@@ -37,52 +52,47 @@
     width: 100%;
     padding: 0;
     margin: 0;
+
 }
 
 #menu li a {
     font-size: 14px;
-    font-weight: 600;
-    background-color: rgb(255 253 253 / 76%);
+    background-color: rgb(255, 253, 253);
+    
     padding-bottom: 12px;
     padding-top: 12px;
+
     text-decoration: none;
     text-align: center;
-    color: #567569;
-    display: block; 
-}
+    color: black;
+    display: block;
+    
 
-#menu li:last-of-type{
-    border-radius: 0px 0px 10px 10px;
 }
 
 #menu li a:hover {
-    background-color: #85baa5d4;
-    color: #2f3e38;
-    cursor: pointer;
+background-color: rgb(2, 150, 27);
+color: aliceblue;
+cursor: pointer;
 }
 
 .resultado{
-    -webkit-box-shadow: 0px 0px 4px 4px rgb(0 0 0 / 20%);
-    -moz-box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.2);
-    box-shadow: 0px 0px 4px 4px rgb(0 0 0 / 20%);
+    
+    box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.514);
+    
+   
 }
 
 .icons-search{
     fill: #717171;
     stroke:#717171;
-    width: 20%; 
+    width: 54px; 
+    height:48px; 
     display: flex; 
     align-items: center; justify-content: center;
     cursor: pointer;
 
-    margin-top: 14px;
-    margin-bottom: 14px;
-    height: 22px;
-
 }
-
-
 .icons-search svg:hover{
-    stroke: #85baa54f;
-
+    stroke: rgb(1, 151, 21);
 }

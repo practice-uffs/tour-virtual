@@ -100,8 +100,8 @@ body.multiple-scenes.mobile #titleBar {
   height: 100%;
   line-height: 30px;
   padding: 5px;
-  background-color: rgb(0 0 0 / 60%);
-    color: #e2e0e0;
+  background-color: rgb(58,68,84);
+  background-color: rgba(58,68,84,0.8);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -174,8 +174,8 @@ body.fullscreen-enabled #fullscreenToggle {
   width: 40px;
   height: 40px;
   padding: 5px;
-  background-color: rgb(0 0 0 / 60%);
-  color: #e2e0e0;
+  background-color: rgb(103,115,131);
+  background-color: rgba(103,115,131,0.8);
 }
 
 .mobile #autorotateToggle {
@@ -228,8 +228,7 @@ body.fullscreen-enabled.mobile #autorotateToggle {
   width: 40px;
   height: 40px;
   padding: 5px;
-  background-color: #5b8574;
-    color: #e2e0e0;
+  background-color: rgba(106, 116, 129, 0.384);
 }
 
 .mobile #sceneListToggle {
@@ -251,7 +250,6 @@ body.fullscreen-enabled.mobile #autorotateToggle {
   right: 5px;
   width: 30px;
   height: 30px;
-  padding: 5px;
 }
 
 
@@ -260,18 +258,16 @@ body.fullscreen-enabled.mobile #autorotateToggle {
   display: block;
   position: absolute;
   padding: 5px;
-  background-color: rgb(0 0 0 / 60%);
-    color: #e2e0e0;
+  background-color: rgba(58,68,84,0.8);
 }
 
 #btn-voltar:hover{
-  background-color: #5b8574;
+  background-color: rgb(29, 34, 43);
 }
 
 #btn-voltar img{
   width: 30px;
   height: 30px;
-  padding: 5px;
 }
 
 .mobile #sceneListToggle .icon {
@@ -315,11 +311,8 @@ body.fullscreen-enabled.mobile #autorotateToggle {
 
 #sceneList .scenes {
   width: 100%;
-  background-color: rgb(0 0 0 / 60%);
-  color: #e2e0e0;
-  -webkit-box-shadow: 0px 0px 4px 4px rgb(0 0 0 / 20%);
-  -moz-box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.2);
-  box-shadow: 0px 0px 4px 4px rgb(0 0 0 / 20%);
+  background-color: rgb(58,68,84);
+  background-color: rgba(58,68,84,0.8);
 }
 
 .mobile #sceneList {
@@ -365,11 +358,13 @@ body.fullscreen-enabled.mobile #autorotateToggle {
 }
 
 .no-touch #sceneList .scene:hover {
-  background-color: #5b8574;
+  background-color: rgb(103,115,131);
+  background-color: rgba(103,115,131,0.8);
 }
 
 #sceneList .scene.current {
-  background-color: #5b8574;
+  background-color: rgb(103,115,131);
+  background-color: rgba(103,115,131,0.8);
 }
 
 /* Hide scene list when only a single scene exists */

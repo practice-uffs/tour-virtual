@@ -57,15 +57,15 @@ function abrir(titulo, descricao,list_desc,id_360, img_capa){
   if (httpRegex.test(img_capa)){
       if(driveRegex.test(img_capa)){
           let hash = max_string_array(img_capa);
-          $("#vista-panoramica").attr({"style": `background-image: url('https://drive.google.com/uc?id=${hash}')`})
+          $("#sidebar-img-capa").attr({"src": `https://drive.google.com/uc?id=${hash}`})
       }
       else{
-          $("#vista-panoramica").attr("style", `background-image: url('${img_capa}')` )
+          $("#sidebar-img-capa").attr("src", img_capa )
       }
 
   }
   else{
-      $("#vista-panoramica").attr("style", `background-image: url('${PREFIX_IMG + img_capa }')`)
+      $("#sidebar-img-capa").attr("src", PREFIX_IMG + img_capa )
   }
 
   for(let i in list_desc){
@@ -82,7 +82,6 @@ function abrir(titulo, descricao,list_desc,id_360, img_capa){
   $("#side-bar").removeClass("hidden-side-bar");
 
   $("#vista-panoramica").click(()=>{changeToPanorama(id_360)})
-  $("#vista-panoramica2").click(()=>{changeToPanorama(id_360)})
 
 
   $("#btn-adicionar-photo").click(openPopupConstrucao)
@@ -92,8 +91,8 @@ function abrir(titulo, descricao,list_desc,id_360, img_capa){
   // ============================
 
   $("#search").val(titulo)
-  $("#btn-close-search").css({"width":"60px", "transition": "width 0.5s", "border-left": "1px solid #7171713c"});
-  // $(".search-bar-container").css({"width":"392px", "transition": "width 0.5s"})
+  $("#btn-close-search").css({"border-left":"1px dashed rgba(184, 184, 184, 0.2)", "width":"50px"});
+  $(".search-bar-container").css({"width":"392px", "transition": "width 0.5s"})
 
 }
 
@@ -111,7 +110,8 @@ function fechar(){
   // ============================
   //Search Action
   $("#search").val("")
-  $("#btn-close-search").css({"border-left":"0px", "width":"0", "transition": "all 1s ease 0s"})
+  $(".search-bar-container").css({"width":"342px", "transition": "width 0.5s"});
+  $("#btn-close-search").css({"border-left":"0px", "width":"0"})
 
 }
 

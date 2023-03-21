@@ -195,7 +195,7 @@ button { border: none; background: none; cursor: pointer; } button:focus { outli
 
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 920px) {
 
 
     .secondary-content{
@@ -383,7 +383,7 @@ button { border: none; background: none; cursor: pointer; } button:focus { outli
 }
 
 
-@media only screen and (max-width: 820px) {
+@media only screen and (max-width: 620px) {
     .first-map, .second-map, .thirty-map{
         width: 50vw;
         max-height: 50vw;
