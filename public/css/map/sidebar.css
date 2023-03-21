@@ -18,10 +18,12 @@
 }
 
 .container-content-side-bar .content-side-bar{
-    height: 100%;
+    height: auto;
     background-color: #ffffff;
     width: 100%;
     text-align: start;
+    padding: 10px 35px;
+    margin: 10px 0px;
 }
 
 .side-bar-campus{
@@ -88,13 +90,8 @@
 
 .container-side-bar .container-content-side-bar{
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 48vh;
     border: 1px solid #3333;
-    padding: 5px 35px;
-    overflow: scroll;
     color: #4b695d;
     font-size: 16px; 
 }

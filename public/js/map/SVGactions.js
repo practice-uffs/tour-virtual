@@ -57,15 +57,15 @@ function abrir(titulo, descricao,list_desc,id_360, img_capa){
   if (httpRegex.test(img_capa)){
       if(driveRegex.test(img_capa)){
           let hash = max_string_array(img_capa);
-          $("#sidebar-img-capa").attr({"src": `https://drive.google.com/uc?id=${hash}`})
+          $("#vista-panoramica").attr({"style": `background-image: url('https://drive.google.com/uc?id=${hash}')`})
       }
       else{
-          $("#sidebar-img-capa").attr("src", img_capa )
+          $("#vista-panoramica").attr("style", `background-image: url('${img_capa}')` )
       }
 
   }
   else{
-      $("#sidebar-img-capa").attr("src", PREFIX_IMG + img_capa )
+      $("#vista-panoramica").attr("style", `background-image: url('${PREFIX_IMG + img_capa }')`)
   }
 
   for(let i in list_desc){

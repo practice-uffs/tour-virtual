@@ -43,8 +43,8 @@
                 <circle id="pivot" class="pivot" cx="0" cy="0" r="6" />
             </svg>
         </div>
-        <div class="campus" id="step4" onclick="$('.campus-popup').show();">
-            <div>
+        <div class="campus" id="step4">
+            <div onclick="$('.campus-popup').show();">
                 <img src="/img/icon/forward-item-svgrepo-com.svg"  width="30px" height="30px" style="stroke: #567569; margin-right: 15px;">
 
                 <h2>{{$titulo}}</h2>
@@ -108,7 +108,7 @@
         </div>
         <div class="container-side-bar  hidden-side-bar"id="side-bar">
             <div style="width: 100%; height: 30vh; background-color: black" >
-                <div class="img custom-hover-sidebar-img" id="vista-panoramica" style="background-image: url('img/pictures/LS/Principal/Capa/bloco_A.jpg');">
+                <div class="img custom-hover-sidebar-img" id="vista-panoramica">
                 {{-- <img  id="sidebar-img-capa" src="{{'img/pictures/LS/Principal/Capa/almoxarifado.jpg'}}" alt=""> --}}
                     <img class="eye-btn-sidebar" src="img/icon/eye-svgrepo-com.svg">
                 </div>
@@ -150,6 +150,9 @@
 
         <div class="search-bar-container" id="step1">
             <div class="search-bar">
+                <a class="icons-search" href="{{ route('home') }}" >
+                    <img src="/img/icon/left-chevron-svgrepo-com.svg" style="width: 25px; height: 25px;">
+                </a>
                 <input type="text" id="search" placeholder="Procurar..." title="Type in a category">
                 <div class="icons-search startTour" >
                     <img src="/img/icon/book-1-svgrepo-com.svg" style="width: 25px; height: 25px;">
@@ -219,12 +222,12 @@
     <div class='campus-popup'>
         <div class='campus-selector-popup'>
             <h2>Selecione um Campus</h2>
-            <div class="campus-item"><a href="{{ route('map.cl') }}"><img class="eye-btn" src="img/icon/eye-svgrepo-com.svg">Cerro Largo</a></div>
-            <div class="campus-item"><a href="{{ route('map.ch') }}"><img class="eye-btn" src="img/icon/eye-svgrepo-com.svg">Chapecó</a></div>
-            <div class="campus-item"><a href="{{ route('map.er') }}"><img class="eye-btn" src="img/icon/eye-svgrepo-com.svg">Erechim</a></div>
-            <div class="campus-item"><a href="{{ route('map.ls') }}"><img class="eye-btn" src="img/icon/eye-svgrepo-com.svg">Laranjeiras do Sul</a></div>
-            <div class="campus-item"><a href="{{ route('map.pf') }}"><img class="eye-btn" src="img/icon/eye-svgrepo-com.svg">Passo Fundo</a></div>
-            <div class="campus-item"><a href="{{ route('map.re') }}"><img class="eye-btn" src="img/icon/eye-svgrepo-com.svg">Realeza</a></div>
+            <div class="campus-item"><a href="{{ route('map.cl') }}"><img class="eye-btn" src="img/icon/eye-svgrepo-com_green.svg">Cerro Largo</a></div>
+            <div class="campus-item"><a href="{{ route('map.ch') }}"><img class="eye-btn" src="img/icon/eye-svgrepo-com_green.svg">Chapecó</a></div>
+            <div class="campus-item"><a href="{{ route('map.er') }}"><img class="eye-btn" src="img/icon/eye-svgrepo-com_green.svg">Erechim</a></div>
+            <div class="campus-item"><a href="{{ route('map.ls') }}"><img class="eye-btn" src="img/icon/eye-svgrepo-com_green.svg">Laranjeiras do Sul</a></div>
+            <div class="campus-item"><a href="{{ route('map.pf') }}"><img class="eye-btn" src="img/icon/eye-svgrepo-com_green.svg">Passo Fundo</a></div>
+            <div class="campus-item"><a href="{{ route('map.re') }}"><img class="eye-btn" src="img/icon/eye-svgrepo-com_green.svg">Realeza</a></div>
             <img class="btn-close-campus-selector" onclick="$('.campus-popup').hide();" src="img/icon/close-square-svgrepo-com.svg">
         </div>
     </div>

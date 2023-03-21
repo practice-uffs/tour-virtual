@@ -1,6 +1,6 @@
 @extends('layouts.panorama_base')
 @section('title', 'Laranjeiras do Sul - Panorama')
-@section('btn-voltar', route('home'))
+@section('btn-voltar', url()->previous())
 @section('sceneList')
     <a href="javascript:void(0)" class="scene" data-id="0-caminho-1">
 

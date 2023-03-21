@@ -119,8 +119,8 @@
 </a>
 
 <a href="javascript:void(0)" id="sceneListToggle">
-  <img class="icon off" src="{{'img/panorama/img/expand.png'}}">
-  <img class="icon on" src="{{'img/panorama/img/collapse.png'}}">
+  <img class="icon off" src="{{'img/icon/menu-svgrepo-com.svg'}}">
+  <img class="icon on" src="{{'img/icon/menu-svgrepo-com.svg'}}">
 </a>
 
 
