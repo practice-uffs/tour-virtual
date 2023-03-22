@@ -36,7 +36,7 @@
 <script>
     var atributos = {!! json_encode($data, JSON_HEX_TAG) !!};
     var campus = {!! json_encode($campus, JSON_HEX_TAG) !!};
-    var hash_file = {!! json_encode($hash, JSON_HEX_TAG) !!};
+    var hash_file = {!! json_encode($hash_file, JSON_HEX_TAG) !!};
 
 </script>
 
