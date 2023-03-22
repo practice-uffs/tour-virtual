@@ -927,7 +927,7 @@ var APP_DATA = {
         },
         {
             "id": "20-laboratrios",
-            "name": "Laboratórios",
+            "name": "Caminho",
             "levels": [
                 {
                     "tileSize": 256,

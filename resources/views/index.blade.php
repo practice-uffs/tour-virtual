@@ -1,73 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-  <title>Tour Virtual</title>
+    <title>Tour Virtual</title>
 
-  <link rel="stylesheet" href="{{ 'css/map/scroll.css' }}">
-  <link rel="stylesheet" href="{{ 'css/map/sidebar.css' }}">
-  <link rel="stylesheet" href="{{ 'css/map/controls.css'}}">
-  <link rel="stylesheet" href="{{ 'css/map/map.css'}}">
-  <link rel="stylesheet" href="{{ 'css/map/legenda.css'}}">
-  <link rel="stylesheet" href="{{ 'css/map/searchbar.css' }}">
-  <link rel="stylesheet" href="{{ 'css/map/construcao.css' }}">
- <link href="{{ 'tour-explain/bootstrap.min.css' }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ 'css/map/scroll.css' }}">
+    <link rel="stylesheet" href="{{ 'css/map/sidebar.css' }}">
+    <link rel="stylesheet" href="{{ 'css/map/controls.css'}}">
+    <link rel="stylesheet" href="{{ 'css/map/map.css'}}">
+    <link rel="stylesheet" href="{{ 'css/map/legenda.css'}}">
+    <link rel="stylesheet" href="{{ 'css/map/searchbar.css' }}">
+    <link rel="stylesheet" href="{{ 'css/map/construcao.css' }}">
+    <link href="{{ 'tour-explain/bootstrap.min.css' }}" rel="stylesheet">
 
- <link rel="stylesheet" href="{{ 'css/style.css' }}">
+    <link rel="stylesheet" href="{{ 'css/style.css' }}">
 
 
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="{{'img/icon/uffsvirtual-icon.png'}}">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/utils/Draggable.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{'img/icon/uffsvirtual-icon.png'}}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/utils/Draggable.min.js"></script>
 
-  <script src="{{ 'js/map/snap.svg/snap.svg.js'}}"></script>
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="{{ 'js/map/snap.svg/snap.svg.js'}}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
 </head>
 <body>
-    <script>
-        var atributos = {!! json_encode($data, JSON_HEX_TAG) !!};
-        var campus = {!! json_encode($campus, JSON_HEX_TAG) !!};
-    </script>
+@php
 
-    @if(isset($popup) && $popup)
-        @include('components.popup')
-    @endif
-    <div class="mapa" id="backdrop">
-        <div class="map-svg">
-            <svg id="svg" class="svg" viewBox="322.783 100.267 1526.7 1526.7" preserveAspectRatio="xMidYMid meet"  fill="none" xmlns="http://www.w3.org/2000/svg"><g id="viewport"></g></svg>
+    $hash_file = uniqid();
 
-            <svg id="svg-scrim" class="svg svg-scrim">
-                <circle id="pivot" class="pivot" cx="0" cy="0" r="6" />
-            </svg>
+@endphp
+
+<script>
+    var atributos = {!! json_encode($data, JSON_HEX_TAG) !!};
+    var campus = {!! json_encode($campus, JSON_HEX_TAG) !!};
+    var hash_file = {!! json_encode($hash_file, JSON_HEX_TAG) !!};
+
+</script>
+
+
+@if(isset($popup) && $popup)
+    @include('components.popup')
+@endif
+<div class="mapa" id="backdrop">
+    <div class="map-svg">
+        <svg id="svg" class="svg" viewBox="322.783 100.267 1526.7 1526.7" preserveAspectRatio="xMidYMid meet"  fill="none" xmlns="http://www.w3.org/2000/svg"><g id="viewport"></g></svg>
+
+        <svg id="svg-scrim" class="svg svg-scrim">
+            <circle id="pivot" class="pivot" cx="0" cy="0" r="6" />
+        </svg>
+    </div>
+    <div class="campus" id="step4">
+        <div onclick="$('.campus-popup').show();">
+            <img src="{{'img/icon/forward-item-svgrepo-com.svg'}}"  width="30px" height="30px" style="stroke: #567569; margin-right: 15px;">
+
+            <h2>{{$titulo}}</h2>
         </div>
-        <div class="campus" id="step4">
-            <div onclick="$('.campus-popup').show();">
-                <img src="/img/icon/forward-item-svgrepo-com.svg"  width="30px" height="30px" style="stroke: #567569; margin-right: 15px;">
 
-                <h2>{{$titulo}}</h2>
+    </div>
+    <div class="controls-container controls-top" id="step2">
+        <div class="especial-controls" >
+            <div class="btn-legenda" id="btn-legenda">
+                <img src="{{'img/icon/legend-right-svgrepo-com.svg'}}" style="width: 25px; height: 25px;">
             </div>
-           
+            {{-- <div class="btn-ajuda startTour">
+                <img src="/img/icon/book-1-svgrepo-com.svg" style="width: 25px; height: 25px;">
+            </div> --}}
         </div>
-        <div class="controls-container controls-top" id="step2">
-            <div class="especial-controls" > 
-                <div class="btn-legenda" id="btn-legenda">
-                    <img src="/img/icon/legend-right-svgrepo-com.svg" style="width: 25px; height: 25px;">
-                </div>
-                {{-- <div class="btn-ajuda startTour">
-                    <img src="/img/icon/book-1-svgrepo-com.svg" style="width: 25px; height: 25px;">
-                </div> --}}
-            </div>
-        </div>
-        <div class="controls-container controls-bottom" id="step3" >
-            <div class="zoom-container">
-                <div class="btn-360">
-                    {{-- <img  id="btn-360" src="/img/icon/zoom-in-svgrepo-com.svg" style="width: 25px; height: 25px;"> --}}
-                        <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-                        <svg id="btn-360" fill="#000000" style="background-color: white; border-radius: 10px;"  width="28px" height="28px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                            viewBox="0 0 480 480" xml:space="preserve">
+    </div>
+    <div class="controls-container controls-bottom" id="step3" >
+        <div class="zoom-container">
+            <div class="btn-360">
+                {{-- <img  id="btn-360" src="/img/icon/zoom-in-svgrepo-com.svg" style="width: 25px; height: 25px;"> --}}
+                <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                <svg id="btn-360" fill="#000000" style="background-color: white; border-radius: 10px;"  width="28px" height="28px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     viewBox="0 0 480 480" xml:space="preserve">
                             <g>
                                 <g>
                                     <g>
@@ -88,95 +97,95 @@
                                 </g>
                             </g>
                         </svg>
-                </div>
-
-                <div class="zoomin" id="zoomin">
-                    <img src="/img/icon/zoom-in-svgrepo-com.svg" style="width: 25px; height: 25px;">
-                </div>
-                <div class="zoomout" id="zoomout">
-                    <img src="/img/icon/zoom-out-svgrepo-com.svg" style="width: 25px; height: 25px;">
-                </div>
-                <div class="zoomreset" id="zoomreset">
-                    <img src="/img/icon/eye-svgrepo-com.svg" style="width: 18px; height: 18px;">
-                    <img src="/img/icon/screen-full-svgrepo-com.svg" style="width: 30px;height: 30px;position: absolute;">
-                </div>
-            </div>
-        </div>
-
-        <div id="tooltip" display="none" style="position: absolute; display: none;"></div>
-
-        </div>
-        <div class="container-side-bar  hidden-side-bar"id="side-bar">
-            <div style="width: 100%; height: 30vh; background-color: black" >
-                <div class="img custom-hover-sidebar-img" id="vista-panoramica">
-                {{-- <img  id="sidebar-img-capa" src="{{'img/pictures/LS/Principal/Capa/almoxarifado.jpg'}}" alt=""> --}}
-                    <img class="eye-btn-sidebar" src="img/icon/eye-svgrepo-com.svg">
-                </div>
             </div>
 
-            <div class="container-content-side-bar custom-scrollbar-css" >
-                <div class="content-side-bar">
-                    <div class="titulo">
-                        <h2 id="titulo-sidebar">BLOCO A</h2>
-                    </div>
-                    <div class="description"><p id="descricao-sidebar">Neste bloco é onde ocorre a maioria das aulas. Estão presentes, também: </p></div>
-                    <div id="list_description"></div>
+            <div class="zoomin" id="zoomin">
+                <img src="{{'img/icon/zoom-in-svgrepo-com.svg'}}" style="width: 25px; height: 25px;">
+            </div>
+            <div class="zoomout" id="zoomout">
+                <img src="{{'img/icon/zoom-out-svgrepo-com.svg'}}" style="width: 25px; height: 25px;">
+            </div>
+            <div class="zoomreset" id="zoomreset">
+                <img src="{{'img/icon/eye-svgrepo-com.svg'}}" style="width: 18px; height: 18px;">
+                <img src="{{'img/icon/screen-full-svgrepo-com.svg'}}" style="width: 30px;height: 30px;position: absolute;">
+            </div>
+        </div>
+    </div>
+
+    <div id="tooltip" display="none" style="position: absolute; display: none;"></div>
+
+</div>
+<div class="container-side-bar  hidden-side-bar"id="side-bar">
+    <div style="width: 100%; height: 30vh; background-color: black" >
+        <div class="img custom-hover-sidebar-img" id="vista-panoramica">
+            {{-- <img  id="sidebar-img-capa" src="{{'img/pictures/LS/Principal/Capa/almoxarifado.jpg'}}" alt=""> --}}
+            <img class="eye-btn-sidebar" src="{{'img/icon/eye-svgrepo-com.svg'}}">
+        </div>
+    </div>
+
+    <div class="container-content-side-bar custom-scrollbar-css" >
+        <div class="content-side-bar">
+            <div class="titulo">
+                <h2 id="titulo-sidebar">BLOCO A</h2>
+            </div>
+            <div class="description"><p id="descricao-sidebar">Neste bloco é onde ocorre a maioria das aulas. Estão presentes, também: </p></div>
+            <div id="list_description"></div>
+        </div>
+    </div>
+
+    <div class="side-bar-logo">
+        <div class="vista-panoramica-container">
+            <div class="vista-panoramica" id="vista-panoramica2">
+                <span>VISTA PANORÂMICA</span>
+            </div>
+        </div>
+        <a href="https://practice.uffs.edu.br/" target="_blank" style="text-decoration: none"><img src="{{asset('img/icon/practice.svg')}}" class="logo-practice"></a>
+        <a href="https://www.uffs.edu.br/" target="_blank"><div class="bkgd-logo-uffs"><img src="{{'img/icon/logoUFFS.png'}}" class="logo-UFFS"></div></a>
+    </div>
+
+
+
+
+</div>
+
+
+<div class="legenda ocultar" id="legenda">
+    <div><h2> Legenda</h2></div>
+    <img src="{{'img/svg/legenda.svg'}}" alt="">
+    <div class="container-list"><div class="list" id="list"></div></div>
+    <div class="close-legenda"><div class="close-container"><div class="arrow "></div></div></div>
+</div>
+
+
+<div class="search-bar-container" id="step1">
+    <div class="search-bar">
+        <a class="icons-search" href="{{ route('home') }}" >
+            <img src="{{'img/icon/left-chevron-svgrepo-com.svg'}}" style="width: 25px; height: 25px;">
+        </a>
+        <input type="text" id="search" placeholder="Procurar..." title="Type in a category">
+        <div class="icons-search startTour" >
+            <img src="{{'img/icon/book-1-svgrepo-com.svg'}}" style="width: 25px; height: 25px;">
+        </div>
+        <div class="icons-search" id="btn-close-search" style="width: 0;">
+            <svg width="25" height="25" clip-rule="evenodd" fill-rule="evenodd" fill="#616161" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z"/></svg>
+        </div>
+    </div>
+    <div class="search-bar" id="resultado"><ul id="menu"></ul></div>
+</div>
+
+<div class="popup-container" id="popup-construcao">
+    <div class="popup-construcao">
+        <div class="popup-content">
+            <div class="popup-cabecalho">
+                <div class="popup-close" id="popup-close-construcao">
+                    <svg clip-rule="evenodd" fill-rule="evenodd"  stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z"/></svg>
                 </div>
             </div>
-              
-            <div class="side-bar-logo">
-                <div class="vista-panoramica-container">
-                    <div class="vista-panoramica" id="vista-panoramica2">
-                        <span>VISTA PANORÂMICA</span>
-                    </div>
-                </div>
-                <a href="https://practice.uffs.edu.br/" target="_blank" style="text-decoration: none"><img src="{{asset('img/icon/practice.svg')}}" class="logo-practice"></a>
-                <a href="https://www.uffs.edu.br/" target="_blank"><div class="bkgd-logo-uffs"><img src="img/icon/logoUFFS.png" class="logo-UFFS"></div></a>
-            </div>
-                  
-            
-
-         
-        </div>
-
-
-        <div class="legenda ocultar" id="legenda">
-            <div><h2> Legenda</h2></div>
-            <img src="{{'img/svg/legenda.svg'}}" alt="">
-            <div class="container-list"><div class="list" id="list"></div></div>
-            <div class="close-legenda"><div class="close-container"><div class="arrow "></div></div></div>
-        </div>
-
-
-        <div class="search-bar-container" id="step1">
-            <div class="search-bar">
-                <a class="icons-search" href="{{ route('home') }}" >
-                    <img src="/img/icon/left-chevron-svgrepo-com.svg" style="width: 25px; height: 25px;">
-                </a>
-                <input type="text" id="search" placeholder="Procurar..." title="Type in a category">
-                <div class="icons-search startTour" >
-                    <img src="/img/icon/book-1-svgrepo-com.svg" style="width: 25px; height: 25px;">
-                </div>
-                <div class="icons-search" id="btn-close-search" style="width: 0;">
-                    <svg width="25" height="25" clip-rule="evenodd" fill-rule="evenodd" fill="#616161" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z"/></svg>
-                </div>
-            </div>
-            <div class="search-bar" id="resultado"><ul id="menu"></ul></div>
-        </div>
-
-        <div class="popup-container" id="popup-construcao">
-            <div class="popup-construcao">
-                <div class="popup-content">
-                    <div class="popup-cabecalho">
-                        <div class="popup-close" id="popup-close-construcao">
-                            <svg clip-rule="evenodd" fill-rule="evenodd"  stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z"/></svg>
-                        </div>
-                    </div>
-                    <h1>Em construção</h1>
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100.001px" height="70px" viewBox="0 0 100 68">
-                        <g id="large">
-                          <g>
-                            <path d="M55.777,38.473l6.221-1.133c0.017-1.791-0.123-3.573-0.41-5.324l-6.321-0.19c-0.438-2.053-1.135-4.048-2.076-5.931
+            <h1>Em construção</h1>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100.001px" height="70px" viewBox="0 0 100 68">
+                <g id="large">
+                    <g>
+                        <path d="M55.777,38.473l6.221-1.133c0.017-1.791-0.123-3.573-0.41-5.324l-6.321-0.19c-0.438-2.053-1.135-4.048-2.076-5.931
                             l4.82-4.094c-0.868-1.552-1.874-3.028-3.005-4.417l-5.569,2.999c-1.385-1.54-2.98-2.921-4.771-4.099l2.124-5.954
                             c-0.759-0.452-1.543-0.878-2.357-1.269c-0.811-0.39-1.625-0.732-2.449-1.046l-3.325,5.381c-2.038-0.665-4.113-1.052-6.183-1.174
                             L31.34,6.002c-1.792-0.02-3.571,0.119-5.32,0.406l-0.191,6.32c-2.056,0.439-4.051,1.137-5.936,2.08l-4.097-4.82
@@ -190,10 +199,10 @@
                             c1.537-1.385,2.914-2.98,4.093-4.772l5.953,2.127c0.448-0.761,0.878-1.545,1.268-2.356c0.388-0.808,0.729-1.631,1.047-2.458
                             l-5.378-3.324C55.268,42.615,55.655,40.542,55.777,38.473z M42.302,42.435c-3.002,6.243-10.495,8.872-16.737,5.866
                             c-6.244-2.999-8.872-10.493-5.867-16.736c3.002-6.244,10.495-8.873,16.736-5.869C42.676,28.698,45.306,36.19,42.302,42.435z" fill="none" stroke="#E43" />
-                            <animateTransform attributeName="transform" begin="0s" dur="3s" type="rotate" from="0 31 37" to="360 31 37" repeatCount="indefinite" </animateTransform>
-                          </g>
-                          <g id="small">
-                            <path d="M93.068,19.253L99,16.31c-0.371-1.651-0.934-3.257-1.679-4.776l-6.472,1.404c-0.902-1.436-2.051-2.735-3.42-3.819
+                        <animateTransform attributeName="transform" begin="0s" dur="3s" type="rotate" from="0 31 37" to="360 31 37" repeatCount="indefinite" </animateTransform>
+                    </g>
+                    <g id="small">
+                        <path d="M93.068,19.253L99,16.31c-0.371-1.651-0.934-3.257-1.679-4.776l-6.472,1.404c-0.902-1.436-2.051-2.735-3.42-3.819
                             l2.115-6.273c-0.706-0.448-1.443-0.867-2.213-1.238c-0.774-0.371-1.559-0.685-2.351-0.958l-3.584,5.567
                             c-1.701-0.39-3.432-0.479-5.118-0.284L73.335,0c-1.652,0.367-3.256,0.931-4.776,1.672l1.404,6.47
                             c-1.439,0.899-2.744,2.047-3.835,3.419c-2.208-0.746-4.38-1.476-6.273-2.114c-0.451,0.71-0.874,1.448-1.244,2.229
@@ -205,119 +214,119 @@
                             c0.372-0.777,0.691-1.569,0.963-2.361l-5.568-3.586C93.181,22.677,93.269,20.939,93.068,19.253z M84.365,24.062
                             c-1.693,3.513-5.908,4.991-9.418,3.302c-3.513-1.689-4.99-5.906-3.301-9.419c1.688-3.513,5.906-4.991,9.417-3.302
                             C84.573,16.331,86.05,20.549,84.365,24.062z" fill="none" stroke="#E43" />
-                            <animateTransform attributeName="transform" begin="0s" dur="2s" type="rotate" from="0 78 21" to="-360 78 21" repeatCount="indefinite" </animateTransform>
-                          </g>
-                      </svg>
-                      <p>
-                        Estamos trabalhando nisso.
-                      </p>
-                </div>
-            </div>
+                        <animateTransform attributeName="transform" begin="0s" dur="2s" type="rotate" from="0 78 21" to="-360 78 21" repeatCount="indefinite" </animateTransform>
+                    </g>
+            </svg>
+            <p>
+                Estamos trabalhando nisso.
+            </p>
         </div>
     </div>
+</div>
+</div>
 
 
 
 
-    <div class='campus-popup'>
-        <div class='campus-selector-popup'>
-            <h2>Selecione um Campus</h2>
-            <div class="campus-item"><a href="{{ route('map.cl') }}"><img class="eye-btn" src="img/icon/eye-svgrepo-com_green.svg">Cerro Largo</a></div>
-            <div class="campus-item"><a href="{{ route('map.ch') }}"><img class="eye-btn" src="img/icon/eye-svgrepo-com_green.svg">Chapecó</a></div>
-            <div class="campus-item"><a href="{{ route('map.er') }}"><img class="eye-btn" src="img/icon/eye-svgrepo-com_green.svg">Erechim</a></div>
-            <div class="campus-item"><a href="{{ route('map.ls') }}"><img class="eye-btn" src="img/icon/eye-svgrepo-com_green.svg">Laranjeiras do Sul</a></div>
-            <div class="campus-item"><a href="{{ route('map.pf') }}"><img class="eye-btn" src="img/icon/eye-svgrepo-com_green.svg">Passo Fundo</a></div>
-            <div class="campus-item"><a href="{{ route('map.re') }}"><img class="eye-btn" src="img/icon/eye-svgrepo-com_green.svg">Realeza</a></div>
-            <img class="btn-close-campus-selector" onclick="$('.campus-popup').hide();" src="img/icon/close-square-svgrepo-com.svg">
-        </div>
+<div class='campus-popup'>
+    <div class='campus-selector-popup'>
+        <h2>Selecione um Campus</h2>
+        <div class="campus-item"><a href="{{ route('map.cl') }}"><img class="eye-btn" src="{{'img/icon/eye-svgrepo-com_green.svg'}}">Cerro Largo</a></div>
+        <div class="campus-item"><a href="{{ route('map.ch') }}"><img class="eye-btn" src="{{'img/icon/eye-svgrepo-com_green.svg'}}">Chapecó</a></div>
+        <div class="campus-item"><a href="{{ route('map.er') }}"><img class="eye-btn" src="{{'img/icon/eye-svgrepo-com_green.svg'}}">Erechim</a></div>
+        <div class="campus-item"><a href="{{ route('map.ls') }}"><img class="eye-btn" src="{{'img/icon/eye-svgrepo-com_green.svg'}}">Laranjeiras do Sul</a></div>
+        <div class="campus-item"><a href="{{ route('map.pf') }}"><img class="eye-btn" src="{{'img/icon/eye-svgrepo-com_green.svg'}}">Passo Fundo</a></div>
+        <div class="campus-item"><a href="{{ route('map.re') }}"><img class="eye-btn" src="{{'img/icon/eye-svgrepo-com_green.svg'}}">Realeza</a></div>
+        <img class="btn-close-campus-selector" onclick="$('.campus-popup').hide();" src="{{'img/icon/close-square-svgrepo-com.svg'}}">
     </div>
+</div>
 
-    <!-- Tour-Virtual Scripts -->
-    <script type="module" src=" {{'js/map/SVGactions.js'}}" defer></script>
-    <script type="module" src="{{'js/map/legenda.js'}}" defer></script>
-    <script type="module" src="{{'js/map/searchbar.js'}}"defer></script>
-    <script src="{{'js/map/controls.js'}}" defer></script>
-    <script src="{{'js/map/popup.js'}}" defer></script>
+<!-- Tour-Virtual Scripts -->
+<script type="module" src=" {{'js/map/SVGactions.js?id='.$hash_file}}" defer></script>
+<script type="module" src="{{'js/map/legenda.js'}}" defer></script>
+<script type="module" src="{{'js/map/searchbar.js'}}"defer></script>
+<script src="{{'js/map/controls.js'}}" defer></script>
+<script src="{{'js/map/popup.js'}}" defer></script>
 
-    <!-- Explain Steps Scripts -->
-    <script src="{{'tour-explain/jquery.min.js'}}"></script>
-    <script src="{{'tour-explain/bootstrap.min.js'}}"></script>
-    <script src="{{'tour-explain/bootstrap-tour.js'}}"></script>
+<!-- Explain Steps Scripts -->
+<script src="{{'tour-explain/jquery.min.js'}}"></script>
+<script src="{{'tour-explain/bootstrap.min.js'}}"></script>
+<script src="{{'tour-explain/bootstrap-tour.js'}}"></script>
 
-    <script>
-        $(document).ready(function (){
-            // Instance the tour
-            var tour = new Tour({
-                steps: [{
-                        element: "#step1",
-                        title: "Barra de pesquisa",
-                        content: "Procure por um local específico do campus. Basta digitar a sua busca e selecionar um elemento para obter as informações detalhadas.",
-                        placement: "bottom",
-                        backdrop: true,
-                        backdropContainer: '#wrapper',
-                        onShown: function (tour){
-                            $('#step1').addClass('z-index-1120')
-                        },
-                        onHidden: function (tour){
-                            $('#step1').removeClass('z-index-1120')
-                        }
+<script>
+    $(document).ready(function (){
+        // Instance the tour
+        var tour = new Tour({
+            steps: [{
+                element: "#step1",
+                title: "Barra de pesquisa",
+                content: "Procure por um local específico do campus. Basta digitar a sua busca e selecionar um elemento para obter as informações detalhadas.",
+                placement: "bottom",
+                backdrop: true,
+                backdropContainer: '#wrapper',
+                onShown: function (tour){
+                    $('#step1').addClass('z-index-1120')
+                },
+                onHidden: function (tour){
+                    $('#step1').removeClass('z-index-1120')
+                }
+            },
+                {
+                    element: "#btn-legenda",
+                    title: "Legenda",
+                    content: " Clique aqui abrir o menu lateral e entenda o que representa cada elemento presente no mapa.",
+                    placement: "bottom",
+                    backdrop: true,
+                    backdropContainer: '#wrapper',
+                    onShown: function (tour){
+                        $('#step2').addClass('z-index-1120')
                     },
-                    {
-                        element: "#btn-legenda",
-                        title: "Legenda",
-                        content: " Clique aqui abrir o menu lateral e entenda o que representa cada elemento presente no mapa.",
-                        placement: "bottom",
-                        backdrop: true,
-                        backdropContainer: '#wrapper',
-                        onShown: function (tour){
-                            $('#step2').addClass('z-index-1120')
-                        },
-                        onHidden: function (tour){
-                            $('#step2').removeClass('z-index-1120')
-                        }
-                    },
-                    {
-                        element: "#step3",
-                        title: "Controles de navegação",
-                        content: "Aqui estão localizados os controles de visualização do mapa. Arraste o ícone do personagem até um local específico para iniciar o tour.",
-                        placement: "top",
-                        backdrop: true,
-                        backdropContainer: '#wrapper',
-                        onShown: function (tour){
-                            $('#step3').addClass('z-index-1120')
-                        },
-                        onHidden: function (tour){
-                            $('#step3').removeClass('z-index-1120')
-                        }
-                    },
-                    {
-                        element: "#step4",
-                        title: "Nome do Campus",
-                        content: "Este é nome do campus que está sendo exibido. Clique aqui para alternar entre os campi.",
-                        placement: "top",
-                        backdrop: true,
-                        backdropContainer: '#wrapper',
-                        onShown: function (tour){
-                            $('#step4').addClass('z-index-1120')
-                        },
-                        onHidden: function (tour){
-                            $('#step4').removeClass('z-index-1120')
-                        }
+                    onHidden: function (tour){
+                        $('#step2').removeClass('z-index-1120')
                     }
-                ]});
-    
-            // Initialize the tour
-            tour.init();
-    
-            $('.startTour').click(function(){
-                tour.restart();
-    
-                // Start the tour
-                // tour.start();
-            })
-    
-        });
-    
-    </script>
+                },
+                {
+                    element: "#step3",
+                    title: "Controles de navegação",
+                    content: "Aqui estão localizados os controles de visualização do mapa. Arraste o ícone do personagem até um local específico para iniciar o tour.",
+                    placement: "top",
+                    backdrop: true,
+                    backdropContainer: '#wrapper',
+                    onShown: function (tour){
+                        $('#step3').addClass('z-index-1120')
+                    },
+                    onHidden: function (tour){
+                        $('#step3').removeClass('z-index-1120')
+                    }
+                },
+                {
+                    element: "#step4",
+                    title: "Nome do Campus",
+                    content: "Este é nome do campus que está sendo exibido. Clique aqui para alternar entre os campi.",
+                    placement: "top",
+                    backdrop: true,
+                    backdropContainer: '#wrapper',
+                    onShown: function (tour){
+                        $('#step4').addClass('z-index-1120')
+                    },
+                    onHidden: function (tour){
+                        $('#step4').removeClass('z-index-1120')
+                    }
+                }
+            ]});
+
+        // Initialize the tour
+        tour.init();
+
+        $('.startTour').click(function(){
+            tour.restart();
+
+            // Start the tour
+            // tour.start();
+        })
+
+    });
+
+</script>
 </body>
 </html>

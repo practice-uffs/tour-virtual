@@ -235,7 +235,7 @@ btn_360.drag(
 
 
 
-new LoadSVG(DIR_MAP + campus + "/main.svg" ,atributos,setActions);
+new LoadSVG(DIR_MAP + campus + "/main.svg" + "?id=" + hash_file ,atributos,setActions);
 
 
 $("#btn-close-search").click(fechar);

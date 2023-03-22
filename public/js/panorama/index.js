@@ -29,7 +29,8 @@ function isValidScene(scenes, setScene){
 function fix_caminhos(){
     for(let i of $($('#sceneList').children()[0]).children()){
         let string = $(i).data().id;
-        if(string.toLowerCase().includes('caminho')){
+        let name = $(i).text()
+        if(string && string.toLowerCase().includes('caminho') || name && name.toLowerCase().includes('caminho') ){
             $(i).remove()
             $('#titleBar').children().text(personalSceneName  )
         }

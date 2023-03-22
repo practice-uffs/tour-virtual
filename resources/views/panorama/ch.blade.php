@@ -1,4 +1,4 @@
-@extends('layouts.panorama_base')
+@extends('layouts.panorama.base')
 @section('title', 'Chapecó - Panorama')
 @section('btn-voltar', route('home'))
 @section('sceneList')
@@ -42,15 +42,20 @@
 
 
 
-
-
     <a href="javascript:void(0)" class="scene" data-id="12-bloco-a-e-b">
-        <li class="text">Acesso Bloco A e B</li>
+        <li class="text">Bloco A</li>
     </a>
 
-    <a href="javascript:void(0)" class="scene" data-id="15-sada-bloco-b">
-        <li class="text">Bloco B (saída)</li>
-    </a>
+    @component('components.panorama.dropdown', ['title' => 'Bloco B'])
+        <a href="javascript:void(0)" class="scene" data-id="bloco-b-acesso">
+            <li class="text">Acesso</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="15-sada-bloco-b">
+            <li class="text">Saída</li>
+        </a>
+
+    @endcomponent
+
 
     <a href="javascript:void(0)" class="scene" data-id="21-bloco-c">
         <li class="text">Bloco C</li>
@@ -58,46 +63,80 @@
 
 
 
+    @component('components.panorama.dropdown', ['title' => 'Bloco Docente'])
+
+        <a href="javascript:void(0)" class="scene" data-id="11-bloco-dos-professores">
+            <li class="text">Acesso</li>
+        </a>
+
+        <a href="javascript:void(0)" class="scene" data-id="14-sada-bloco-dos-professores">
+            <li class="text">Saída</li>
+        </a>
+
+    @endcomponent
+
+
+
+    @component('components.panorama.dropdown', ['title' => 'RU'])
+        <a href="javascript:void(0)" class="scene" data-id="20-ru">
+            <li class="text">Acesso</li>
+        </a>
+
+        <a href="javascript:void(0)" class="scene" data-id="9-sada-ru">
+            <li class="text">Saída</li>
+        </a>
+    @endcomponent
+
+
     <a href="javascript:void(0)" class="scene" data-id="13-biblioteca">
         <li class="text">Biblioteca</li>
-    </a>
-
-
-    <a href="javascript:void(0)" class="scene" data-id="11-bloco-dos-professores">
-        <li class="text">Bloco Docente</li>
-    </a>
-
-    <a href="javascript:void(0)" class="scene" data-id="14-sada-bloco-dos-professores">
-        <li class="text">Bloco Docente (saída)</li>
-    </a>
-
-
-
-    <a href="javascript:void(0)" class="scene" data-id="16-laboratrio-12">
-        <li class="text">Acesso Lab. 1 e 2</li>
-    </a>
-
-    <a href="javascript:void(0)" class="scene" data-id="17-laoratrio-34">
-        <li class="text">Acesso Lab. 3 e 4</li>
-    </a>
-
-    <a href="javascript:void(0)" class="scene" data-id="18-laboratrio-04">
-        <li class="text">Laboratório 04</li>
-    </a>
-
-    <a href="javascript:void(0)" class="scene" data-id="19-laboratrio-03">
-        <li class="text">Laboratório 03</li>
     </a>
     <a href="javascript:void(0)" class="scene" data-id="10-cantina">
         <li class="text">Cantina</li>
     </a>
-    <a href="javascript:void(0)" class="scene" data-id="20-ru">
-        <li class="text">Restaurante Univ.</li>
+
+
+
+
+
+
+    <a href="javascript:void(0)" class="scene" data-id="16-laboratrio-12">
+        <li class="text">Laboratório 1</li>
     </a>
 
-    <a href="javascript:void(0)" class="scene" data-id="9-sada-ru">
-        <li class="text">Restaurante Univ. (saída)</li>
+    <a href="javascript:void(0)" class="scene" data-id="lab2">
+        <li class="text">Laboratório 2</li>
     </a>
+
+
+    @component('components.panorama.dropdown', ['title' => 'Laboratório 3'])
+        <a href="javascript:void(0)" class="scene" data-id="17-laoratrio-34">
+            <li class="text">Acesso</li>
+        </a>
+
+        <a href="javascript:void(0)" class="scene" data-id="19-laboratrio-03">
+            <li class="text">Saída</li>
+        </a>
+
+    @endcomponent
+
+    @component('components.panorama.dropdown', ['title' => 'Laboratório 4'])
+        <a href="javascript:void(0)" class="scene" data-id="lab4">
+            <li class="text">Acesso</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="18-laboratrio-04">
+            <li class="text">Saída</li>
+        </a>
+    @endcomponent
+
+
+
+
+
+
+
+
+
 
 
 
