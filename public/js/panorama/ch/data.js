@@ -560,7 +560,7 @@ var APP_DATA = {
     },
     {
       "id": "12-bloco-a-e-b",
-      "name": "Acesso Bloco A e B",
+      "name": "Bloco A",
       "levels": [
         {
           "tileSize": 256,
@@ -583,7 +583,7 @@ var APP_DATA = {
       "faceSize": 2048,
       "initialViewParameters": {
         "pitch": 0,
-        "yaw": 0,
+        "yaw": -3,
         "fov": 1.5707963267948966
       },
       "linkHotspots": [
@@ -602,6 +602,54 @@ var APP_DATA = {
       ],
       "infoHotspots": []
     },
+
+      {
+          "id": "bloco-b-acesso",
+          "name": "Bloco B",
+          "levels": [
+              {
+                  "tileSize": 256,
+                  "size": 256,
+                  "fallbackOnly": true
+              },
+              {
+                  "tileSize": 512,
+                  "size": 512
+              },
+              {
+                  "tileSize": 512,
+                  "size": 1024
+              },
+              {
+                  "tileSize": 512,
+                  "size": 2048
+              }
+          ],
+          "faceSize": 2048,
+          "initialViewParameters": {
+              "pitch": 0,
+              "yaw": 0,
+              "fov": 1.5707963267948966
+          },
+          "linkHotspots": [
+              {
+                  "yaw": -1.4770902697063875,
+                  "pitch": 0.03823008982925913,
+                  "rotation": 0,
+                  "target": "8-caminho-1"
+              },
+              {
+                  "yaw": 1.4061957851037405,
+                  "pitch": 0.079158379369062,
+                  "rotation": 0,
+                  "target": "21-bloco-c"
+              }
+          ],
+          "infoHotspots": []
+      },
+
+
+
     {
       "id": "13-biblioteca",
       "name": "Biblioteca",
@@ -692,7 +740,7 @@ var APP_DATA = {
     },
     {
       "id": "15-sada-bloco-b",
-      "name": "Bloco B (saida)",
+      "name": "Bloco B (saída)",
       "levels": [
         {
           "tileSize": 256,
@@ -736,7 +784,7 @@ var APP_DATA = {
     },
     {
       "id": "16-laboratrio-12",
-      "name": "Acesso Laboratório 1 e 2",
+      "name": "Laboratório 1",
       "levels": [
         {
           "tileSize": 256,
@@ -758,7 +806,7 @@ var APP_DATA = {
       ],
       "faceSize": 2048,
       "initialViewParameters": {
-        "yaw": -2.18534503646282,
+        "yaw": -3.18534503646282,
         "pitch": 0.1412936801816933,
         "fov": 1.4646774636490456
       },
@@ -778,9 +826,53 @@ var APP_DATA = {
       ],
       "infoHotspots": []
     },
+      {
+          "id": "lab2",
+          "name": "Laboratório 2",
+          "levels": [
+              {
+                  "tileSize": 256,
+                  "size": 256,
+                  "fallbackOnly": true
+              },
+              {
+                  "tileSize": 512,
+                  "size": 512
+              },
+              {
+                  "tileSize": 512,
+                  "size": 1024
+              },
+              {
+                  "tileSize": 512,
+                  "size": 2048
+              }
+          ],
+          "faceSize": 2048,
+          "initialViewParameters": {
+              "yaw": 0.18534503646282,
+              "pitch": 0.1412936801816933,
+              "fov": 1.4646774636490456
+          },
+          "linkHotspots": [
+              {
+                  "yaw": 1.56810209448419,
+                  "pitch": 0.05627060545028151,
+                  "rotation": 0,
+                  "target": "0-caminho-9"
+              },
+              {
+                  "yaw": -1.9563810603517418,
+                  "pitch": 0.04564523101485207,
+                  "rotation": 0,
+                  "target": "17-laoratrio-34"
+              }
+          ],
+          "infoHotspots": []
+      },
     {
       "id": "17-laoratrio-34",
-      "name": "Acesso Laboratório 3 e 4",
+      "name": "Laboratório 3",
       "levels": [
         {
           "tileSize": 256,
@@ -802,8 +894,8 @@ var APP_DATA = {
       ],
       "faceSize": 2048,
       "initialViewParameters": {
-        "yaw": 2.1921718067917126,
-        "pitch": -0.044663929973166816,
+        "yaw": 1.4,
+        "pitch": 0.0,
         "fov": 1.3907039144210047
       },
       "linkHotspots": [
@@ -827,10 +919,59 @@ var APP_DATA = {
         }
       ],
       "infoHotspots": []
-    },
+    },{
+          "id": "lab4",
+          "name": "Laboratório 4",
+          "levels": [
+              {
+                  "tileSize": 256,
+                  "size": 256,
+                  "fallbackOnly": true
+              },
+              {
+                  "tileSize": 512,
+                  "size": 512
+              },
+              {
+                  "tileSize": 512,
+                  "size": 1024
+              },
+              {
+                  "tileSize": 512,
+                  "size": 2048
+              }
+          ],
+          "faceSize": 2048,
+          "initialViewParameters": {
+              "yaw": -1.6,
+              "pitch": 0.0,
+              "fov": 1.3907039144210047
+          },
+          "linkHotspots": [
+              {
+                  "yaw": 3.0825526859580332,
+                  "pitch": 0.021417238324868748,
+                  "rotation": 0,
+                  "target": "16-laboratrio-12"
+              },
+              {
+                  "yaw": -1.5561718984473565,
+                  "pitch": 0.07968457352314218,
+                  "rotation": 0,
+                  "target": "18-laboratrio-04"
+              },
+              {
+                  "yaw": 1.536968192187146,
+                  "pitch": 0.0695324669240609,
+                  "rotation": 0,
+                  "target": "19-laboratrio-03"
+              }
+          ],
+          "infoHotspots": []
+      },
     {
       "id": "18-laboratrio-04",
-      "name": "Laboratório 4",
+      "name": "Laboratório 4 (saída)",
       "levels": [
         {
           "tileSize": 256,
@@ -852,7 +993,7 @@ var APP_DATA = {
       ],
       "faceSize": 2048,
       "initialViewParameters": {
-        "yaw": -0.8079215159992614,
+        "yaw": -1.7,
         "pitch": 0.1195118627881584,
         "fov": 1.4646774636490456
       },
@@ -868,7 +1009,7 @@ var APP_DATA = {
     },
     {
       "id": "19-laboratrio-03",
-      "name": "Laboratório 3",
+      "name": "Laboratório 3 (saída)",
       "levels": [
         {
           "tileSize": 256,

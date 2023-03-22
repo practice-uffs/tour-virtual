@@ -228,8 +228,13 @@ body.fullscreen-enabled.mobile #autorotateToggle {
   width: 40px;
   height: 40px;
   padding: 5px;
-  background-color: #5b8574;
+
     color: #e2e0e0;
+}
+
+
+#sceneListToggle:hover{
+    background-color: #5b8574;
 }
 
 .mobile #sceneListToggle {
@@ -871,3 +876,42 @@ body.view-control-buttons .viewControlButton {
 .viewControlButton-6 {
   margin-left: 105px;
 }
+
+/* =================================================================== */
+/*                             CUSTOM                                  */
+/* =================================================================== */
+
+
+
+
+/* DROPDOWN*/
+.dropdown button{
+    background-color: rgba(58, 68, 84, 0);
+    border: 0;
+    width: 100%;
+    font-size: 1em;
+    font-family: "Helvetica Neue", Helvetica, Arial, Helvetica, sans-serif;
+    text-align: inherit;
+    padding: 0 15px;
+    cursor: pointer;
+    color: aliceblue;
+    line-height: 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+
+}
+
+.dropdown button:hover{
+    background-color: #5b8574;
+}
+
+
+
+.conteudo{
+    background-color:  rgba(0, 0, 0, 0.3);
+}
+
+
+/* End Dropdown */
+
