@@ -27,10 +27,19 @@
 
 </head>
 <body>
+@php
+
+    $hash_file = uniqid();
+
+@endphp
+
 <script>
     var atributos = {!! json_encode($data, JSON_HEX_TAG) !!};
     var campus = {!! json_encode($campus, JSON_HEX_TAG) !!};
+    var hash_file = {!! json_encode($hash, JSON_HEX_TAG) !!};
+
 </script>
+
 
 @if(isset($popup) && $popup)
     @include('components.popup')
@@ -233,7 +242,7 @@
 </div>
 
 <!-- Tour-Virtual Scripts -->
-<script type="module" src=" {{'js/map/SVGactions.js'}}" defer></script>
+<script type="module" src=" {{'js/map/SVGactions.js?id='.$hash_file}}" defer></script>
 <script type="module" src="{{'js/map/legenda.js'}}" defer></script>
 <script type="module" src="{{'js/map/searchbar.js'}}"defer></script>
 <script src="{{'js/map/controls.js'}}" defer></script>
