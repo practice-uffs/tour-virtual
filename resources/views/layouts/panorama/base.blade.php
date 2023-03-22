@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{'../css/panorama/style.css'}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/x-icon" href="{{'/img/icon/uffsvirtual-icon.png'}}">
+    <link rel="icon" type="image/x-icon" href="{{'../img/icon/uffsvirtual-icon.png'}}">
 </head>
 <body class="multiple-scenes ">
 
