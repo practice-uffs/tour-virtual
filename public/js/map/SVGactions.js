@@ -72,8 +72,7 @@ function abrir(titulo, descricao,list_desc,id_360, img_capa){
     let li = $("<li>")
     let a = $("<a>")
     li.html(list_desc[i])
-    a.append(li)
-    ul.append(a)
+    ul.append(li)
   }
   lista.append(ul)
 
