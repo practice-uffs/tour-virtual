@@ -3,49 +3,48 @@
 namespace App\Http\Controllers;
 
 use App\Models\Detail;
+use App\Models\FigmaMap;
 use App\Models\Information;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class MapController extends Controller
 {
-    public function index(){
-        $data = $this->formatData(Information::all()->toArray());
-        return view('index', ['data' => $data, 'campus' => 'ls', 'titulo' => 'Laranjeiras do Sul']);
-    }
 
     public function laranjeiras(){
-        $data = $this->formatData(Information::query()->where('campus', 'LS')->get()->toArray());
-        return view('index', ['data' => $data, 'campus' => 'ls', 'titulo' => 'Laranjeiras do Sul']);
+        return view('index', $this->get_data('LS', 'Laranjeiras do Sul', false));
 
     }
 
     public function chapeco(){
-        $data = $this->formatData(Information::query()->where('campus', 'CH')->get()->toArray());
-        return view('index', ['data' => $data, 'campus' => 'ch', 'titulo' => 'Chapecó', 'popup' => 'true']);
+        return view('index', $this->get_data('CH', 'Chapecó', true));
     }
 
     public function cerro_largo(){
-        $data = $this->formatData(Information::query()->where('campus', 'CL')->get()->toArray());
-        return view('index', ['data' => $data, 'campus' => 'cl', 'titulo' => 'Cerro Largo' , 'popup' => 'true']);
+        return view('index', $this->get_data('CL', 'Cerro Largo', true));
 
     }
 
     public function erechim(){
-        $data = $this->formatData(Information::query()->where('campus', 'ER')->get()->toArray());
-        return view('index', ['data' => $data, 'campus' => 'er', 'titulo' => 'Erechim', 'popup' => 'true']);
+        return view('index', $this->get_data('ER', 'Erechim', true));
     }
 
     public function realeza(){
-        $data = $this->formatData(Information::query()->where('campus', 'RE')->get()->toArray());
-        return view('index', ['data' => $data, 'campus' => 're', 'titulo' => 'Realeza', 'popup' => 'true']);
+        return view('index', $this->get_data('RE', 'Realeza', true));
     }
 
     public function passo_fundo(){
-        $data = $this->formatData(Information::query()->where('campus', 'PF')->get()->toArray());
-        return view('index', ['data' => $data, 'campus' => 'pf', 'titulo' => 'Passo Fundo', 'popup' => 'true']);
+        return view('index', $this->get_data('PF', 'Passo Fundo', true));
     }
 
+    private function get_data($campus, $titulo, $popup){
+        $data = $this->formatData(Information::query()->where('campus', $campus)->get()->toArray());
+        $viewport = FigmaMap::query()->where('campus', $campus)->first();
+        if($viewport){
+            $viewport = $viewport['viewport'];
+        }
+        return ['data' => $data, 'campus' => strtolower($campus), 'titulo' => $titulo , 'viewport' => $viewport ,'popup' => $popup];
+    }
     private function formatData($dataInfo): array
     {
         $dataDetail = Detail::all()->toArray();
