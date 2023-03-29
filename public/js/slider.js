@@ -41,6 +41,7 @@ function swapCards(direction) {
 		currentCardEl.style.zIndex = "50";
 		currentBgImageEl.style.zIndex = "-2";
 
+		console.log(nextCardEl);
 		if (direction === "right") {
 			previousCardEl.style.zIndex = "20";
 			nextCardEl.style.zIndex = "30";
@@ -55,6 +56,7 @@ function swapCards(direction) {
 			previousBgImageEl.classList.add("next--image");
 			nextBgImageEl.classList.add("current--image");
 		} else if (direction === "left") {
+		
 			previousCardEl.style.zIndex = "30";
 			nextCardEl.style.zIndex = "20";
 
