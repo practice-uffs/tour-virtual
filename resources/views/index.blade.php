@@ -21,9 +21,11 @@
     <link rel="icon" type="image/x-icon" href="{{'img/icon/uffsvirtual-icon.png'}}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/utils/Draggable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
     <script src="{{ 'js/map/snap.svg/snap.svg.js'}}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
 
 </head>
 <body>
@@ -46,7 +48,7 @@
 @endif
 <div class="mapa" id="backdrop">
     <div class="map-svg">
-        <svg id="svg" class="svg" viewBox="322.783 100.267 1526.7 1526.7" preserveAspectRatio="xMidYMid meet"  fill="none" xmlns="http://www.w3.org/2000/svg"><g id="viewport"></g></svg>
+        <svg id="svg" class="svg" viewBox="{{$viewport ?? '0 0 3794 1985'}}" preserveAspectRatio="xMidYMid meet"  fill="none" xmlns="http://www.w3.org/2000/svg"><g id="viewport"></g></svg>
 
         <svg id="svg-scrim" class="svg svg-scrim">
             <circle id="pivot" class="pivot" cx="0" cy="0" r="6" />

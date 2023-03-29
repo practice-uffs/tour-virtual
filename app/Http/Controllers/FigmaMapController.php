@@ -44,6 +44,11 @@ class FigmaMapController extends Controller
         $name = $figma_map->getAttribute('name');
         $campus = $figma_map->getAttribute('campus');
         $SVG = $this->requestFigma($name, $campus);
+        $xml = simplexml_load_string($SVG);
+        $viewbox = null;
+        if($xml && $xml->attributes()->viewBox){
+            $viewbox= $xml->attributes()->viewBox;
+        }
         if($SVG){
             $dir = strtolower($campus) ."/". $figma_map->getAttribute('file_name');
             if(Storage::disk('mapa')->exists($dir)){
@@ -51,6 +56,9 @@ class FigmaMapController extends Controller
             }
             Storage::disk('mapa')->put($dir, $SVG);
             $figma_map->touch();
+            if($viewbox){
+                $figma_map->update(['viewport' => $viewbox]);
+            }
             $campus = Information::siglaCampus($campus);
             return redirect()->back()->with('success', "$campus atualizado com sucesso");
 

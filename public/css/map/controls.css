@@ -3,7 +3,7 @@
     display: block;
     right: 10px;
     transition: margin-right 0.5s;
-    height: 40px; 
+    height: 40px;
   }
 
 .controls-bottom{
@@ -62,3 +62,6 @@
   cursor: pointer;
 }
 
+.smooth-zoom{
+    transition:   transform 0.1s ease-out;
+}
