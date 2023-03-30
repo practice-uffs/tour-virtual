@@ -23,12 +23,12 @@
 	<div class="header">
 		<div class="container-large">
 			<a href="{{ route('home')}} " class="logo-header">
-				<img src="img/icon/tour-icon.svg" class="header-main-icon">
+				<img src="{{ 'img/icon/tour-icon.svg' }}" class="header-main-icon">
 				<h1 class="header-title">Tour Virtual UFFS</h1>
 			</a>
 			<a class="btn-header" href="{{route('map.ls')}}">
 				<h2>Acessar o tour</h2>
-				<img src="img/icon/pin-map.svg">
+				<img src="{{ 'img/icon/pin-map.svg' }}">
 			</a>
 		</div>
 	</div>
@@ -41,7 +41,7 @@
 			<a href="/cl" class="item-slider">
 				<div class="container-item-slider">
 					<div class="info">
-						<img src="img/icon/explore-solid-svgrepo-com.svg" class="icon-explore-slider">
+						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
 						<div class="box-text-slider">
 							<p class="text description">Explorar</p>
 							<h4 class="text campus-title">Campus Cerro Largo</h4>
@@ -52,10 +52,10 @@
 		</swiper-slide>
 		<swiper-slide>
 			<div class="background-slider" style='background-image: url("{{ 'img/slider/ch_slider.jpeg' }}")'></div>
-			<a href="/cl" class="item-slider">
+			<a href="/ch" class="item-slider">
 				<div class="container-item-slider">
 					<div class="info">
-						<img src="img/icon/explore-solid-svgrepo-com.svg" class="icon-explore-slider">
+						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
 						<div class="box-text-slider">
 							<p class="text description">Explorar</p>
 							<h4 class="text campus-title">Campus Chapecó</h4>
@@ -66,10 +66,10 @@
 		</swiper-slide>
 		<swiper-slide>
 			<div class="background-slider" style='background-image: url("{{ 'img/slider/er_slider.jpeg' }}")'></div>
-			<a href="/cl" class="item-slider">
+			<a href="/er" class="item-slider">
 				<div class="container-item-slider">
 					<div class="info">
-						<img src="img/icon/explore-solid-svgrepo-com.svg" class="icon-explore-slider">
+						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
 						<div class="box-text-slider">
 							<p class="text description">Explorar</p>
 							<h4 class="text campus-title">Campus Erechim</h4>
@@ -83,7 +83,7 @@
 			<a href="/cl" class="item-slider">
 				<div class="container-item-slider">
 					<div class="info">
-						<img src="img/icon/explore-solid-svgrepo-com.svg" class="icon-explore-slider">
+						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
 						<div class="box-text-slider">
 							<p class="text description">Explorar</p>
 							<h4 class="text campus-title">Campus Laranjeiras do Sul</h4>
@@ -97,7 +97,7 @@
 			<a href="/cl" class="item-slider">
 				<div class="container-item-slider">
 					<div class="info">
-						<img src="img/icon/explore-solid-svgrepo-com.svg" class="icon-explore-slider">
+						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
 						<div class="box-text-slider">
 							<p class="text description">Explorar</p>
 							<h4 class="text campus-title">Campus Passo Fundo</h4>
@@ -111,7 +111,7 @@
 			<a href="/cl" class="item-slider">
 				<div class="container-item-slider">
 					<div class="info">
-						<img src="img/icon/explore-solid-svgrepo-com.svg" class="icon-explore-slider">
+						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
 						<div class="box-text-slider">
 							<p class="text description">Explorar</p>
 							<h4 class="text campus-title">Campus Realeza</h4>
@@ -121,36 +121,36 @@
 			</a>
 		</swiper-slide>
 	</swiper-container>
-	<a href="https://uffs.edu.br/" target='_blank'><img src="img/icon/logoUFFS.png" class="logo-uffs-slide"></a>
+	<a href="https://uffs.edu.br/" target='_blank'><img src="{{ 'img/icon/logoUFFS.png' }}" class="logo-uffs-slide"></a>
 	 
 
 
 
 	<!-- initial footer -->
 	<div class="header-footer" id="header-footer-transaction">
-		<img src="img/icon/practice.svg">
+		<img src="{{ 'img/icon/practice.svg' }}">
 	</div>
 
 
 	<!-- content section 1-->
 	<div class="main-content">
 		<div class="detail-content-section-responsive"></div>
-		<img src="img/icon/detail-icon-practice.svg" class="detail-content-section">
+		<img src="{{ 'img/icon/detail-icon-practice.svg' }}" class="detail-content-section">
 		<div class="container-small">
-			<img src="img/icon/title-main-content.svg" class="tour-virtual-text">
+			<img src="{{ 'img/icon/title-main-content.svg' }}" class="tour-virtual-text">
 
 			<div class="text-main-content">Conheça e navegue dentro dos campus da Universidade Federal da Fronteira Sul</div>
-			<img src="img/icon/chapeco-map.svg" class="item-map-content">
+			<img src="{{ 'img/slider/maps_slider/Chapecó.svg' }}" class="item-map-content">
 			<div class="align-main-content" id="item-content-1">
-				<img src="img/icon/btn-mapas-detalhados.svg" style="padding: 8px;" class="item-content">
+				<img src="{{ 'img/icon/btn-mapas-detalhados.svg' }}" style="padding: 8px;" class="item-content">
 				<p>Mapas Detalhados</p>
 			</div>
 			<div class="align-main-content" id="item-content-2">
-				<img src="img/icon/btn-interatividade.svg" class="item-content">
+				<img src="{{ 'img/icon/btn-interatividade.svg' }}" class="item-content">
 				<p>Interatividade</p>
 			</div>
 			<div class="align-main-content" id="item-content-3">
-				<img src="img/icon/btn-visao-panoramica.svg" class="item-content" style="padding: 5px;">
+				<img src="{{ 'img/icon/btn-visao-panoramica.svg' }}" class="item-content" style="padding: 5px;">
 				<p>Visão Panorâmica</p>
 			</div>
 		</div>
@@ -163,18 +163,35 @@
 			<div class="title-secondary-content"><p>Veja seu campus</p>por outra perspectiva</div>
 			<div class="description-secondary-content">Encontre a informação que você precisa ou publique seu próprio conteúdo e contribua com este projeto</div>
 		</div>
-		<img src="img/icon/erechim-map.svg" class="first-map">
-		<img src="img/icon/chapeco-map.svg" class="second-map">
-		<img src="img/icon/laranjeiras-map.svg" class="thirty-map">
+		<img src="{{ 'img/slider/maps_slider/Laranjeiras do Sul.svg' }}" class="first-map">
+		<img src="{{ 'img/slider/maps_slider/Erechim.svg' }}" class="second-map">
+		<img src="{{ 'img/slider/maps_slider/Cerro Largo.svg' }}" class="thirty-map">
 
 	</div>
+
+	<!-- content section 2 -->
+	<div class="secondary-content" style="padding-top: 0;">
+		<img src="{{ 'img/slider/maps_slider/Realeza.svg' }}" class="first-map">
+		<img src="{{ 'img/slider/maps_slider/Passo Fundo.svg' }}" class="second-map">
+		<img src="{{ 'img/slider/maps_slider/Chapecó.svg' }}" class="thirty-map" style="top: 0">
+	</div>
+	
+
+	<swiper-container class="mySwiper2" navigation="true"  effect="fade" autoplay-disable-on-interaction="true" swiper-pagination-left="20%">
+		<swiper-slide><a><img src="{{ 'img/slider/maps_slider/Laranjeiras do Sul.svg' }}" class="item_slider_minimap"></a></swiper-slide>
+		<swiper-slide><a><img src="{{ 'img/slider/maps_slider/Passo Fundo.svg' }}" class="item_slider_minimap"></a></swiper-slide>
+		<swiper-slide><a><img src="{{ 'img/slider/maps_slider/Cerro Largo.svg' }}" class="item_slider_minimap"></a></swiper-slide>
+		<swiper-slide><a><img src="{{ 'img/slider/maps_slider/Chapecó.svg' }}" class="item_slider_minimap"></a></swiper-slide>
+		<swiper-slide><a><img src="{{ 'img/slider/maps_slider/Erechim.svg' }}" class="item_slider_minimap"></a></swiper-slide>
+		<swiper-slide><a><img src="{{ 'img/slider/maps_slider/Realeza.svg' }}" class="item_slider_minimap"></a></swiper-slide>
+	</swiper-container>
 
 
 
 	<div class="footer-bkgd">
 
 		<a onclick="scrollTopPage()" class="logo-header" id="logo-footer">
-			<img src="img/icon/tour-icon.svg" class="header-main-icon">
+			<img src="{{ 'img/icon/tour-icon.svg' }}" class="header-main-icon">
 			<div class="container-logo-footer">
 				<h2 class="header-title">Tour Virtual UFFS</h2>
 				<div>voltar ao topo</div>
@@ -185,26 +202,21 @@
 
 			<div class="align-content-footer">
 				<div class="top-content-footer">
-					<a href="https://www.instagram.com/practiceuffs/" target='_blank' class="social-icon"><img src="img/icon/instagram-f-svgrepo-com.svg" class="header-main-icon"></a>
-					<a href="https://www.facebook.com/profile.php?id=100063468824805" target='_blank' class="social-icon"><img src="img/icon/facebook-round-svgrepo-com.svg" class="header-main-icon"></a>
-					<a href="https://twitter.com/PracticeUFFS" target='_blank' class="social-icon"><img src="img/icon/twitter-2-svgrepo-com.svg" class="header-main-icon"></a>
-					<a href="https://github.com/practice-uffs" target='_blank' class="social-icon"><img src="img/icon/github-svgrepo-com.svg" class="header-main-icon"></a>
-					<a href="https://www.youtube.com/channel/UCu3jAl8MTMPkaxb3u0_xESw?view_as=subscriber" target='_blank' class="social-icon"><img src="img/icon/youtube-round-svgrepo-com.svg" class="header-main-icon"></a>
-					<a href="https://practice.uffs.edu.br/" target='_blank' class="social-icon"><img src="img/icon/website-ui-web-svgrepo-com.svg" class="header-main-icon"></a>
+					<a href="https://www.instagram.com/practiceuffs/" target='_blank' class="social-icon"><img src="{{ 'img/icon/instagram-f-svgrepo-com.svg' }}" class="header-main-icon"></a>
+					<a href="https://www.facebook.com/profile.php?id=100063468824805" target='_blank' class="social-icon"><img src="{{ 'img/icon/facebook-round-svgrepo-com.svg' }}" class="header-main-icon"></a>
+					<a href="https://twitter.com/PracticeUFFS" target='_blank' class="social-icon"><img src="{{ 'img/icon/twitter-2-svgrepo-com.svg' }}" class="header-main-icon"></a>
+					<a href="https://github.com/practice-uffs" target='_blank' class="social-icon"><img src="{{ 'img/icon/github-svgrepo-com.svg' }}" class="header-main-icon"></a>
+					<a href="https://www.youtube.com/channel/UCu3jAl8MTMPkaxb3u0_xESw?view_as=subscriber" target='_blank' class="social-icon"><img src="{{ 'img/icon/youtube-round-svgrepo-com.svg' }}" class="header-main-icon"></a>
+					<a href="https://practice.uffs.edu.br/" target='_blank' class="social-icon"><img src="{{ 'img/icon/website-ui-web-svgrepo-com.svg' }}" class="header-main-icon"></a>
 				</div>
 				<a class="bottom-content-footer" href="https://practice.uffs.edu.br/" target="_blank">
-					<div>DESENVOLVIDO POR<img src="img/icon/practice.svg" class="footer-icon"></div>
+					<div>DESENVOLVIDO POR<img src="{{ 'img/icon/practice.svg' }}" class="footer-icon"></div>
 				</a>
 			</div>
 		</div>
-		<a class="logo-uffs-footer" href="https://uffs.edu.br" target="_blank"><img src="img/icon/logo_uffs_verde.png"></a>
+		<a class="logo-uffs-footer" href="https://uffs.edu.br" target="_blank"><img src="{{ 'img/icon/logo_uffs_verde.png' }}"></a>
 	</div>
 
-
-	{{-- <!-- partial -->
-	<script src="{{ 'js/imagesloaded.pkgd.min.js' }}"></script>
-	<script src="{{ 'js/gsap.min.js' }}"></script>
-	<script  src="{{ 'js/slider.js' }}"></script> --}}
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 	<script src="{{'js/swiper-element-bundle.min.js'}}"></script>
