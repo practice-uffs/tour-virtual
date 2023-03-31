@@ -2,6 +2,12 @@
 /public/hot
 /public/storage
 /storage/*.key
+/public/img/svg/map/ch/main.svg
+/public/img/svg/map/cl/main.svg
+/public/img/svg/map/er/main.svg
+/public/img/svg/map/ls/main.svg
+/public/img/svg/map/pf/main.svg
+/public/img/svg/map/re/main.svg
 /vendor
 .env
 .env.backup
