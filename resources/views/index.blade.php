@@ -49,10 +49,6 @@
 <div class="mapa" id="backdrop">
     <div class="map-svg">
         <svg id="svg" class="svg" viewBox="{{$viewport ?? '0 0 3794 1985'}}" preserveAspectRatio="xMidYMid meet"  fill="none" xmlns="http://www.w3.org/2000/svg"><g id="viewport"></g></svg>
-
-        <svg id="svg-scrim" class="svg svg-scrim">
-            <circle id="pivot" class="pivot" cx="0" cy="0" r="6" />
-        </svg>
     </div>
     <div class="campus" id="step4">
         <div onclick="$('.campus-popup').show();">
@@ -68,7 +64,7 @@
                 <img src="{{'img/icon/legend-right-svgrepo-com.svg'}}" style="width: 25px; height: 25px;">
             </div>
             <div class="btn-ajuda startTour">
-                <img src="/img/icon/book-1-svgrepo-com.svg" style="width: 25px; height: 25px;">
+                <img src="{{'img/icon/book-1-svgrepo-com.svg'}}" style="width: 25px; height: 25px;">
             </div>
         </div>
     </div>
