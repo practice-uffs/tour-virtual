@@ -1,15 +1,19 @@
+@php
+    $hash_file = uniqid();
+@endphp
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <title>Tour Virtual</title>
 
-    <link rel="stylesheet" href="{{ 'css/map/scroll.css' }}">
-    <link rel="stylesheet" href="{{ 'css/map/sidebar.css' }}">
-    <link rel="stylesheet" href="{{ 'css/map/controls.css'}}">
-    <link rel="stylesheet" href="{{ 'css/map/map.css'}}">
-    <link rel="stylesheet" href="{{ 'css/map/legenda.css'}}">
-    <link rel="stylesheet" href="{{ 'css/map/searchbar.css' }}">
-    <link rel="stylesheet" href="{{ 'css/map/construcao.css' }}">
+    <link rel="stylesheet" href="{{ 'css/map/scroll.css?id='.$hash_file }}">
+    <link rel="stylesheet" href="{{ 'css/map/sidebar.css?id='.$hash_file }}">
+    <link rel="stylesheet" href="{{ 'css/map/controls.css?id='.$hash_file}}">
+    <link rel="stylesheet" href="{{ 'css/map/map.css?id='.$hash_file}}">
+    <link rel="stylesheet" href="{{ 'css/map/legenda.css?id='.$hash_file}}">
+    <link rel="stylesheet" href="{{ 'css/map/searchbar.css?id='.$hash_file}}">
+    <link rel="stylesheet" href="{{ 'css/map/construcao.css?id='.$hash_file }}">
     <link href="{{ 'tour-explain/bootstrap.min.css' }}" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ 'css/style.css' }}">
@@ -29,11 +33,7 @@
 
 </head>
 <body>
-@php
 
-    $hash_file = uniqid();
-
-@endphp
 
 <script>
     var atributos = {!! json_encode($data, JSON_HEX_TAG) !!};
@@ -67,9 +67,9 @@
             <div class="btn-legenda" id="btn-legenda">
                 <img src="{{'img/icon/legend-right-svgrepo-com.svg'}}" style="width: 25px; height: 25px;">
             </div>
-            {{-- <div class="btn-ajuda startTour">
+            <div class="btn-ajuda startTour">
                 <img src="/img/icon/book-1-svgrepo-com.svg" style="width: 25px; height: 25px;">
-            </div> --}}
+            </div>
         </div>
     </div>
     <div class="controls-container controls-bottom" id="step3" >
@@ -165,8 +165,8 @@
             <img src="{{'img/icon/left-chevron-svgrepo-com.svg'}}" style="width: 25px; height: 25px;">
         </a>
         <input type="text" id="search" placeholder="Procurar..." title="Type in a category">
-        <div class="icons-search startTour" >
-            <img src="{{'img/icon/book-1-svgrepo-com.svg'}}" style="width: 25px; height: 25px;">
+        <div class="icons-search" >
+            <img src="{{'img/icon/search-icon.svg'}}" style="width: 23px; height: 22px;">
         </div>
         <div class="icons-search" id="btn-close-search" style="width: 0;">
             <svg width="25" height="25" clip-rule="evenodd" fill-rule="evenodd" fill="#616161" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z"/></svg>
@@ -245,10 +245,10 @@
 
 <!-- Tour-Virtual Scripts -->
 <script type="module" src=" {{'js/map/SVGactions.js?id='.$hash_file}}" defer></script>
-<script type="module" src="{{'js/map/legenda.js'}}" defer></script>
-<script type="module" src="{{'js/map/searchbar.js'}}"defer></script>
-<script src="{{'js/map/controls.js'}}" defer></script>
-<script src="{{'js/map/popup.js'}}" defer></script>
+<script type="module" src="{{'js/map/legenda.js?id='.$hash_file}}" defer></script>
+<script type="module" src="{{'js/map/searchbar.js?id='.$hash_file}}"defer></script>
+<script src="{{'js/map/controls.js?id='.$hash_file}}" defer></script>
+<script src="{{'js/map/popup.js?id='.$hash_file}}" defer></script>
 
 <!-- Explain Steps Scripts -->
 <script src="{{'tour-explain/jquery.min.js'}}"></script>
