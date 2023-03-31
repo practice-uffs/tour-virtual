@@ -45,9 +45,14 @@ function deletar() {
 // CRIAR SIDEBAR
 // ====================================
 
-function abrir(titulo, descricao, list_desc, id_360, img_capa) {
+function abrir(titulo, descricao, list_desc, id_360, img_capa, paper) {
+    let marcado = $('.map-selected')
+    if(marcado)
+        marcado.removeClass('map-selected')
 
 
+
+    paper.addClass('map-selected')
     $("#titulo-sidebar").text(titulo);
     $("#descricao-sidebar").html(descricao);
     let ul = $("<ul>")
@@ -102,6 +107,10 @@ function abrir(titulo, descricao, list_desc, id_360, img_capa) {
 // ====================================
 
 function fechar() {
+
+    let marcado = $('.map-selected')
+    if(marcado)
+        marcado.removeClass('map-selected')
     $("#side-bar").addClass("hidden-side-bar");
     $("#titulo-sidebar").text("");
     $("#descricao-sidebar").text("");
@@ -131,7 +140,7 @@ function setActions(parent, ID_element, ID_group, titulo, desc, list_desc, id_36
 
     if (grupo) {
         grupo.click(function () {
-            abrir(titulo, desc, list_desc, id_360, img_capa)
+            abrir(titulo, desc, list_desc, id_360, img_capa, grupoSNAP)
         });
 
         grupo.bind("touchstart", function () {

@@ -1,15 +1,19 @@
+@php
+    $hash_file = uniqid();
+@endphp
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <title>Tour Virtual</title>
 
-    <link rel="stylesheet" href="{{ 'css/map/scroll.css' }}">
-    <link rel="stylesheet" href="{{ 'css/map/sidebar.css' }}">
-    <link rel="stylesheet" href="{{ 'css/map/controls.css'}}">
-    <link rel="stylesheet" href="{{ 'css/map/map.css'}}">
-    <link rel="stylesheet" href="{{ 'css/map/legenda.css'}}">
-    <link rel="stylesheet" href="{{ 'css/map/searchbar.css' }}">
-    <link rel="stylesheet" href="{{ 'css/map/construcao.css' }}">
+    <link rel="stylesheet" href="{{ 'css/map/scroll.css?id='.$hash_file }}">
+    <link rel="stylesheet" href="{{ 'css/map/sidebar.css?id='.$hash_file }}">
+    <link rel="stylesheet" href="{{ 'css/map/controls.css?id='.$hash_file}}">
+    <link rel="stylesheet" href="{{ 'css/map/map.css?id='.$hash_file}}">
+    <link rel="stylesheet" href="{{ 'css/map/legenda.css?id='.$hash_file}}">
+    <link rel="stylesheet" href="{{ 'css/map/searchbar.css?id='.$hash_file}}">
+    <link rel="stylesheet" href="{{ 'css/map/construcao.css?id='.$hash_file }}">
     <link href="{{ 'tour-explain/bootstrap.min.css' }}" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ 'css/style.css' }}">
@@ -29,11 +33,7 @@
 
 </head>
 <body>
-@php
 
-    $hash_file = uniqid();
-
-@endphp
 
 <script>
     var atributos = {!! json_encode($data, JSON_HEX_TAG) !!};
@@ -245,10 +245,10 @@
 
 <!-- Tour-Virtual Scripts -->
 <script type="module" src=" {{'js/map/SVGactions.js?id='.$hash_file}}" defer></script>
-<script type="module" src="{{'js/map/legenda.js'}}" defer></script>
-<script type="module" src="{{'js/map/searchbar.js'}}"defer></script>
-<script src="{{'js/map/controls.js'}}" defer></script>
-<script src="{{'js/map/popup.js'}}" defer></script>
+<script type="module" src="{{'js/map/legenda.js?id='.$hash_file}}" defer></script>
+<script type="module" src="{{'js/map/searchbar.js?id='.$hash_file}}"defer></script>
+<script src="{{'js/map/controls.js?id='.$hash_file}}" defer></script>
+<script src="{{'js/map/popup.js?id='.$hash_file}}" defer></script>
 
 <!-- Explain Steps Scripts -->
 <script src="{{'tour-explain/jquery.min.js'}}"></script>

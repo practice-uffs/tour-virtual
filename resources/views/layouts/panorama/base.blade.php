@@ -1,3 +1,7 @@
+@php
+    $hash_file = uniqid();
+@endphp
+
 <html lang="pt-br">
 <head>
     <title>@yield('title')</title>
@@ -5,7 +9,7 @@
     <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
     <style> @-ms-viewport { width: device-width; } </style>
     <link rel="stylesheet" href="{{'../css/panorama/reset.min.css'}}">
-    <link rel="stylesheet" href="{{'../css/panorama/style.css'}}">
+    <link rel="stylesheet" href="{{'../css/panorama/style.css?id='.$hash_file }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="{{'../img/icon/uffsvirtual-icon.png'}}">
@@ -74,8 +78,8 @@
 
 @yield('data_panorama')
 
-<script src="{{'../js/panorama/index.js'}}"></script>
-<script src="{{'../js/panorama/script.js'}}"></script>
+<script src="{{'../js/panorama/index.js?id='.$hash_file }}"></script>
+<script src="{{'../js/panorama/script.js?id='.$hash_file }}"></script>
 
 </body>
 </html>

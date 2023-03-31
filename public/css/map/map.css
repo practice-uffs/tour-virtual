@@ -44,6 +44,13 @@
   cursor: pointer;
 }
 
+.map-selected{
+  opacity: 0.85;
+  fill: #00CCFF;
+  stroke: #282828;
+  stroke-width: 2;
+  cursor: pointer;
+}
 
 .map-hover-legendas{
   fill: #067988;
