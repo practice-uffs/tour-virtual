@@ -38,7 +38,7 @@
 	<swiper-container class="mySwiper" navigation="true"  effect="fade" autoplay-delay="2500" autoplay-disable-on-interaction="true" swiper-pagination-left="20%">
 		<swiper-slide>
 			<div class="background-slider" style='background-image: url("{{ 'img/slider/cl_slider.jpeg' }}")'></div>
-			<a href="{{ route('panorama.cl')}} " class="item-slider">
+			<a href="{{ route('map.cl')}} " class="item-slider">
 				<div class="container-item-slider">
 					<div class="info">
 						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
@@ -52,7 +52,7 @@
 		</swiper-slide>
 		<swiper-slide>
 			<div class="background-slider" style='background-image: url("{{ 'img/slider/ch_slider.jpeg' }}")'></div>
-			<a href="{{ route('panorama.ch')}} " class="item-slider">
+			<a href="{{ route('map.ch')}} " class="item-slider">
 				<div class="container-item-slider">
 					<div class="info">
 						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
@@ -66,7 +66,7 @@
 		</swiper-slide>
 		<swiper-slide>
 			<div class="background-slider" style='background-image: url("{{ 'img/slider/er_slider.jpeg' }}")'></div>
-			<a href="{{ route('panorama.er')}} " class="item-slider">
+			<a href="{{ route('map.er')}} " class="item-slider">
 				<div class="container-item-slider">
 					<div class="info">
 						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
@@ -80,7 +80,7 @@
 		</swiper-slide>
 		<swiper-slide>
 			<div class="background-slider" style='background-image: url("{{ 'img/slider/ls_slider.jpeg' }}")'></div>
-			<a href="{{ route('panorama.ls')}} " class="item-slider">
+			<a href="{{ route('map.ls')}} " class="item-slider">
 				<div class="container-item-slider">
 					<div class="info">
 						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
@@ -94,7 +94,7 @@
 		</swiper-slide>
 		<swiper-slide>
 			<div class="background-slider" style='background-image: url("{{ 'img/slider/pf_slider.jpeg' }}")'></div>
-			<a href="{{ route('panorama.pf')}} " class="item-slider">
+			<a href="{{ route('map.pf')}} " class="item-slider">
 				<div class="container-item-slider">
 					<div class="info">
 						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
@@ -108,7 +108,7 @@
 		</swiper-slide>
 		<swiper-slide>
 			<div class="background-slider" style='background-image: url("{{ 'img/slider/rl_slider.jpeg' }}")'></div>
-			<a href="{{ route('panorama.re')}} " class="item-slider">
+			<a href="{{ route('map.re')}} " class="item-slider">
 				<div class="container-item-slider">
 					<div class="info">
 						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
