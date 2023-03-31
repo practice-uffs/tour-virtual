@@ -197,7 +197,8 @@ class BTN_360 {
         }
         let nearPoint = this.#nearPoint();
         if (nearPoint.value - 80 <= 0) {
-            changeToPanorama(nearPoint.element.identifier_360)
+            if(nearPoint.element)
+                changeToPanorama(nearPoint.element.identifier_360)
         }
 
 
