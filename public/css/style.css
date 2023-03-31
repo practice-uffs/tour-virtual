@@ -16,6 +16,15 @@ body{
 }
 
 
+@keyframes move_bkgd {
+  0% {background-position: center;}
+  33% {background-position: bottom;}  
+  66% {background-position: top;} 
+  100% {background-position: center;}  
+}
+
+
+
 .campus{
   position: absolute;
   width: 100%;
@@ -193,6 +202,9 @@ img {
   height: 25px;
   transition: 0.5s all;
 }
+
+
+
 
 
 

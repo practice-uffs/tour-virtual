@@ -17,6 +17,15 @@ a { text-decoration: none; }
 /* | custom styles tour-virtual | */
 /* ================================ */
 
+@keyframes move_bkgd {
+    0% {background-position: center;}
+    33% {background-position: bottom;}  
+    66% {background-position: top;} 
+    100% {background-position: center;}  
+}
+
+
+
 .header { width: 100%; display: block; float: left; height: 13.5%; background-color: #fafafa; color: var(--color-dark-blue); }
 .contariner-large { width: 80%; left: auto; right: auto; }
 .campus-title { font-size: 2.1vw; margin-top: 5px; font-weight: 600; float: left; text-align: start; }
@@ -192,6 +201,89 @@ swiper-slide img {
 swiper-container.mySwiper {
     color: #E5E5E5 !important;
 }
+
+
+
+.section-slider{
+
+    height: 73vh;
+    float: left;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .container-labels-slider{
+    height: 100%;
+    display: flex;
+    padding-top: 25px;
+  }
+  
+  .label-slider{
+    position: absolute;
+    z-index: 10000;
+  }
+  
+  
+  .item-slider{
+    position: fixed;
+    width: 24%;
+    height: 100%;
+    left: 30%;
+    z-index: 1000;
+  }
+  
+  .container-item-slider{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transform-style: preserve-3d;
+  }
+  
+  .info{
+    display: flex;
+    height: auto;
+    cursor: pointer;
+  }
+  
+  .background-slider{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    opacity: 0.5;
+    filter: blur(2px);
+    -webkit-transition: transform 1000ms ease, opacity 1000ms ease;
+    transition: transform 1000ms ease, opacity 1000ms ease;
+    z-index: -1;
+    position: relative;
+    animation: move_bkgd 100s forwards;
+    animation-iteration-count: infinite;
+  }
+  
+  
+  
+  .logo {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: block;
+    z-index: 100;
+    transition: all 250ms linear;
+  }
+  .logo img {
+    height: 26px;
+    width: auto;
+    display: block;
+  }
+
+  
+
+
 
 @media only screen and (max-width: 1600px) {
     .detail-content-section{
@@ -540,6 +632,8 @@ swiper-container.mySwiper {
         color: #264653 !important;
     }
 
+
+    
    
 
 }

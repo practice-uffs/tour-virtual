@@ -38,7 +38,7 @@
 	<swiper-container class="mySwiper" navigation="true"  effect="fade" autoplay-delay="2500" autoplay-disable-on-interaction="true" swiper-pagination-left="20%">
 		<swiper-slide>
 			<div class="background-slider" style='background-image: url("{{ 'img/slider/cl_slider.jpeg' }}")'></div>
-			<a href="/cl" class="item-slider">
+			<a href="{{ route('panorama.cl')}} " class="item-slider">
 				<div class="container-item-slider">
 					<div class="info">
 						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
@@ -52,7 +52,7 @@
 		</swiper-slide>
 		<swiper-slide>
 			<div class="background-slider" style='background-image: url("{{ 'img/slider/ch_slider.jpeg' }}")'></div>
-			<a href="/ch" class="item-slider">
+			<a href="{{ route('panorama.ch')}} " class="item-slider">
 				<div class="container-item-slider">
 					<div class="info">
 						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
@@ -66,7 +66,7 @@
 		</swiper-slide>
 		<swiper-slide>
 			<div class="background-slider" style='background-image: url("{{ 'img/slider/er_slider.jpeg' }}")'></div>
-			<a href="/er" class="item-slider">
+			<a href="{{ route('panorama.er')}} " class="item-slider">
 				<div class="container-item-slider">
 					<div class="info">
 						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
@@ -80,7 +80,7 @@
 		</swiper-slide>
 		<swiper-slide>
 			<div class="background-slider" style='background-image: url("{{ 'img/slider/ls_slider.jpeg' }}")'></div>
-			<a href="/cl" class="item-slider">
+			<a href="{{ route('panorama.ls')}} " class="item-slider">
 				<div class="container-item-slider">
 					<div class="info">
 						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
@@ -94,7 +94,7 @@
 		</swiper-slide>
 		<swiper-slide>
 			<div class="background-slider" style='background-image: url("{{ 'img/slider/pf_slider.jpeg' }}")'></div>
-			<a href="/cl" class="item-slider">
+			<a href="{{ route('panorama.pf')}} " class="item-slider">
 				<div class="container-item-slider">
 					<div class="info">
 						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
@@ -108,7 +108,7 @@
 		</swiper-slide>
 		<swiper-slide>
 			<div class="background-slider" style='background-image: url("{{ 'img/slider/rl_slider.jpeg' }}")'></div>
-			<a href="/cl" class="item-slider">
+			<a href="{{ route('panorama.re')}} " class="item-slider">
 				<div class="container-item-slider">
 					<div class="info">
 						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
@@ -163,27 +163,27 @@
 			<div class="title-secondary-content"><p>Veja seu campus</p>por outra perspectiva</div>
 			<div class="description-secondary-content">Encontre a informação que você precisa ou publique seu próprio conteúdo e contribua com este projeto</div>
 		</div>
-		<img src="{{ 'img/slider/maps_slider/Laranjeiras do Sul.svg' }}" class="first-map">
-		<img src="{{ 'img/slider/maps_slider/Erechim.svg' }}" class="second-map">
-		<img src="{{ 'img/slider/maps_slider/Cerro Largo.svg' }}" class="thirty-map">
+		<a href="{{ route('panorama.ls') }}"><img src="{{ 'img/slider/maps_slider/Laranjeiras do Sul.svg' }}" class="first-map"></a>
+		<a href="{{ route('panorama.ls') }}"><img src="{{ 'img/slider/maps_slider/Erechim.svg' }}" class="second-map"></a>
+		<a href="{{ route('panorama.ls') }}"><img src="{{ 'img/slider/maps_slider/Cerro Largo.svg' }}" class="thirty-map"></a>
 
 	</div>
 
 	<!-- content section 2 -->
 	<div class="secondary-content" style="padding-top: 0;">
-		<img src="{{ 'img/slider/maps_slider/Realeza.svg' }}" class="first-map">
-		<img src="{{ 'img/slider/maps_slider/Passo Fundo.svg' }}" class="second-map">
-		<img src="{{ 'img/slider/maps_slider/Chapecó.svg' }}" class="thirty-map" style="top: 0">
+		<a href="{{ route('panorama.ls') }}"><img src="{{ 'img/slider/maps_slider/Realeza.svg' }}" class="first-map"></a>
+		<a href="{{ route('panorama.ls') }}"><img src="{{ 'img/slider/maps_slider/Passo Fundo.svg' }}" class="second-map"></a>
+		<a href="{{ route('panorama.ls') }}"><img src="{{ 'img/slider/maps_slider/Chapecó.svg' }}" class="thirty-map" style="top: 0"></a>
 	</div>
 	
 
 	<swiper-container class="mySwiper2" navigation="true"  effect="fade" autoplay-disable-on-interaction="true" swiper-pagination-left="20%">
-		<swiper-slide><a><img src="{{ 'img/slider/maps_slider/Laranjeiras do Sul.svg' }}" class="item_slider_minimap"></a></swiper-slide>
-		<swiper-slide><a><img src="{{ 'img/slider/maps_slider/Passo Fundo.svg' }}" class="item_slider_minimap"></a></swiper-slide>
-		<swiper-slide><a><img src="{{ 'img/slider/maps_slider/Cerro Largo.svg' }}" class="item_slider_minimap"></a></swiper-slide>
-		<swiper-slide><a><img src="{{ 'img/slider/maps_slider/Chapecó.svg' }}" class="item_slider_minimap"></a></swiper-slide>
-		<swiper-slide><a><img src="{{ 'img/slider/maps_slider/Erechim.svg' }}" class="item_slider_minimap"></a></swiper-slide>
-		<swiper-slide><a><img src="{{ 'img/slider/maps_slider/Realeza.svg' }}" class="item_slider_minimap"></a></swiper-slide>
+		<swiper-slide><a href="{{ route('panorama.ls') }}"><img src="{{ 'img/slider/maps_slider/Laranjeiras do Sul.svg' }}" class="item_slider_minimap"></a></swiper-slide>
+		<swiper-slide><a href="{{ route('panorama.pf') }}"><img src="{{ 'img/slider/maps_slider/Passo Fundo.svg' }}" class="item_slider_minimap"></a></swiper-slide>
+		<swiper-slide><a href="{{ route('panorama.cl') }}"><img src="{{ 'img/slider/maps_slider/Cerro Largo.svg' }}" class="item_slider_minimap"></a></swiper-slide>
+		<swiper-slide><a href="{{ route('panorama.ch') }}"><img src="{{ 'img/slider/maps_slider/Chapecó.svg' }}" class="item_slider_minimap"></a></swiper-slide>
+		<swiper-slide><a href="{{ route('panorama.er') }}"><img src="{{ 'img/slider/maps_slider/Erechim.svg' }}" class="item_slider_minimap"></a></swiper-slide>
+		<swiper-slide><a href="{{ route('panorama.re') }}"><img src="{{ 'img/slider/maps_slider/Realeza.svg' }}" class="item_slider_minimap"></a></swiper-slide>
 	</swiper-container>
 
 
