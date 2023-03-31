@@ -163,17 +163,17 @@
 			<div class="title-secondary-content"><p>Veja seu campus</p>por outra perspectiva</div>
 			<div class="description-secondary-content">Encontre a informação que você precisa ou publique seu próprio conteúdo e contribua com este projeto</div>
 		</div>
-		<a href="{{ route('map.ls') }}"><img src="{{ 'img/slider/maps_slider/Laranjeiras do Sul.svg' }}" class="first-map"></a>
-		<a href="{{ route('map.er') }}"><img src="{{ 'img/slider/maps_slider/Erechim.svg' }}" class="second-map"></a>
-		<a href="{{ route('map.cl') }}"><img src="{{ 'img/slider/maps_slider/Cerro Largo.svg' }}" class="thirty-map"></a>
+		<a href="{{ route('map.ls') }}" class="first-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Laranjeiras do Sul.svg' }}"></a>
+		<a href="{{ route('map.er') }}" class="second-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Erechim.svg' }}"></a>
+		<a href="{{ route('map.cl') }}" class="thirty-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Cerro Largo.svg' }}"></a>
 
 	</div>
 
 	<!-- content section 2 -->
-	<div class="secondary-content" style="padding-top: 0;">
-		<a href="{{ route('map.re') }}"><img src="{{ 'img/slider/maps_slider/Realeza.svg' }}" class="first-map"></a>
-		<a href="{{ route('map.pf') }}"><img src="{{ 'img/slider/maps_slider/Passo Fundo.svg' }}" class="second-map"></a>
-		<a href="{{ route('map.ch') }}"><img src="{{ 'img/slider/maps_slider/Chapecó.svg' }}" class="thirty-map" style="top: 0"></a>
+	<div class="secondary-content" style="padding-top: 5vw;">
+		<a href="{{ route('map.re') }}" class="first-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Realeza.svg' }}"></a>
+		<a href="{{ route('map.pf') }}" class="second-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Passo Fundo.svg' }}"></a>
+		<a href="{{ route('map.ch') }}" class="thirty-map"  style="top: 0"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Chapecó.svg' }}"></a>
 	</div>
 	
 

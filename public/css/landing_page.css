@@ -64,27 +64,28 @@ a { text-decoration: none; }
 
 .text-main-content { margin-top: 100px; margin-bottom: 20px; width: 50%; font-size: 1vw; color: var(--color-dark-blue); }
 .item-map-content { height: auto; width: 16vw; right: 0%; position: absolute; top: 20%; opacity: 0;  transition: all 1s; }
-.secondary-content { float: left; padding: 15vw 20vw 8vw 20vw; width: 100%; position: relative;}
+.secondary-content { float: left; padding: 15vw 15vw 8vw 15vw; width: 100%; position: relative;}
 
 .first-map {     position: relative;
     float: right;
-    max-height: 20vw;
-    width: 20vw; }
+    width: 20vw; 
+    height: 15vw;}
 .second-map {     float: left;
-    max-height: 20vw;
-    width: 20vw; }
+    width: 20vw;
+    height: 15vw; }
 .thirty-map { display: block;
     bottom: 0;
     position: relative;
     width: 20vw;
-    top: 12vw;
-    max-height: 20vw;
+    top: 10vw;
+    height: 15vw;
+    margin-left:5vw;
     float: left; }
 .title-secondary-content { font-size: 2vw; color: var(--color-dark-blue); font-weight: 600; position: relative; }
 .title-secondary-content p { font-size: 1.5vw; }
 
 .description-secondary-content { font-size: 1vw; color: var(--color-dark-blue); margin-top: 20px; position: relative; width: 240px; float: left; }
-.align-descriptions {position: absolute; top: 15vw; margin-left: 20vw;}
+.align-descriptions {position: absolute; top: 15vw; margin-left: 25vw;}
 
 .footer-bkgd { position: relative; float: left; height: auto; background-color: #E5E5E5; padding-left: 10%; display: block; width: 100%; padding-top: 100px; padding-bottom: 100px; }
 #logo-footer{ opacity: 1}
@@ -205,16 +206,7 @@ swiper-container.mySwiper {
 
 
 @media only screen and (max-width: 1200px) {
-    .secondary-content{
-        padding-left: 10vw;
-        padding-right: 10vw;
-        padding-bottom: 15vw;
-    }
 
-    .thirty-map{
-        top: 20vw;
-        left: 10vw;
-    }
 
     .description-secondary-content {
         font-size: 16px;
@@ -321,7 +313,7 @@ swiper-container.mySwiper {
 
     .social-icon {
         margin-left: 0px;
-        margin-right: 10px;
+        margin-right:20px;
     }
 
     .container-logo-footer .header-main-icon {
@@ -436,7 +428,7 @@ swiper-container.mySwiper {
     }
 
     .footer-bkgd .header-main-icon{
-        width: 10vw;
+        width: 8vw;
         height: 8vw;
     }
 
@@ -510,7 +502,7 @@ swiper-container.mySwiper {
         align-items: start;
     }
 
-    .secondary-content img {
+    .secondary-content a {
         display: none;
     }
 
@@ -553,7 +545,7 @@ swiper-container.mySwiper {
     }
 
     .secondary-content{
-        padding: 10vw 25vw 5vw 25vw;
+        padding: 10vw 20vw 5vw 20vw;
     }
 
 
@@ -571,11 +563,11 @@ swiper-container.mySwiper {
 
     .align-descriptions {
         top: 10vw;
-        margin-left: 18vw;
+        margin-left: 22vw;
     }
 
     .first-map{
-        width: 10vw;
+        width: 15vw;
     }
 
     .thirty-map{
@@ -597,6 +589,10 @@ swiper-container.mySwiper {
 
     .bottom-content-footer img {
         width: 6vw;
+    }
+
+    .thirty-map{
+        margin-left: 0;
     }
 
 
