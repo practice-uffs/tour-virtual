@@ -1,16 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@200;400;500;600;700;800&display=swap"); */
 :root { --card-width: 10vw; --card-height: 15vw; --card-transition-duration: 800ms; --card-transition-easing: ease; --color-dark-blue: #264653; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { width: 100%; height: 100vh; display: block; justify-content: center; align-items: center; background: #fafafa; font-family: roboto; }
 button { border: none; background: none; cursor: pointer; } button:focus { outline: none; border: none; }
-.app { position: relative; width: 100%; height: 73%; display: flex; justify-content: center; align-items: center; overflow: hidden; } .app__bg { position: absolute; width: 100%; height: 100%; z-index: -5; filter: blur(2px); pointer-events: none; user-select: none; overflow: hidden; } .app__bg::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: #000; z-index: 1; opacity: 0.8; } .app__bg__image { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) translateX(var(--image-translate-offset, 0)); width: 100%; height: 100%; transition: transform 1000ms ease, opacity 1000ms ease; overflow: hidden; } .app__bg__image img { width: 100%; height: 100%; object-fit: cover; } .app__bg__image.current--image { opacity: 1; --image-translate-offset: 0; } .app__bg__image.previous--image, .app__bg__image.next--image { opacity: 0; } .app__bg__image.previous--image { --image-translate-offset: -25%; } .app__bg__image.next--image { --image-translate-offset: 25%; }
+a { text-decoration: none; }
+/* .app { position: relative; width: 100%; height: 73%; display: flex; justify-content: center; align-items: center; overflow: hidden; } .app__bg { position: absolute; width: 100%; height: 100%; z-index: -5; filter: blur(2px); pointer-events: none; user-select: none; overflow: hidden; } .app__bg::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: #000; z-index: 1; opacity: 0.8; } .app__bg__image { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) translateX(var(--image-translate-offset, 0)); width: 100%; height: 100%; transition: transform 1000ms ease, opacity 1000ms ease; overflow: hidden; } .app__bg__image img { width: 100%; height: 100%; object-fit: cover; } .app__bg__image.current--image { opacity: 1; --image-translate-offset: 0; } .app__bg__image.previous--image, .app__bg__image.next--image { opacity: 0; } .app__bg__image.previous--image { --image-translate-offset: -25%; } .app__bg__image.next--image { --image-translate-offset: 25%; }
 .cardList { position: absolute; width: calc(3 * var(--card-width)); height: auto; right:20%; } .cardList__btn { --btn-size: 4.1vw; width: var(--btn-size); height: var(--btn-size); position: absolute; top: 50%; transform: translateY(-50%); z-index: 100; } .cardList__btn.btn--left { left: 0; } .cardList__btn.btn--right { right: 0; } .cardList__btn .icon { width: 100%; height: 100%; } .cardList__btn .icon svg { width: 100%; height: 100%; } .cardList .cards__wrapper { position: relative; width: 100%; height: 100%; }
 .card { --card-translateY-offset: 100%; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) translateX(var(--card-translateX-offset)) translateY(var(--card-translateY-offset)) rotateY(var(--card-rotation-offset)) scale(var(--card-scale-offset)); display: inline-block; width: var(--card-width); height: var(--card-height); transition: transform var(--card-transition-duration) var(--card-transition-easing); user-select: none; } .card::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: #000; z-index: 1; transition: opacity var(--card-transition-duration) var(--card-transition-easing); opacity: calc(1 - var(--opacity)); } .card__image { position: relative; width: 100%; height: 100%; } .card__image img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; } .card.current--card { --current-card-rotation-offset: 0; --card-translateX-offset: 0; --card-rotation-offset: var(--current-card-rotation-offset); --card-scale-offset: 1.2; --opacity: 0.8; } .card.previous--card { --card-translateX-offset: calc(-1 * var(--card-width) * 1.1); --card-rotation-offset: 25deg; } .card.next--card { --card-translateX-offset: calc(var(--card-width) * 1.1); --card-rotation-offset: -25deg; } .card.previous--card, .card.next--card { --card-scale-offset: 0.9; --opacity: 0.4; }
 .infoList { position: absolute; width: 24%; height: var(--card-height); pointer-events: none; left: 20%; } .infoList .info__wrapper { position: relative; width: 100%; height: 100%; display: flex; justify-content: flex-start; align-items: center; transform-style: preserve-3d; }
 .info { top: 0; transform: translateZ(2rem); transition: transform var(--card-transition-duration) var(--card-transition-easing); } .info .text { position: relative; color: #fff; width: fit-content; white-space: break-spaces;}
 .info .name, .info .location { text-transform: uppercase; } .info .location { font-weight: 800; } .info .location { --mg-left: 40px; --text-size-offset: 0.12; font-weight: 600; margin-left: var(--mg-left); margin-bottom: calc(var(--mg-left) / 2); padding-bottom: 0.8rem; } .info .location::before, .info .location::after { content: ""; position: absolute; background: #fff; left: 0%; transform: translate(calc(-1 * var(--mg-left)), -50%); } .info .location::before { top: 50%; width: 20px; height: 5px; } .info .location::after { bottom: 0; width: 60px; height: 2px; } .info.previous--info, .info.next--info { opacity: 0; display: none; }
 .loading__wrapper { position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #000; z-index: 200; } .loading__wrapper .loader--text { color: #fff; font-weight: 500; margin-bottom: 1.4rem; } .loading__wrapper .loader { position: relative; width: 200px; height: 2px; background: rgba(255, 255, 255, 0.25); } .loading__wrapper .loader span { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: red; transform: scaleX(0); transform-origin: left; }
-.support { position: absolute; right: 10px; bottom: 10px; padding: 10px; display: flex; } .support a { margin: 0 10px; color: #fff; font-size: 1.8rem; backface-visibility: hidden; transition: all 150ms ease; } .support a:hover { transform: scale(1.1); }
+.support { position: absolute; right: 10px; bottom: 10px; padding: 10px; display: flex; } .support a { margin: 0 10px; color: #fff; font-size: 1.8rem; backface-visibility: hidden; transition: all 150ms ease; } .support a:hover { transform: scale(1.1); } */
 
 /* ================================*/
 /* | custom styles tour-virtual | */
@@ -18,9 +19,9 @@ button { border: none; background: none; cursor: pointer; } button:focus { outli
 
 .header { width: 100%; display: block; float: left; height: 13.5%; background-color: #fafafa; color: var(--color-dark-blue); }
 .contariner-large { width: 80%; left: auto; right: auto; }
-.campus-title { font-size: 2.1vw; margin-top: 5px; font-weight: 600; }
-.text.description { font-weight: 200; font-size: 1.3vw; }
-.box-text-slider { float: left; margin-left: 10px; margin-top: -10px; }
+.campus-title { font-size: 2.1vw; margin-top: 5px; font-weight: 600; float: left; text-align: start; }
+.text.description { font-weight: 200; font-size: 1.3vw;  float:left; width: 100%;    text-align: start;}
+.box-text-slider { float: left; margin-left: 10px; margin-top: -10px; color: #D9D9D9; }
 .icon-explore-slider { width: 2.6vw; height: 2.6vw; stroke: #fafafa; float: left; fill: #fafafa; }
 .info { display: flex; height: auto; cursor:pointer;  }
 .header-footer { height: 13.5%; width: 100%; background-color: #fafafa; display: flex; align-items: center; transition: height 1s; }
@@ -37,8 +38,16 @@ button { border: none; background: none; cursor: pointer; } button:focus { outli
 .main-content { position: relative; background-color: #D9D9D9; height: auto; float: left; width: 100%; display: flex; }
 .container-small { width: 35vw; height: auto; position: relative; float: left; padding-top: 20vh; padding-bottom: 20vh; margin-left: auto; margin-right: auto; }
 
-.align-main-content { display: flex; position: relative; flex-direction: column; float: left; bottom: 0; }
-.item-content { width: 255px; height: auto; margin-top: 10px; opacity: 0 }
+.align-main-content {     display: flex;
+    position: relative;
+    flex-direction: row;
+    float: left;
+    bottom: 0;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+ }
+.item-content { width: 50px; height: 50px;  margin-top: 30px; }
 .detail-content-section { position: absolute; margin: 20vh 10% 20vh 10%; display: none; }
 
 .detail-content-section-responsive {
@@ -55,18 +64,30 @@ button { border: none; background: none; cursor: pointer; } button:focus { outli
 
 .text-main-content { margin-top: 100px; margin-bottom: 20px; width: 50%; font-size: 1vw; color: var(--color-dark-blue); }
 .item-map-content { height: auto; width: 16vw; right: 0%; position: absolute; top: 20%; opacity: 0;  transition: all 1s; }
-.secondary-content { float: left; padding: 15vw 20vw 10vw 20vw; width: 100%; position: relative;}
+.secondary-content { float: left; padding: 15vw 15vw 8vw 15vw; width: 100%; position: relative;}
 
-.first-map { position: relative; float: right; width: 16vw; }
-.second-map { float: left; width: 10vw; }
-.thirty-map { display: block; bottom: 0; position: relative; width: 100%; height: 200px; top: -5vw; }
+.first-map {     position: relative;
+    float: right;
+    width: 20vw; 
+    height: 15vw;}
+.second-map {     float: left;
+    width: 20vw;
+    height: 15vw; }
+.thirty-map { display: block;
+    bottom: 0;
+    position: relative;
+    width: 20vw;
+    top: 10vw;
+    height: 15vw;
+    margin-left:5vw;
+    float: left; }
 .title-secondary-content { font-size: 2vw; color: var(--color-dark-blue); font-weight: 600; position: relative; }
 .title-secondary-content p { font-size: 1.5vw; }
 
 .description-secondary-content { font-size: 1vw; color: var(--color-dark-blue); margin-top: 20px; position: relative; width: 240px; float: left; }
-.align-descriptions {position: absolute; top: 15vw; margin-left: 20vw;}
+.align-descriptions {position: absolute; top: 15vw; margin-left: 25vw;}
 
-.footer-bkgd { position: relative; float: left; height: 300px; background-color: #E5E5E5; padding-left: 10%; display: block; width: 100%; }
+.footer-bkgd { position: relative; float: left; height: auto; background-color: #E5E5E5; padding-left: 10%; display: block; width: 100%; padding-top: 100px; padding-bottom: 100px; }
 #logo-footer{ opacity: 1}
 .container-logo-footer { display: flex; flex-direction: column; font-size: 2.1vw; color: var(--color-dark-blue); margin-left: 10px; }
 .container-logo-footer div { font-size: 1.1vw; margin-left: 16px; }
@@ -80,10 +101,12 @@ button { border: none; background: none; cursor: pointer; } button:focus { outli
 .top-content-footer { margin-bottom: 10px; }
 .first-map, .second-map, .thirty-map { opacity: 0; }
 .logo-uffs-slide {
-    bottom: 30px;
+    bottom: 17%;
     position: absolute;
     opacity: 1;
     z-index: 10000000;
+    left: 45%;
+    width: 10%;
 }
 
 .btn-header:hover img{
@@ -105,31 +128,71 @@ button { border: none; background: none; cursor: pointer; } button:focus { outli
 .logo-uffs-footer{
     position: absolute;
     left: 45%;
-    height: 100%;
+    width: 10%;
     align-items: center;
     display: flex;
 }
 
 .logo-uffs-footer img{
-    width: 15vw;
+    width: 100%;
 }
 
 
 .in-view-opacity-1s{
     opacity:1;
-    transition: all 1s;
+    transition: opacity 1s;
 }
 
 .in-view-opacity-2s{
     opacity:1;
-    transition: all 2s;
+    transition: opacity 2s;
 }
 
 .in-view-opacity-3s{
     opacity:1;
-    transition: all 3s;
+    transition: opacity 3s;
 }
 
+
+
+swiper-container {
+    width: 100%;
+    height: 73%;
+  }
+
+swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.align-main-content p{
+    font-size: 22px;
+    margin-top: 25px;
+    margin-left: 10px;
+    font-weight: 200;
+    color: #152238;
+}
+
+
+.mySwiper2{
+    display: none;
+}
+
+
+swiper-container.mySwiper {
+    color: #E5E5E5 !important;
+}
 
 @media only screen and (max-width: 1600px) {
     .detail-content-section{
@@ -143,15 +206,7 @@ button { border: none; background: none; cursor: pointer; } button:focus { outli
 
 
 @media only screen and (max-width: 1200px) {
-    .secondary-content{
-        padding-left: 10vw;
-        padding-right: 10vw;
-        padding-bottom: 25vw;
-    }
 
-    .thirty-map{
-        top: 5vw;
-    }
 
     .description-secondary-content {
         font-size: 16px;
@@ -186,8 +241,10 @@ button { border: none; background: none; cursor: pointer; } button:focus { outli
     }
 
 
-    .header .header-title, .btn-header h2 {
-        font-size: 3vw;
+   
+
+    .logo-uffs-footer{
+        width: 15%;
     }
 
 
@@ -226,34 +283,37 @@ button { border: none; background: none; cursor: pointer; } button:focus { outli
 
     .footer-bkgd{
         height: auto;
-        padding-top: 50px;
-        padding-bottom: 50px;
+        padding-top: 150px;
+        padding-bottom: 100px;
     }
 
     .content-footer{
         float: left;
-        margin-top: 40px;
+        margin-top: 150px;
         width: 100%;
+        padding-left:5px;
     }
 
     .container-logo-footer div {
-        font-size: 14px;
-        margin-left: 12px;
+        font-size: 38px;
+        margin-left: 14px;
+        margin-top: 10px;
     }
 
     .bottom-content-footer img {
-        width: 15vw;
+        width: 35vw;
+        margin-bottom: -20px;
     }
 
     .bottom-content-footer {
-        font-size: 12px;
+        font-size: 30px;
         float: left;
         width: 100%;
     }
 
     .social-icon {
         margin-left: 0px;
-        margin-right: 10px;
+        margin-right:20px;
     }
 
     .container-logo-footer .header-main-icon {
@@ -273,8 +333,9 @@ button { border: none; background: none; cursor: pointer; } button:focus { outli
 
 
     .text-main-content {
-        font-size: 18px;
-        width: 80%;
+        font-size: 28px;
+        width: auto;
+        padding-right: 25%;
     }
 
     .detail-content-section{
@@ -342,11 +403,11 @@ button { border: none; background: none; cursor: pointer; } button:focus { outli
     }
 
     .campus-title {
-        font-size: 22px;
+        font-size: 46px;
     }
 
     .text.description {
-        font-size: 18px;
+        font-size: 30px;
     }
 
     .info { align-items: center; }
@@ -355,35 +416,33 @@ button { border: none; background: none; cursor: pointer; } button:focus { outli
 
     .logo-uffs-footer {
         float: right;
-        right: 10%;
+        right: 5%;
         padding-top: 0;
-        height: 10vw;
         left: unset;
         align-items: baseline;
     }
 
-    .logo-uffs-footer img {
-        width: 130px;
-    }
 
     .footer-bkgd .header-title{
-        font-size: 18px;
+        font-size: 40px;
     }
 
     .footer-bkgd .header-main-icon{
-        width: 50px;
-        height: 50px;
+        width: 8vw;
+        height: 8vw;
     }
 
     .container-logo-footer{
         margin-left: 0;
     }
 
+    .item-slider{
+        width: 55% !important;
+        left: unset !important;
+        top: 25%;
+        height: auto !important;
+    }
 
-}
-
-
-@media only screen and (max-width: 820px) {
     .first-map, .second-map, .thirty-map{
         width: 50vw;
         max-height: 50vw;
@@ -396,12 +455,87 @@ button { border: none; background: none; cursor: pointer; } button:focus { outli
 
     .logo-uffs-slide{
         width: 30%;
+        left: 35%;
+    }
+
+    .top-content-footer {
+        margin-bottom: 50px;
+    }
+    .footer-bkgd {
+        padding-left: 5%;
+    }
+
+    .logo-uffs-footer{
+        width: 35%;
+    }
+
+    #logo-footer{
+        padding: 20px 0px;
     }
 
 
+    .social-icon{
+        float: left;
+    }
 
+    .description-secondary-content {
+        font-size: 24px;
+        width: 400px;
+    }
+    .title-secondary-content {
+        font-size: 42px;
+    }
+
+    .title-secondary-content p {
+        font-size: 30px;
+    }
+
+    .btn-header h2 {
+        font-size: 5vw;
+    }
+
+    .header .header-title{
+        font-size: 4vw;
+    }
+
+    .align-content-footer{
+        align-items: start;
+    }
+
+    .secondary-content a {
+        display: none;
+    }
+
+    .secondary-content{
+        padding-bottom: 0;
+    }
+
+    .mySwiper2{
+        display: block;
+        height: 500px;
+        margin-bottom: 200px;
+    }
+
+    .mySwiper2 swiper-slide{
+        background-color: #fafafa !important;
+    }
+
+    .mySwiper2 swiper-slide img {
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        max-height: 100vw;
+    }
+
+
+   swiper-container.mySwiper2 {
+        color: #264653 !important;
+    }
+
+   
 
 }
+
 
 
 @media only screen and (min-width: 2200px) {
@@ -411,7 +545,7 @@ button { border: none; background: none; cursor: pointer; } button:focus { outli
     }
 
     .secondary-content{
-        padding: 10vw 25vw;
+        padding: 10vw 20vw 5vw 20vw;
     }
 
 
@@ -429,7 +563,15 @@ button { border: none; background: none; cursor: pointer; } button:focus { outli
 
     .align-descriptions {
         top: 10vw;
-        margin-left: 13vw;
+        margin-left: 22vw;
+    }
+
+    .first-map{
+        width: 15vw;
+    }
+
+    .thirty-map{
+        top: 10vw;
     }
 
     .container-logo-footer div {
@@ -446,7 +588,11 @@ button { border: none; background: none; cursor: pointer; } button:focus { outli
     }
 
     .bottom-content-footer img {
-        width: 8vw;
+        width: 6vw;
+    }
+
+    .thirty-map{
+        margin-left: 0;
     }
 
 

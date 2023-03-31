@@ -4,147 +4,155 @@
 	<meta charset="UTF-8">
 	<title>Tour Virtual UFFS</title>
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
-	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto&amp;display=swap"rel="stylesheet'>
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto:wght@200;400;500;600;700;800&display=swap'>
 	<link rel="stylesheet" href="{{ 'css/landing_page.css' }}">
+	<link rel="stylesheet" href="{{ 'css/slider.css' }}">
+
+
+	<style>
+		.swiper-button-prev ::after {
+			left: 20% !important;
+			color: white !important;
+		}
+  
+	</style>
 </head>
 <body>
 
 	<!-- header -->
 	<div class="header">
 		<div class="container-large">
-			<a href="/" class="logo-header">
-				<img src="img/icon/tour-icon.svg" class="header-main-icon">
+			<a href="{{ route('home')}} " class="logo-header">
+				<img src="{{ 'img/icon/tour-icon.svg' }}" class="header-main-icon">
 				<h1 class="header-title">Tour Virtual UFFS</h1>
 			</a>
 			<a class="btn-header" href="{{route('map.ls')}}">
 				<h2>Acessar o tour</h2>
-				<img src="img/icon/pin-map.svg">
+				<img src="{{ 'img/icon/pin-map.svg' }}">
 			</a>
 		</div>
 	</div>
 
 
-	<!-- slider component -->
-	<div class="app">
-
-		<!-- text content slider -->
-		<div class="infoList">
-			<div class="info__wrapper">
-				<a href="/ferramenta" class="info current--info">
-					<img src="img/icon/explore-solid-svgrepo-com.svg" class="icon-explore-slider">
-					<div class="box-text-slider">
-						<p class="text description">Explorar</p>
-						<h4 class="text campus-title">Campus Laranjeiras do Sul</h4>
-					</div>
-				</a>
-				<a href="/ferramenta" class="info next--info">
-					<img src="img/icon/explore-solid-svgrepo-com.svg" class="icon-explore-slider">
-					<div class="box-text-slider">
-						<p class="text description">Explorar</p>
-						<h4 class="text campus-title">Campus Chapecó</h4>
-					</div>
-				</a>
-				<a href="/ferramenta" class="info previous--info">
-					<img src="img/icon/explore-solid-svgrepo-com.svg" class="icon-explore-slider">
-					<div class="box-text-slider">
-						<p class="text description">Explorar</p>
-						<h4 class="text campus-title">Campus Realeza</h4>
-					</div>
-				</a>
-			</div>
-		</div>
-
-		<!-- card images slider -->
-		<div class="cardList">
-			<button class="cardList__btn btn btn--left">
-				<div class="icon">
-					<svg>
-						<use xlink:href="#arrow-left"></use>
-					</svg>
-				</div>
-			</button>
-			<div class="cards__wrapper">
-				<div class="card current--card">
-					<div class="card__image">
-						<img src="img/slider/WhatsApp Image 2023-01-31 at 10.59.20.jpeg" alt="" />
+	
+	<swiper-container class="mySwiper" navigation="true"  effect="fade" autoplay-delay="2500" autoplay-disable-on-interaction="true" swiper-pagination-left="20%">
+		<swiper-slide>
+			<div class="background-slider" style='background-image: url("{{ 'img/slider/cl_slider.jpeg' }}")'></div>
+			<a href="{{ route('map.cl')}} " class="item-slider">
+				<div class="container-item-slider">
+					<div class="info">
+						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
+						<div class="box-text-slider">
+							<p class="text description">Explorar</p>
+							<h4 class="text campus-title">Campus Cerro Largo</h4>
+						</div>
 					</div>
 				</div>
-				<div class="card next--card">
-					<div class="card__image">
-						<img src="img/slider/thumbnail_foto-aerea-UFFS-Campus-Erechim.png" alt="" />
+			</a>
+		</swiper-slide>
+		<swiper-slide>
+			<div class="background-slider" style='background-image: url("{{ 'img/slider/ch_slider.jpeg' }}")'></div>
+			<a href="{{ route('map.ch')}} " class="item-slider">
+				<div class="container-item-slider">
+					<div class="info">
+						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
+						<div class="box-text-slider">
+							<p class="text description">Explorar</p>
+							<h4 class="text campus-title">Campus Chapecó</h4>
+						</div>
 					</div>
 				</div>
-				<div class="card previous--card">
-					<div class="card__image">
-						<img src="img/slider/maxresdefault.jpg" alt="" />
+			</a>
+		</swiper-slide>
+		<swiper-slide>
+			<div class="background-slider" style='background-image: url("{{ 'img/slider/er_slider.jpeg' }}")'></div>
+			<a href="{{ route('map.er')}} " class="item-slider">
+				<div class="container-item-slider">
+					<div class="info">
+						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
+						<div class="box-text-slider">
+							<p class="text description">Explorar</p>
+							<h4 class="text campus-title">Campus Erechim</h4>
+						</div>
 					</div>
 				</div>
-			</div>
-			<button class="cardList__btn btn btn--right">
-				<div class="icon">
-					<svg>
-						<use xlink:href="#arrow-right"></use>
-					</svg>
+			</a>
+		</swiper-slide>
+		<swiper-slide>
+			<div class="background-slider" style='background-image: url("{{ 'img/slider/ls_slider.jpeg' }}")'></div>
+			<a href="{{ route('map.ls')}} " class="item-slider">
+				<div class="container-item-slider">
+					<div class="info">
+						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
+						<div class="box-text-slider">
+							<p class="text description">Explorar</p>
+							<h4 class="text campus-title">Campus Laranjeiras do Sul</h4>
+						</div>
+					</div>
 				</div>
-			</button>
-		</div>
+			</a>
+		</swiper-slide>
+		<swiper-slide>
+			<div class="background-slider" style='background-image: url("{{ 'img/slider/pf_slider.jpeg' }}")'></div>
+			<a href="{{ route('map.pf')}} " class="item-slider">
+				<div class="container-item-slider">
+					<div class="info">
+						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
+						<div class="box-text-slider">
+							<p class="text description">Explorar</p>
+							<h4 class="text campus-title">Campus Passo Fundo</h4>
+						</div>
+					</div>
+				</div>
+			</a>
+		</swiper-slide>
+		<swiper-slide>
+			<div class="background-slider" style='background-image: url("{{ 'img/slider/rl_slider.jpeg' }}")'></div>
+			<a href="{{ route('map.re')}} " class="item-slider">
+				<div class="container-item-slider">
+					<div class="info">
+						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
+						<div class="box-text-slider">
+							<p class="text description">Explorar</p>
+							<h4 class="text campus-title">Campus Realeza</h4>
+						</div>
+					</div>
+				</div>
+			</a>
+		</swiper-slide>
+	</swiper-container>
+	<a href="https://uffs.edu.br/" target='_blank'><img src="{{ 'img/icon/logoUFFS.png' }}" class="logo-uffs-slide"></a>
+	 
 
-		<!-- background slider -->
-		<div class="app__bg">
-			<div class="app__bg__image current--image">
-				<img src="img/slider/WhatsApp Image 2023-01-31 at 10.59.20.jpeg" alt="" />
-			</div>
-			<div class="app__bg__image next--image">
-				<img src="img/slider/thumbnail_foto-aerea-UFFS-Campus-Erechim.png" alt="" />
-			</div>
-			<div class="app__bg__image previous--image">
-				<img src="img/slider/maxresdefault.jpg" alt="" />
-			</div>
-		</div>
 
-		<img src="img/icon/logoUFFS.png" class="logo-uffs-slide">
-	</div>
-
-	<!-- loader slider -->
-	<div class="loading__wrapper">
-		<div class="loader--text">Loading...</div>
-		<div class="loader">
-			<span></span>
-		</div>
-	</div>
-
-	<!-- arrows slider -->
-	<svg class="icons" style="display: none;">
-		<symbol id="arrow-left" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
-			<polyline points='328 112 184 256 328 400'
-						style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
-		</symbol>
-		<symbol id="arrow-right" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
-			<polyline points='184 112 328 256 184 400'
-						style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
-		</symbol>
-	</svg>
 
 	<!-- initial footer -->
 	<div class="header-footer" id="header-footer-transaction">
-		<img src="img/icon/practice.svg">
+		<img src="{{ 'img/icon/practice.svg' }}">
 	</div>
+
 
 	<!-- content section 1-->
 	<div class="main-content">
 		<div class="detail-content-section-responsive"></div>
-		<img src="img/icon/detail-icon-practice.svg" class="detail-content-section">
+		<img src="{{ 'img/icon/detail-icon-practice.svg' }}" class="detail-content-section">
 		<div class="container-small">
-			<img src="img/icon/title-main-content.svg" class="tour-virtual-text">
+			<img src="{{ 'img/icon/title-main-content.svg' }}" class="tour-virtual-text">
 
 			<div class="text-main-content">Conheça e navegue dentro dos campus da Universidade Federal da Fronteira Sul</div>
-			<img src="img/icon/chapeco-map.svg" class="item-map-content">
-			<div class="align-main-content">
-				<img src="img/icon/btn-mapas-detalhados.svg" class="item-content" id="item-content-1">
-				<img src="img/icon/btn-interatividade.svg" class="item-content" id="item-content-2">
-				<img src="img/icon/btn-visao-panoramica.svg" class="item-content" id="item-content-3">
+			<img src="{{ 'img/slider/maps_slider/Chapecó.svg' }}" class="item-map-content">
+			<div class="align-main-content" id="item-content-1">
+				<img src="{{ 'img/icon/btn-mapas-detalhados.svg' }}" style="padding: 8px;" class="item-content">
+				<p>Mapas Detalhados</p>
 			</div>
-
+			<div class="align-main-content" id="item-content-2">
+				<img src="{{ 'img/icon/btn-interatividade.svg' }}" class="item-content">
+				<p>Interatividade</p>
+			</div>
+			<div class="align-main-content" id="item-content-3">
+				<img src="{{ 'img/icon/btn-visao-panoramica.svg' }}" class="item-content" style="padding: 5px;">
+				<p>Visão Panorâmica</p>
+			</div>
 		</div>
 	</div>
 
@@ -155,18 +163,35 @@
 			<div class="title-secondary-content"><p>Veja seu campus</p>por outra perspectiva</div>
 			<div class="description-secondary-content">Encontre a informação que você precisa ou publique seu próprio conteúdo e contribua com este projeto</div>
 		</div>
-		<img src="img/icon/erechim-map.svg" class="first-map">
-		<img src="img/icon/chapeco-map.svg" class="second-map">
-		<img src="img/icon/laranjeiras-map.svg" class="thirty-map">
+		<a href="{{ route('map.ls') }}" class="first-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Laranjeiras do Sul.svg' }}"></a>
+		<a href="{{ route('map.er') }}" class="second-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Erechim.svg' }}"></a>
+		<a href="{{ route('map.cl') }}" class="thirty-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Cerro Largo.svg' }}"></a>
 
 	</div>
+
+	<!-- content section 2 -->
+	<div class="secondary-content" style="padding-top: 5vw;">
+		<a href="{{ route('map.re') }}" class="first-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Realeza.svg' }}"></a>
+		<a href="{{ route('map.pf') }}" class="second-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Passo Fundo.svg' }}"></a>
+		<a href="{{ route('map.ch') }}" class="thirty-map"  style="top: 0"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Chapecó.svg' }}"></a>
+	</div>
+	
+
+	<swiper-container class="mySwiper2" navigation="true"  effect="fade" autoplay-disable-on-interaction="true" swiper-pagination-left="20%">
+		<swiper-slide><a href="{{ route('map.ls') }}"><img src="{{ 'img/slider/maps_slider/Laranjeiras do Sul.svg' }}" class="item_slider_minimap"></a></swiper-slide>
+		<swiper-slide><a href="{{ route('map.pf') }}"><img src="{{ 'img/slider/maps_slider/Passo Fundo.svg' }}" class="item_slider_minimap"></a></swiper-slide>
+		<swiper-slide><a href="{{ route('map.cl') }}"><img src="{{ 'img/slider/maps_slider/Cerro Largo.svg' }}" class="item_slider_minimap"></a></swiper-slide>
+		<swiper-slide><a href="{{ route('map.ch') }}"><img src="{{ 'img/slider/maps_slider/Chapecó.svg' }}" class="item_slider_minimap"></a></swiper-slide>
+		<swiper-slide><a href="{{ route('map.er') }}"><img src="{{ 'img/slider/maps_slider/Erechim.svg' }}" class="item_slider_minimap"></a></swiper-slide>
+		<swiper-slide><a href="{{ route('map.re') }}"><img src="{{ 'img/slider/maps_slider/Realeza.svg' }}" class="item_slider_minimap"></a></swiper-slide>
+	</swiper-container>
 
 
 
 	<div class="footer-bkgd">
 
 		<a onclick="scrollTopPage()" class="logo-header" id="logo-footer">
-			<img src="img/icon/tour-icon.svg" class="header-main-icon">
+			<img src="{{ 'img/icon/tour-icon.svg' }}" class="header-main-icon">
 			<div class="container-logo-footer">
 				<h2 class="header-title">Tour Virtual UFFS</h2>
 				<div>voltar ao topo</div>
@@ -177,39 +202,37 @@
 
 			<div class="align-content-footer">
 				<div class="top-content-footer">
-					<a class="social-icon"><img src="img/icon/instagram-f-svgrepo-com.svg" class="header-main-icon"></a>
-					<a class="social-icon"><img src="img/icon/facebook-round-svgrepo-com.svg" class="header-main-icon"></a>
-					<a class="social-icon"><img src="img/icon/twitter-2-svgrepo-com.svg" class="header-main-icon"></a>
-					<a class="social-icon"><img src="img/icon/github-svgrepo-com.svg" class="header-main-icon"></a>
-					<a class="social-icon"><img src="img/icon/youtube-round-svgrepo-com.svg" class="header-main-icon"></a>
-					<a class="social-icon"><img src="img/icon/website-ui-web-svgrepo-com.svg" class="header-main-icon"></a>
+					<a href="https://www.instagram.com/practiceuffs/" target='_blank' class="social-icon"><img src="{{ 'img/icon/instagram-f-svgrepo-com.svg' }}" class="header-main-icon"></a>
+					<a href="https://www.facebook.com/profile.php?id=100063468824805" target='_blank' class="social-icon"><img src="{{ 'img/icon/facebook-round-svgrepo-com.svg' }}" class="header-main-icon"></a>
+					<a href="https://twitter.com/PracticeUFFS" target='_blank' class="social-icon"><img src="{{ 'img/icon/twitter-2-svgrepo-com.svg' }}" class="header-main-icon"></a>
+					<a href="https://github.com/practice-uffs" target='_blank' class="social-icon"><img src="{{ 'img/icon/github-svgrepo-com.svg' }}" class="header-main-icon"></a>
+					<a href="https://www.youtube.com/channel/UCu3jAl8MTMPkaxb3u0_xESw?view_as=subscriber" target='_blank' class="social-icon"><img src="{{ 'img/icon/youtube-round-svgrepo-com.svg' }}" class="header-main-icon"></a>
+					<a href="https://practice.uffs.edu.br/" target='_blank' class="social-icon"><img src="{{ 'img/icon/website-ui-web-svgrepo-com.svg' }}" class="header-main-icon"></a>
 				</div>
-				<div class="bottom-content-footer">
-					<div>DESENVOLVIDO POR<img src="img/icon/practice.svg" class="footer-icon"></div>
-				</div>
+				<a class="bottom-content-footer" href="https://practice.uffs.edu.br/" target="_blank">
+					<div>DESENVOLVIDO POR<img src="{{ 'img/icon/practice.svg' }}" class="footer-icon"></div>
+				</a>
 			</div>
 		</div>
-		<div class="logo-uffs-footer"><img src="img/icon/logo_uffs_verde.png"></div>
+		<a class="logo-uffs-footer" href="https://uffs.edu.br" target="_blank"><img src="{{ 'img/icon/logo_uffs_verde.png' }}"></a>
 	</div>
 
 
-	<!-- partial -->
-	<script src="{{ 'js/imagesloaded.pkgd.min.js' }}"></script>
-	<script src="{{ 'js/gsap.min.js' }}"></script>
-	<script  src="{{ 'js/slider.js' }}"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	<script src="{{'js/swiper-element-bundle.min.js'}}"></script>
+
 
 	<script>
-		// Get the button:
-		let mybutton = document.getElementById("header-footer-transaction");
+		//efeito de aumentar tamanho da section logo do practice
+		let header_footer_element = document.getElementById("header-footer-transaction");
 
-		// When the user scrolls down 20px from the top of the document, show the button
 		window.onscroll = function() {scrollFunction()};
 
 		function scrollFunction() {
 			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-				mybutton.style.height = "25%";
+				header_footer_element.style.height = "25%";
 			} else {
-				mybutton.style.height = "13.5%";
+				header_footer_element.style.height = "13.5%";
 			}
 		}
 
@@ -221,7 +244,6 @@
 
 	</script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
 <script>
 	$.fn.isInViewport = function() {
@@ -277,31 +299,7 @@
 		}
 	});
 
-	// var logo_footer_transition = 0;
-	// while(1){
-	// 	if (logo_footer_transition) {
-	// 		delay(1500).then(() => $('.logo-footer').addClass("in-view-opacity-1s"));
-	// 	}else{
-	// 		delay(1500).then(() => $('.logo-footer').removeClass("in-view-opacity-1s"));
-	// 	}
-	// }
-
-	// var logo_footer_transition = 0;
-	// const interval = setInterval(function() {
-	// 	if (logo_footer_transition) {
-	// 		logo_footer_transition = 0;
-	// 		delay(1500).then(() => $('.logo-footer').removeClass("in-view-opacity-1s"));
-	// 	}else{
-	// 		logo_footer_transition = 1;
-	// 		delay(1500).then(() => $('.logo-footer').addClass("in-view-opacity-1s"));
-	// 	}
-	// }, 500);
-
-	// clearInterval(interval);
-
-
 </script>
-
 
 
 </body>
