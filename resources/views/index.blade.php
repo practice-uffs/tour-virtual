@@ -40,6 +40,7 @@
     var campus = {!! json_encode($campus, JSON_HEX_TAG) !!};
     var hash_file = {!! json_encode($hash_file, JSON_HEX_TAG) !!};
 
+
 </script>
 
 
@@ -322,6 +323,12 @@
             // Start the tour
             // tour.start();
         })
+
+        if(!localStorage.getItem('tutorial')){
+            localStorage.setItem('tutorial', 'true');
+            tour.restart();
+
+        }
 
     });
 

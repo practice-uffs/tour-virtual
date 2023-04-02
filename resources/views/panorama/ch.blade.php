@@ -1,6 +1,6 @@
 @extends('layouts.panorama.base')
 @section('title', 'Chapecó - Panorama')
-@section('btn-voltar', route('home'))
+@section('btn-voltar', route('map.ch'))
 @section('sceneList')
     <a href="javascript:void(0)" class="scene" data-id="0-caminho-9">
         <li class="text">Caminho 9</li>
@@ -63,7 +63,7 @@
 
 
 
-    @component('components.panorama.dropdown', ['title' => 'Bloco Docente'])
+    @component('components.panorama.dropdown', ['title' => 'Bloco dos Professores'])
 
         <a href="javascript:void(0)" class="scene" data-id="11-bloco-dos-professores">
             <li class="text">Acesso</li>

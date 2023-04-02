@@ -1,6 +1,6 @@
 @extends('layouts.panorama.base')
 @section('title', 'Laranjeiras do Sul - Panorama')
-@section('btn-voltar', route('home'))
+@section('btn-voltar', route('map.ls'))
 @section('sceneList')
 
     @component('components.panorama.dropdown', ['title' => 'Bloco A'])
@@ -19,7 +19,7 @@
 
     @endcomponent
 
-    @component('components.panorama.dropdown', ['title' => 'Bloco Docente'])
+    @component('components.panorama.dropdown', ['title' => 'Bloco dos Professores'])
 
         <a href="javascript:void(0)" class="scene" data-id="4-docente-fora">
             <li class="text">Externo</li>
