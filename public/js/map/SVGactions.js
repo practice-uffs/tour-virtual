@@ -58,15 +58,19 @@ function abrir(titulo, descricao, list_desc, id_360, img_capa, paper) {
     let ul = $("<ul>")
     let lista = $("#list_description");
     lista.empty();
+    let img_url;
     if (httpRegex.test(img_capa)) {
         if (driveRegex.test(img_capa)) {
             let hash = max_string_array(img_capa);
+            img_url = `https://drive.google.com/uc?id=${hash}`;
             $("#vista-panoramica").attr({"style": `background-image: url('https://drive.google.com/uc?id=${hash}')`})
-        } else {
+        } else {;
+            img_url = img_capa
             $("#vista-panoramica").attr("style", `background-image: url('${img_capa}')`)
         }
 
     } else {
+        img_url = PREFIX_IMG + img_capa;
         $("#vista-panoramica").attr("style", `background-image: url('${PREFIX_IMG + img_capa}')`)
     }
 
@@ -82,7 +86,11 @@ function abrir(titulo, descricao, list_desc, id_360, img_capa, paper) {
     $("#side-bar").removeClass("hidden-side-bar");
 
     $("#vista-panoramica").click(() => {
-        changeToPanorama(id_360)
+        if(!$('#legenda').hasClass('ocultar'))
+            $("#btn-legenda").trigger('click');
+        $('#image_modal_img').attr('src', img_url);
+        $('#image_modal_title').html(titulo)
+        $(".image_modal").show()
     })
     $("#vista-panoramica2").click(() => {
         changeToPanorama(id_360)

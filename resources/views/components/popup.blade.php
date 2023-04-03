@@ -35,7 +35,7 @@
         padding: 35px 35px;
         border-radius: 5px;
         -webkit-box-shadow: 0px 0px 4px 4px rgb(0 0 0 / 20%);
-        -moz-box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.2);
+        -moz-box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.2);
         box-shadow: 0px 0px 4px 4px rgb(0 0 0 / 20%);
     }
 
@@ -77,8 +77,6 @@
             overlay.appendTo(document.body).remove();
             return false;
         });
-
-
         $('.x').click(function () {
             $('.popup').hide();
             overlay.appendTo(document.body).remove();
@@ -99,4 +97,3 @@
     </div>
 </div>
 <!-- partial -->
-
