@@ -22,6 +22,7 @@
         display: none;
         position: fixed;
         z-index: 101;
+        display: none;
     }
 
     .cnt223 {
@@ -71,7 +72,6 @@
         var overlay = $('<div id="overlay"></div>');
         overlay.show();
         overlay.appendTo(document.body);
-        $('.popup').show();
         $('.close').click(function () {
             $('.popup').hide();
             overlay.appendTo(document.body).remove();

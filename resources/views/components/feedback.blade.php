@@ -82,12 +82,19 @@
 
 </style>
 
+@if($errors->any())
+    <script>
+        $('.popup').hide();
+    </script>
+
+@endif
 
 <form class="feedback_form-container" action="{{route('feedback.send')}}" method="POST">
     @csrf
     <div class="feedback_form">
         @if(\Session::has('feedback'))<h3 style="color: #25b109; text-align: center">Feedback Enviado!</h3>
         <script>
+            $('.popup').hide();
             $('.feedback_form-container').show();
             setTimeout(function () {
                 window.location.replace('{{ url()->previous() }}');

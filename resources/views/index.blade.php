@@ -41,13 +41,16 @@
     var atributos = {!! json_encode($data, JSON_HEX_TAG) !!};
     var campus = {!! json_encode($campus, JSON_HEX_TAG) !!};
     var hash_file = {!! json_encode($hash_file, JSON_HEX_TAG) !!};
-
+    var popup_construcao;
 
 </script>
 
 
 @if(isset($popup) && $popup)
     @include('components.popup')
+    <script>
+        popup_construcao = true;
+    </script>
 @endif
 
 @include('components.image_modal')
@@ -232,6 +235,11 @@
 </div>
 </div>
 
+<script>
+    if(popup_construcao){
+        $('.popup').show();
+    }
+</script>
 
 
 @include('components.feedback')

@@ -3,7 +3,7 @@
 @section('content')
     <style>
         #feedback{
-
+            min-height: 5em;
         }
     </style>
     <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
@@ -36,7 +36,6 @@
     <script>
         let feedback = $('#feedback');
         let value = (feedback.text().length / 50) * 18 + 'px'
-        console.log(value)
         feedback.css('height', value)
 
     </script>
