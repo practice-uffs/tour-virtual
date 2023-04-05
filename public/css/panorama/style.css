@@ -920,5 +920,9 @@ body.view-control-buttons .viewControlButton {
 }
 
 
+.dropdown li{
+  margin-left: 10px;
+}
+
 /* End Dropdown */
 
