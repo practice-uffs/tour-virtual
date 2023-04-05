@@ -24,6 +24,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="{{'img/icon/uffsvirtual-icon.png'}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/utils/Draggable.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
@@ -40,16 +41,20 @@
     var atributos = {!! json_encode($data, JSON_HEX_TAG) !!};
     var campus = {!! json_encode($campus, JSON_HEX_TAG) !!};
     var hash_file = {!! json_encode($hash_file, JSON_HEX_TAG) !!};
-
+    var popup_construcao;
 
 </script>
 
 
 @if(isset($popup) && $popup)
     @include('components.popup')
+    <script>
+        popup_construcao = true;
+    </script>
 @endif
 
 @include('components.image_modal')
+
 <div class="mapa" id="backdrop">
     <div class="map-svg">
         <svg id="svg" class="svg" viewBox="{{$viewport ?? '0 0 3794 1985'}}" preserveAspectRatio="xMidYMid meet"  fill="none" xmlns="http://www.w3.org/2000/svg"><g id="viewport"></g></svg>
@@ -69,6 +74,9 @@
             </div>
             <div class="btn-ajuda startTour">
                 <img src="{{'img/icon/book-1-svgrepo-com.svg'}}" style="width: 25px; height: 25px;">
+            </div>
+            <div class="btn-feedback">
+                <img src="{{'img/icon/feedback-icon.svg'}}" style="width: 25px; height: 25px;">
             </div>
         </div>
     </div>
@@ -227,9 +235,14 @@
 </div>
 </div>
 
+<script>
+    if(popup_construcao){
+        $('.popup').show();
+    }
+</script>
 
 
-
+@include('components.feedback')
 <div class='campus-popup'>
     <div class='campus-selector-popup'>
         <h2>Selecione um Campus</h2>

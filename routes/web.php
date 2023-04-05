@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\FigmaMapController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\MapController;
@@ -81,6 +82,10 @@ Route::prefix('admin')->group(function (){
     Route::resource('/information', InformationController::class)->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::get('/mapa', [FigmaMapController::class, 'index'])->name('figma_map.index')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::get('/mapa/{figma_map}/edit', [FigmaMapController::class, 'edit'])->name('figma_map.edit')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+    Route::get('/feedback',[FeedbackController::class, 'index'])->name('feedback.index')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+    Route::get('/feedback/{feedback}',[FeedbackController::class, 'show'])->name('feedback.show')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+    Route::delete('/feedback/{feedback}',[FeedbackController::class, 'destroy'])->name('feedback.destroy')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
 });
 
 
+Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.send');
