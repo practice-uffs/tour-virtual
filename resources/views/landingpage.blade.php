@@ -22,14 +22,28 @@
 	<!-- header -->
 	<div class="header">
 		<div class="container-large">
-			<a href="{{ route('home')}} " class="logo-header">
+			<a href="{{ route('home')}}" class="logo-header">
 				<img src="{{ 'img/icon/tour-icon.svg' }}" class="header-main-icon">
 				<h1 class="header-title">Tour Virtual UFFS</h1>
 			</a>
-			<a class="btn-header" href="{{route('map.ls')}}">
-				<h2>Acessar o tour</h2>
-				<img src="{{ 'img/icon/pin-map.svg' }}">
-			</a>
+		
+				
+			
+
+			<div class="dropdown btn-header">
+				<button class="dropbtn " type="button" data-toggle="dropdown">
+					<h2>Acessar o tour</h2>
+					<img src="{{ 'img/icon/pin-map.svg' }}">
+				</button>
+				<div class="dropdown-content">
+					<a class="" href="{{ route('map.cl')}}">Cerro Largo</a>
+					<a class="" href="{{ route('map.ch')}}">Chapecó</a>
+					<a class="" href="{{ route('map.er')}}">Erechim</a>
+					<a class="" href="{{ route('map.ls')}}">Laranjeiras do Sul</a>
+					<a class="" href="{{ route('map.pf')}}">Passo Fundo</a>
+					<a class="" href="{{ route('map.re')}}">Realeza</a>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -37,7 +51,7 @@
 	
 	<swiper-container class="mySwiper" navigation="true"  effect="fade" autoplay-delay="2500" autoplay-disable-on-interaction="true" swiper-pagination-left="20%">
 		<swiper-slide>
-			<div class="background-slider" style='background-image: url("{{ 'img/slider/cl_slider.jpeg' }}")'></div>
+			<div class="background-slider" style='background-image: url("{{ 'img/slider/cl_slider.png' }}")'></div>
 			<a href="{{ route('map.cl')}} " class="item-slider">
 				<div class="container-item-slider">
 					<div class="info">
@@ -135,7 +149,7 @@
 	<!-- content section 1-->
 	<div class="main-content">
 		<div class="detail-content-section-responsive"></div>
-		<img src="{{ 'img/icon/detail-icon-practice.svg' }}" class="detail-content-section">
+		<div class="detail-content-section"></div>
 		<div class="container-small">
 			<img src="{{ 'img/icon/title-main-content.svg' }}" class="tour-virtual-text">
 
@@ -163,27 +177,27 @@
 			<div class="title-secondary-content"><p>Veja seu campus</p>por outra perspectiva</div>
 			<div class="description-secondary-content">Encontre a informação que você precisa ou publique seu próprio conteúdo e contribua com este projeto</div>
 		</div>
-		<a href="{{ route('map.ls') }}" class="first-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Laranjeiras do Sul.svg' }}"></a>
-		<a href="{{ route('map.er') }}" class="second-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Erechim.svg' }}"></a>
-		<a href="{{ route('map.cl') }}" class="thirty-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Cerro Largo.svg' }}"></a>
+		<a href="{{ route('map.ls') }}" class="first-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Laranjeiras do Sul.svg' }}"><span>Laranjeiras do Sul</span></a>
+		<a href="{{ route('map.er') }}" class="second-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Erechim.svg' }}"><span>Erechim</span></a>
+		<a href="{{ route('map.cl') }}" class="thirty-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Cerro Largo.svg' }}"><span>Cerro Largo</span></a>
 
 	</div>
 
 	<!-- content section 2 -->
-	<div class="secondary-content" style="padding-top: 5vw;">
-		<a href="{{ route('map.re') }}" class="first-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Realeza.svg' }}"></a>
-		<a href="{{ route('map.pf') }}" class="second-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Passo Fundo.svg' }}"></a>
-		<a href="{{ route('map.ch') }}" class="thirty-map"  style="top: 0"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Chapecó.svg' }}"></a>
+	<div class="secondary-content" style="margin-top: 5vw; padding-top:5vw">
+		<a href="{{ route('map.re') }}" class="first-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Realeza.svg' }}"><span>Realeza</span></a>
+		<a href="{{ route('map.pf') }}" class="second-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Passo Fundo.svg' }}"><span>Passo Fundo</span></a>
+		<a href="{{ route('map.ch') }}" class="thirty-map"  style="top: 5vw"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Chapecó.svg' }}"><span>Chapecó</span></a>
 	</div>
 	
 
 	<swiper-container class="mySwiper2" navigation="true"  effect="fade" autoplay-disable-on-interaction="true" swiper-pagination-left="20%">
-		<swiper-slide><a href="{{ route('map.ls') }}"><img src="{{ 'img/slider/maps_slider/Laranjeiras do Sul.svg' }}" class="item_slider_minimap"></a></swiper-slide>
-		<swiper-slide><a href="{{ route('map.pf') }}"><img src="{{ 'img/slider/maps_slider/Passo Fundo.svg' }}" class="item_slider_minimap"></a></swiper-slide>
-		<swiper-slide><a href="{{ route('map.cl') }}"><img src="{{ 'img/slider/maps_slider/Cerro Largo.svg' }}" class="item_slider_minimap"></a></swiper-slide>
-		<swiper-slide><a href="{{ route('map.ch') }}"><img src="{{ 'img/slider/maps_slider/Chapecó.svg' }}" class="item_slider_minimap"></a></swiper-slide>
-		<swiper-slide><a href="{{ route('map.er') }}"><img src="{{ 'img/slider/maps_slider/Erechim.svg' }}" class="item_slider_minimap"></a></swiper-slide>
-		<swiper-slide><a href="{{ route('map.re') }}"><img src="{{ 'img/slider/maps_slider/Realeza.svg' }}" class="item_slider_minimap"></a></swiper-slide>
+		<swiper-slide><a href="{{ route('map.ls') }}" class="item_slider_minimap"><img src="{{ 'img/slider/maps_slider/Laranjeiras do Sul.svg' }}"><span class="text campus-title">Laranjeiras do Sul</span></a></swiper-slide>
+		<swiper-slide><a href="{{ route('map.pf') }}" class="item_slider_minimap"><img src="{{ 'img/slider/maps_slider/Passo Fundo.svg' }}"><span class="text campus-title">Passo Fundo</span></a></swiper-slide>
+		<swiper-slide><a href="{{ route('map.cl') }}" class="item_slider_minimap"><img src="{{ 'img/slider/maps_slider/Cerro Largo.svg' }}"><span class="text campus-title">Cerro Largo</span></a></swiper-slide>
+		<swiper-slide><a href="{{ route('map.ch') }}" class="item_slider_minimap"><img src="{{ 'img/slider/maps_slider/Chapecó.svg' }}"><span class="text campus-title">Chapecó</span></a></swiper-slide>
+		<swiper-slide><a href="{{ route('map.er') }}" class="item_slider_minimap"><img src="{{ 'img/slider/maps_slider/Erechim.svg' }}"><span class="text campus-title">Erechim</span></a></swiper-slide>
+		<swiper-slide><a href="{{ route('map.re') }}" class="item_slider_minimap"><img src="{{ 'img/slider/maps_slider/Realeza.svg' }}"><span class="text campus-title">Realeza</span></a></swiper-slide>
 	</swiper-container>
 
 
@@ -204,7 +218,6 @@
 				<div class="top-content-footer">
 					<a href="https://www.instagram.com/practiceuffs/" target='_blank' class="social-icon"><img src="{{ 'img/icon/instagram-f-svgrepo-com.svg' }}" class="header-main-icon"></a>
 					<a href="https://www.facebook.com/profile.php?id=100063468824805" target='_blank' class="social-icon"><img src="{{ 'img/icon/facebook-round-svgrepo-com.svg' }}" class="header-main-icon"></a>
-					<a href="https://twitter.com/PracticeUFFS" target='_blank' class="social-icon"><img src="{{ 'img/icon/twitter-2-svgrepo-com.svg' }}" class="header-main-icon"></a>
 					<a href="https://github.com/practice-uffs" target='_blank' class="social-icon"><img src="{{ 'img/icon/github-svgrepo-com.svg' }}" class="header-main-icon"></a>
 					<a href="https://www.youtube.com/channel/UCu3jAl8MTMPkaxb3u0_xESw?view_as=subscriber" target='_blank' class="social-icon"><img src="{{ 'img/icon/youtube-round-svgrepo-com.svg' }}" class="header-main-icon"></a>
 					<a href="https://practice.uffs.edu.br/" target='_blank' class="social-icon"><img src="{{ 'img/icon/website-ui-web-svgrepo-com.svg' }}" class="header-main-icon"></a>
@@ -220,7 +233,6 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 	<script src="{{'js/swiper-element-bundle.min.js'}}"></script>
-
 
 	<script>
 		//efeito de aumentar tamanho da section logo do practice
@@ -298,6 +310,28 @@
 			delay(1000).then(() => $('.footer-icon').addClass("in-view-opacity-1s"));
 		}
 	});
+
+	document.addEventListener("DOMContentLoaded", function() {
+		var dropdowns = document.getElementsByClassName("dropdown");
+		for (var i = 0; i < dropdowns.length; i++) {
+			var dropdown = dropdowns[i];
+			dropdown.addEventListener("click", function(event) {
+			this.classList.toggle("show");
+			event.stopPropagation();
+			});
+		}
+
+		document.addEventListener("click", function(event) {
+			var dropdowns = document.getElementsByClassName("dropdown");
+			for (var i = 0; i < dropdowns.length; i++) {
+			var dropdown = dropdowns[i];
+			if (dropdown.classList.contains("show") && !dropdown.contains(event.target)) {
+				dropdown.classList.remove("show");
+			}
+			}
+		});
+	});
+
 
 </script>
 

@@ -81,10 +81,15 @@ a:hover {
 }
 
 @keyframes move_bkgd {
-   0% {background-position: center;}
-   33% {background-position: bottom;}  
-   66% {background-position: top;} 
-   100% {background-position: center;}  
+  0% {background-position-y: 50%;}
+  0% {background-position-x: 50%;}
+  33% {background-position-y: 100%;} 
+  33% {background-position-x: 100%;}  
+  66% {background-position-y: 50%;} 
+  66% {background-position-x: 50%;} 
+  100% {background-position-y: 0%;} 
+  100% {background-position-x: 0%;}  
+  
 }
 
 @keyframes move_minimap {
@@ -231,9 +236,9 @@ ul li span {
 
 .item-slider{
    position: fixed;
-   width: 24%;
+   width: 40%;
    height: 100%;
-   left: 25%;
+   left: 30%;
    z-index: 1000;
 }
 
@@ -251,6 +256,7 @@ ul li span {
    display: flex;
    height: auto;
    cursor: pointer;
+   align-items: flex-start;
 }
 
 

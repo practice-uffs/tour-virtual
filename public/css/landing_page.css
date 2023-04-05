@@ -21,14 +21,14 @@ a { text-decoration: none; }
 .contariner-large { width: 80%; left: auto; right: auto; }
 .campus-title { font-size: 2.1vw; margin-top: 5px; font-weight: 600; float: left; text-align: start; }
 .text.description { font-weight: 200; font-size: 1.3vw;  float:left; width: 100%;    text-align: start;}
-.box-text-slider { float: left; margin-left: 10px; margin-top: -10px; color: #D9D9D9; }
-.icon-explore-slider { width: 2.6vw; height: 2.6vw; stroke: #fafafa; float: left; fill: #fafafa; }
+.box-text-slider { float: left; margin-left: 10px; color: #D9D9D9; }
+.icon-explore-slider { width: 2.6vw; height: 2.6vw; margin-top: 10px; stroke: #fafafa; float: left; fill: #fafafa; }
 .info { display: flex; height: auto; cursor:pointer;  }
 .header-footer { height: 13.5%; width: 100%; background-color: #fafafa; display: flex; align-items: center; transition: height 1s; }
 .header-footer img { margin-left:auto; margin-right:auto; position: relative; height: 4.1vh; display: flex; }
 .container-large { width: 80%; margin-left: auto; margin-right: auto; }
 .header .container-large { display: block; height: 100%; }
-.header-main-icon { width: 70px; height: 70px; float: left; }
+.header-main-icon { width: 60px; height: 60px; float: left; }
 .header-title { font-size: 28px; float: left; margin-left: 10px; }
 .btn-header { display: flex; position: relative; float: right; right: 0%; align-items: center; height: 100%; text-decoration: none; color: var(--color-dark-blue); opacity: 0 }
 .logo-header { display: flex; align-items: center; height: 100%; float: left; opacity: 0; color: unset; cursor: pointer}
@@ -66,7 +66,7 @@ a { text-decoration: none; }
 .item-map-content { height: auto; width: 16vw; right: 0%; position: absolute; top: 20%; opacity: 0;  transition: all 1s; }
 .secondary-content { float: left; padding: 15vw 15vw 8vw 15vw; width: 100%; position: relative;}
 
-.first-map {     position: relative;
+.first-map {     position: relative !important;
     float: right;
     width: 20vw; 
     height: 15vw;}
@@ -75,11 +75,11 @@ a { text-decoration: none; }
     height: 15vw; }
 .thirty-map { display: block;
     bottom: 0;
-    position: relative;
     width: 20vw;
-    top: 10vw;
     height: 15vw;
-    margin-left:5vw;
+    top: 30vw;
+    margin-left: 25vw;
+    position: absolute;
     float: left; }
 .title-secondary-content { font-size: 2vw; color: var(--color-dark-blue); font-weight: 600; position: relative; }
 .title-secondary-content p { font-size: 1.5vw; }
@@ -118,8 +118,8 @@ a { text-decoration: none; }
 }
 
 .logo-header:hover img{
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     margin: 5px;
     transition: all 0.5s;
 }
@@ -194,6 +194,98 @@ swiper-container.mySwiper {
     color: #E5E5E5 !important;
 }
 
+
+.secondary-content a{
+    display: flex;
+
+}
+.secondary-content a span{
+    width: auto;
+    display: none;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px;
+    right: 0;
+    left: 0;
+    align-items: center;
+    flex-direction: column;
+    color: var(--color-dark-blue);
+    background-color: #fafafaab;
+}
+
+.secondary-content a:hover > span{
+    display: flex;
+}
+
+.secondary-content a:hover img{
+    opacity: 0.8;
+}
+
+.secondary-content a:hover{
+    background-color: rgb(0 0 0 / 5%);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    transition: padding 0.5s;
+}
+
+.secondary-content .second-map:hover{
+    position: relative;
+}
+
+
+.item_slider_minimap{
+    width: 40%;
+}
+
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  background-color: #fafafa;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  color: var(--color-dark-blue);
+  font-weight: 600;
+  padding: 15px 30px;
+  transition: 1s all;
+}
+
+.dropdown-content a:hover {
+    background-color: #dfdfdf;
+    padding-left: 35px;
+    padding-right: 25px;
+    transition: 0.5s all;
+}
+
+.dropdown.show .dropdown-content {
+  display: block;
+  right: 0;
+  border: 1px solid #000000ab;
+  margin-top: -30px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
 @media only screen and (max-width: 1600px) {
     .detail-content-section{
         width: 20vw;
@@ -206,50 +298,41 @@ swiper-container.mySwiper {
 
 
 @media only screen and (max-width: 1200px) {
-
-
     .description-secondary-content {
+        font-size: 14px;
+    }
+    .title-secondary-content {
+        font-size: 26px;
+    }
+    .title-secondary-content p {
         font-size: 16px;
     }
-
-    .title-secondary-content {
-        font-size: 30px;
-    }
-
-    .title-secondary-content p {
-        font-size: 18px;
-    }
-
     .align-descriptions {
-        margin-left: 25vw;
+        margin-left: 22vw;
     }
-
     .detail-content-section-responsive {
         width: 10vw;
         background-size: 2vw;
         margin-left: 10vw;
-
     }
-
     .container-small {
         width: 50vw;
     }
-
     .text-main-content {
-        font-size: 16px;
+        font-size: 14px;
 
     }
-
-
-   
-
     .logo-uffs-footer{
         width: 15%;
     }
 
-
-
-
+    .thirty-map{
+        top: 30vw;
+        margin-left: 22vw;
+    }
+    .secondary-content{
+        padding: 15vw 15vw 10vw 15vw;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -491,7 +574,7 @@ swiper-container.mySwiper {
     }
 
     .btn-header h2 {
-        font-size: 5vw;
+        font-size: 4vw;
     }
 
     .header .header-title{
@@ -521,10 +604,11 @@ swiper-container.mySwiper {
     }
 
     .mySwiper2 swiper-slide img {
-        width: 40%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
-        max-height: 100vw;
+        object-fit: fill;
+        max-height: 350px;
     }
 
 
@@ -532,7 +616,20 @@ swiper-container.mySwiper {
         color: #264653 !important;
     }
 
-   
+    .item_slider_minimap span{
+        font-size: 35px;
+        top: 30px;
+        position: relative;
+        color: var(--color-dark-blue);
+        width: 100%;
+        text-align: center;
+    }
+    
+
+    .dropdown-content a {
+        font-size: 28px;
+        padding: 25px 40px;
+    }
 
 }
 
@@ -570,9 +667,6 @@ swiper-container.mySwiper {
         width: 15vw;
     }
 
-    .thirty-map{
-        top: 10vw;
-    }
 
     .container-logo-footer div {
         font-size: 18px;
@@ -592,7 +686,8 @@ swiper-container.mySwiper {
     }
 
     .thirty-map{
-        margin-left: 0;
+        top: 20vw;
+        margin-left: 22vw;
     }
 
 
