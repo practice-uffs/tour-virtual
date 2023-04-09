@@ -45,14 +45,14 @@ function deletar() {
 // CRIAR SIDEBAR
 // ====================================
 
-function abrir(titulo, descricao, list_desc, id_360, img_capa, paper) {
+function abrir(titulo, descricao, list_desc, id_360, img_capa, paper, element) {
     let marcado = $('.map-selected')
     if(marcado)
         marcado.removeClass('map-selected')
 
 
 
-    paper.addClass('map-selected')
+    element.addClass('map-selected')
     $("#titulo-sidebar").text(titulo);
     $("#descricao-sidebar").html(descricao);
     let ul = $("<ul>")
@@ -148,7 +148,7 @@ function setActions(parent, ID_element, ID_group, titulo, desc, list_desc, id_36
 
     if (grupo) {
         grupo.click(function () {
-            abrir(titulo, desc, list_desc, id_360, img_capa, grupoSNAP)
+            abrir(titulo, desc, list_desc, id_360, img_capa, grupoSNAP, grupoSNAP.select(ID_element))
         });
 
         grupo.bind("touchstart", function () {
@@ -192,7 +192,7 @@ class BTN_360 {
 
     start() {
         this.btn.data('origTransform', this.btn.transform().local);
-        $(".map").addClass('_360');
+        this.#color360(false);
 
     }
 
@@ -205,6 +205,7 @@ class BTN_360 {
             } catch (DOMException) {
                 atributo = false;
             }
+
 
             if (this.#Onpoint(paper) && atributo) {
                 changeToPanorama(this.atributos[i].identifier_360)
@@ -223,7 +224,7 @@ class BTN_360 {
         this.btn.attr({
             transform: (this.btn.data('origTransform') ? "T" : "t") + [dx, dy]
         });
-        $(".map").removeClass('_360');
+        this.#color360(true);
 
 
     }
@@ -247,6 +248,20 @@ class BTN_360 {
         return min;
     }
 
+
+    #color360(remove){
+        for(let atributo of this.atributos){
+            let group = this.parent.select(atributo.group);
+            if(group){
+                let element = group.select(atributo.component)
+                if(!remove)
+                    element.addClass('_360')
+                else element.removeClass('_360')
+            }
+        }
+
+
+    }
     // Converte o ponteiro de acordo com o zoom
 
 

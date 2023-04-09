@@ -46,8 +46,8 @@
 
 .map-selected{
   opacity: 0.85;
-  fill: #00CCFF;
-  stroke: #282828;
+  fill: #FCAE17;
+  stroke: rgba(40, 40, 40, 0.48);
   stroke-width: 2;
   cursor: pointer;
 }
@@ -62,9 +62,7 @@
 
 
 ._360{
-  stroke: var(--orange);
-  fill-opacity: 0.85;
-  transform: translateZ(100%);
+  fill: #152238;
 }
 
 
