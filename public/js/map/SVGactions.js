@@ -51,8 +51,8 @@ function abrir(titulo, descricao, list_desc, id_360, img_capa, paper, element) {
         marcado.removeClass('map-selected')
 
 
-
-    element.addClass('map-selected')
+    if(element)
+        element.addClass('map-selected')
     $("#titulo-sidebar").text(titulo);
     $("#descricao-sidebar").html(descricao);
     let ul = $("<ul>")
@@ -254,9 +254,12 @@ class BTN_360 {
             let group = this.parent.select(atributo.group);
             if(group){
                 let element = group.select(atributo.component)
-                if(!remove)
-                    element.addClass('_360')
-                else element.removeClass('_360')
+                if(element){
+                    if(!remove)
+                        element.addClass('_360')
+                    else element.removeClass('_360')
+                }
+
             }
         }
 
