@@ -110,7 +110,7 @@
             </script>
             <p class="feedback_form-erros">{{ $errors->first('nome') }}</p>
         @endif
-        <input id="feedback_form_name" type="text" name="nome" placeholder="Seu nome" value="{{old('nome') ?? ''}}" class="feedback_form-text">
+        <input id="feedback_form_name" type="text" name="nome" placeholder="Nome completo" value="{{old('nome') ?? ''}}" class="feedback_form-text">
         @if($errors->has('email'))
                 <script>
                     $('.feedback_form-container').show();
@@ -128,8 +128,8 @@
         <select id="feedback_form_type" class="feedback_form-text" name="type" >
 
             <option value="">Selecione o tipo do feedback</option>
-            <option value="0">Duvidas</option>
-            <option value="1">Criticas</option>
+            <option value="0">Dúvidas</option>
+            <option value="1">Críticas</option>
             <option value="2">Sugestões</option>
         </select>
         @if($errors->has('feedback'))
@@ -139,7 +139,7 @@
                 </script>
             <p class="feedback_form-erros">{{ $errors->first('feedback') }}</p>
         @endif
-        <textarea id="feedback_form_feedback" style="resize: none" name="feedback" placeholder="Digite seu feedback ..." class="feedback_form-text">{{old('feedback') ?? ''}}</textarea>
+        <textarea id="feedback_form_feedback" style="resize: none" name="feedback" placeholder="Envie seu feedback ..." class="feedback_form-text">{{old('feedback') ?? ''}}</textarea>
 
         <button type="submit" class="feedback_form-btn">Enviar</button>
         @endif
