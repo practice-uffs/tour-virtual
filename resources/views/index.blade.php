@@ -289,7 +289,7 @@
                 {
                     element: "#btn-legenda",
                     title: "Legenda",
-                    content: " Clique aqui abrir o menu lateral e entenda o que representa cada elemento presente no mapa.",
+                    content: " Clique aqui para abrir o menu lateral e entenda o que representa cada elemento presente no mapa.",
                     placement: "bottom",
                     backdrop: true,
                     backdropContainer: '#wrapper',
