@@ -1,0 +1,67 @@
+.controls-container {
+    position: absolute;
+    display: block;
+    right: 10px;
+    transition: margin-right 0.5s;
+    height: 40px;
+  }
+
+.controls-bottom{
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    height: 180px;
+    width: 50px;
+}
+
+.controls-show-legenda{
+  margin-right: 16em;
+  transition: margin-right 0.5s;
+  z-index: 200;
+}
+
+
+.zoom-container{
+  width: 40px;
+  height: 160px;
+  border-radius: 0.5em;
+  -webkit-box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.2);
+  background-color: rgba(255, 255, 255, 0.897);
+  bottom: 10px;
+  position: absolute;
+}
+
+.especial-controls{
+  width: 40px;
+  height: 120px;
+  margin-top: 10px;
+  border-radius: 0.5em;
+    -webkit-box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.2);
+  background-color: rgba(255, 255, 255, 0.897);
+
+}
+
+
+.zoomout, .zoomin, .zoomreset, .btn-360, .btn-legenda, .btn-ajuda, .btn-feedback{
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.zoomout:hover, .zoomin:hover, .zoomreset:hover, .btn-360:hover, .btn-legenda:hover, .btn-ajuda:hover, .btn-feedback:hover{
+  background-color: #85baa54f;
+  color: #567569;
+
+  cursor: pointer;
+}
+
+.smooth-zoom{
+    transition:   transform 0.1s ease-out;
+}

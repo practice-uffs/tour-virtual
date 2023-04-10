@@ -1,0 +1,30 @@
+
+.custom-scrollbar-css {
+    height: 50vh;
+    overflow-y: scroll;
+    
+  }
+  
+
+  .esquerda{
+    direction: rtl;
+  }
+  .custom-scrollbar-css::-webkit-scrollbar {
+    background-image:linear-gradient(rgb(129, 129, 129),rgba(119, 118, 118, 0.753));
+    width: 0.0625em;
+    
+  }
+  
+  .custom-scrollbar-css::-webkit-scrollbar-track {
+    background: rgba(233, 11, 11, 0);
+    
+    
+  }
+  
+  .custom-scrollbar-css::-webkit-scrollbar-thumb {
+    border-radius: 300rem;
+    background-image:linear-gradient(rgb(129, 129, 129),rgba(104, 103, 103, 0.753));
+  }
+  
+  
+  
