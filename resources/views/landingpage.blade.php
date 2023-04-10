@@ -153,7 +153,7 @@
 		<div class="container-small">
 			<img src="{{ 'img/icon/title-main-content.svg' }}" class="tour-virtual-text">
 
-			<div class="text-main-content">Conheça e navegue dentro dos campus da Universidade Federal da Fronteira Sul</div>
+			<div class="text-main-content">Conheça e navegue dentro dos campi da Universidade Federal da Fronteira Sul</div>
 			<img src="{{ 'img/slider/maps_slider/Chapecó.svg' }}" class="item-map-content">
 			<div class="align-main-content" id="item-content-1">
 				<img src="{{ 'img/icon/btn-mapas-detalhados.svg' }}" style="padding: 8px;" class="item-content">
