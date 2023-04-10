@@ -81,5 +81,15 @@
 <script src="{{'../js/panorama/index.js?id='.$hash_file }}"></script>
 <script src="{{'../js/panorama/script.js?id='.$hash_file }}"></script>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J157BT7FS9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J157BT7FS9');
+</script>
+
 </body>
 </html>
