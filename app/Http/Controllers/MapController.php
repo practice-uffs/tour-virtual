@@ -17,7 +17,7 @@ class MapController extends Controller
     }
 
     public function chapeco(){
-        return view('index', $this->get_data('CH', 'Chapecó', true));
+        return view('index', $this->get_data('CH', 'Chapecó', false));
     }
 
     public function cerro_largo(){
