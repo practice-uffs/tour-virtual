@@ -14,7 +14,6 @@ class InformationController extends Controller
         'component' => 'required',
         'group' => 'required',
         'campus' => 'required',
-        'identifier_360' => 'required',
         'title' => 'required',
         'description' => 'required',
         'cover_image' => 'required',
