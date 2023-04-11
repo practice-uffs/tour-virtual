@@ -41,7 +41,7 @@
     .container_img_modal img{
         width: 100%;
         height: auto;
-        max-height: 600px;
+        max-height: 55vh;
         margin-bottom: 1em;
         border-radius: 5px;
 
