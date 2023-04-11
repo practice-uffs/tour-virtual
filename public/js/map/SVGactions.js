@@ -92,9 +92,16 @@ function abrir(titulo, descricao, list_desc, id_360, img_capa, paper, element) {
         $('#image_modal_title').html(titulo)
         $(".image_modal").show()
     })
-    $("#vista-panoramica2").click(() => {
-        changeToPanorama(id_360)
-    })
+
+    let btn_360_side = $("#vista-panoramica2")
+
+    if(id_360){
+        btn_360_side.click(() => {
+            changeToPanorama(id_360);
+        })
+    }else{
+        btn_360_side.css('display','none');
+    }
 
 
     $("#btn-adicionar-photo").click(openPopupConstrucao)
@@ -207,15 +214,14 @@ class BTN_360 {
             }
 
 
-            if (this.#Onpoint(paper) && atributo) {
+            if (this.#Onpoint(paper) && atributo && this.atributos[i].identifier_360) {
                 changeToPanorama(this.atributos[i].identifier_360)
-
 
             }
         }
         let nearPoint = this.#nearPoint();
         if (nearPoint.value - 80 <= 0) {
-            if(nearPoint.element)
+            if(nearPoint.element && nearPoint.element.identifier_360)
                 changeToPanorama(nearPoint.element.identifier_360)
         }
 
@@ -252,7 +258,8 @@ class BTN_360 {
     #color360(remove){
         for(let atributo of this.atributos){
             let group = this.parent.select(atributo.group);
-            if(group){
+            if(group && atributo.identifier_360){
+
                 let element = group.select(atributo.component)
                 if(element){
                     if(!remove)
