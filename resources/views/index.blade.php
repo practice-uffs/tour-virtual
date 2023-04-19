@@ -5,24 +5,61 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Tour Virtual</title>
 
-    <link rel="stylesheet" href="{{ 'css/map/scroll.css?id='.$hash_file }}">
-    <link rel="stylesheet" href="{{ 'css/map/sidebar.css?id='.$hash_file }}">
-    <link rel="stylesheet" href="{{ 'css/map/controls.css?id='.$hash_file}}">
-    <link rel="stylesheet" href="{{ 'css/map/map.css?id='.$hash_file}}">
-    <link rel="stylesheet" href="{{ 'css/map/legenda.css?id='.$hash_file}}">
-    <link rel="stylesheet" href="{{ 'css/map/searchbar.css?id='.$hash_file}}">
-    <link rel="stylesheet" href="{{ 'css/map/construcao.css?id='.$hash_file }}">
-    <link href="{{ 'tour-explain/bootstrap.min.css' }}" rel="stylesheet">
+	<title>{{ $titulo }} {{(isset($ID_element) ? '| '.$campus_name : '')}} | Mapa do Campus - Tour Virtual UFFS</title>
 
-    <link rel="stylesheet" href="{{ 'css/style.css' }}">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href='{{ URL::asset($campus . (isset($ID_element) ? '/'.$ID_element : '') . (isset($titulo) ? '/'.$titulo : '' )) }}' rel="canonical">
+  
+	<meta name="title" content="{{ isset($ID_element) ? $titulo.' | '.$campus_name.' | Mapa do Campus - Tour Virtual UFFS' : 'Mapa do campus '.$titulo.' | Tour Virtual UFFS' }}" />
+	<meta name="description" content="{{ isset($ID_element) ? $titulo.' do campus '.$campus_name : 'Mapa do campus '.$titulo }}. Aqui você encontra os principais pontos do campus. Clique em um deles para obter mais informaçẽs e acesse a Vista Panorâmica" />
+	<meta name='image' content='{{ URL::asset("/img/svg/map/$campus/main.svg") }}' />
+	<meta name="rating" content="General" />
+	<meta name="expires" content="0" />
+	<meta name="language" content="portuguese, PT-BR" />
+	<meta name="distribution" content="Global" />
+	<meta name="revisit-after" content="7 Days" />
+	<meta name="author" content="Practice - https://practice.uffs.edu.br" />
+	<meta name="publisher" content="Practice - https://practice.uffs.edu.br" />
+	<meta name="copyright" content="Practice"/>
+	<meta name="robots" content="index,follow">
+	<meta name="googlebot" content="index,follow">
+	<meta name="url" content="{{ URL::asset($campus . (isset($ID_element) ? '/'.$ID_element : '') . (isset($titulo) ? '/'.$titulo : '' )) }}"/>        
+  
+	<meta property="og:type" content="article"/>
+	<meta property="og:title" content="{{ isset($ID_element) ? $titulo.' | '.$campus_name.' | Mapa do Campus - Tour Virtual UFFS' : 'Mapa do campus '.$titulo.' | Tour Virtual UFFS' }}" />
+	<meta property="og:description" content="{{ isset($ID_element) ? $titulo.' do campus '.$campus_name : 'Mapa do campus '.$titulo }}. Aqui você encontra os principais pontos do campus. Clique em um deles para obter mais informaçẽs e acesse a Vista Panorâmica"/>
+	<meta property="og:image" content='{{ URL::asset("/img/svg/map/$campus/main.svg") }}' />
+	<meta property="og:image:width" content="800">
+	<meta property="og:image:height" content="600">
+	<meta property="og:url" content="{{ URL::asset($campus . (isset($ID_element) ? '/'.$ID_element : '') . (isset($titulo) ? '/'.$titulo : '' )) }}" />
+	<meta property="og:site_name" content="Tour Virtual UFFS" />
+	<meta property="og:locale" content="pt_BR"/>
+	<meta property="article:author" content="Practice - https://practice.uffs.edu.br"/>
+	<meta property="article:publisher" content="Practice - https://practice.uffs.edu.br"/>   
+  
+	<meta property="twitter:card" content="summary_large_image"/>
+	<meta property="twitter:site" content="https://practice.uffs.edu.br/tour-virtual"/>
+	<meta property="twitter:domain" content="https://practice.uffs.edu.br/tour-virtual"/>
+	<meta property="twitter:title" content="{{ isset($ID_element) ? $titulo.' | '.$campus_name.' | Mapa do Campus - Tour Virtual UFFS' : 'Mapa do campus '.$titulo.' | Tour Virtual UFFS' }}"/>
+	<meta property="twitter:description" content="{{ isset($ID_element) ? $titulo.' do campus '.$campus_name : 'Mapa do campus '.$titulo }}. Aqui você encontra os principais pontos do campus. Clique em um deles para obter mais informaçẽs e acesse a Vista Panorâmica" />
+	<meta property="twitter:image:src" content='{{ URL::asset("/img/svg/map/$campus/main.svg") }}'>
+	<meta property="twitter:url" content="{{ URL::asset($campus . (isset($ID_element) ? '/'.$ID_element : '') . (isset($titulo) ? '/'.$titulo : '' )) }}"/>
 
 
+    <link rel="stylesheet" href="{{  URL::asset('css/map/scroll.css?id='.$hash_file) }}">
+    <link rel="stylesheet" href="{{  URL::asset('css/map/sidebar.css?id='.$hash_file) }}">
+    <link rel="stylesheet" href="{{  URL::asset('css/map/controls.css?id='.$hash_file) }}">
+    <link rel="stylesheet" href="{{  URL::asset('css/map/map.css?id='.$hash_file) }}">
+    <link rel="stylesheet" href="{{  URL::asset('css/map/legenda.css?id='.$hash_file) }}">
+    <link rel="stylesheet" href="{{  URL::asset('css/map/searchbar.css?id='.$hash_file) }}">
+    <link rel="stylesheet" href="{{  URL::asset('css/map/construcao.css?id='.$hash_file) }}">
+    <link rel="stylesheet" href="{{  URL::asset('tour-explain/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{  URL::asset('css/style.css') }}">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="{{'img/icon/uffsvirtual-icon.png'}}">
+    <link rel="icon" type="image/x-icon" href="{{ URL::asset('img/icon/uffsvirtual-icon.png') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
@@ -30,9 +67,7 @@
     <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
-    <script src="{{ 'js/map/snap.svg/snap.svg.js'}}"></script>
-
-
+    <script src="{{ URL::asset('js/map/snap.svg/snap.svg.js') }}"></script>
 </head>
 <body>
 
@@ -61,22 +96,22 @@
     </div>
     <div class="campus" id="step4">
         <div onclick="$('.campus-popup').show();">
-            <img src="{{'img/icon/forward-item-svgrepo-com.svg'}}"  width="30px" height="30px" style="stroke: #567569; margin-right: 15px;">
+            <img src="{{ URL::asset('img/icon/forward-item-svgrepo-com.svg') }}"  width="30px" height="30px" style="stroke: #567569; margin-right: 15px;">
 
-            <h2>{{$titulo}}</h2>
+            <h2>{{$campus_name}}</h2>
         </div>
 
     </div>
     <div class="controls-container controls-top" id="step2">
         <div class="especial-controls" >
             <div class="btn-legenda" id="btn-legenda">
-                <img src="{{'img/icon/legend-right-svgrepo-com.svg'}}" style="width: 25px; height: 25px;">
+                <img src="{{ URL::asset('img/icon/legend-right-svgrepo-com.svg') }}" style="width: 25px; height: 25px;">
             </div>
             <div class="btn-ajuda startTour">
-                <img src="{{'img/icon/book-1-svgrepo-com.svg'}}" style="width: 25px; height: 25px;">
+                <img src="{{ URL::asset('img/icon/book-1-svgrepo-com.svg') }}" style="width: 25px; height: 25px;">
             </div>
             <div class="btn-feedback">
-                <img src="{{'img/icon/feedback-icon.svg'}}" style="width: 25px; height: 25px;">
+                <img src="{{ URL::asset('img/icon/feedback-icon.svg') }}" style="width: 25px; height: 25px;">
             </div>
         </div>
     </div>
@@ -110,14 +145,14 @@
             </div>
 
             <div class="zoomin" id="zoomin">
-                <img src="{{'img/icon/zoom-in-svgrepo-com.svg'}}" style="width: 25px; height: 25px;">
+                <img src="{{ URL::asset('img/icon/zoom-in-svgrepo-com.svg') }}" style="width: 25px; height: 25px;">
             </div>
             <div class="zoomout" id="zoomout">
-                <img src="{{'img/icon/zoom-out-svgrepo-com.svg'}}" style="width: 25px; height: 25px;">
+                <img src="{{ URL::asset('img/icon/zoom-out-svgrepo-com.svg') }}" style="width: 25px; height: 25px;">
             </div>
             <div class="zoomreset" id="zoomreset">
-                <img src="{{'img/icon/eye-svgrepo-com.svg'}}" style="width: 18px; height: 18px;">
-                <img src="{{'img/icon/screen-full-svgrepo-com.svg'}}" style="width: 30px;height: 30px;position: absolute;">
+                <img src="{{ URL::asset('img/icon/eye-svgrepo-com.svg') }}" style="width: 18px; height: 18px;">
+                <img src="{{ URL::asset('img/icon/screen-full-svgrepo-com.svg') }}" style="width: 30px;height: 30px;position: absolute;">
             </div>
         </div>
     </div>
@@ -129,7 +164,7 @@
     <div style="width: 100%; height: 30vh; background-color: black" >
         <div class="img custom-hover-sidebar-img" id="vista-panoramica">
             {{-- <img  id="sidebar-img-capa" src="{{'img/pictures/LS/Principal/Capa/almoxarifado.jpg'}}" alt=""> --}}
-            <img class="eye-btn-sidebar" src="{{'img/icon/eye-svgrepo-com.svg'}}">
+            <img class="eye-btn-sidebar" src="{{ URL::asset('img/icon/eye-svgrepo-com.svg') }}">
         </div>
     </div>
 
@@ -145,12 +180,12 @@
 
     <div class="side-bar-logo">
         <div class="vista-panoramica-container">
-            <div class="vista-panoramica" id="vista-panoramica2">
+            <a href="{{ route('panorama.'.$campus) }}" class="vista-panoramica" id="vista-panoramica2">
                 <span>VISTA PANORÂMICA</span>
-            </div>
+            </a>
         </div>
-        <a href="https://practice.uffs.edu.br/" target="_blank" style="text-decoration: none"><img src="{{asset('img/icon/practice.svg')}}" class="logo-practice"></a>
-        <a href="https://www.uffs.edu.br/" target="_blank"><div class="bkgd-logo-uffs"><img src="{{'img/icon/logoUFFS.png'}}" class="logo-UFFS"></div></a>
+        <a href="https://practice.uffs.edu.br/" target="_blank" style="text-decoration: none"><img src="{{asset( URL::asset('img/icon/practice.svg') )}}" class="logo-practice"></a>
+        <a href="https://www.uffs.edu.br/" target="_blank"><div class="bkgd-logo-uffs"><img src="{{ URL::asset('img/icon/logoUFFS.png' )}}" class="logo-UFFS"></div></a>
     </div>
 
 
@@ -161,7 +196,7 @@
 
 <div class="legenda ocultar" id="legenda">
     <div><h2> Legenda</h2></div>
-    <img src="{{'img/svg/legenda.svg'}}" alt="">
+    <img src="{{ URL::asset('img/svg/legenda.svg') }}" alt="">
     <div class="container-list"><div class="list" id="list"></div></div>
     <div class="close-legenda"><div class="close-container"><div class="arrow "></div></div></div>
 </div>
@@ -170,11 +205,11 @@
 <div class="search-bar-container" id="step1">
     <div class="search-bar">
         <a class="icons-search" href="{{ route('home') }}" >
-            <img src="{{'img/icon/left-chevron-svgrepo-com.svg'}}" style="width: 25px; height: 25px;">
+            <img src="{{ URL::asset('img/icon/left-chevron-svgrepo-com.svg') }}" style="width: 25px; height: 25px;">
         </a>
         <input type="text" id="search" placeholder="Procurar..." title="Type in a category">
         <div class="icons-search" >
-            <img src="{{'img/icon/search-icon.svg'}}" style="width: 23px; height: 22px;">
+            <img src="{{ URL::asset('img/icon/search-icon.svg') }}" style="width: 23px; height: 22px;">
         </div>
         <div class="icons-search" id="btn-close-search" style="width: 0;">
             <svg width="25" height="25" clip-rule="evenodd" fill-rule="evenodd" fill="#616161" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z"/></svg>
@@ -246,27 +281,27 @@
 <div class='campus-popup'>
     <div class='campus-selector-popup'>
         <h2>Selecione um Campus</h2>
-        <div class="campus-item"><a href="{{ route('map.cl') }}"><img class="eye-btn" src="{{'img/icon/eye-svgrepo-com_green.svg'}}">Cerro Largo</a></div>
-        <div class="campus-item"><a href="{{ route('map.ch') }}"><img class="eye-btn" src="{{'img/icon/eye-svgrepo-com_green.svg'}}">Chapecó</a></div>
-        <div class="campus-item"><a href="{{ route('map.er') }}"><img class="eye-btn" src="{{'img/icon/eye-svgrepo-com_green.svg'}}">Erechim</a></div>
-        <div class="campus-item"><a href="{{ route('map.ls') }}"><img class="eye-btn" src="{{'img/icon/eye-svgrepo-com_green.svg'}}">Laranjeiras do Sul</a></div>
-        <div class="campus-item"><a href="{{ route('map.pf') }}"><img class="eye-btn" src="{{'img/icon/eye-svgrepo-com_green.svg'}}">Passo Fundo</a></div>
-        <div class="campus-item"><a href="{{ route('map.re') }}"><img class="eye-btn" src="{{'img/icon/eye-svgrepo-com_green.svg'}}">Realeza</a></div>
-        <img class="btn-close-campus-selector" onclick="$('.campus-popup').hide();" src="{{'img/icon/close-square-svgrepo-com.svg'}}">
+        <div class="campus-item"><a href="{{ route('map.cl') }}"><img class="eye-btn" src="{{ URL::asset('img/icon/eye-svgrepo-com_green.svg') }}">Cerro Largo</a></div>
+        <div class="campus-item"><a href="{{ route('map.ch') }}"><img class="eye-btn" src="{{ URL::asset('img/icon/eye-svgrepo-com_green.svg') }}">Chapecó</a></div>
+        <div class="campus-item"><a href="{{ route('map.er') }}"><img class="eye-btn" src="{{ URL::asset('img/icon/eye-svgrepo-com_green.svg') }}">Erechim</a></div>
+        <div class="campus-item"><a href="{{ route('map.ls') }}"><img class="eye-btn" src="{{ URL::asset('img/icon/eye-svgrepo-com_green.svg') }}">Laranjeiras do Sul</a></div>
+        <div class="campus-item"><a href="{{ route('map.pf') }}"><img class="eye-btn" src="{{ URL::asset('img/icon/eye-svgrepo-com_green.svg') }}">Passo Fundo</a></div>
+        <div class="campus-item"><a href="{{ route('map.re') }}"><img class="eye-btn" src="{{ URL::asset('img/icon/eye-svgrepo-com_green.svg') }}">Realeza</a></div>
+        <img class="btn-close-campus-selector" onclick="$('.campus-popup').hide();" src="{{ URL::asset('img/icon/close-square-svgrepo-com.svg') }}">
     </div>
 </div>
 
 <!-- Tour-Virtual Scripts -->
-<script type="module" src=" {{'js/map/SVGactions.js?id='.$hash_file}}" defer></script>
-<script type="module" src="{{'js/map/legenda.js?id='.$hash_file}}" defer></script>
-<script type="module" src="{{'js/map/searchbar.js?id='.$hash_file}}"defer></script>
-<script src="{{'js/map/controls.js?id='.$hash_file}}" defer></script>
-<script src="{{'js/map/popup.js?id='.$hash_file}}" defer></script>
+<script type="module" src=" {{ URL::asset('js/map/SVGactions.js?id='.$hash_file) }}" defer></script>
+<script type="module" src="{{ URL::asset('js/map/legenda.js?id='.$hash_file) }}" defer></script>
+<script type="module" src="{{ URL::asset('js/map/searchbar.js?id='.$hash_file) }}"defer></script>
+<script src="{{ URL::asset('js/map/controls.js?id='.$hash_file) }}" defer></script>
+<script src="{{ URL::asset('js/map/popup.js?id='.$hash_file) }}" defer></script>
 
 <!-- Explain Steps Scripts -->
-<script src="{{'tour-explain/jquery.min.js'}}"></script>
-<script src="{{'tour-explain/bootstrap.min.js'}}"></script>
-<script src="{{'tour-explain/bootstrap-tour.js'}}"></script>
+<script src="{{ URL::asset('tour-explain/jquery.min.js') }}"></script>
+<script src="{{ URL::asset('tour-explain/bootstrap.min.js') }}"></script>
+<script src="{{ URL::asset('tour-explain/bootstrap-tour.js') }}"></script>
 
 <script>
     $(document).ready(function (){

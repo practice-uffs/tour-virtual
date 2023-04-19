@@ -7,43 +7,117 @@ use App\Models\FigmaMap;
 use App\Models\Information;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class MapController extends Controller
 {
 
     public function laranjeiras(){
-        return view('index', $this->get_data('LS', 'Laranjeiras do Sul', false));
-
+        return view('index', $this->get_data('LS', 'Laranjeiras do Sul', 'Laranjeiras do Sul', false));
     }
 
+    public function laranjeiras_Info($ID_element){
+        $validator = Validator::make(['id' => $ID_element], [
+            'id' => 'required | numeric'
+        ]);
+        if ($validator->fails()) {
+            abort(404);
+        }else {
+            $titulo = Information::query()->where('component', '#item'.$ID_element)->where('campus', 'LS')->get('title');
+            return view('index', $this->get_data('LS', 'Laranjeiras do Sul', $titulo[0]->title, false), ['ID_element' => $ID_element]);
+        }
+    }
+
+
     public function chapeco(){
-        return view('index', $this->get_data('CH', 'Chapecó', false));
+        // dd($information);
+        return view('index', $this->get_data('CH', 'Chapecó', 'Chapecó', false));
+    }
+
+    public function chapeco_Info($ID_element){
+        $validator = Validator::make(['id' => $ID_element], [
+            'id' => 'required | numeric'
+        ]);
+        if ($validator->fails()) {
+            abort(404);
+        }else {
+            $titulo = Information::query()->where('component', '#item'.$ID_element)->where('campus', 'CH')->get('title');
+            return view('index', $this->get_data('CH', 'Chapecó', $titulo[0]->title, false), ['ID_element' => $ID_element]);
+        }
     }
 
     public function cerro_largo(){
-        return view('index', $this->get_data('CL', 'Cerro Largo', true));
+        return view('index', $this->get_data('CL', 'Cerro Largo', 'Cerro Largo', true));
+    }
 
+    public function cerro_largo_Info($ID_element, $titulo = null){
+        $campus = 'Cerro Largo';
+        $validator = Validator::make(['id' => $ID_element], [
+            'id' => 'required | numeric'
+        ]);
+        if ($validator->fails()) {
+            abort(404);
+        }else {
+            $titulo = Information::query()->where('component', '#item'.$ID_element)->where('campus', 'CL')->get('title');
+            return view('index', $this->get_data('CL',  'Cerro Largo', $titulo[0]->title, true), ['ID_element' => $ID_element]);
+        }
     }
 
     public function erechim(){
-        return view('index', $this->get_data('ER', 'Erechim', true));
+        return view('index', $this->get_data('ER', 'Erechim', 'Erechim', true));
+    }
+
+    public function erechim_Info($ID_element, $titulo = null){
+        $validator = Validator::make(['id' => $ID_element], [
+            'id' => 'required | numeric'
+        ]);
+        if ($validator->fails()) {
+            abort(404);
+        }else {
+            $titulo = Information::query()->where('component', '#item'.$ID_element)->where('campus', 'ER')->get('title');
+            return view('index', $this->get_data('ER', 'Erechim', $titulo[0]->title, true), ['ID_element' => $ID_element]);
+        }
     }
 
     public function realeza(){
-        return view('index', $this->get_data('RE', 'Realeza', true));
+        return view('index', $this->get_data('RE', 'Realeza','Realeza', true));
+    }
+
+    public function realeza_Info($ID_element, $titulo = null){
+        $validator = Validator::make(['id' => $ID_element], [
+            'id' => 'required | numeric'
+        ]);
+        if ($validator->fails()) {
+            abort(404);
+        }else {
+            $titulo = Information::query()->where('component', '#item'.$ID_element)->where('campus', 'RE')->get('title');
+            return view('index', $this->get_data('RE', 'Realeza', $titulo[0]->title, true), ['ID_element' => $ID_element]);
+        }
     }
 
     public function passo_fundo(){
-        return view('index', $this->get_data('PF', 'Passo Fundo', true));
+        return view('index', $this->get_data('PF', 'Passo Fundo', 'Passo Fundo', true));
     }
 
-    private function get_data($campus, $titulo, $popup){
+    public function passo_fundo_Info($ID_element, $titulo = null){
+        $validator = Validator::make(['id' => $ID_element], [
+            'id' => 'required | numeric'
+        ]);
+        if ($validator->fails()) {
+            abort(404);
+        }else {
+            $titulo = Information::query()->where('component', '#item'.$ID_element)->where('campus', 'PF')->get('title');
+            return view('index', $this->get_data('PF', 'Passo Fundo', $titulo[0]->title, true), ['ID_element' => $ID_element]);
+        }
+    }
+
+    private function get_data($campus, $campus_name, $titulo, $popup){
         $data = $this->formatData(Information::query()->where('campus', $campus)->get()->toArray());
         $viewport = FigmaMap::query()->where('campus', $campus)->first();
         if($viewport){
             $viewport = $viewport['viewport'];
         }
-        return ['data' => $data, 'campus' => strtolower($campus), 'titulo' => $titulo , 'viewport' => $viewport ,'popup' => $popup];
+        return ['data' => $data, 'campus' => strtolower($campus), 'campus_name' => $campus_name , 'titulo' => $titulo , 'viewport' => $viewport ,'popup' => $popup];
     }
     private function formatData($dataInfo): array
     {

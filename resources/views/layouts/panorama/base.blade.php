@@ -4,8 +4,48 @@
 
 <html lang="pt-br">
 <head>
-    <title>@yield('title')</title>
     <meta charset="utf-8">
+
+    <link href="https://practice.uffs.edu.br/tour-virtual/{{ $campus }}/panorama/{{ $ID_element ?? '' }}" rel="canonical">
+    <title>{{$campus_name}}: Visão Panoramica</title>
+    <meta name="title" content="Tour Virtual UFFS - Conheça e navegue dentro dos campi da Universidade Federal da Fronteira Sul" />
+    <meta name="description" content="Tenha acesso aos mapas contendo informações sobre os blocos e a localização das salas, além de acessar a visualização 360 dos principais pontos de cada campus." />
+    <meta name='image' content="https://practice.uffs.edu.br/tour-virtual/img/icon/tour-icon.svg" />
+    <meta name="rating" content="General" />
+    <meta name="expires" content="0" />
+    <meta name="language" content="portuguese, PT-BR" />
+    <meta name="distribution" content="Global" />
+    <meta name="revisit-after" content="7 Days" />
+    <meta name="author" content="Practice - https://practice.uffs.edu.br" />
+    <meta name="publisher" content="Practice - https://practice.uffs.edu.br" />
+    <meta name="copyright" content="Practice"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="url" content="https://practice.uffs.edu.br/tour-virtual"/>        
+
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Tour Virtual UFFS - Conheça e navegue dentro dos campi da Universidade Federal da Fronteira Sul" />
+    <meta property="og:description" content="Tenha acesso aos mapas contendo informações sobre os blocos e a localização das salas, além de acessar a visualização 360 dos principais pontos de cada campus." />
+    <meta property="og:image" content="https://practice.uffs.edu.br/tour-virtual/img/icon/tour-icon.svg" />
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="600">
+    <meta property="og:url" content="https://practice.uffs.edu.br/tour-virtual" />
+    <meta property="og:site_name" content="practice" />
+    <meta property="og:locale" content="pt_BR"/>
+    <meta property="article:author" content="Practice - https://practice.uffs.edu.br"/>
+    <meta property="article:publisher" content="Practice - https://practice.uffs.edu.br"/>   
+
+    <meta property="twitter:card" content="summary_large_image"/>
+    <meta property="twitter:site" content="https://practice.uffs.edu.br/tour-virtual"/>
+    <meta property="twitter:domain" content="https://practice.uffs.edu.br/tour-virtual"/>
+    <meta property="twitter:title" content="Tour Virtual UFFS - Conheça e navegue dentro dos campi da Universidade Federal da Fronteira Sul"/>
+    <meta property="twitter:description" content="Tenha acesso aos mapas contendo informações sobre os blocos e a localização das salas, além de acessar a visualização 360 dos principais pontos de cada campus."/>
+    <meta property="twitter:image:src" content="https://practice.uffs.edu.br/tour-virtual/img/icon/tour-icon.svg/">
+    <meta property="twitter:url" content="https://practice.uffs.edu.br/tour-virtual"/>
+
+
+
+
     <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
     <style> @-ms-viewport { width: device-width; } </style>
     <link rel="stylesheet" href="{{'../css/panorama/reset.min.css'}}">
@@ -13,6 +53,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="{{'../img/icon/uffsvirtual-icon.png'}}">
+
+
+
+
 </head>
 <body class="multiple-scenes ">
 

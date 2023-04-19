@@ -16,7 +16,7 @@ function max_string_array(string) {
 const PREFIX_IMG = "img/pictures/LS/Principal/Capa/"
 const httpRegex = new RegExp('https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)')
 const driveRegex = new RegExp('[d-dD-D][r-rR-R][i-iI-I][v-vV-V][e-eE-E][.][g-gG-G][o-oO-O][o-oO-O][g-gG-G][l-lL-L][e-eE-E]');
-const DIR_MAP = './img/svg/map/'
+const DIR_MAP = '/img/svg/map/'
 
 //
 // CRIAR HOVER
@@ -45,7 +45,32 @@ function deletar() {
 // CRIAR SIDEBAR
 // ====================================
 
-function abrir(titulo, descricao, list_desc, id_360, img_capa, paper, element) {
+function abrir(ID_group, titulo, descricao, list_desc, id_360, img_capa, paper, element) {
+   
+    let str = ID_group;
+    let numbers_id = str.replace(/[^0-9]/g, "");
+    
+    const nextURL = '/'+campus+'/'+numbers_id+'/'+''+encodeURIComponent(titulo).replaceAll('%20','-');
+    const nextTitle = titulo;
+    const nextState = '';
+
+    // This will create a new entry in the browser's history, without reloading
+    window.history.pushState(nextState, nextTitle, nextURL);
+    // This will replace the current entry in the browser's history, without reloading
+    window.history.replaceState(nextState, nextTitle, nextURL);
+
+    const campus_name = [];
+    campus_name['ch']= "Chapecó";
+    campus_name['pf']= "Passo Fundo";
+    campus_name['ls']= "Laranjeiras do Sul";
+    campus_name['ch']= "Chapecó";
+    campus_name['ch']= "Chapecó";
+    campus_name['ch']= "Chapecó";
+    
+    //This will force to replace title page
+    document.title = titulo+' | '+campus_name[campus]+' | Mapa do Campus - Tour Virtual UFFS';
+
+
     let marcado = $('.map-selected')
     if(marcado)
         marcado.removeClass('map-selected')
@@ -136,12 +161,34 @@ function fechar() {
     $("#search").val("")
     $("#btn-close-search").css({"border-left": "0px", "width": "0", "transition": "all 1s ease 0s"})
 
+    
+    const nextURL = '/'+campus;
+    const nextTitle = '';
+    const nextState = '';
+
+    // This will create a new entry in the browser's history, without reloading
+    window.history.pushState(nextState, nextTitle, nextURL);
+
+    // This will replace the current entry in the browser's history, without reloading
+    window.history.replaceState(nextState, nextTitle, nextURL);
+
+    const campus_name = [];
+    campus_name['ch']= "Chapecó";
+    campus_name['pf']= "Passo Fundo";
+    campus_name['ls']= "Laranjeiras do Sul";
+    campus_name['ch']= "Chapecó";
+    campus_name['ch']= "Chapecó";
+    campus_name['ch']= "Chapecó";
+    
+    //This will force to replace title page
+    document.title = campus_name[campus]+' | Mapa do Campus - Tour Virtual UFFS';
+
 }
 
 
 function changeToPanorama(id_360) {
     sessionStorage.setItem("id_360", id_360);
-    window.location.href += "/panorama";
+    window.location.href = campus+"/panorama";
 }
 
 
@@ -150,18 +197,25 @@ function changeToPanorama(id_360) {
 // ====================================
 
 function setActions(parent, ID_element, ID_group, titulo, desc, list_desc, id_360, img_capa) {
+
     let grupoSNAP = parent.select(ID_group);
     let grupo = $(ID_group);
 
     if (grupo) {
-        grupo.click(function () {
-            abrir(titulo, desc, list_desc, id_360, img_capa, grupoSNAP, grupoSNAP.select(ID_element))
-        });
-
         grupo.bind("touchstart", function () {
-            abrir(titulo, desc);
+            abrir(ID_group, titulo, desc);
         })
 
+        grupo.click(function () {
+            abrir(ID_group, titulo, desc, list_desc, id_360, img_capa, grupoSNAP, grupoSNAP.select(ID_element))
+        });
+        
+        //verifica se o usuário acessou um link com essa informação selecionada, então abre o menu lateral dessa informação
+        let numbers_id = ID_element.replace(/[^0-9]/g, "");
+        let href_id = window.location.pathname.split('/');
+        if(href_id[2] == numbers_id){
+            abrir(ID_group, titulo, desc, list_desc, id_360, img_capa, grupoSNAP, grupoSNAP.select(ID_element))
+        }
     }
 
     // Hover
