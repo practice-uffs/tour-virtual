@@ -9,11 +9,11 @@
 	<title>{{ $titulo }} {{(isset($ID_element) ? '| '.$campus_name : '')}} | Mapa do Campus - Tour Virtual UFFS</title>
 
 	<meta content="width=device-width, initial-scale=1" name="viewport">
-    <link href='{{ url($campus . (isset($ID_element) ? '/'.$ID_element : '') . (isset($titulo) ? '/'.$titulo : '' )) }}' rel="canonical">
+    <link href='{{ route('home').('/'.$campus . (isset($ID_element) ? '/'.$ID_element : '') . (isset($titulo) ? '/'.$titulo : '' )) }}' rel="canonical">
   
 	<meta name="title" content="{{ isset($ID_element) ? $titulo.' | '.$campus_name.' | Mapa do Campus - Tour Virtual UFFS' : 'Mapa do campus '.$titulo.' | Tour Virtual UFFS' }}" />
 	<meta name="description" content="{{ isset($ID_element) ? $titulo.' do campus '.$campus_name : 'Mapa do campus '.$titulo }}. Aqui você encontra os principais pontos do campus. Clique em um deles para obter mais informaçẽs e acesse a Vista Panorâmica." />
-	<meta name='image' content='{{ url('img/svg/map/'.$campus.'/main.svg') }}'/>
+	<meta name='image' content='{{ route('home').('/img/svg/map/'.$campus.'/main.svg') }}'/>
 	<meta name="rating" content="General" />
 	<meta name="expires" content="0" />
 	<meta name="language" content="portuguese, PT-BR" />
@@ -24,15 +24,15 @@
 	<meta name="copyright" content="Practice"/>
 	<meta name="robots" content="index,follow">
 	<meta name="googlebot" content="index,follow">
-	<meta name="url" content="{{ url($campus . (isset($ID_element) ? '/'.$ID_element : '') . (isset($titulo) ? '/'.$titulo : '' )) }}"/>        
+	<meta name="url" content="{{ route('home').('/'.$campus . (isset($ID_element) ? '/'.$ID_element : '') . (isset($titulo) ? '/'.$titulo : '' )) }}"/>        
   
 	<meta property="og:type" content="article"/>
 	<meta property="og:title" content="{{ isset($ID_element) ? $titulo.' | '.$campus_name.' | Mapa do Campus - Tour Virtual UFFS' : 'Mapa do campus '.$titulo.' | Tour Virtual UFFS' }}" />
 	<meta property="og:description" content="{{ isset($ID_element) ? $titulo.' do campus '.$campus_name : 'Mapa do campus '.$titulo }}. Aqui você encontra os principais pontos do campus. Clique em um deles para obter mais informaçẽs e acesse a Vista Panorâmica."/>
-	<meta property="og:image" content='{{ url("img/svg/map/".$campus."/main.svg") }}'/>
+	<meta property="og:image" content='{{ route('home').("/img/svg/map/".$campus."/main.svg") }}'/>
 	<meta property="og:image:width" content="800">
 	<meta property="og:image:height" content="600">
-	<meta property="og:url" content="{{ url($campus . (isset($ID_element) ? '/'.$ID_element : '') . (isset($titulo) ? '/'.$titulo : '' )) }}" />
+	<meta property="og:url" content="{{ route('home').('/'.$campus . (isset($ID_element) ? '/'.$ID_element : '') . (isset($titulo) ? '/'.$titulo : '' )) }}" />
 	<meta property="og:site_name" content="Tour Virtual UFFS" />
 	<meta property="og:locale" content="pt_BR"/>
 	<meta property="article:author" content="Practice - https://practice.uffs.edu.br"/>
@@ -43,8 +43,8 @@
 	<meta property="twitter:domain" content="https://practice.uffs.edu.br/tour-virtual"/>
 	<meta property="twitter:title" content="{{ isset($ID_element) ? $titulo.' | '.$campus_name.' | Mapa do Campus - Tour Virtual UFFS' : 'Mapa do campus '.$titulo.' | Tour Virtual UFFS' }}"/>
 	<meta property="twitter:description" content="{{ isset($ID_element) ? $titulo.' do campus '.$campus_name : 'Mapa do campus '.$titulo }}. Aqui você encontra os principais pontos do campus. Clique em um deles para obter mais informaçẽs e acesse a Vista Panorâmica." />
-	<meta property="twitter:image:src" content='{{ url("img/svg/map/".$campus."/main.svg") }}'/>
-	<meta property="twitter:url" content="{{ url($campus . (isset($ID_element) ? '/'.$ID_element : '') . (isset($titulo) ? '/'.$titulo : '' )) }}"/>
+	<meta property="twitter:image:src" content='{{ route('home').("/img/svg/map/".$campus."/main.svg") }}'/>
+	<meta property="twitter:url" content="{{ route('home').('/'.$campus . (isset($ID_element) ? '/'.$ID_element : '') . (isset($titulo) ? '/'.$titulo : '' )) }}"/>
 
 
     <link rel="stylesheet" href="{{  asset('css/map/scroll.css?id='.$hash_file) }}">
