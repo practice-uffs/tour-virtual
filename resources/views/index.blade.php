@@ -13,7 +13,7 @@
   
 	<meta name="title" content="{{ isset($ID_element) ? $titulo.' | '.$campus_name.' | Mapa do Campus - Tour Virtual UFFS' : 'Mapa do campus '.$titulo.' | Tour Virtual UFFS' }}" />
 	<meta name="description" content="{{ isset($ID_element) ? $titulo.' do campus '.$campus_name : 'Mapa do campus '.$titulo }}. Aqui você encontra os principais pontos do campus. Clique em um deles para obter mais informaçẽs e acesse a Vista Panorâmica" />
-	<meta name='image' content='{{ asset("/img/svg/map/$campus/main.svg") }}' />
+	<meta name='image' content='{{ asset("img/svg/map/$campus/main.svg") }}' />
 	<meta name="rating" content="General" />
 	<meta name="expires" content="0" />
 	<meta name="language" content="portuguese, PT-BR" />
@@ -29,7 +29,7 @@
 	<meta property="og:type" content="article"/>
 	<meta property="og:title" content="{{ isset($ID_element) ? $titulo.' | '.$campus_name.' | Mapa do Campus - Tour Virtual UFFS' : 'Mapa do campus '.$titulo.' | Tour Virtual UFFS' }}" />
 	<meta property="og:description" content="{{ isset($ID_element) ? $titulo.' do campus '.$campus_name : 'Mapa do campus '.$titulo }}. Aqui você encontra os principais pontos do campus. Clique em um deles para obter mais informaçẽs e acesse a Vista Panorâmica"/>
-	<meta property="og:image" content='{{ asset("/img/svg/map/$campus/main.svg") }}' />
+	<meta property="og:image" content='{{ asset("img/svg/map/$campus/main.svg") }}' />
 	<meta property="og:image:width" content="800">
 	<meta property="og:image:height" content="600">
 	<meta property="og:url" content="{{ asset($campus . (isset($ID_element) ? '/'.$ID_element : '') . (isset($titulo) ? '/'.$titulo : '' )) }}" />
@@ -43,7 +43,7 @@
 	<meta property="twitter:domain" content="https://practice.uffs.edu.br/tour-virtual"/>
 	<meta property="twitter:title" content="{{ isset($ID_element) ? $titulo.' | '.$campus_name.' | Mapa do Campus - Tour Virtual UFFS' : 'Mapa do campus '.$titulo.' | Tour Virtual UFFS' }}"/>
 	<meta property="twitter:description" content="{{ isset($ID_element) ? $titulo.' do campus '.$campus_name : 'Mapa do campus '.$titulo }}. Aqui você encontra os principais pontos do campus. Clique em um deles para obter mais informaçẽs e acesse a Vista Panorâmica" />
-	<meta property="twitter:image:src" content='{{ asset("/img/svg/map/$campus/main.svg") }}'>
+	<meta property="twitter:image:src" content='{{ asset("img/svg/map/$campus/main.svg") }}'>
 	<meta property="twitter:url" content="{{ asset($campus . (isset($ID_element) ? '/'.$ID_element : '') . (isset($titulo) ? '/'.$titulo : '' )) }}"/>
 
 
@@ -184,7 +184,7 @@
                 <span>VISTA PANORÂMICA</span>
             </a>
         </div>
-        <a href="https://practice.uffs.edu.br/" target="_blank" style="text-decoration: none"><img src="{{asset( asset('img/icon/practice.svg') )}}" class="logo-practice"></a>
+        <a href="https://practice.uffs.edu.br/" target="_blank" style="text-decoration: none"><img src="{{ asset('img/icon/practice.svg') }}" class="logo-practice"></a>
         <a href="https://www.uffs.edu.br/" target="_blank"><div class="bkgd-logo-uffs"><img src="{{ asset('img/icon/logoUFFS.png' )}}" class="logo-UFFS"></div></a>
     </div>
 
