@@ -16,7 +16,7 @@ function max_string_array(string) {
 const PREFIX_IMG = "img/pictures/LS/Principal/Capa/"
 const httpRegex = new RegExp('https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)')
 const driveRegex = new RegExp('[d-dD-D][r-rR-R][i-iI-I][v-vV-V][e-eE-E][.][g-gG-G][o-oO-O][o-oO-O][g-gG-G][l-lL-L][e-eE-E]');
-const DIR_MAP = '/img/svg/map/'
+const DIR_MAP = '/tour-virtual/img/svg/map/'
 
 //
 // CRIAR HOVER
