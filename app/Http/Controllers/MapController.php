@@ -24,7 +24,7 @@ class MapController extends Controller
             abort(404);
         }else {
             $titulo = Information::query()->where('component', '#item'.$ID_element)->where('campus', 'LS')->get('title');
-            return view('index', $this->get_data('LS', 'Laranjeiras do Sul', $titulo[0]->title, false), ['ID_element' => $ID_element]);
+            return view('index', $this->get_data('LS', 'Laranjeiras do Sul', str_replace(' ', '-', $titulo[0]->title ), false), ['ID_element' => $ID_element]);
         }
     }
 
@@ -42,7 +42,7 @@ class MapController extends Controller
             abort(404);
         }else {
             $titulo = Information::query()->where('component', '#item'.$ID_element)->where('campus', 'CH')->get('title');
-            return view('index', $this->get_data('CH', 'Chapecó', $titulo[0]->title, false), ['ID_element' => $ID_element]);
+            return view('index', $this->get_data('CH', 'Chapecó', str_replace(' ', '-', $titulo[0]->title ), false), ['ID_element' => $ID_element]);
         }
     }
 
@@ -59,7 +59,7 @@ class MapController extends Controller
             abort(404);
         }else {
             $titulo = Information::query()->where('component', '#item'.$ID_element)->where('campus', 'CL')->get('title');
-            return view('index', $this->get_data('CL',  'Cerro Largo', $titulo[0]->title, true), ['ID_element' => $ID_element]);
+            return view('index', $this->get_data('CL',  'Cerro Largo', str_replace(' ', '-', $titulo[0]->title ), true), ['ID_element' => $ID_element]);
         }
     }
 
@@ -75,7 +75,7 @@ class MapController extends Controller
             abort(404);
         }else {
             $titulo = Information::query()->where('component', '#item'.$ID_element)->where('campus', 'ER')->get('title');
-            return view('index', $this->get_data('ER', 'Erechim', $titulo[0]->title, true), ['ID_element' => $ID_element]);
+            return view('index', $this->get_data('ER', 'Erechim', str_replace(' ', '-', $titulo[0]->title ), true), ['ID_element' => $ID_element]);
         }
     }
 
@@ -91,7 +91,7 @@ class MapController extends Controller
             abort(404);
         }else {
             $titulo = Information::query()->where('component', '#item'.$ID_element)->where('campus', 'RE')->get('title');
-            return view('index', $this->get_data('RE', 'Realeza', $titulo[0]->title, true), ['ID_element' => $ID_element]);
+            return view('index', $this->get_data('RE', 'Realeza', str_replace(' ', '-', $titulo[0]->title ), true), ['ID_element' => $ID_element]);
         }
     }
 
@@ -107,7 +107,7 @@ class MapController extends Controller
             abort(404);
         }else {
             $titulo = Information::query()->where('component', '#item'.$ID_element)->where('campus', 'PF')->get('title');
-            return view('index', $this->get_data('PF', 'Passo Fundo', $titulo[0]->title, true), ['ID_element' => $ID_element]);
+            return view('index', $this->get_data('PF', 'Passo Fundo', str_replace(' ', '-', $titulo[0]->title ), true), ['ID_element' => $ID_element]);
         }
     }
 
