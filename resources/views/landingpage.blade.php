@@ -5,6 +5,7 @@
 	<title>Tour Virtual UFFS - Conheça e navegue dentro dos campi da Universidade Federal da Fronteira Sul</title>
 	<meta content="width=device-width, initial-scale=1" name="viewport">
 	<link href="https://practice.uffs.edu.br/tour-virtual" rel="canonical">
+	<base href="{{ route('home') }}">
   
 	<meta name="title" content="Tour Virtual UFFS - Conheça e navegue dentro dos campi da Universidade Federal da Fronteira Sul" />
 	<meta name="description" content="Tenha acesso aos mapas contendo informações sobre os blocos e a localização das salas, além de acessar a visualização 360 dos principais pontos de cada campus." />

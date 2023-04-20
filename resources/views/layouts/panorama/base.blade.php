@@ -8,6 +8,7 @@
 
     <link href="https://practice.uffs.edu.br/tour-virtual/{{ $campus }}/panorama/{{ $ID_element ?? '' }}" rel="canonical">
     <title>{{$campus_name}}: Visão Panoramica</title>
+    <base href="{{ route('home') }}">
     <meta name="title" content="Tour Virtual UFFS - Conheça e navegue dentro dos campi da Universidade Federal da Fronteira Sul" />
     <meta name="description" content="Tenha acesso aos mapas contendo informações sobre os blocos e a localização das salas, além de acessar a visualização 360 dos principais pontos de cada campus." />
     <meta name='image' content="https://practice.uffs.edu.br/tour-virtual/img/icon/tour-icon.svg" />
