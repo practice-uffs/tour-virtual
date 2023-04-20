@@ -10,7 +10,7 @@
 
 	<meta content="width=device-width, initial-scale=1" name="viewport">
     <link href='{{ route('home').('/'.$campus . (isset($ID_element) ? '/'.$ID_element : '') . (isset($titulo) ? '/'.$titulo : '' )) }}' rel="canonical">
-    <base href="{{ route('home') }}">
+    <base href="{{ route('home') }}/">
 	<meta name="title" content="{{ isset($ID_element) ? $titulo.' | '.$campus_name.' | Mapa do Campus - Tour Virtual UFFS' : 'Mapa do campus '.$titulo.' | Tour Virtual UFFS' }}" />
 	<meta name="description" content="{{ isset($ID_element) ? $titulo.' do campus '.$campus_name : 'Mapa do campus '.$titulo }}. Aqui você encontra os principais pontos do campus. Clique em um deles para obter mais informaçẽs e acesse a Vista Panorâmica." />
 	<meta name='image' content='{{ route('home').('/img/svg/map/'.$campus.'/main.svg') }}'/>
