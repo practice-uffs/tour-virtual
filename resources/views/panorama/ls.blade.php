@@ -184,7 +184,7 @@
 @endsection
 @section('data_panorama')
     <script>var prefix_DIR = 'ls'</script>
-    <script src="{{'../js/panorama/ls/data.js'}}"></script>
+    <script src="{{'js/panorama/ls/data.js'}}"></script>
 @endsection
 <script>
     const personalSceneName = "Laranjeiras do Sul";

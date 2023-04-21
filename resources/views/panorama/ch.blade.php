@@ -290,7 +290,7 @@
 @endsection
 @section('data_panorama')
 <script>var prefix_DIR = 'ch'</script>
-<script src="{{'../js/panorama/ch/data.js'}}"></script>
+<script src="{{'js/panorama/ch/data.js'}}"></script>
 @endsection
 <script>
     const personalSceneName = "Chapecó";
