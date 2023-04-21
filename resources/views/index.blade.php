@@ -292,7 +292,7 @@
 </div>
 
 <!-- Tour-Virtual Scripts -->
-<script type="module" src=" {{ asset('js/map/SVGactions.js?id='.$hash_file) }}" defer></script>
+<script type="module" src="{{ asset('js/map/SVGactions.js?id='.$hash_file) }}" defer></script>
 <script type="module" src="{{ asset('js/map/legenda.js?id='.$hash_file) }}" defer></script>
 <script type="module" src="{{ asset('js/map/searchbar.js?id='.$hash_file) }}"defer></script>
 <script src="{{ asset('js/map/controls.js?id='.$hash_file) }}" defer></script>

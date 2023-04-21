@@ -50,7 +50,10 @@ function abrir(ID_group, titulo, descricao, list_desc, id_360, img_capa, paper, 
     let str = ID_group;
     let numbers_id = str.replace(/[^0-9]/g, "");
     
-    const nextURL = '/'+campus+'/'+numbers_id+'/'+''+encodeURIComponent(titulo).replaceAll('%20','-');
+
+    window.location.origin + campus+"/panorama";
+
+    const nextURL = campus+'/'+numbers_id+'/'+''+encodeURIComponent(titulo).replaceAll('%20','-');
     const nextTitle = titulo;
     const nextState = '';
 
