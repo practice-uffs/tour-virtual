@@ -162,7 +162,7 @@ function fechar() {
     $("#btn-close-search").css({"border-left": "0px", "width": "0", "transition": "all 1s ease 0s"})
 
     
-    const nextURL = '/'+campus;
+    const nextURL = campus;
     const nextTitle = '';
     const nextState = '';
 
