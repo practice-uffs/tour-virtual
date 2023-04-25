@@ -33,7 +33,7 @@ a { text-decoration: none; }
 .btn-header { display: flex; position: relative; float: right; right: 0%; align-items: center; height: 100%; text-decoration: none; color: var(--color-dark-blue); opacity: 0 }
 .logo-header { display: flex; align-items: center; height: 100%; float: left; opacity: 0; color: unset; cursor: pointer}
 .logo-header img { transition: all 1s }
-.btn-header h2 { font-size: 28px; margin-right: 15px; font-weight: 400; }
+.btn-header h2 { font-size: 28px; margin-right: 15px; font-weight: 400; color:#264653; }
 .btn-header img { height: 50px; width: 50px; transition: all 1s; }
 .main-content { position: relative; background-color: #D9D9D9; height: auto; float: left; width: 100%; display: flex; }
 .container-small { width: 35vw; height: auto; position: relative; float: left; padding-top: 20vh; padding-bottom: 20vh; margin-left: auto; margin-right: auto; }

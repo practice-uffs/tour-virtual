@@ -1,3 +1,4 @@
+
 /*
  * Copyright 2016 Google Inc. All rights reserved.
  *
@@ -105,7 +106,7 @@ function fix_caminhos(){
 
   // Create scenes.
   var scenes = data.scenes.map(function(data) {
-    var urlPrefix = "../img/panorama/" + prefix_DIR + "/tiles";
+    var urlPrefix = "img/panorama/" + prefix_DIR + "/tiles";
     var source = Marzipano.ImageUrlSource.fromString(
       urlPrefix + "/" + data.id + "/{z}/{f}/{y}/{x}.jpg",
       { cubeMapPreviewUrl: urlPrefix + "/" + data.id + "/preview.jpg" });
@@ -292,7 +293,7 @@ function fix_caminhos(){
 
     // Create image element.
     var icon = document.createElement('img');
-    icon.src = '../img/panorama/img/link.png';
+    icon.src = 'img/panorama/img/link.png';
     icon.classList.add('link-hotspot-icon');
 
     // Set rotation transform.
