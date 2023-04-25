@@ -33,47 +33,60 @@ Route::get('/', function () {
 })->name('home');
 
 Route::prefix('/cl')->group(function (){
-    Route::get('/', [MapController::class, 'cerro_largo'])->name('map.cl');
     Route::get('/panorama', function (){
         return redirect()->route('home');
     })->name('panorama.cl');
+    Route::get('/{ID_element}/{titulo}', [MapController::class, 'cerro_largo_Info'])->name('map.cl.element');
+    Route::get('/{ID_element}', [MapController::class, 'cerro_largo_Info'])->name('map.cl.element2');
+    Route::get('/', [MapController::class, 'cerro_largo'])->name('map.cl');
 });
+
 Route::prefix('/ch')->group(function (){
+    Route::prefix('/panorama')->group(function (){
+        Route::get('/', function (){
+            return view('panorama.ch', ['campus_name' => 'Chapecó'], ['campus' => 'ch']);
+        })->name('panorama.ch');
+    });
+    Route::get('/{ID_element}/{titulo}', [MapController::class, 'chapeco_Info'])->name('map.ch.element');
+    Route::get('/{ID_element}', [MapController::class, 'chapeco_Info'])->name('map.ch.element2');
     Route::get('/', [MapController::class, 'chapeco'])->name('map.ch');
-    Route::get('/panorama', function (){
-        return view('panorama.ch');
-    })->name('panorama.ch');
 });
+
 Route::prefix('/er')->group(function (){
-    Route::get('/', [MapController::class, 'erechim'])->name('map.er');
     Route::get('/panorama', function (){
         return redirect()->route('home');
     })->name('panorama.er');
+    Route::get('/{ID_element}/{titulo}', [MapController::class, 'erechim_Info'])->name('map.er.element');
+    Route::get('/{ID_element}', [MapController::class, 'erechim_Info'])->name('map.er.element2');
+    Route::get('/', [MapController::class, 'erechim'])->name('map.er');
 });
 
 Route::prefix('/ls')->group(function (){
-    Route::get('/', [MapController::class, 'laranjeiras'])->name('map.ls');
     Route::get('/panorama', function (){
-        return view('panorama.ls');
+        return view('panorama.ls', ['campus_name' => 'Laranjeiras do Sul'], ['campus' => 'ls']);
     })->name('panorama.ls');
+    Route::get('/{ID_element}/{titulo}', [MapController::class, 'laranjeiras_Info'])->name('map.ls.element');
+    Route::get('/{ID_element}', [MapController::class, 'laranjeiras_Info'])->name('map.ls.element2');
+    Route::get('/', [MapController::class, 'laranjeiras'])->name('map.ls');
 });
 
 Route::prefix('/pf')->group(function (){
-    Route::get('/', [MapController::class, 'passo_fundo'])->name('map.pf');
     Route::get('/panorama', function (){
         return redirect()->route('home');
     })->name('panorama.pf');
+    Route::get('/{ID_element}/{titulo}', [MapController::class, 'passo_fundo_Info'])->name('map.pf.element');
+    Route::get('/{ID_element}', [MapController::class, 'passo_fundo_Info'])->name('map.pf.element2');
+    Route::get('/', [MapController::class, 'passo_fundo'])->name('map.pf');
 });
 
 Route::prefix('/re')->group(function (){
-    Route::get('/', [MapController::class, 'realeza'])->name('map.re');
     Route::get('/panorama', function (){
         return redirect()->route('home');
     })->name('panorama.re');
+    Route::get('/{ID_element}/{titulo}', [MapController::class, 'realeza_Info'])->name('map.re.element');
+    Route::get('/{ID_element}', [MapController::class, 'realeza_Info'])->name('map.re.element2');
+    Route::get('/', [MapController::class, 'realeza'])->name('map.re');
 });
-
-
-
 
 Route::prefix('admin')->group(function (){
     Route::get("/", function (){
