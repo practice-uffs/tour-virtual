@@ -4,7 +4,9 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\FigmaMapController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\MapController;
+use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Route;
+use App\Models\FigmaMap;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +31,8 @@ if (!empty($proxy_schema)) {
 }
 
 Route::get('/', function () {
-    return view('landingpage');
+    $data = FigmaMap::all();
+    return view('landingpage', ['data' => $data]);
 })->name('home');
 
 Route::prefix('/cl')->group(function (){
@@ -98,6 +101,7 @@ Route::prefix('admin')->group(function (){
     Route::get('/feedback',[FeedbackController::class, 'index'])->name('feedback.index')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::get('/feedback/{feedback}',[FeedbackController::class, 'show'])->name('feedback.show')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::delete('/feedback/{feedback}',[FeedbackController::class, 'destroy'])->name('feedback.destroy')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+    Route::post('/mapa/{figma_map}/image', [ImageController::class, 'upload'])->name('image.upload')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
 });
 
 
