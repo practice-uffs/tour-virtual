@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\FigmaMap;
 use App\Models;
+use Buglinjo\Webp\Controllers\WebpController;
 
 class ImageController extends Controller
 {
@@ -16,6 +17,10 @@ class ImageController extends Controller
         $file = $request->file('imagem');
         $fileName = $file->getClientOriginalName();
         $file->move(public_path('img/slider'), $fileName);
+
+        $webp = Webp::make($request->file('imagem'));
+
+        $webp->save(public_path('img/slider'));
 
         $figma_map->image_link = $fileName;
         $figma_map->save();

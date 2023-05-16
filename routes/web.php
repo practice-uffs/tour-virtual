@@ -7,6 +7,7 @@ use App\Http\Controllers\MapController;
 use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Route;
 use App\Models\FigmaMap;
+use Buglinjo\Webp\Controllers\WebpController;
 
 /*
 |--------------------------------------------------------------------------
