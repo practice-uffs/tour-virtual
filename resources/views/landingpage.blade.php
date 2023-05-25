@@ -90,7 +90,7 @@
 		@if(isset($data))
             @foreach($data as $d)	
 				<swiper-slide>
-					@if($webpsupport == 1)
+					@if($webpsupport == 0)
 					<div class="background-slider" style="background-image: url({{ 'img/geral/'.$d->image_link.'.'.$d->extensao }})"></div>
 					@else
 					<div class="background-slider" style="background-image: url({{ 'img/webp/'.$d->image_link.'.webp' }})"></div>
