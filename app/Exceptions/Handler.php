@@ -6,7 +6,6 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 use Illuminate\Http\Exceptions\PostTooLargeException;
 use Illuminate\Support\Facades\Response;
-use Illuminate\Validation\Rules\In;
 
 class Handler extends ExceptionHandler
 {
