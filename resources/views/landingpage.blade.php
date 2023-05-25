@@ -86,12 +86,15 @@
 	</div>
 
 
-	
 	<swiper-container class="mySwiper" navigation="true"  effect="fade" autoplay-delay="2500" autoplay-disable-on-interaction="true" swiper-pagination-left="20%">
 		@if(isset($data))
             @foreach($data as $d)	
 				<swiper-slide>
-					<div class="background-slider" style="background-image: url({{ 'img/slider/'.$d->image_link }})"></div>
+					@if($webpsupport == 1)
+					<div class="background-slider" style="background-image: url({{ 'img/geral/'.$d->image_link.'.'.$d->extensao }})"></div>
+					@else
+					<div class="background-slider" style="background-image: url({{ 'img/webp/'.$d->image_link.'.webp' }})"></div>
+					@endif
 					<a href="{{ route('map.'.strtolower($d->campus))}} " class="item-slider">
 						<div class="container-item-slider">
 							<div class="info">
@@ -106,6 +109,7 @@
 				</swiper-slide>
 			@endforeach
         @endif
+		
 	</swiper-container>
 	<a href="https://uffs.edu.br/" target='_blank'><img src="{{ 'img/icon/logoUFFS.png' }}" class="logo-uffs-slide"></a>
 	 

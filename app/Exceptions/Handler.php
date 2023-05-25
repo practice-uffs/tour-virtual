@@ -4,6 +4,9 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Illuminate\Http\Exceptions\PostTooLargeException;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Validation\Rules\In;
 
 class Handler extends ExceptionHandler
 {
@@ -37,4 +40,12 @@ class Handler extends ExceptionHandler
             //
         });
     }
+    public function render($request, Throwable $exception)
+    {
+        if ($exception instanceof PostTooLargeException) {
+            return dd(redirect()->back()->withErrors(['ssuccess' => "Imagem muito grande!"]));
+        }
+
+        return parent::render($request, $exception);
+    } 
 }
