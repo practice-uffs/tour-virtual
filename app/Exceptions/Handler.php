@@ -42,7 +42,7 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $exception)
     {
         if ($exception instanceof PostTooLargeException) {
-            return dd(redirect()->back()->withErrors(['ssuccess' => "Imagem muito grande!"]));
+            return redirect()->back()->withErrors(['ssuccess' => "Imagem muito grande!"]);
         }
 
         return parent::render($request, $exception);
