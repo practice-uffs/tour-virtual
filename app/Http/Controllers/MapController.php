@@ -8,9 +8,15 @@ use App\Models\Information;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use PhpIfc\PhpIfcParser\Parser;
 
 class MapController extends Controller
 {
+    public function model3d(){
+
+
+        return view('model3d');
+    }
 
     public function laranjeiras(){
         return view('index', $this->get_data('LS', 'Laranjeiras do Sul', 'Laranjeiras do Sul', false));

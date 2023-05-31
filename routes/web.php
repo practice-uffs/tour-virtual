@@ -42,6 +42,7 @@ Route::prefix('/cl')->group(function (){
 });
 
 Route::prefix('/ch')->group(function (){
+    Route::get('/model3d', [MapController::class, 'model3d'])->name('3d.ch');
     Route::prefix('/panorama')->group(function (){
         Route::get('/', function (){
             return view('panorama.ch', ['campus_name' => 'Chapecó'], ['campus' => 'ch']);
