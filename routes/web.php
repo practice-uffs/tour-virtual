@@ -6,9 +6,9 @@ use App\Http\Controllers\InformationController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\WebpSupportController;
+use App\Http\Controllers\LandingPageController;
 use Illuminate\Support\Facades\Route;
 use App\Models\FigmaMap;
-use Buglinjo\Webp\Controllers\WebpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +32,7 @@ if (!empty($proxy_schema)) {
    URL::forceScheme($proxy_schema);
 }
 
-Route::get('/', [WebpSupportController::class, 'landingpage'])->name('home');
+Route::get('/', [LandingPageController::class, 'index'])->name('home');
 
 Route::prefix('/cl')->group(function (){
     Route::get('/panorama', function (){

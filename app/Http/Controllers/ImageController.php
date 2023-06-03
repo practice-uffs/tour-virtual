@@ -33,8 +33,7 @@ class ImageController extends Controller
             $file = $request->file('imagem');
             $extension = $file->getClientOriginalExtension();
 
-            $figma_map->image_link = $fileName;
-            $figma_map->extensao = $extension;
+            $figma_map->image_link = $fileName.'.'.$extension;
             $figma_map->save();
             
             return redirect()->back()->with('success', "Imagem de $name atualizada com sucesso");

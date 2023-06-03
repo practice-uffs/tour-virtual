@@ -15,10 +15,4 @@ class WebpSupportController extends Controller
             return FALSE;
         }
     }
-
-    public function landingPage()
-    {
-        $data = FigmaMap::all();
-        return view('landingpage', ['data' => $data, 'webpsupport' => $this->support()]);
-    }
 }

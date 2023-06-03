@@ -50,7 +50,7 @@
             @if(isset($data))
                 @foreach($data as $d)
                     <tr>
-                        <td><img src="{{url('img/geral/'.$d->image_link.'.'.$d->extensao)}}" width="50px" height="auto"/></td>
+                        <td><img src="{{url('img/geral/'.$d->image_link)}}" width="50px" height="auto"/></td>
                         <td>{{$d->name}}</td>
                         <td>{{date('d-m-Y H:i:s', strtotime($d->updated_at))}}</td>
                         <td>
