@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\ContribuaController;
 use App\Http\Controllers\FigmaMapController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\MapController;

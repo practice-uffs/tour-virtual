@@ -25,7 +25,7 @@
     }
 
     .feedback_form h5 {
-        color: #555555;;
+        color: #83ad9b;;
         font-size: 20px;
         text-align: center;
         height: 1em;
@@ -54,9 +54,10 @@
         border: none;
         width: 100%;
         height: 42px;
-        background: #152238;
+        background: #83ad9b;
         color: #ffffff;
         font-weight: bold;
+        border-radius: 3px;
     }
 
     .feedback_form input:focus, .feedback_form select:focus, .feedback_form textarea:focus{

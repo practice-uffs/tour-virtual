@@ -94,7 +94,7 @@
     <div class="map-svg">
         <svg id="svg" class="svg" viewBox="{{$viewport ?? '0 0 3794 1985'}}" preserveAspectRatio="xMidYMid meet"  fill="none" xmlns="http://www.w3.org/2000/svg"><g id="viewport"></g></svg>
     </div>
-    <div class="campus" id="step4">
+    <div class="campus" id="step5">
         <div onclick="$('.campus-popup').show();">
             <img src="{{ asset('img/icon/forward-item-svgrepo-com.svg') }}"  width="30px" height="30px" style="stroke: #567569; margin-right: 15px;">
 
@@ -113,9 +113,12 @@
             <div class="btn-feedback">
                 <img src="{{ asset('img/icon/feedback-icon.svg') }}" style="width: 25px; height: 25px;">
             </div>
+            <div class="btn-contribua" id="step3">
+                <img src="{{ asset('img/icon/feedback-icon.svg') }}" style="width: 25px; height: 25px;">
+            </div>
         </div>
     </div>
-    <div class="controls-container controls-bottom" id="step3" >
+    <div class="controls-container controls-bottom" id="step4" >
         <div class="zoom-container">
             <div class="btn-360">
                 {{-- <img  id="btn-360" src="/img/icon/zoom-in-svgrepo-com.svg" style="width: 25px; height: 25px;"> --}}
@@ -278,6 +281,7 @@
 
 
 @include('components.feedback')
+
 <div class='campus-popup'>
     <div class='campus-selector-popup'>
         <h2>Selecione um Campus</h2>
@@ -337,22 +341,22 @@
                 },
                 {
                     element: "#step3",
-                    title: "Controles de navegação",
-                    content: "Aqui estão localizados os controles de visualização do mapa. Arraste o ícone do personagem até um local específico para iniciar o tour.",
-                    placement: "top",
+                    title: "Contribua",
+                    content: " Compartilhe fotos autorais dos campi da UFFS.",
+                    placement: "bottom",
                     backdrop: true,
                     backdropContainer: '#wrapper',
                     onShown: function (tour){
-                        $('#step3').addClass('z-index-1120')
+                        $('#step2').addClass('z-index-1120')
                     },
                     onHidden: function (tour){
-                        $('#step3').removeClass('z-index-1120')
+                        $('#step2').removeClass('z-index-1120')
                     }
                 },
                 {
                     element: "#step4",
-                    title: "Nome do Campus",
-                    content: "Este é nome do campus que está sendo exibido. Clique aqui para alternar entre os campi.",
+                    title: "Controles de Navegação",
+                    content: "Aqui estão localizados os controles de visualização do mapa. Arraste o ícone do personagem até um local específico para iniciar o tour.",
                     placement: "top",
                     backdrop: true,
                     backdropContainer: '#wrapper',
@@ -361,6 +365,20 @@
                     },
                     onHidden: function (tour){
                         $('#step4').removeClass('z-index-1120')
+                    }
+                },
+                {
+                    element: "#step5",
+                    title: "Nome do Campus",
+                    content: "Este é nome do campus que está sendo exibido. Clique aqui para alternar entre os campi.",
+                    placement: "top",
+                    backdrop: true,
+                    backdropContainer: '#wrapper',
+                    onShown: function (tour){
+                        $('#step5').addClass('z-index-1120')
+                    },
+                    onHidden: function (tour){
+                        $('#step5').removeClass('z-index-1120')
                     }
                 }
             ]});
