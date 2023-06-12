@@ -27,7 +27,6 @@
                 <a href="{{route('feedback.index')}}" class="btn btn-primary mt-2">Acessar</a>
             </div>
         </div>
-
     </div>
 
 @endsection

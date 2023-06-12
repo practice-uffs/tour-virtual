@@ -88,90 +88,24 @@
 
 	
 	<swiper-container class="mySwiper" navigation="true"  effect="fade" autoplay-delay="2500" autoplay-disable-on-interaction="true" swiper-pagination-left="20%">
-		<swiper-slide>
-			<div class="background-slider" style='background-image: url("{{ 'img/slider/cl_slider.png' }}")'></div>
-			<a href="{{ route('map.cl')}} " class="item-slider">
-				<div class="container-item-slider">
-					<div class="info">
-						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
-						<div class="box-text-slider">
-							<p class="text description">Explorar</p>
-							<h4 class="text campus-title">Campus Cerro Largo</h4>
+		@if(isset($data))
+            @foreach($data as $d)	
+				<swiper-slide>
+					<div class="background-slider" style="background-image: url({{ 'img/slider/'.$d->image_link }})"></div>
+					<a href="{{ route('map.'.strtolower($d->campus))}} " class="item-slider">
+						<div class="container-item-slider">
+							<div class="info">
+								<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
+								<div class="box-text-slider">
+									<p class="text description">Explorar</p>
+									<h4 class="text campus-title">Campus {{$d->name}}</h4>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-			</a>
-		</swiper-slide>
-		<swiper-slide>
-			<div class="background-slider" style='background-image: url("{{ 'img/slider/ch_slider.jpeg' }}")'></div>
-			<a href="{{ route('map.ch')}} " class="item-slider">
-				<div class="container-item-slider">
-					<div class="info">
-						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
-						<div class="box-text-slider">
-							<p class="text description">Explorar</p>
-							<h4 class="text campus-title">Campus Chapecó</h4>
-						</div>
-					</div>
-				</div>
-			</a>
-		</swiper-slide>
-		<swiper-slide>
-			<div class="background-slider" style='background-image: url("{{ 'img/slider/er_slider.jpeg' }}")'></div>
-			<a href="{{ route('map.er')}} " class="item-slider">
-				<div class="container-item-slider">
-					<div class="info">
-						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
-						<div class="box-text-slider">
-							<p class="text description">Explorar</p>
-							<h4 class="text campus-title">Campus Erechim</h4>
-						</div>
-					</div>
-				</div>
-			</a>
-		</swiper-slide>
-		<swiper-slide>
-			<div class="background-slider" style='background-image: url("{{ 'img/slider/ls_slider.jpeg' }}")'></div>
-			<a href="{{ route('map.ls')}} " class="item-slider">
-				<div class="container-item-slider">
-					<div class="info">
-						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
-						<div class="box-text-slider">
-							<p class="text description">Explorar</p>
-							<h4 class="text campus-title">Campus Laranjeiras do Sul</h4>
-						</div>
-					</div>
-				</div>
-			</a>
-		</swiper-slide>
-		<swiper-slide>
-			<div class="background-slider" style='background-image: url("{{ 'img/slider/pf_slider.jpeg' }}")'></div>
-			<a href="{{ route('map.pf')}} " class="item-slider">
-				<div class="container-item-slider">
-					<div class="info">
-						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
-						<div class="box-text-slider">
-							<p class="text description">Explorar</p>
-							<h4 class="text campus-title">Campus Passo Fundo</h4>
-						</div>
-					</div>
-				</div>
-			</a>
-		</swiper-slide>
-		<swiper-slide>
-			<div class="background-slider" style='background-image: url("{{ 'img/slider/rl_slider.jpeg' }}")'></div>
-			<a href="{{ route('map.re')}} " class="item-slider">
-				<div class="container-item-slider">
-					<div class="info">
-						<img src="{{ 'img/icon/explore-solid-svgrepo-com.svg' }}" class="icon-explore-slider">
-						<div class="box-text-slider">
-							<p class="text description">Explorar</p>
-							<h4 class="text campus-title">Campus Realeza</h4>
-						</div>
-					</div>
-				</div>
-			</a>
-		</swiper-slide>
+					</a>
+				</swiper-slide>
+			@endforeach
+        @endif
 	</swiper-container>
 	<a href="https://uffs.edu.br/" target='_blank'><img src="{{ 'img/icon/logoUFFS.png' }}" class="logo-uffs-slide"></a>
 	 

@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "buglinjo/laravel-webp": "^2.3",
         "ccuffs/auth-iduffs": "^1.1",
         "doctrine/dbal": "^3.6",
         "erusev/parsedown": "^1.7",
