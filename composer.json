@@ -24,6 +24,7 @@
         "laravel/ui": "^3.4",
         "league/html-to-markdown": "^5.1",
         "livewire/livewire": "^2.11",
+        "rosell-dk/webp-convert": "^2.9",
         "wireui/wireui": "^1.17"
     },
     "require-dev": {

@@ -6,9 +6,10 @@ use App\Http\Controllers\FigmaMapController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\WebpSupportController;
+use App\Http\Controllers\LandingPageController;
 use Illuminate\Support\Facades\Route;
 use App\Models\FigmaMap;
-use Buglinjo\Webp\Controllers\WebpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,10 +33,7 @@ if (!empty($proxy_schema)) {
    URL::forceScheme($proxy_schema);
 }
 
-Route::get('/', function () {
-    $data = FigmaMap::all();
-    return view('landingpage', ['data' => $data]);
-})->name('home');
+Route::get('/', [LandingPageController::class, 'index'])->name('home');
 
 Route::prefix('/cl')->group(function (){
     Route::get('/panorama', function (){
@@ -103,7 +101,7 @@ Route::prefix('admin')->group(function (){
     Route::get('/feedback',[FeedbackController::class, 'index'])->name('feedback.index')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::get('/feedback/{feedback}',[FeedbackController::class, 'show'])->name('feedback.show')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::delete('/feedback/{feedback}',[FeedbackController::class, 'destroy'])->name('feedback.destroy')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
-    Route::post('/mapa/{figma_map}/image', [ImageController::class, 'upload'])->name('image.upload')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+    Route::post('/mapa/{figma_map}/image', [ImageController::class, 'sliderUpload'])->name('image.upload')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
 });
 
 

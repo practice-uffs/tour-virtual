@@ -5,25 +5,37 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\FigmaMap;
 use App\Models;
-use Buglinjo\Webp\Controllers\WebpController;
+use WebPConvert\WebPConvert;
 
 class ImageController extends Controller
 {
-    public function upload(Request $request, FigmaMap $figma_map)
+    public function upload(Request $request)
     {
-        $name = $figma_map->getAttribute('name');
+            $path = $request->file('imagem')->store('img/geral');
+            $file = $request->file('imagem');
+            $extension = $file->getClientOriginalExtension();
+            $fileName = 'imagem_' . date('YmdHisv');
+            $file->move(public_path('img/geral'), $fileName.'.'.$extension);
 
-        $path = $request->file('imagem')->store('img/slider');
-        $file = $request->file('imagem');
-        $fileName = $file->getClientOriginalName();
-        $file->move(public_path('img/slider'), $fileName);
+            $source = public_path('img/geral/').$fileName.'.'.$extension;
+            $destination = public_path('img/webp/').$fileName.'.webp';
+            $options = [];
+            WebPConvert::convert($source, $destination, $options);
 
-        $webp = Webp::make($request->file('imagem'));
+            return $fileName;
+    }
 
-        $webp->save(public_path('img/slider'));
+    public function sliderUpload(Request $request, FigmaMap $figma_map)
+    {
+            $name = $figma_map->getAttribute('name');
 
-        $figma_map->image_link = $fileName;
-        $figma_map->save();
-        return redirect()->back()->with('success', "Imagem do $name atualizada com sucesso");
+            $fileName = $this->upload($request);
+            $file = $request->file('imagem');
+            $extension = $file->getClientOriginalExtension();
+
+            $figma_map->image_link = $fileName.'.'.$extension;
+            $figma_map->save();
+            
+            return redirect()->back()->with('success', "Imagem de $name atualizada com sucesso");
     }
 }

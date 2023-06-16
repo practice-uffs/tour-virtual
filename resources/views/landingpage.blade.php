@@ -86,12 +86,15 @@
 	</div>
 
 
-	
 	<swiper-container class="mySwiper" navigation="true"  effect="fade" autoplay-delay="2500" autoplay-disable-on-interaction="true" swiper-pagination-left="20%">
 		@if(isset($data))
             @foreach($data as $d)	
 				<swiper-slide>
-					<div class="background-slider" style="background-image: url({{ 'img/slider/'.$d->image_link }})"></div>
+					@if($webpsupport == 0)
+					<div class="background-slider" style="background-image: url({{ 'img/geral/'.$d->image_link }})"></div>
+					@else
+					<div class="background-slider" style="background-image: url({{ 'img/webp/' . pathinfo($d->image_link, PATHINFO_FILENAME) . '.webp' }})"></div>
+					@endif
 					<a href="{{ route('map.'.strtolower($d->campus))}} " class="item-slider">
 						<div class="container-item-slider">
 							<div class="info">
@@ -126,7 +129,7 @@
 			<img src="{{ 'img/icon/title-main-content.svg' }}" class="tour-virtual-text">
 
 			<div class="text-main-content">Conheça e navegue dentro dos campi da Universidade Federal da Fronteira Sul</div>
-			<img src="{{ 'img/slider/maps_slider/Chapecó.svg' }}" class="item-map-content">
+			<img src="{{ 'img/svg/Chapecó.svg' }}" class="item-map-content">
 			<div class="align-main-content" id="item-content-1">
 				<img src="{{ 'img/icon/btn-mapas-detalhados.svg' }}" style="padding: 8px;" class="item-content">
 				<p>Mapas Detalhados</p>
@@ -149,27 +152,27 @@
 			<div class="title-secondary-content"><p>Veja seu campus</p>por outra perspectiva</div>
 			<div class="description-secondary-content">Encontre a informação que você precisa ou publique seu próprio conteúdo e contribua com este projeto</div>
 		</div>
-		<a href="{{ route('map.ls') }}" class="first-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Laranjeiras do Sul.svg' }}"><span>Laranjeiras do Sul</span></a>
-		<a href="{{ route('map.er') }}" class="second-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Erechim.svg' }}"><span>Erechim</span></a>
-		<a href="{{ route('map.cl') }}" class="thirty-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Cerro Largo.svg' }}"><span>Cerro Largo</span></a>
+		<a href="{{ route('map.ls') }}" class="first-map"><img style="width: 100%; height: 100%;" src="{{ 'img/svg/Laranjeiras do Sul.svg' }}"><span>Laranjeiras do Sul</span></a>
+		<a href="{{ route('map.er') }}" class="second-map"><img style="width: 100%; height: 100%;" src="{{ 'img/svg/Erechim.svg' }}"><span>Erechim</span></a>
+		<a href="{{ route('map.cl') }}" class="thirty-map"><img style="width: 100%; height: 100%;" src="{{ 'img/svg/Cerro Largo.svg' }}"><span>Cerro Largo</span></a>
 
 	</div>
 
 	<!-- content section 2 -->
 	<div class="secondary-content" style="margin-top: 5vw; padding-top:5vw">
-		<a href="{{ route('map.re') }}" class="first-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Realeza.svg' }}"><span>Realeza</span></a>
-		<a href="{{ route('map.pf') }}" class="second-map"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Passo Fundo.svg' }}"><span>Passo Fundo</span></a>
-		<a href="{{ route('map.ch') }}" class="thirty-map"  style="top: 5vw"><img style="width: 100%; height: 100%;" src="{{ 'img/slider/maps_slider/Chapecó.svg' }}"><span>Chapecó</span></a>
+		<a href="{{ route('map.re') }}" class="first-map"><img style="width: 100%; height: 100%;" src="{{ 'img/svg/Realeza.svg' }}"><span>Realeza</span></a>
+		<a href="{{ route('map.pf') }}" class="second-map"><img style="width: 100%; height: 100%;" src="{{ 'img/svg/Passo Fundo.svg' }}"><span>Passo Fundo</span></a>
+		<a href="{{ route('map.ch') }}" class="thirty-map"  style="top: 5vw"><img style="width: 100%; height: 100%;" src="{{ 'img/svg/Chapecó.svg' }}"><span>Chapecó</span></a>
 	</div>
 	
 
 	<swiper-container class="mySwiper2" navigation="true"  effect="fade" autoplay-disable-on-interaction="true" swiper-pagination-left="20%">
-		<swiper-slide><a href="{{ route('map.ls') }}" class="item_slider_minimap"><img src="{{ 'img/slider/maps_slider/Laranjeiras do Sul.svg' }}"><span class="text campus-title">Laranjeiras do Sul</span></a></swiper-slide>
-		<swiper-slide><a href="{{ route('map.pf') }}" class="item_slider_minimap"><img src="{{ 'img/slider/maps_slider/Passo Fundo.svg' }}"><span class="text campus-title">Passo Fundo</span></a></swiper-slide>
-		<swiper-slide><a href="{{ route('map.cl') }}" class="item_slider_minimap"><img src="{{ 'img/slider/maps_slider/Cerro Largo.svg' }}"><span class="text campus-title">Cerro Largo</span></a></swiper-slide>
-		<swiper-slide><a href="{{ route('map.ch') }}" class="item_slider_minimap"><img src="{{ 'img/slider/maps_slider/Chapecó.svg' }}"><span class="text campus-title">Chapecó</span></a></swiper-slide>
-		<swiper-slide><a href="{{ route('map.er') }}" class="item_slider_minimap"><img src="{{ 'img/slider/maps_slider/Erechim.svg' }}"><span class="text campus-title">Erechim</span></a></swiper-slide>
-		<swiper-slide><a href="{{ route('map.re') }}" class="item_slider_minimap"><img src="{{ 'img/slider/maps_slider/Realeza.svg' }}"><span class="text campus-title">Realeza</span></a></swiper-slide>
+		<swiper-slide><a href="{{ route('map.ls') }}" class="item_slider_minimap"><img src="{{ 'img/svg/Laranjeiras do Sul.svg' }}"><span class="text campus-title">Laranjeiras do Sul</span></a></swiper-slide>
+		<swiper-slide><a href="{{ route('map.pf') }}" class="item_slider_minimap"><img src="{{ 'img/svg/Passo Fundo.svg' }}"><span class="text campus-title">Passo Fundo</span></a></swiper-slide>
+		<swiper-slide><a href="{{ route('map.cl') }}" class="item_slider_minimap"><img src="{{ 'img/svg/Cerro Largo.svg' }}"><span class="text campus-title">Cerro Largo</span></a></swiper-slide>
+		<swiper-slide><a href="{{ route('map.ch') }}" class="item_slider_minimap"><img src="{{ 'img/svg/Chapecó.svg' }}"><span class="text campus-title">Chapecó</span></a></swiper-slide>
+		<swiper-slide><a href="{{ route('map.er') }}" class="item_slider_minimap"><img src="{{ 'img/svg/Erechim.svg' }}"><span class="text campus-title">Erechim</span></a></swiper-slide>
+		<swiper-slide><a href="{{ route('map.re') }}" class="item_slider_minimap"><img src="{{ 'img/svg/Realeza.svg' }}"><span class="text campus-title">Realeza</span></a></swiper-slide>
 	</swiper-container>
 
 
