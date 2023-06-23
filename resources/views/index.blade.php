@@ -281,6 +281,7 @@
 
 
 @include('components.feedback')
+@include('components.contribua')
 
 <div class='campus-popup'>
     <div class='campus-selector-popup'>

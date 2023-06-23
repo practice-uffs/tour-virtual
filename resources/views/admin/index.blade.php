@@ -27,6 +27,14 @@
                 <a href="{{route('feedback.index')}}" class="btn btn-primary mt-2">Acessar</a>
             </div>
         </div>
+        <div class="card" style="width: 18rem;">
+            <img src="{{'img/icon/feedback-icon.svg'}}" class="card-img-top img-thumbnail" alt="...">
+            <div class="card-body">
+                <h5 class="card-title fs-4">Imagens</h5>
+                <p class="card-text">Compartilhamento de fotos pelos usuários</p>
+                <a href="{{route('contribua.index')}}" class="btn btn-primary mt-2">Acessar</a>
+            </div>
+        </div>
     </div>
 
 @endsection

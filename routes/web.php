@@ -99,6 +99,7 @@ Route::prefix('admin')->group(function (){
     Route::get('/mapa', [FigmaMapController::class, 'index'])->name('figma_map.index')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::get('/mapa/{figma_map}/edit', [FigmaMapController::class, 'edit'])->name('figma_map.edit')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::get('/feedback',[FeedbackController::class, 'index'])->name('feedback.index')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+    Route::get('/contribua',[ContribuaController::class, 'index'])->name('contribua.index')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::get('/feedback/{feedback}',[FeedbackController::class, 'show'])->name('feedback.show')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::delete('/feedback/{feedback}',[FeedbackController::class, 'destroy'])->name('feedback.destroy')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::post('/mapa/{figma_map}/image', [ImageController::class, 'sliderUpload'])->name('image.upload')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
@@ -106,3 +107,4 @@ Route::prefix('admin')->group(function (){
 
 
 Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.send');
+Route::post('/contribua', [ContribuaController::class, 'upload'])->name('contribua.send');

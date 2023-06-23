@@ -9,14 +9,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
+use App\Http\Controllers\ContribuaController;
+
 class MapController extends Controller
 {
-
     public function laranjeiras(){
         return view('index', $this->get_data('LS', 'Laranjeiras do Sul', 'Laranjeiras do Sul', false));
     }
 
-    public function laranjeiras_Info($ID_element){
+    public function laranjeiras_Info($ID_element) {
         $validator = Validator::make(['id' => $ID_element], [
             'id' => 'required | numeric'
         ]);
@@ -28,10 +29,10 @@ class MapController extends Controller
         }
     }
 
-
     public function chapeco(){
-        // dd($information);
-        return view('index', $this->get_data('CH', 'Chapecó', 'Chapecó', false));
+        $contribuaController = new ContribuaController();
+        $data = $contribuaController->getOptions('CH');
+        return view('index', $this->get_data('CH', 'Chapecó', 'Chapecó', false), ['result' => $data]);
     }
 
     public function chapeco_Info($ID_element){

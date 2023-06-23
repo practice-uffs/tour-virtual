@@ -9,7 +9,7 @@ use WebPConvert\WebPConvert;
 
 class ImageController extends Controller
 {
-    public function upload(Request $request)
+    public static function upload(Request $request)
     {
             $path = $request->file('imagem')->store('img/geral');
             $file = $request->file('imagem');
