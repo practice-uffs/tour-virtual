@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "buglinjo/laravel-webp": "^2.3",
         "ccuffs/auth-iduffs": "^1.1",
         "doctrine/dbal": "^3.6",
         "erusev/parsedown": "^1.7",
@@ -23,6 +24,7 @@
         "laravel/ui": "^3.4",
         "league/html-to-markdown": "^5.1",
         "livewire/livewire": "^2.11",
+        "rosell-dk/webp-convert": "^2.9",
         "wireui/wireui": "^1.17"
     },
     "require-dev": {
