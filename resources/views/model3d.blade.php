@@ -1,10 +1,52 @@
     <!doctype html>
     <html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>xeokit Example</title>
+        <meta charset="UTF-8">
+        <title>Tour Virtual UFFS - Conheça e navegue dentro dos campi da Universidade Federal da Fronteira Sul</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        {{-- <link href="https://practice.uffs.edu.br/tour-virtual" rel="canonical"> --}}
+        <base href="{{ route('home') }}/ch/model3d">
+      
+        {{-- <meta name="title" content="Tour Virtual UFFS - Conheça e navegue dentro dos campi da Universidade Federal da Fronteira Sul" />
+        <meta name="description" content="Tenha acesso aos mapas contendo informações sobre os blocos e a localização das salas, além de acessar a visualização 360 dos principais pontos de cada campus." />
+        <meta name='image' content="https://practice.uffs.edu.br/tour-virtual/img/icon/tour-icon.svg" />
+        <meta name="rating" content="General" />
+        <meta name="expires" content="0" />
+        <meta name="language" content="portuguese, PT-BR" />
+        <meta name="distribution" content="Global" />
+        <meta name="revisit-after" content="7 Days" />
+        <meta name="author" content="Practice - https://practice.uffs.edu.br" />
+        <meta name="publisher" content="Practice - https://practice.uffs.edu.br" />
+        <meta name="copyright" content="Practice"/>
+        <meta name="robots" content="index,follow">
+        <meta name="googlebot" content="index,follow">
+        <meta name="url" content="https://practice.uffs.edu.br/tour-virtual"/>        
+      
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Tour Virtual UFFS - Conheça e navegue dentro dos campi da Universidade Federal da Fronteira Sul" />
+        <meta property="og:description" content="Tenha acesso aos mapas contendo informações sobre os blocos e a localização das salas, além de acessar a visualização 360 dos principais pontos de cada campus." />
+        <meta property="og:image" content="https://practice.uffs.edu.br/tour-virtual/img/icon/tour-icon.svg" />
+        <meta property="og:image:width" content="800">
+        <meta property="og:image:height" content="600">
+        <meta property="og:url" content="https://practice.uffs.edu.br/tour-virtual" />
+        <meta property="og:site_name" content="practice" />
+        <meta property="og:locale" content="pt_BR"/>
+        <meta property="article:author" content="Practice - https://practice.uffs.edu.br"/>
+        <meta property="article:publisher" content="Practice - https://practice.uffs.edu.br"/>   
+      
+        <meta property="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:site" content="https://practice.uffs.edu.br/tour-virtual"/>
+        <meta property="twitter:domain" content="https://practice.uffs.edu.br/tour-virtual"/>
+        <meta property="twitter:title" content="Tour Virtual UFFS - Conheça e navegue dentro dos campi da Universidade Federal da Fronteira Sul"/>
+        <meta property="twitter:description" content="Tenha acesso aos mapas contendo informações sobre os blocos e a localização das salas, além de acessar a visualização 360 dos principais pontos de cada campus."/>
+        <meta property="twitter:image:src" content="https://practice.uffs.edu.br/tour-virtual/img/icon/tour-icon.svg/">
+        <meta property="twitter:url" content="https://practice.uffs.edu.br/tour-virtual"/>
+    
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto:wght@200;400;500;600;700;800&display=swap'>
+        <link rel="stylesheet" href="{{ 'css/landing_page.css' }}">
+        <link rel="stylesheet" href="{{ 'css/slider.css' }}">
+     --}}
 
         <style>
             body {
@@ -100,16 +142,15 @@
 
         #treeViewContainer {
             pointer-events: all;
-            height: 100%;
             overflow-y: scroll;
             overflow-x: hidden;
             position: absolute;
             background-color: rgba(255, 255, 255, 0.2);
             color: black;
-            top: 80px;
+            top: 0px;
             z-index: 200000;
             float: left;
-            left: 0;
+            right: 0;
             padding-left: 10px;
             font-family: 'Roboto', sans-serif;
             font-size: 15px;
@@ -252,37 +293,16 @@
         </style>
     </head>
     <body>
+
+
+    <a href="#" onclick="window.explodeModel()" style="position: absolute; left: 30px; top: 30px; z-index:10"><img src="{{ '../../img/icon/play-1003-svgrepo-com.svg' }}" width="50px" height="50px"></a>
     <canvas id="myCanvas"></canvas>
     {{-- <div id="treeViewContainer" style="display: none"></div> --}}
 
     <div id="treeViewContainer"></div>
 
 
-    
-    </body>
-
-    
-    {{-- <script src="https://cdn.jsdelivr.net/npm/@xeokit/xeokit-convert/dist/convert2xkt.cjs.js"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            import('/3d_model/files/BlocoA.ifc').then(module => {
-                const { convert2xkt } = window.xeokitConvert;
-    
-                convert2xkt({
-                    sourceData: module.default,
-                    outputXKT: (xtkArrayBuffer) => {
-                        console.log(xtkArrayBuffer);
-                    }
-                }).then(() => {
-                    console.log("Converted.");
-                }, (errMsg) => {
-                    console.error("Conversion failed: " + errMsg);
-                });
-            });
-        });
-    </script> --}}
-
-    <script id="source" type="module">
+    <script id='source' type="module">
 
 
         import {Viewer, XKTLoaderPlugin, math, TreeViewPlugin, ContextMenu, AnnotationsPlugin, } from
@@ -308,7 +328,7 @@
 
         const sceneModel = xktLoader.load({
             id: "myModel",
-            src: "/3d_model/files/xkt/BlocoA.xkt",
+            src: "/3d_model/files/xkt/cenary.xkt",
             excludeTypes: ["IfcSpace", "IfcBuilding", "IfcSite"],
             edges,
             saoEnabled,
@@ -323,16 +343,90 @@
 
 
         sceneModel.on("loaded", function () {
+            hideObject("298uW9PODAmgWwAQB0IyQ0");
+            hideObject("298uW9PODAmgWwAQB0IyK1");
+            hideObject("298uW9PODAmgWwAQB0ITCX");
+            hideObject("298uW9PODAmgWwAQB0IT7r");
+            hideObject("298uW9PODAmgWwAQB0IT3e");
+            hideObject("0s0xHliUD1dOn2nVe22Li8");
+            showCenary('298uW9PODAmgWwAQB0IyQ0');
 
-            setTimeout(() => {
+            // const sceneModel2 = xktLoader.load({
+            //     id: "myModel",
+            //     src: "/3d_model/files/xkt/novoBlalocoA.xkt",
+            //     excludeTypes: ["IfcSpace", "IfcBuilding", "IfcSite"],
+            //     edges,
+            //     saoEnabled,
+            //     useDataTextures: {
+            //         enableViewFrustumCulling: true,
+            //         targetLodFps: 20,
+            //         disableVertexWelding: true,
+            //         disableIndexRebucketing: true
+            //     },
+            //     position: [20, 0, -30]
+            // });
+            const sceneModel2 = xktLoader.load({
+                id: "myModel",
+                src: "/3d_model/files/xkt/laboratorio.xkt",
+                excludeTypes: ["IfcSpace", "IfcBuilding", "IfcSite"],
+                edges,
+                saoEnabled,
+                useDataTextures: {
+                    enableViewFrustumCulling: true,
+                    targetLodFps: 20,
+                    disableVertexWelding: true,
+                    disableIndexRebucketing: true
+                },
+                position: [-10, 0, -50],
+                rotation: [0, -90, 0],
+            });
+        });
+
+   
+
+        if (!window.explodeModel) {
+            window.explodeModel = function() {
+                moveObject("3yQF813kT3dgkZGyn6HnfO", [0, 0, 100]);
+                //   hideObject("3yQF813kT3dgkZGyn6HnfO");
+                // moveObject("0s0xHliUD1dOn2nVe2EVsG", [0, 0, 0]);
+                // moveObject("0s0xHliUD1dOn2nVe2BDsb", [0, 0, 0]);
+                // moveObject("0s0xHliUD1dOn2nVe2DMV0", [0, 0, 50]);
+                // moveObject("0s0xHliUD1dOn2nVe22LiU", [0, 0, 100]);
+                // moveObject("0s0xHliUD1dOn2nVe22Li1", [0, 0, 150]);
+                // moveObject("0s0xHliUD1dOn2nVe22Li8", [0, 0, 200]);
+            };
+        };
+
+        if (!window.implodeModel) {
+            window.implodeModel = function() {
                 moveObject("0s0xHliUD1dOn2nVe2EVsG", [0, 0, 0]);
                 moveObject("0s0xHliUD1dOn2nVe2BDsb", [0, 0, 0]);
-                moveObject("0s0xHliUD1dOn2nVe2DMV0", [0, 0, 50]);
-                moveObject("0s0xHliUD1dOn2nVe22LiU", [0, 0, 100]);
-                moveObject("0s0xHliUD1dOn2nVe22Li1", [0, 0, 150]);
-                moveObject("0s0xHliUD1dOn2nVe22Li8", [0, 0, 200]);
-            }, 500);
-        });
+                moveObject("0s0xHliUD1dOn2nVe2DMV0", [0, 0, 0]);
+                moveObject("0s0xHliUD1dOn2nVe22LiU", [0, 0, 0]);
+                moveObject("0s0xHliUD1dOn2nVe22Li1", [0, 0, 0]);
+                moveObject("0s0xHliUD1dOn2nVe22Li8", [0, 0, 0]);
+            };
+        }; 
+
+
+        function hideObject(objectId){
+            const metaObject = viewer.metaScene.metaObjects[objectId];
+            if (!metaObject) {
+                return;
+            }
+            const objectIds = viewer.metaScene.getObjectIDsInSubtree(objectId);
+            scene.setObjectsOpacity(objectIds, 0);
+        }
+
+        function showCenary(objectId){
+            const metaObject = viewer.metaScene.metaObjects[objectId];
+            if (!metaObject) {
+                return;
+            }
+            const objectIds = viewer.metaScene.getObjectIDsInSubtree(objectId);
+            scene.setObjectsOpacity(objectIds.slice(0,55), 1);
+        }
+
 
         function moveObject(objectId, dir, done) {
 
@@ -370,7 +464,11 @@
         sortNodes: false,
     });
 
-    console.log(treeView);
+    treeView.on('loaded', function(){
+        console.log('tree'+treeView);
+    });
+
+  
 
     //----------------------------------------------------------------------------------------------------------------------
     // Create submenu on treeview by element rightclick event.
@@ -906,7 +1004,7 @@
 
             // Default HTML template for label
             labelHTML: "<div class='annotation-label' style='background-color: white;'>" +
-            "<div class='annotation-title'>Sala 302</div><div class='annotation-desc'>Sala do professor...</div></div>",
+            "<div class='annotation-title'>Entrada</div><div class='annotation-desc'></div></div>",
 
             // Default values to insert into the marker and label templates
             values: {
@@ -930,11 +1028,10 @@
 
                 id: "myAnnotation",
 
-                entity: viewer.scene.objects["2O2Fr$t4X7Zf8NOew3FLOH"], // Optional, associate with an Entity
+                entity: viewer.scene.objects["0s0xHliUD1dOn2nVe22Li1"], // Optional, associate with an Entity
+                worldPos: [0, 0, -30],        // 3D World-space position
 
-                worldPos: [0, 0, 10],        // 3D World-space position
-
-                // occludable: true,           // Optional, default, makes Annotation invisible when occluded by Entities
+                occludable: true,           // Optional, default, makes Annotation invisible when occluded by Entities
                 markerShown: true,          // Optional, default is true, makes position visible (when not occluded)
                 labelShown: true            // Optional, default is false, makes label visible (when not occluded)
 
@@ -958,4 +1055,6 @@
 
 
     </script>
+     
+    </body>
     </html>
