@@ -351,23 +351,9 @@
             hideObject("0s0xHliUD1dOn2nVe22Li8");
             showCenary('298uW9PODAmgWwAQB0IyQ0');
 
-            // const sceneModel2 = xktLoader.load({
-            //     id: "myModel",
-            //     src: "/3d_model/files/xkt/novoBlalocoA.xkt",
-            //     excludeTypes: ["IfcSpace", "IfcBuilding", "IfcSite"],
-            //     edges,
-            //     saoEnabled,
-            //     useDataTextures: {
-            //         enableViewFrustumCulling: true,
-            //         targetLodFps: 20,
-            //         disableVertexWelding: true,
-            //         disableIndexRebucketing: true
-            //     },
-            //     position: [20, 0, -30]
-            // });
             const sceneModel2 = xktLoader.load({
                 id: "myModel",
-                src: "/3d_model/files/xkt/laboratorio.xkt",
+                src: "/3d_model/files/xkt/novoBlocoA.xkt",
                 excludeTypes: ["IfcSpace", "IfcBuilding", "IfcSite"],
                 edges,
                 saoEnabled,
@@ -377,23 +363,37 @@
                     disableVertexWelding: true,
                     disableIndexRebucketing: true
                 },
-                position: [-10, 0, -50],
-                rotation: [0, -90, 0],
+                position: [20, 0, -30]
             });
+            // const sceneModel2 = xktLoader.load({
+            //     id: "myModel",
+            //     src: "/3d_model/files/xkt/laboratorio.xkt",
+            //     excludeTypes: ["IfcSpace", "IfcBuilding", "IfcSite"],
+            //     edges,
+            //     saoEnabled,
+            //     useDataTextures: {
+            //         enableViewFrustumCulling: true,
+            //         targetLodFps: 20,
+            //         disableVertexWelding: true,
+            //         disableIndexRebucketing: true
+            //     },
+            //     position: [-10, 0, -50],
+            //     rotation: [0, -90, 0],
+            // });
         });
 
    
 
         if (!window.explodeModel) {
             window.explodeModel = function() {
-                moveObject("3yQF813kT3dgkZGyn6HnfO", [0, 0, 100]);
-                //   hideObject("3yQF813kT3dgkZGyn6HnfO");
-                // moveObject("0s0xHliUD1dOn2nVe2EVsG", [0, 0, 0]);
-                // moveObject("0s0xHliUD1dOn2nVe2BDsb", [0, 0, 0]);
-                // moveObject("0s0xHliUD1dOn2nVe2DMV0", [0, 0, 50]);
-                // moveObject("0s0xHliUD1dOn2nVe22LiU", [0, 0, 100]);
-                // moveObject("0s0xHliUD1dOn2nVe22Li1", [0, 0, 150]);
-                // moveObject("0s0xHliUD1dOn2nVe22Li8", [0, 0, 200]);
+                // moveObject("3yQF813kT3dgkZGyn6HnfO", [0, 0, 100]);
+                  hideObject("3yQF813kT3dgkZGyn6HnfO");
+                moveObject("0s0xHliUD1dOn2nVe2EVsG", [0, 0, 0]);
+                moveObject("0s0xHliUD1dOn2nVe2BDsb", [0, 0, 0]);
+                moveObject("0s0xHliUD1dOn2nVe2DMV0", [0, 0, 50]);
+                moveObject("0s0xHliUD1dOn2nVe22LiU", [0, 0, 100]);
+                moveObject("0s0xHliUD1dOn2nVe22Li1", [0, 0, 150]);
+                moveObject("0s0xHliUD1dOn2nVe22Li8", [0, 0, 200]);
             };
         };
 
