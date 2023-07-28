@@ -8,6 +8,7 @@
 /public/img/svg/map/ls/main.svg
 /public/img/svg/map/pf/main.svg
 /public/img/svg/map/re/main.svg
+/public/img/*
 /vendor
 .env
 .env.backup

@@ -37,10 +37,21 @@ class FigmaMapController extends Controller
            $data[$k] = $v;
        } */
        $data = FigmaMap::all();
-       return view('mapa_figma.index', ['data' => $data]);
+       return view('admin.campus.list', ['data' => $data]);
     }
 
-    public function edit(FigmaMap $figma_map){
+    public  function edit(FigmaMap $figma_map){
+        /* $data = FigmaMap::query()->where('name', '=', 'Principal')->get();
+        foreach ($data as $k => $v){
+            $campus = Information::siglaCampus($v['campus']);
+            $v['campus'] = $campus;
+            $data[$k] = $v;
+        } */
+        $data = FigmaMap::all();
+        return view('admin.campus.edit', ['data' => $data]);
+    }
+
+    public function refresh(FigmaMap $figma_map){
         $campus = $figma_map->getAttribute('campus');
         $name = $figma_map->getAttribute('name');
         $SVG = $this->requestFigma($name, $campus);

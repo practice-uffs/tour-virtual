@@ -3,7 +3,7 @@
 @section('content')
 
     <a class="btn btn-secondary m-2" href="{{route('admin.index')}}">Voltar</a>
-    <h1 class="fs-4 text-center mt-5 mb-4">Mapas Figma</h1>
+    <h1 class="fs-4 text-center mt-5 mb-4">Campus da UFFS</h1>
     <div class="container w-50">
         <!-- Alerta Sucesso / Falha-->
         <div  style="display: none">
@@ -55,7 +55,8 @@
                         <td>{{date('d-m-Y H:i:s', strtotime($d->updated_at))}}</td>
                         <td>
                             <div>
-                                <a class="btn btn-primary" href="{{route('figma_map.edit',['figma_map' => $d->id])}}">Atualizar Mapa</a>
+                                <a class="btn btn-primary" href="{{route('campus.refresh',['figma_map' => $d->id])}}">Atualizar Mapa</a>
+                                <a class="btn btn-primary" href="{{route('campus.edit',['figma_map' => $d->id])}}">Editar</a>
                                 <div>
                                 <form id="{{'image-form.'.$d->campus}}" method="post" action="{{ route('image.upload', ['figma_map' => $d->id])}}" enctype="multipart/form-data">
                                     @csrf

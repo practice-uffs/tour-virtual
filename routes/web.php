@@ -96,12 +96,13 @@ Route::prefix('admin')->group(function (){
         return view('admin.index');
     })->name('admin.index')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::resource('/information', InformationController::class)->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
-    Route::get('/mapa', [FigmaMapController::class, 'index'])->name('figma_map.index')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
-    Route::get('/mapa/{figma_map}/edit', [FigmaMapController::class, 'edit'])->name('figma_map.edit')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+    Route::get('/campus', [FigmaMapController::class, 'index'])->name('campus.index')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+    Route::get('/campus/edit/{figma_map}', [FigmaMapController::class, 'edit'])->name('campus.edit')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+    Route::get('/campus/{figma_map}/refresh', [FigmaMapController::class, 'refresh'])->name('campus.refresh')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::get('/feedback',[FeedbackController::class, 'index'])->name('feedback.index')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::get('/feedback/{feedback}',[FeedbackController::class, 'show'])->name('feedback.show')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::delete('/feedback/{feedback}',[FeedbackController::class, 'destroy'])->name('feedback.destroy')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
-    Route::post('/mapa/{figma_map}/image', [ImageController::class, 'sliderUpload'])->name('image.upload')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+    Route::post('/campus/{figma_map}/image', [ImageController::class, 'sliderUpload'])->name('image.upload')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
 });
 
 
