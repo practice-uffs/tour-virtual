@@ -10,5 +10,5 @@ class FigmaMap extends Model
     use HasFactory;
     protected $table = 'figma_maps';
 
-    protected $fillable = ['name', 'campus', 'file_name', 'file_key', 'node_id', 'viewport'];
+    protected $fillable = ['name', 'campus', 'file_name', 'file_key', 'node_id', 'viewport', 'image_link'];
 }

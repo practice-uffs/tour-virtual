@@ -12,7 +12,6 @@ use Illuminate\Validation\Rules\In;
 class FigmaMapController extends Controller
 {
 
-
    public function requestFigma($name, $campus){
 
        $query = FigmaMap::query()->where('name', '=', $name)->where('campus', '=', $campus)->first();
@@ -31,18 +30,19 @@ class FigmaMapController extends Controller
    }
 
     public  function index(){
-       $data = FigmaMap::query()->where('name', '=', 'Principal')->get();
+       /* $data = FigmaMap::query()->where('name', '=', 'Principal')->get();
        foreach ($data as $k => $v){
            $campus = Information::siglaCampus($v['campus']);
            $v['campus'] = $campus;
            $data[$k] = $v;
-       }
+       } */
+       $data = FigmaMap::all();
        return view('mapa_figma.index', ['data' => $data]);
     }
 
     public function edit(FigmaMap $figma_map){
-        $name = $figma_map->getAttribute('name');
         $campus = $figma_map->getAttribute('campus');
+        $name = $figma_map->getAttribute('name');
         $SVG = $this->requestFigma($name, $campus);
         $xml = simplexml_load_string($SVG);
         $viewbox = null;

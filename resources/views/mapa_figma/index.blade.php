@@ -40,6 +40,7 @@
         <table class="table">
             <thead>
             <tr>
+                <th scope="col">Imagem</th>
                 <th scope="col">Campus</th>
                 <th scope="col">Atualizado em</th>
                 <th scope="col">Ação</th>
@@ -49,14 +50,40 @@
             @if(isset($data))
                 @foreach($data as $d)
                     <tr>
-                        <td>{{$d->campus}}</td>
+                        <td><img src="{{url('img/geral/'.$d->image_link)}}" width="50px" height="auto"/></td>
+                        <td>{{$d->name}}</td>
                         <td>{{date('d-m-Y H:i:s', strtotime($d->updated_at))}}</td>
-                        <td> <a class="btn btn-primary" href="{{route('figma_map.edit',['figma_map' => $d->id])}}">Atualizar</a></td>
+                        <td>
+                            <div>
+                                <a class="btn btn-primary" href="{{route('figma_map.edit',['figma_map' => $d->id])}}">Atualizar Mapa</a>
+                                <div>
+                                <form id="{{'image-form.'.$d->campus}}" method="post" action="{{ route('image.upload', ['figma_map' => $d->id])}}" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="file" name="imagem" id="{{'image-input.'.$d->campus}}">
+                                    <button class="btn btn-primary" id="{{'submit-btn.'.$d->campus}}" type="submit" disabled>Enviar imagem</button>
+                                </form>
+                                <script>
+                                    const {{'imageInput'.$d->campus}} = document.getElementById('{{"image-input.".$d->campus}}');
+                                    const {{'submitBtn'.$d->campus}} = document.getElementById('{{"submit-btn.".$d->campus}}');
+                                    const {{'imageForm'.$d->campus}} = document.getElementById('{{"image-form.".$d->campus}}');
+
+                                    {{'imageInput'.$d->campus}}.addEventListener("change", function() {
+                                        if ({{'imageInput'.$d->campus}}.value) {
+                                            {{'submitBtn'.$d->campus}}.disabled = false;
+                                            {{'imageForm'.$d->campus}}.addEventListener("submit", function() {
+                                            {{'imageForm'.$d->campus}}.disabled = true;
+                                        });
+                                    } else {
+                                        {{'submitBtn'.$d->campus}}.disabled = true;
+                                    }
+                                });
+                                </script>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                 @endforeach
             @endif
             </tbody>
         </table>
-
-
 @endsection
