@@ -3,7 +3,7 @@
 @section('content')
 
     <a class="btn btn-secondary m-2" href="{{route('admin.index')}}">Voltar</a>
-    <h1 class="fs-4 text-center mt-5 mb-4">Campus da UFFS</h1>
+    <h1 class="fs-4 text-center mt-5 mb-4">Modelos 3d</h1>
     <div class="container w-50">
         <!-- Alerta Sucesso / Falha-->
         <div  style="display: none">
@@ -36,21 +36,22 @@
         </div>
         <!-- Fim Alerta Sucesso / Falha-->
 
-
+        <a href="{{route('model3d.create')}}">
+            <button style="width: 50%; height:35px; margin: 0; background-color: #3b3b3b; color:#d7d7d7; border-radius: 5px;">Adicionar
+            </button>
+        </a>
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">Imagem</th>
-                <th scope="col">Campus</th>
-                <th scope="col">Atualizado em</th>
-                <th scope="col">Ação</th>
+                <th scope="col-md-10">Nome</th>
+                <th scope="col-md-2">Atualizado em</th>
+                <th scope="col-md-2">Ação</th>
             </tr>
             </thead>
             <tbody>
             @if(isset($data))
                 @foreach($data as $d)
                     <tr>
-                        <td><img src="{{url('img/geral/'.$d->image_link)}}" width="50px" height="auto"/></td>
                         <td>{{$d->name}}</td>
                         <td>{{date('d-m-Y H:i:s', strtotime($d->updated_at))}}</td>
                         <td>

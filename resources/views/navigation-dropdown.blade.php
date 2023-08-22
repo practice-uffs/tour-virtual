@@ -11,7 +11,7 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('information.index') }}" :active="request()->routeIs('information.index')">
+                    <x-jet-nav-link href="{{ route('admin.index') }}" :active="request()->routeIs('information.index')">
                         {{ __('PAINEL ADMIN') }}
                     </x-jet-nav-link>
                 </div>

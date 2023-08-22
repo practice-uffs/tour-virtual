@@ -12,7 +12,7 @@ use PhpIfc\PhpIfcParser\Parser;
 
 class MapController extends Controller
 {
-    public function model3d(){
+    public function model3d($ID_element){
 
 
         return view('model3d');
@@ -37,7 +37,7 @@ class MapController extends Controller
 
     public function chapeco(){
         // dd($information);
-        return view('index', $this->get_data('CH', 'Chapecó', 'Chapecó', false));
+        return view('index', $this->get_data('CH', 'Chapecó', 'Chapecó', false), ['ID_element' => null]);
     }
 
     public function chapeco_Info($ID_element){

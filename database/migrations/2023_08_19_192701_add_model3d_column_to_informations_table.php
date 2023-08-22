@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnToFigmaMapsTable extends Migration
+class AddModel3dColumnToInformationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class AddColumnToFigmaMapsTable extends Migration
      */
     public function up()
     {
-        Schema::table('figma_maps', function (Blueprint $table) {
-            $table->string('image_link')->nullable();
+        Schema::table('informations', function (Blueprint $table) {
+            $table->foreign('model3d')->on('model3d')->references('id');
+            //
         });
     }
 
@@ -25,10 +26,8 @@ class AddColumnToFigmaMapsTable extends Migration
      */
     public function down()
     {
-        Schema::table('figma_maps', function (Blueprint $table) {
-            $table->dropColumn('image_link');
+        Schema::table('informations', function (Blueprint $table) {
+            $table->dropColumn('id_model3d');
         });
     }
 }
-
-?>

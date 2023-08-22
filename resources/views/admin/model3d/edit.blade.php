@@ -49,29 +49,29 @@
                 
                     <div>
                         <div>
-                            <form id="{{'image-form.'.$data->campus}}" method="post" action="{{ route('image.upload', ['figma_map' => $data->id])}}" enctype="multipart/form-data">
-                                @csrf
-                                <input type="file" name="imagem" id="{{'image-input.'.$data->campus}}">
-                                <button class="btn btn-primary" id="{{'submit-btn.'.$data->campus}}" type="submit" disabled>Enviar imagem</button>
-                            </form>
-                            <script>
-                                const {{'imageInput'.$data->campus}} = document.getElementById('{{"image-input.".$data->campus}}');
-                                const {{'submitBtn'.$data->campus}} = document.getElementById('{{"submit-btn.".$data->campus}}');
-                                const {{'imageForm'.$data->campus}} = document.getElementById('{{"image-form.".$data->campus}}');
+                        <form id="{{'image-form.'.$data->campus}}" method="post" action="{{ route('image.upload', ['figma_map' => $data->id])}}" enctype="multipart/form-data">
+                            @csrf
+                            <input type="file" name="imagem" id="{{'image-input.'.$data->campus}}">
+                            <button class="btn btn-primary" id="{{'submit-btn.'.$data->campus}}" type="submit" disabled>Enviar imagem</button>
+                        </form>
+                        <script>
+                            const {{'imageInput'.$data->campus}} = document.getElementById('{{"image-input.".$data->campus}}');
+                            const {{'submitBtn'.$data->campus}} = document.getElementById('{{"submit-btn.".$data->campus}}');
+                            const {{'imageForm'.$data->campus}} = document.getElementById('{{"image-form.".$data->campus}}');
 
-                                {{'imageInput'.$data->campus}}.addEventListener("change", function() {
-                                    if ({{'imageInput'.$data->campus}}.value) {
-                                        {{'submitBtn'.$data->campus}}.disabled = false;
-                                        {{'imageForm'.$data->campus}}.addEventListener("submit", function() {
-                                        {{'imageForm'.$data->campus}}.disabled = true;
-                                    });
-                                    } else {
-                                        {{'submitBtn'.$data->campus}}.disabled = true;
-                                    }
+                            {{'imageInput'.$data->campus}}.addEventListener("change", function() {
+                                if ({{'imageInput'.$data->campus}}.value) {
+                                    {{'submitBtn'.$data->campus}}.disabled = false;
+                                    {{'imageForm'.$data->campus}}.addEventListener("submit", function() {
+                                    {{'imageForm'.$data->campus}}.disabled = true;
                                 });
-                            </script>
-                        </div>
+                            } else {
+                                {{'submitBtn'.$data->campus}}.disabled = true;
+                            }
+                            });
+                        </script>
                     </div>
+                </div>
                 
             @endif
             </tbody>

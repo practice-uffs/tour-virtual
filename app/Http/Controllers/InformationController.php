@@ -17,7 +17,7 @@ class InformationController extends Controller
         'title' => 'required',
         'description' => 'required',
         'cover_image' => 'required',
-
+        'model3d' => 'required',
 
     ];
     protected static $feedback = [
@@ -119,11 +119,14 @@ class InformationController extends Controller
     public function update(Request $request, Information $information)
     {
 
+        $htmlConverter = new HtmlConverter(); // Html to Markdown
         $md2html = new Parsedown();
 
         $request->validate(InformationController::$rules, InformationController::$feedback);
         $input = $request->all();
         $input['description'] = $md2html->text($input['description']);
+
+        // dd($input);
 
         $information->update($input);
 
@@ -148,8 +151,16 @@ class InformationController extends Controller
         }
 
 
+        $information['description'] = $htmlConverter->convert($information['description']);
 
-        return redirect()->route('information.index');
+        $data =  Detail::where('id_information', $information->getAttribute('id'));
+        $data = $data->get();
+        foreach ($data as $k => $v){
+            $data[$k]['item'] = $htmlConverter->convert($v['item']);
+        }
+
+
+        return view('information.edit', ['information' => $information, 'details' => $data]);
     }
 
     /**

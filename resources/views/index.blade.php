@@ -77,7 +77,6 @@
     var campus = {!! json_encode($campus, JSON_HEX_TAG) !!};
     var hash_file = {!! json_encode($hash_file, JSON_HEX_TAG) !!};
     var popup_construcao;
-
 </script>
 
 
@@ -160,7 +159,7 @@
     <div id="tooltip" display="none" style="position: absolute; display: none;"></div>
 
 </div>
-<div class="container-side-bar  hidden-side-bar"id="side-bar">
+<div class="container-side-bar  hidden-side-bar" id="side-bar">
     <div style="width: 100%; height: 30vh; background-color: black" >
         <div class="img custom-hover-sidebar-img" id="vista-panoramica">
             {{-- <img  id="sidebar-img-capa" src="{{'img/pictures/LS/Principal/Capa/almoxarifado.jpg'}}" alt=""> --}}
@@ -184,12 +183,15 @@
                 <span>VISTA PANORÂMICA</span>
             </a>
         </div>
+        <div class="vista-panoramica-container">
+            <a href="{{ route('ch.model3d', [($ID_element ? $ID_element: 0 ), $titulo]) }}" class="vista-panoramica" id="vista-3d">
+                <span>3D</span>
+            </a>
+        </div>
+
         <a href="https://practice.uffs.edu.br/" target="_blank" style="text-decoration: none"><img src="{{ asset('img/icon/practice.svg') }}" class="logo-practice"></a>
         <a href="https://www.uffs.edu.br/" target="_blank"><div class="bkgd-logo-uffs"><img src="{{ asset('img/icon/logoUFFS.png' )}}" class="logo-UFFS"></div></a>
     </div>
-
-
-
 
 </div>
 

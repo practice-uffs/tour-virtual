@@ -70,6 +70,18 @@
                 <option selected>{{$information->campus ?? old('campus')}}</option>
             </select>
 
+            {{-- {{$information}} --}}
+            <label for="floatingInput">Modelo 3d</label>
+            <select class="form-select mb-3" name="model3d" value="{{$information->model3d ?? old('model3d')}}" >
+                <option value=null {{$information->model3d == null ? 'selected' : ''}}>Selecione o modelo</option>
+                <option value='1' {{$information->model3d == 1 ? 'selected' : ''}}>Bloco A</option>
+                <option value='2' {{$information->model3d == 2 ? 'selected' : ''}}>Bloco B</option>
+                <option value='3' {{$information->model3d == 3 ? 'selected' : ''}}>Bloco C</option>
+                <option value='4' {{$information->model3d == 4 ? 'selected' : ''}}>Biblioteca</option>
+                <option value='5' {{$information->model3d == 5 ? 'selected' : ''}}>Laboratório</option>
+            </select>
+
+
 
 
             <div class="form-floating mb-3">
@@ -111,8 +123,9 @@
 
             <div id="boxquantity" class="mb-4">
                 @foreach($details as $dt)
+                       
+                        <a href="{{route('detail.edit', $dt->id)}}">Marcar Localização</a>
                         <x-input value="{{$dt->item ?? old('item')}}" name="item[{{$dt->id}}]" placeholder="ID" />
-
                 @endforeach
             </div>
 

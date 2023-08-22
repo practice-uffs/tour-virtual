@@ -295,7 +295,7 @@
     <body>
 
 
-    <a href="#" onclick="window.explodeModel()" style="position: absolute; left: 30px; top: 30px; z-index:10"><img src="{{ '../../img/icon/play-1003-svgrepo-com.svg' }}" width="50px" height="50px"></a>
+    <a onclick="window.explodeModel()" style="position: absolute; left: 30px; top: 30px; z-index:10"><img src="{{ '../../img/icon/play-1003-svgrepo-com.svg' }}" width="50px" height="50px"></a>
     <canvas id="myCanvas"></canvas>
     {{-- <div id="treeViewContainer" style="display: none"></div> --}}
 
@@ -353,7 +353,7 @@
 
             const sceneModel2 = xktLoader.load({
                 id: "myModel",
-                src: "/3d_model/files/xkt/novoBlocoA.xkt",
+                src: "/3d_model/files/xkt/laboratorio.xkt",
                 excludeTypes: ["IfcSpace", "IfcBuilding", "IfcSite"],
                 edges,
                 saoEnabled,

@@ -47,7 +47,7 @@ class FigmaMapController extends Controller
             $v['campus'] = $campus;
             $data[$k] = $v;
         } */
-        $data = FigmaMap::all();
+        $data = $figma_map;
         return view('admin.campus.edit', ['data' => $data]);
     }
 

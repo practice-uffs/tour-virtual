@@ -54,7 +54,7 @@
             height: 9em;
             margin-bottom: 1em;
             margin-left: auto;
-            margin-right: auto;
+            margin-right: 25%;
 
         }
         .filtro select{
@@ -84,7 +84,7 @@
     </style>
     <a class="btn btn-secondary m-2" href="{{route('admin.index')}}">Voltar</a>
     <div class="filtro">
-        <form action="{{ route('information.index') }}" method="GET">
+        <form action="{{ route('information.index') }}"  style="width: auto; float: right;" method="GET">
             <br>
             <label>
                 <select name="filter" id="filter">
@@ -97,16 +97,16 @@
                     <option value="RE">Realeza</option>
                 </select>
             </label>
-            <button type="submit" >Filtrar</button>
+            <button type="submit" style="margin-left: 10px" >Filtrar</button>
         </form>
     </div>
     <table>
         <tr>
-            <th>CAMPUS</th>
-            <th>TITULO</th>
-            <th colspan="2">
+            <th class="col-md-2">Campus</th>
+            <th class="col-md-8">Título</th>
+            <th colspan="2" class="col-md-2">
                 <a href="{{route('information.create')}}">
-                    <button  style="width: 50%; height:35px; margin: 0; background-color: #3b3b3b; color:#d7d7d7; border-radius: 5px;">NOVO
+                    <button  style="width: 50%; height:35px; margin: 0; background-color: #3b3b3b; color:#d7d7d7; border-radius: 5px;">Adicionar
                     </button>
                 </a>
             </th>

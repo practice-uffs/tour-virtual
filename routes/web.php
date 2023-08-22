@@ -9,6 +9,8 @@ use App\Http\Controllers\WebpSupportController;
 use App\Http\Controllers\LandingPageController;
 use Illuminate\Support\Facades\Route;
 use App\Models\FigmaMap;
+use App\Http\Controllers\Model3dController;
+use App\Http\Controllers\DetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +46,6 @@ Route::prefix('/cl')->group(function (){
 });
 
 Route::prefix('/ch')->group(function (){
-    Route::get('/model3d', [MapController::class, 'model3d'])->name('3d.ch');
     Route::prefix('/panorama')->group(function (){
         Route::get('/', function (){
             return view('panorama.ch', ['campus_name' => 'Chapecó'], ['campus' => 'ch']);
@@ -53,6 +54,7 @@ Route::prefix('/ch')->group(function (){
     Route::get('/{ID_element}/{titulo}', [MapController::class, 'chapeco_Info'])->name('map.ch.element');
     Route::get('/{ID_element}', [MapController::class, 'chapeco_Info'])->name('map.ch.element2');
     Route::get('/', [MapController::class, 'chapeco'])->name('map.ch');
+    Route::get('/{ID_element}/{titulo}/3d', [Model3dController::class, 'index'])->name('ch.model3d');
 });
 
 Route::prefix('/er')->group(function (){
@@ -100,9 +102,13 @@ Route::prefix('admin')->group(function (){
     Route::get('/campus/edit/{figma_map}', [FigmaMapController::class, 'edit'])->name('campus.edit')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::get('/campus/{figma_map}/refresh', [FigmaMapController::class, 'refresh'])->name('campus.refresh')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::get('/feedback',[FeedbackController::class, 'index'])->name('feedback.index')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+    Route::resource('/model3d', Model3dController::class)->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+    // Route::get('/model3d/create',[Model3dController::class, 'create'])->name('model3d.create')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+    // Route::POST('/model3d/store',[Model3dController::class, 'store'])->name('model3d.store')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::get('/feedback/{feedback}',[FeedbackController::class, 'show'])->name('feedback.show')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::delete('/feedback/{feedback}',[FeedbackController::class, 'destroy'])->name('feedback.destroy')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::post('/campus/{figma_map}/image', [ImageController::class, 'sliderUpload'])->name('image.upload')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+    Route::get('/details/{detail}/edit',[DetailController::class, 'edit'])->name('detail.edit')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
 });
 
 
