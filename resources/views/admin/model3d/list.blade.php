@@ -36,10 +36,10 @@
         </div>
         <!-- Fim Alerta Sucesso / Falha-->
 
-        <a href="{{route('model3d.create')}}">
+        {{-- <a href="{{route('model3d.create')}}">
             <button style="width: 50%; height:35px; margin: 0; background-color: #3b3b3b; color:#d7d7d7; border-radius: 5px;">Adicionar
             </button>
-        </a>
+        </a> --}}
         <table class="table">
             <thead>
             <tr>
@@ -52,13 +52,12 @@
             @if(isset($data))
                 @foreach($data as $d)
                     <tr>
-                        <td>{{$d->name}}</td>
+                        <td>{{$d->title}}</td>
                         <td>{{date('d-m-Y H:i:s', strtotime($d->updated_at))}}</td>
                         <td>
                             <div>
-                                <a class="btn btn-primary" href="{{route('campus.refresh',['figma_map' => $d->id])}}">Atualizar Mapa</a>
-                                <a class="btn btn-primary" href="{{route('campus.edit',['figma_map' => $d->id])}}">Editar</a>
-                                
+                                <a class="btn btn-primary" href="{{route('model3d.edit',['model3d' => $d->id])}}">Marcação de Salas</a>
+                                {{-- <a class="btn btn-primary" href="{{route('campus.edit',['figma_map' => $d->id])}}">Editar</a> --}}
                             </div>
                         </td>
                     </tr>

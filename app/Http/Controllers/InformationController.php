@@ -126,7 +126,6 @@ class InformationController extends Controller
         $input = $request->all();
         $input['description'] = $md2html->text($input['description']);
 
-        // dd($input);
 
         $information->update($input);
 

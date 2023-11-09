@@ -54,7 +54,7 @@ Route::prefix('/ch')->group(function (){
     Route::get('/{ID_element}/{titulo}', [MapController::class, 'chapeco_Info'])->name('map.ch.element');
     Route::get('/{ID_element}', [MapController::class, 'chapeco_Info'])->name('map.ch.element2');
     Route::get('/', [MapController::class, 'chapeco'])->name('map.ch');
-    Route::get('/{ID_element}/{titulo}/3d', [Model3dController::class, 'index'])->name('ch.model3d');
+    Route::get('/{ID_element}/{titulo}/3d', [Model3dController::class, 'display'])->name('ch.model3d');
 });
 
 Route::prefix('/er')->group(function (){
@@ -103,6 +103,7 @@ Route::prefix('admin')->group(function (){
     Route::get('/campus/{figma_map}/refresh', [FigmaMapController::class, 'refresh'])->name('campus.refresh')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::get('/feedback',[FeedbackController::class, 'index'])->name('feedback.index')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::resource('/model3d', Model3dController::class)->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
+    Route::get('/model3d/{model3d}/edit', [Model3dController::class, 'edit'])->name('model3d.edit')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     // Route::get('/model3d/create',[Model3dController::class, 'create'])->name('model3d.create')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     // Route::POST('/model3d/store',[Model3dController::class, 'store'])->name('model3d.store')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);
     Route::get('/feedback/{feedback}',[FeedbackController::class, 'show'])->name('feedback.show')->middleware(['check.admin', 'verified', 'auth:sanctum' ]);

@@ -123,9 +123,15 @@
 
             <div id="boxquantity" class="mb-4">
                 @foreach($details as $dt)
-                       
-                        <a href="{{route('detail.edit', $dt->id)}}">Marcar Localização</a>
-                        <x-input value="{{$dt->item ?? old('item')}}" name="item[{{$dt->id}}]" placeholder="ID" />
+                    <div style='width:100%; float:left'>
+                            {{-- <a href="{{route('detail.edit', $dt->id)}}">Marcar Localização</a> --}}
+                        <x-input value="{{$dt->item ?? old('item')}}" name="item[{{$dt->id}}]" placeholder="ID" style="float:left; width: 50%"/>
+                        <select style="float:left;" value=''>
+                            <option>Selecione a sala</option>
+                            <option>Sala 101</option>
+                            <option>Sala 102</option>
+                        </select>
+                    </div>
                 @endforeach
             </div>
 

@@ -29,6 +29,23 @@ class Model3dController extends Controller
        
         return redirect()->route('model3d.index');
     }
+
+    public function storeLocation(Request $request)
+    {
+        $item = Model3d::create($request->all());
+        return redirect()->route('model3d.index');
+    }
+
+
+
+    public function edit(Model3d $model3d){
+        return view('admin.model3d.pinModel', ['model3d' => $model3d]);
+    }
+
+    public function display(){
+        $data = Model3d::query()->orderBy('created_at', 'desc')->get();
+        return view('admin.model3d.list', ['data' => $data]);
+    }
 }
 ?>
 

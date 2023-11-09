@@ -213,7 +213,7 @@ function setActions(parent, ID_element, ID_group, titulo, desc, list_desc, id_36
         //verifica se o usuário acessou um link com essa informação selecionada, então abre o menu lateral dessa informação
         let numbers_id = ID_element.replace(/[^0-9]/g, "");
         let href_id = window.location.pathname.split('/');
-	console.log(href_id);
+        
         if(href_id[3] == numbers_id){
             abrir(ID_group, titulo, desc, list_desc, id_360, img_capa, grupoSNAP, grupoSNAP.select(ID_element))
         }

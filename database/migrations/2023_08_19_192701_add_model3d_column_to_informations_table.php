@@ -27,7 +27,7 @@ class AddModel3dColumnToInformationsTable extends Migration
     public function down()
     {
         Schema::table('informations', function (Blueprint $table) {
-            $table->dropColumn('id_model3d');
+            $table->dropColumn('model3d');
         });
     }
 }
