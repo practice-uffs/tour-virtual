@@ -31,7 +31,7 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/2879/2879209.png" height="50px" width="50px" style="align-self: center; margin-top: 30px" alt="...">
                 <div class="card-body">
                     <h5 class="card-title fs-4">Modelos 3D</h5>
-                    <p class="card-text">Gerencie os modelos da edificações da UFFS</p>
+                    <p class="card-text">Gerencie os modelos das edificações da UFFS</p>
                     
                 </div>
             </a>

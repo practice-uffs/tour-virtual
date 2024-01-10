@@ -44,7 +44,7 @@ class Model3dController extends Controller
 
     public function display(){
         $data = Model3d::query()->orderBy('created_at', 'desc')->get();
-        return view('admin.model3d.list', ['data' => $data]);
+        return view('model3d', ['data' => $data]);
     }
 }
 ?>

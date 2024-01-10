@@ -137,6 +137,7 @@ function abrir(ID_group, titulo, descricao, list_desc, id_360, img_capa, paper, 
 
     $("#search").val(titulo)
     $("#btn-close-search").css({"width": "60px", "transition": "width 0.5s", "border-left": "1px solid #7171713c"});
+
     // $(".search-bar-container").css({"width":"392px", "transition": "width 0.5s"})
 
 }
@@ -207,6 +208,11 @@ function setActions(parent, ID_element, ID_group, titulo, desc, list_desc, id_36
         })
 
         grupo.click(function () {
+            let str = ID_group;
+            let numbers_id2 = str.replace(/[^0-9]/g, "");
+        
+            const nextURL = campus+'/'+numbers_id2+'/'+''+encodeURIComponent(titulo).replaceAll('%20','-');
+            $("#vista-3d").attr("href", nextURL+"/3d");
             abrir(ID_group, titulo, desc, list_desc, id_360, img_capa, grupoSNAP, grupoSNAP.select(ID_element))
         });
         
